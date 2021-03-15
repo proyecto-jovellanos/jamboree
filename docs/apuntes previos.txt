@@ -1,0 +1,41 @@
+
+***********INDEX***********
+Vista de "foro" donde ver los temas mas escuchados, los artistas mas votados..similar.
+Formulario para iniciar sesión
+
+****AL LOGEAR. HOME*******
+Ver/editar perfil
+Estudio/sesion
+Grupo(s)
+
+**********ESTUDIO/SESIÓN**************
+ver creaciones
+crear loop
+editar loop
+compartir loop
+
+*********GRUPO*********
+Ver grupos en los que estés
+Crear grupo
+
+
+-------BBDD-------
+tabla usuarios(hacer con ioauth de google?)
+tabla foro,con temas
+tabla temas, de cada  usuario. Y las públicas en cada grupo(según etiqueta)
+tabla grupos (?)
+IMPORTANTE, BASE DE DATOS PARA LOS LOOPS(tabla,con json?, norelacional con referencia en tabla relacional?)
+
+-------LÓGICA-------
+index: cargar los ultimos temas y mas votados/escuchados
+estudio: cargar sesiones previas
+loop: mostrar parametros configrables(pan,vol,bpm,compas,metrónomo,longitud del loop)
+---->crear loop con los parametros y reproducir los botones que se vayan pulsando. Solo cliente
+---->exportar loop al dar en boton
+---->importar loops de grupos o publicos(si no son de tu grupo pero no son privados)
+
+------VISUALIZACIÓN-------
+video o carrusel promocional/explicativo de la pagina. "crea,comparte,usa bases sin descargar software..."
+index: caja por cada tema- efecto onda (AM) al pinchar?tener temas predefinidos, drumbass,funk,trap,reggaeton
+estudio: caja por sesión.podra elegirse color y tema para cada sesion hecha? o segun el tema?
+loop: free style, resaltar borde con cada beat,o segun bpm.
