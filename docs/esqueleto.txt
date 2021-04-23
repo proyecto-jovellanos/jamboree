@@ -31,6 +31,7 @@ main.html
 foro.html
     como quora, reddit, coger plantilla 
     header:
+        logo y redes sociales
         inicio >lleva a main.html
         ayuda, (perfil)
 
