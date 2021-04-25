@@ -1,0 +1,225 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@title: Cormorant, serif;
+@text: Nunito, sans-serif;
+@sombreado: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+/* Colores en Hex */
+@Atlantico-softred: #534486;
+@Atlantico-softmagenta: #D95988;
+@Atlantico-darkblue: #43038c;
+@Atlantico-softblue: #5b339b;
+@Atlantico-white: #F2E8DF;
+@Atlantico-darkest: #0c0d1b;
+
+
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* ocultar barras de scroll */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    height: 100%;
+}
+
+.grow:hover {
+    transform: scale(1.01);
+    transition: 60ms ease;
+    overflow: hidden;
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+    border: 0px;
+    font-size: 1em;
+    background-color: transparent;
+}
+
+//------------ESTRUCTURA---------//
+body {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+
+    /* esto verlo, no me gusta
+    esta a 20 porq es el % del header */
+
+    grid-auto-rows: minmax(20%, auto);
+
+    grid-template-areas:
+        "header header header header header header header header header"
+        "main   main   main   main   main   main   main   main   main";
+}
+
+//------HEADER-------
+.cabecera {
+    z-index: 100;
+    width: 100%;
+    min-height: 52px;
+    height: 15%;
+    grid-area: header;
+    display: flex;
+    flex-flow: row nowrap;
+    position: fixed;
+    top: 0px;
+    background-color: lighten(@Atlantico-softred, 40%);
+
+    .logo {
+        align-self: center;
+        font-size: 2em;
+        flex-basis: 50%;
+
+        /* ver esto, no me gusta */
+        text-size-adjust: 100%;
+
+        color: @Atlantico-softmagenta;
+        font-family: @title;
+    }
+
+    .volver,
+    .ayuda {
+        align-self: center;
+
+        i {
+            color: black;
+        }
+    }
+}
+
+//-------MAIN-------
+
+.main {
+    //quitarlo si queremos hacer scroll, cambiar entonces el margin top a 2%
+    position: fixed;
+    margin: 15% 5% 0 2%;
+    grid-area: main;
+    color: @Atlantico-darkest;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100vh;
+
+    .channel_rack {
+        height: 90vh;
+
+        .track {
+            height: 10%;
+            background-color: rgba(198, 198, 233, 0.671);
+            margin-bottom: 4px;
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+            justify-content: space-around;
+
+            .track_name {
+                align-self: center;
+                flex-basis: 10%;
+                /* ordenar el nombre del track bien */
+            }
+
+            .beat {
+                flex-basis: 5%;
+                background-color: @Atlantico-softmagenta;
+                width: 24px;
+                height: 85%;
+                margin-right: 5px;
+                border-radius: 15%;
+            }
+        }
+
+        .controles {
+            margin-top: 5%;
+            width: 50vw;
+            padding: 0.6%;
+            display: flex;
+            text-align: center;
+            border: 1px solid @Atlantico-softred;
+            align-content: center;
+            justify-items: center;
+
+            button {
+                display: block;
+                color: @Atlantico-softred;
+
+                i {}
+            }
+        }
+    }
+
+}
+
+//------FOOTER------
+
+.contacto {
+    grid-area: footer;
+    color: @Atlantico-white;
+    background-color: fade(@Atlantico-darkblue, 60%);
+    height: 80px;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    line-height: 80px;
+}
+
+//-----ANIMATIONS------
+
+@keyframes left-slide {
+    0% {
+        color: white;
+        left: -50%;
+        top: 0px;
+    }
+
+    100% {
+        color: @Atlantico-darkblue;
+        left: 0%;
+        top: 0px;
+    }
+}
+
+@keyframes right-slide {
+    0% {
+        color: white;
+        right: -50%;
+        top: 0px;
+    }
+
+    100% {
+        color: @Atlantico-darkblue;
+        right: 0%;
+        top: 0px;
+    }
+}
+
+//-----MEDIA-------
+
+@media all and (max-width:400px) {
+    .noticias {
+        margin: 2% 5%;
+    }
+
+    .main {
+        display: grid;
+        grid-auto-rows: minmax(50px, auto);
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "aside"
+            "footer";
+    }
+
+    .sidebar {
+        flex-flow: row nowrap;
+    }
+
+    .contacto {
+        height: 100%;
+        flex-flow: column nowrap;
+    }
+}
