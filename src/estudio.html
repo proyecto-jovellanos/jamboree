@@ -25,7 +25,7 @@
                     $(".beat." + i).css("background-color", "grey")
                     cont++
                 } else {
-                    cont=cont-4
+                    cont = cont - 4
                     i = i + 3
                 }
             }
@@ -45,6 +45,10 @@
             <a href="main.html">
                 <i class="far fa-times-circle fa-3x"></i>
             </a>
+        </div>
+        <div class="ayuda">
+            <i class="fas fa-question fa-2x"></i>
+
         </div>
 
     </div>
@@ -191,9 +195,17 @@
                 <div class="beat 31"></div>
                 <div class="beat 32"></div>
             </div>
-            <button>REPRODUCIR</button>
-            <button>PARAR</button>
-            <button>GUARDAR</button>
+            <div class="controles">
+                <button>
+                    <i class="fas fa-play fa-2x"></i>
+                </button>
+                <button>
+                    <i class="fas fa-stop fa-2x"></i>
+                </button>
+                <button>
+                    <i class="fas fa-save fa-2x"></i>
+                </button>
+            </div>
         </div>
     </div>
     </main>
