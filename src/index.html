@@ -6,24 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenid@ a Jamboree</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- TONE.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.13/Tone.js"
         integrity="sha512-SAB2YrHeaZfb6W1w+tAMm+IUICzUMyf7TJ8upY+NjLYl8jseufUW4yYzoSHfNL9N2rzDlw5PWJrf7rPIQ6VhNw=="
         crossorigin="anonymous"></script>
+    <!-- JQUERY -->
+    <script src="jquery-3.6.0.js"></script>
+    <!-- JS PROPIO -->
+    <script src="app.js"></script>
+    <!-- LESS -->
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-    <button>
-        DO 3
-    </button>
-    <script>
-        let boton = document.querySelector("button")
-        boton.onclick = function () {
-            const synth = new Tone.Synth().toDestination();
-            while (true) {
-                synth.triggerAttackRelease("C4", "8n");
-            }
-        }
-    </script>
+    <header>
+        <div class="logo">
+            ER LOGO
+        </div>
+
+        <div class="social">
+            <ul>
+                <li>Twitter</li>
+                <li>Facebook</li>
+                <li>Tuenti</li>
+            </ul>
+        </div>
+
+    </header>
+    <main>
+        <div class="video">
+            <video src="#">ER VIDEO</video>
+        </div>
+
+        <div class="artistas">Carrousel de artistas</div>
+
+        <div class="log">
+            <button><a href="main.html">LOGIN</a></button>
+            <!-- HACER popup para formulario de inicio o registro -->
+            <button><a href="main.html">REGISTRO</a></button>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="contactos">Nuestros nombres</div>
+        <div class="lopd">ley organica proteccion datos, cookies...</div>
+        <div class="year">AÑO y Copyright</div>
+    </footer>
 </body>
 
 </html>

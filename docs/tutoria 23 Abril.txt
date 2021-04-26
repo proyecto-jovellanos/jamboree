@@ -1,0 +1,12 @@
+1º. Moverse por la página
+	primero esqueleto html de toda el site. Con sus relaciones entre páginas
+
+	transiciones con php, o javascript.
+
+2º Añadir funcionalidades.
+
+Siguiente tutoria: Esqueleto, inicio sesión o algo ya de la API(como guardar,cargar canciones mediante texto?Se puede subir en formanto no editable?En mp3?)
+
+	-Editor, y guardar
+
+		-Foro

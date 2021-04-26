@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro Jamboree</title>
+    <link rel="icon" type="image/x-icon" href="/" />
+    <!-- kit de iconos -->
+    <script src="https://kit.fontawesome.com/62afea99ed.js" crossorigin="anonymous"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".far").on("click", function (ev) {
+                ev.preventDefault()
+                $(this).toggleClass("fas")
+            })
+
+            $(".fa-adjust").on("click", function (ev) {
+                ev.preventDefault()
+                $("*").toggleClass("night-mode")
+            })
+
+            $("#boton-user,#botCerrar").click(function (ev) {
+                ev.stopPropagation();
+                ev.preventDefault()
+                $(".none").toggleClass("login")
+            })
+        })
+    </script>
+
+    <link rel="stylesheet/less" href="style.less">
+    <script src="less.min.js" type="text/javascript"></script>
+    <!-- <link rel="stylesheet/less" href="dark-style.less"> -->
+</head>
+
+<body>
+    <div class="main">
+        <header class="header">
+            <div class="animation-header">
+                <div class="lft">[</div>
+                Jamboree
+                <div class="rght">]</div>
+            </div>
+
+            <button id="boton-user">
+                <i class="fas fa-user"></i>
+
+
+            </button>
+            <div class="none">
+                <h2>Login</h2>
+                <form>
+                    <div>
+                        <i class="far fa-user"></i>
+                        <input type="text" placeholder="Nombre">
+                    </div>
+                    <div>
+                        <i class="fas fa-lock"></i>
+                        <input type="password">
+                    </div>
+                    <input type="submit" value="Inicio">
+                    <input type="submit" id="botCerrar" value="Cerrar">
+                </form>
+            </div>
+            <button id="boton-night">
+                <i class="fas fa-adjust"></i>
+            </button>
+        </header>
+        <div class="sidebar">
+            <div class="most-visited">
+                <span>temas más escuchados</span>
+                <li>
+                    <a href="#">tema Primero</a><br>
+                    <span><i class="far fa-eye"></i> 4525</span>
+                </li>
+                <li>
+                    <a href="#">tema Segundo</a><br>
+                    <span><i class="far fa-eye"></i> 4105</span>
+                </li>
+                <li>
+                    <a href="#">tema Tercero</a><br>
+                    <span><i class="far fa-eye"></i> 3215</span>
+                </li>
+                <li>
+                    <a href="#">tema Cuarto</a><br>
+                    <span><i class="far fa-eye"></i> 2565</span>
+                </li>
+                <li>
+                    <a href="#">tema Quinto</a><br>
+                    <span><i class="far fa-eye"></i> 2005</span>
+                </li>
+            </div>
+            <div class="most-read">
+                <span>Autores más leidos</span>
+                <li>
+                    <a href="#">Autor Primero</a><br>
+                    <span><i class="far fa-eye"></i> 4525</span>
+                </li>
+                <li>
+                    <a href="#">Autor Segundo</a><br>
+                    <span><i class="far fa-eye"></i> 4525</span>
+                </li>
+                <li>
+                    <a href="#">Autor Tercero</a><br>
+                    <span><i class="far fa-eye"></i> 4525</span>
+                </li>
+                <li>
+                    <a href="#">Autor Cuarto</a><br>
+                    <span><i class="far fa-eye"></i> 4525</span>
+                </li>
+                <li>
+                    <a href="#">Autor Quinto</a><br>
+                    <span><i class="far fa-eye"></i> 4525</span>
+                </li>
+            </div>
+        </div>
+        <section class="noticias">
+            <article class="tema grow">
+                <header class="header-tema">
+                    Cabecera tema
+                </header>
+                <span class="nombre-tema">Nombre tema</span>
+                <span class="nombre-autor">Nombre autor</span>
+                <div class="parrafo">Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero suscipit
+                    omnis alias quibusdam eaque hic magni nesciunt doloribus animi, quam nam corrupti, beatae quos.
+                    Reiciendis dolore obcaecati enim error quos. ipsum dolor sit amet consectetur adipisicing elit.
+                    Expedita suscipit
+                    cupiditate vitae aspernatur libero. Quaerat dele Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Aperiam at, asperiores illum ipsa magni velit itaque nostrum deleniti aliquid, corporis
+                    mollitia assumenda perferendis nam, officia rerum sapiente quis? Perspiciatis, officia? niti dolor,
+                    iste alias at nam. Illum natus
+                    perferendis quia magnam aliquid dicta, vitae voluptates.
+                </div>
+                <button>
+                    <i class="far fa-heart"></i>
+                </button>
+            </article>
+            <article class="tema grow">
+                <header class="header-tema">
+                    Cabecera tema
+                </header>
+                <span class="nombre-tema">Nombre tema</span>
+                <span class="nombre-autor">Nombre autor</span>
+                <div class="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita suscipit
+                    cupiditate vitae asper Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat,
+                    consectetur libero itaque inventore fugit quis autem, ducimus est ex id sapiente! Excepturi
+                    reiciendis quam ex, nam quasi harum temporibus nostrum! natur libero. Quaerat deleniti dolor, iste
+                    alias at nam. Illum natus
+                    perferendis quia magnam aliquid dicta, vitae voluptates.</div>
+                <button>
+                    <i class="far fa-heart"></i>
+                </button>
+            </article>
+            <article class="tema grow">
+                <header class="header-tema">
+                    Cabecera tema
+                </header>
+                <span class="nombre-tema">Nombre tema</span>
+                <span class="nombre-autor">Nombre autor</span>
+                <div class="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita suscipit
+                    cupiditate v Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt saepe modi
+                    repellendus consectetur amet consequatur optio ex itaque asperiores quam perspiciatis unde nobis
+                    ullam sed, dolores dolore iusto nam necessitatibus! itae aspernatur libero. Quaerat deleniti dolor,
+                    iste alias at nam. Illum natus
+                    perferendis quia magnam aliquid dicta, vitae voluptates.</div>
+                <button>
+                    <i class="far fa-heart"></i>
+                </button>
+            </article>
+            <article class="tema grow">
+                <header class="header-tema">
+                    Cabecera tema
+                </header>
+                <span class="nombre-tema">Nombre tema</span>
+                <span class="nombre-autor">Nombre autor</span>
+                <div class="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita suscipit
+                    cupiditate vitae Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem dolores nemo
+                    voluptatem. Porro dolorum aliquid, blanditiis natus quaerat qui, possimus quisquam obcaecati velit
+                    molestiae est ipsam voluptatem eius! Quae, vel! aspernatur libero. Quaerat deleniti dolor, iste
+                    alias at nam. Illum natus
+                    perferendis quia magnam aliquid dicta, vitae voluptates.</div>
+                <button>
+                    <i class="far fa-heart"></i>
+                </button>
+            </article>
+        </section>
+    </div>
+    <footer class="contacto">
+        <div>Telefono: 646462244</div>
+        <div>Dirección: C/ Melodía 23, Madrid</div>
+        <div>Diseño: Miguel Ángel Morcillo</div>
+    </footer>
+</body>
+
+</html>

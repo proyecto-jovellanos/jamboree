@@ -1,0 +1,88 @@
+index.html
+    header: 
+        logo    redes sociales
+    main:
+        (video) artistas que lo utilizan
+        boton "pruebalo ya" y aparezca popup el login/signup
+    footer:
+        contactos
+        cookies, lopd
+        año copyright
+
+    index.html > popup login/signup:
+        formulario nombre y contraseña
+        Aun no te has registrado? a qué esperas? Y que lleve a registro
+    
+main.html 
+    header;
+        logo(lleva a index) y redes sociales   
+        perfil(lleva a perfil.html)      
+        ayuda>lleva a ayuda.html
+        icono puerta> para logout
+
+    main:
+        boton foro > lleva a foro.html
+        boton estudio > lleva a estudio.html  
+        boton audioteca > lleva a audioteca.html  
+
+    footer:
+        el mismo que index.html
+
+foro.html
+    como quora, reddit, coger plantilla 
+    header:
+        logo y redes sociales
+        inicio >lleva a main.html
+        ayuda, (perfil)
+
+    main:
+        se muestran entradas(canciones) de las etiquetas que sigas/las ultimas
+            main > Entrada:
+                Nombre del tema,
+                autor,
+                si tiene-portada,
+                las escuchas,
+                (grafico de ondas)
+
+                Boton PLAY que reproducza en la misma pagina.
+                Boton EDITAR que te vaya al estudio.html, con esa cancion precargada.
+
+                ¿COMO?
+                Ver si se pueden escuchar en json, o sino,en mp3.
+            main > aside:
+                temas mas escuchados/hits del momento
+                (tus ultimas escuchas)
+
+    footer:
+        el de siempre
+
+audioteca.html
+    header:
+        logo > index.html
+        inicio > main.html
+        perfil > perfil.html
+    main:
+        lista de tus temas, ordenado por fecha
+        en cada li, 
+            icono de editar > lleva a estudio, con ese tema cargado.
+            icono de borrar (con confirmacion)
+            icono de reproducir
+    footer opcional
+
+estudio.html   
+    header:
+        logo
+        boton para volver= boton cruz = vuelve a main.html  
+            alert quieres salir?
+    main:
+        channel rack:
+            4 filas de 8 compases cada una:
+                
+    (v)     m s    kick    |- - - - | - - - - |- - - - | - - - - ||- - - - | - - - - |- - - - | - - - - |
+            m s    snare   |- - - - | - - - - |- - - - | - - - - ||- - - - | - - - - |- - - - | - - - - |
+            m s    hithat  |- - - - | - - - - |- - - - | - - - - ||- - - - | - - - - |- - - - | - - - - |
+            m s    clap    |- - - - | - - - - |- - - - | - - - - ||- - - - | - - - - |- - - - | - - - - |
+
+        boton de reproducir: grande ( poder dar en barra espaciadora)
+        boton de parar
+        boton de guardar > guarda en audioteca
