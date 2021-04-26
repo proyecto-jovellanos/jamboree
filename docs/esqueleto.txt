@@ -17,7 +17,7 @@ main.html
     header;
         logo(lleva a index) y redes sociales   
         perfil(lleva a perfil.html)      
-        ayuda>lleva a ayuda.htm
+        ayuda>lleva a ayuda.html
         icono puerta> para logout
 
     main:
