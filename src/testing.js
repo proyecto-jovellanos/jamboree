@@ -20,7 +20,7 @@ $(document).ready(function () {
             "2m" = two measures
             "8n." = dotted-eighth note
         */
-        synth.triggerAttackRelease("D3", "8n", now)
+        synth.triggerAttackRelease("C3", "8n", now)
 
     })
     $(".fa-stop").click(function (ev) {
