@@ -21,7 +21,6 @@ $(document).ready(function () {
             "8n." = dotted-eighth note
         */
         synth.triggerAttackRelease("C3", "8n", now)
-
     })
     $(".fa-stop").click(function (ev) {
         ev.preventDefault()
