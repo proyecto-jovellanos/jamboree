@@ -1,0 +1,192 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+header {
+  background-color: #4b7b83;
+  display: table;
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+}
+header div {
+  margin-top: 20px ;
+}
+header .social ul li:hover {
+  font-size: 20px;
+}
+.logo {
+  float: left;
+  margin-left: 50px;
+  font-size: 20px;
+  color: beige;
+}
+.social {
+  float: right;
+}
+ul {
+  display: flex;
+}
+li {
+  list-style: none;
+  margin-right: 20px;
+}
+main {
+  height: 460px;
+  background-color: aquamarine;
+  display: grid;
+  grid-template-areas: "video artistas" "log log";
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+}
+.video {
+  grid-area: video;
+}
+.artistas {
+  grid-area: artistas;
+}
+.log {
+  grid-area: log;
+}
+.video {
+  text-align: center;
+}
+.artistas {
+  text-align: center;
+}
+.log {
+  text-align: center;
+}
+footer {
+  background-color: #295252;
+  height: 60px;
+  display: flex;
+}
+footer > div {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+.video {
+  border: #a79292 5px solid;
+  margin-top: 40px;
+}
+.artistas {
+  border: #a4a4c9 5px solid;
+  margin-top: 40px;
+  height: 700px;
+  perspective: 600px;
+  transform: translateY(-150px);
+}
+.log {
+  margin-top: 40px;
+}
+.carousel {
+  overflow: hidden;
+  max-width: 600px;
+  position: relative;
+}
+.carousel .carousel-item,
+.carousel .carousel-item--hidden {
+  display: none;
+}
+.carousel .carousel-item,
+img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+}
+.carousel .carousel-item-visible {
+  display: block;
+}
+.carousel .carousel-actions {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+.carousel .carousel-actions button {
+  border-radius: 50px;
+  border: 0;
+  font-weight: bold;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+.carousel .carousel-actions button#carousel-button--prev {
+  margin-left: 20px;
+}
+.carousel .carousel-actions button#carousel-button--next {
+  margin-right: 20px;
+}
+.Loginform {
+  position: absolute;
+  top: 30%;
+  left: 37%;
+  background-color: #fffefe;
+  width: 250px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  font-size: 30px;
+  display: none;
+}
+.data p {
+  font-size: 15px;
+}
+#show:checked ~ .Loginform {
+  display: block;
+}
+#show {
+  display: none;
+}
+.log .open-btn {
+  background-color: #657dc5;
+  color: blanchedalmond;
+  position: absolute;
+  display: block;
+  right: 47%;
+  width: 100px;
+  height: 30px;
+}
+.log a {
+  font-size: 12px;
+}
+#reg {
+  display: none;
+}
+.btn {
+  height: 35px;
+  width: 35%;
+  margin-top: 20px;
+  background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+.btn button {
+  width: 100%;
+  height: 130%;
+  background: none ;
+  border: none;
+}
+.btn:hover {
+  border: #5dff35 1px solid;
+  box-shadow: 0 0 20px #acff30;
+}
+.LinkRegister {
+  font-size: 12px;
+  color: #4293df;
+}
+.close-btn {
+  background: none;
+  float: right;
+  font-size: 14px;
+}
+.close-btn:hover {
+  color: #f31d0d;
+}

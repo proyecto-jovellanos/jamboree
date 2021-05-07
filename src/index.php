@@ -72,19 +72,21 @@
 
           <div class="Loginform">
             <label for="show" class="close-btn fas fa-times"></label>Login Form</br>
-            </br><form action="#">
+            </br><form action="validar.php" method="post">
+              
                 <div class="data">
-                <p>Email</p>
-                <input type="text" name="" id="">
+                <p>Username</p>
+                <input type="text" name="username" id="">
               </div>
               <div class="data">
                 <p><br>Password</p>
-                <input type="password" name="" id="">
+                <input type="password" name="password" id="">
               </div>
               <a href="">Forgot password?</a>
               <div class="btn">
                 <button type="submit"><i class="fas fa-play"></i></button>
               </div>
+              
               <div class="LinkRegister"><br><a href="register.php">No estas registrado?Registrate</a></div>
             </form>
             </div>
@@ -99,9 +101,28 @@
         <div class="lopd">ley organica proteccion datos, cookies...</div>
         <div class="year">AÑO y Copyright</div>
     </footer>
-    <script src="app2.js">
+    <script >
       
     </script>
+    <?php
+      if (isset($_POST['empieza'])) {
+        $user=$_POST['user'];
+        $passw=$_POST['password'];
+        include("db.php");
+        $consulta="INSERT INTO user (Username, Contra) VALUES ('$user','$passw')";
+        mysqli_query($conexion,$consulta);
+        echo $user;
+        echo 'heloo';
+
+
+   
+}
+
+
+
+?>
+
+       
     
     
 </body>
