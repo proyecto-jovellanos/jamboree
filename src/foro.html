@@ -5,13 +5,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Foro Jamboree</title>
+    <script src="https://kit.fontawesome.com/62afea99ed.js" crossorigin="anonymous"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".far").on("click", function (ev) {
+            ev.preventDefault()
+            $(this).toggleClass("fas")
+        })
+
+        $(".fa-adjust").on("click", function (ev) {
+            ev.preventDefault()
+            $("*").toggleClass("night-mode")
+        })
+
+        $("#boton-user,#botCerrar").click(function (ev) {
+            ev.stopPropagation();
+            ev.preventDefault()
+            $(".none").toggleClass("login")
+        })
+    })
+</script>
+<link rel="stylesheet/less" href="styleForo.less">
+    <script src="less.min.js" type="text/javascript"></script>
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            ER LOGO
+    <div class="main">
+    <header class="header">
+        <div class="animation-header">
+                    <div class="lft">[</div>
+                    Jamboree
+                    <div class="rght">]</div>
+                </div>
+        
+        <div class="nav">
+            <a href="main.html">Inicio</a>
+            <a href="ayuda.html">Ayuda</a>
+            <a href="perfil.html">Mi perfil</a>
         </div>
         <div class="social">
             <ul>
@@ -19,12 +51,6 @@
                 <li>Facebook</li>
                 <li>Tuenti</li>
             </ul>
-        </div>
-
-        <div class="nav">
-            <a href="main.html">Inicio</a>
-            <a href="ayuda.html">Ayuda</a>
-            <a href="perfil.html">Mi perfil</a>
         </div>
     </header>
 
