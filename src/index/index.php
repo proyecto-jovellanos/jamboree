@@ -6,27 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenid@ a Jamboree</title>  
-    <!-- TONE.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.13/Tone.js"
-        integrity="sha512-SAB2YrHeaZfb6W1w+tAMm+IUICzUMyf7TJ8upY+NjLYl8jseufUW4yYzoSHfNL9N2rzDlw5PWJrf7rPIQ6VhNw=="
-        crossorigin="anonymous"></script>
     <!-- JQUERY -->
-    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- JS PROPIO -->
-    <script src="app.js"></script>
-    <!-- LESS -->
-    <link rel="stylesheet" href="index.css">
-    <!--FONT AWESOME-->
-    <script src="https://kit.fontawesome.com/e36b117475.js" crossorigin="anonymous"></script>
-
     
+    <!-- JS PROPIO -->
+    
+    <!-- LESS -->
+    <link rel="stylesheet" href="index.less">
+    <!--FONT AWESOME-->
+   <script src="https://kit.fontawesome.com/e36b117475.js" crossorigin="anonymous"></script>
+    <!--MATERIALIZE-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     
     
 
 </head>
 
 <body>
-    
+
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="carousel.js"></script>
     
     
     <header>
@@ -44,26 +43,22 @@
 
     </header>
     <main>
+      <div class="maindiv">
         <div class="video">
             <video src="#">ER VIDEO</video>
         </div>
 
         <div class="carousel">
-          <div class="carousel-item-visible">
+          <div class="carousel-item">
             <img src="1.png" alt="">
+            <p>David Guetta</p>
+          </div>
+          <div class="carousel-item">
+            <img src="2.jpg" alt="">
           </div>
           <div class="carousel-item">
             <img src="1.png" alt="">
           </div>
-          <div class="carousel-item">
-            <img src="1.png" alt="">
-          </div>
-          <div class="carousel-actions">
-            <button id="carousel-button--prev"><</button>
-            <button id="carousel-button--next">></button>
-          </div>
-            
-            
         </div>
         <div class="log">
           <input type="checkbox" name="" id="show">
@@ -92,8 +87,8 @@
             </div>
             <!-- HACER popup para formulario de inicio o registro -->
             
+          </div>
         </div>
-
     </main>
 
     <footer>
