@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+header {
+  background-color: #4b7b83;
+  display: table;
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+}
+header div {
+  margin-top: 20px ;
+}
+header .social ul li:hover {
+  font-size: 20px;
+}
+.logo {
+  float: left;
+  margin-left: 50px;
+  font-size: 20px;
+  color: beige;
+}
+.social {
+  float: right;
+}
+ul {
+  display: flex;
+}
+li {
+  list-style: none;
+  margin-right: 20px;
+}
+main {
+  height: 460px;
+  background-color: aquamarine;
+  display: grid;
+  grid-template-areas: "Foro Estudio" "Foro Audioteca";
+}
+.boton_foro {
+  grid-area: Foro;
+}
+.boton_audioteca {
+  grid-area: Audioteca;
+}
+.boton_estudio {
+  grid-area: Estudio;
+}
+footer {
+  background-color: #295252;
+  height: 60px;
+  display: flex;
+}
+footer > div {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+.boton_foro {
+  height: 100%;
+  background-color: blue;
+}
+.boton_estudio {
+  height: 50%;
+}
+.boton_audioteca {
+  height: 50%;
+  background-color: #7e1d4a;
+}
+.boton_canciones {
+  height: 100%;
+}
