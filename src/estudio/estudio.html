@@ -28,7 +28,7 @@
             let cont = 0
             for (let i = 1; i <= 32; i++) {
                 if (cont < 4) {
-                    $(".beat." + i).css("background-color", "grey")
+                    $(".beat." + i).addClass("impar")
                     cont++
                 } else {
                     cont = cont - 4
@@ -39,7 +39,7 @@
     </script>
 
     <link rel="stylesheet/less" href="estudio.less">
-    <script src="less.min.js" type="text/javascript"></script>
+    <script src="../less.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -48,13 +48,14 @@
             JAMBOREE
         </div>
         <div class="volver">
-            <a href="main.html">
+            <a href="../main/main.html">
                 <i class="far fa-times-circle fa-3x"></i>
             </a>
         </div>
         <div class="ayuda">
-            <i class="fas fa-question fa-2x"></i>
-
+            <a href="../ayuda.html">
+                <i class="fas fa-question fa-2x"></i>
+            </a>
         </div>
 
     </div>
