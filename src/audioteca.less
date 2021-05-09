@@ -95,7 +95,6 @@ button {
         color: @Atlantico-darkblue;
         font-family: @title;
         animation-delay: 2s;
-        // .animation(name-slide);
 
         .lft {
             .animation(left-slide)
@@ -103,35 +102,6 @@ button {
 
         .rght {
             .animation(right-slide);
-        }
-    }
-
-    .none {
-        display: none;
-        z-index: 6;
-
-        h2 {
-            color: @Atlantico-darkblue;
-            font-family: @title;
-        }
-
-        input[type="submit"] {
-            cursor: pointer;
-            outline: none;
-            border: 1px solid @Atlantico-darkest;
-            border-radius: 15%;
-            color: @Atlantico-softred;
-            background-color: transparent;
-            font-size: 1em;
-            margin-bottom: 10px;
-            margin-left: 12.5%;
-        }
-
-        & div {
-            color: @Atlantico-softblue;
-            font-family: @text;
-            padding: 10px;
-            display: flex;
         }
     }
 
