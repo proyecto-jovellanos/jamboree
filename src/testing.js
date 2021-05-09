@@ -1,6 +1,6 @@
 console.clear();
 
-// UPDATE: there is a problem in chrome with starting audio context
+//AÑADIIIDO UPDATE: there is a problem in chrome with starting audio context
 //  before a user gesture. This fixes it.
 document.documentElement.addEventListener('mousedown', () => {
   if (Tone.context.state !== 'running') Tone.context.resume();
