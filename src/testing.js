@@ -1,35 +1,41 @@
-$(document).ready(function () {
-    console.clear()
-    console.log("esta grabando");
+console.clear();
 
-    $(".fa-play").click(function (ev) {
-        ev.preventDefault()
-        //create a synth and connect it to the main output (your speakers)
-        const synth = new Tone.Synth().toDestination();
-        const now = Tone.now()
+//AÑADIIIDO UPDATE: there is a problem in chrome with starting audio context
+//  before a user gesture. This fixes it.
+document.documentElement.addEventListener('mousedown', () => {
+  if (Tone.context.state !== 'running') Tone.context.resume();
+});
 
-        //trigger attack, cuando empieza. release cuando empeia a dejar de sonar.
-        //attackRelease una combinacion en uno. 
-        //Param: nota,tiempo, para schedule events(When allong the audicontext the note is gonna be played)
-        /*   synth.triggerAttack("G#4", now);
-          synth.triggerRelease(now + 0.52); */
+const synths = [
+  new Tone.Synth(),
+  new Tone.Synth(),
+  new Tone.Synth()
+];
 
-        /* 
-            "4n" = quarter note
-            "8t" = eighth note triplet
-            "2m" = two measures
-            "8n." = dotted-eighth note
-        */
-        synth.triggerAttackRelease("C3", "8n", now)
-    })
-    $(".fa-stop").click(function (ev) {
-        ev.preventDefault()
-    })
-})
+synths[0].oscillator.type = 'triangle';
+synths[1].oscillator.type = 'sine';
+synths[2].oscillator.type = 'sawtooth';
 
-/* let sound = function () {
-    const synth = new Tone.Synth().toDestination();
-    while (true) {
-        synth.triggerAttackRelease("C4", "8n");
-    }
-} */
+const gain = new Tone.Gain(0.6);
+gain.toMaster();
+
+synths.forEach(synth => synth.connect(gain));
+
+const $rows = document.body.querySelectorAll('div > div'),
+      notes = ['G5', 'E4', 'C3'];
+let index = 0;
+
+Tone.Transport.scheduleRepeat(repeat, '8n');
+Tone.Transport.start();
+
+function repeat(time) {
+  let step = index % 8;
+  for (let i = 0; i < $rows.length; i++) {
+    let synth = synths[i],
+        note = notes[i],
+        $row = $rows[i],
+        $input = $row.querySelector(`input:nth-child(${step + 1})`);
+    if ($input.checked) synth.triggerAttackRelease(note, '8n', time);
+  }
+  index++;
+}
