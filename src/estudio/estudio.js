@@ -16,7 +16,7 @@ $(document).ready(function () {
 
     $(".fa-stop").click(function (ev) {
         ev.preventDefault()
-
+        
     })
 
     /* evento a cada beat para pulsarlo */

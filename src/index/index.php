@@ -13,7 +13,7 @@
   <!-- JS PROPIO -->
   <script src="app.js"></script>
   <!-- LESS 
-    si es less porq referenciabas a un CSS?
+  si es less porq referenciabas a un CSS?
   y el script del less?
   -->
   <link rel="stylesheet" href="index.less">
