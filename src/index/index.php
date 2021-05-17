@@ -30,7 +30,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="carousel.js"></script>
     
-    
+   <!--HEADER -->
     <header>
         <div class="logo">
             Jamboree
@@ -45,6 +45,8 @@
         </div>
 
     </header>
+
+    <!--MAIN-->
     <main>
       <div class="maindiv">
         <div class="video">
@@ -61,7 +63,6 @@
             <p>David Guetta</p>
           </div>
           <div class="carousel-item">
-
             <img src="3.jpg" alt="">
             <p>Alesso</p>
           </div> 
@@ -77,14 +78,9 @@
             <img src="6.jpg" alt="">
             <p>Post Malone</p>
             </div>
-          </div>   
-
-            <img src="2.jpg" alt="">
+          </div>            
           </div>
-          <div class="data">
-            <p><br>Password</p>
-            <input type="password" name="password" id="">
-          </div>
+          
 
         </div>
         <div class="log">
@@ -117,7 +113,7 @@
           </div>
         </div>
     </main>
-
+    <!--FOOTER-->
     <footer>
         <div class="contactos">Nuestros nombres</div>
         <div class="lopd">ley organica proteccion datos, cookies...</div>
