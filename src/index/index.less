@@ -20,10 +20,12 @@
 /* ocultar barras de scroll */
 body::-webkit-scrollbar {
     display: none;
+
 }
 
 body {
     height: 100%;
+
 }
 
 body {
@@ -34,13 +36,13 @@ body {
         "header header"
         "main main"
         "footer footer"
-        ;
+    ;
 }
 
 
 
 
-
+/*----HEADER------*/
 header {
     grid-area: header;
 }
@@ -90,10 +92,10 @@ li {
 
 
 
-
+/*----MAIN------*/
 main {
     grid-area: main;
-width: 100%;
+    width: 100%;
 }
 
 .maindiv {
@@ -105,32 +107,39 @@ width: 100%;
         "log log";
     width: 100%;
 }
-.log{
+
+.log {
     grid-area: log;
     margin-top: 40px;
 }
-.Loginform{
+
+.Loginform {
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 37%;
     background-color: rgb(255, 254, 254);
     width: 250px;
     padding: 10px;
     border-radius: 5px;
-box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
-font-size: 30px;
-display: none;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    font-size: 30px;
+    display: none;
+    text-align: center;
 }
-.data p{
+
+.data p {
     font-size: 15px;
 }
-#show:checked ~ .Loginform{
+
+#show:checked~.Loginform {
     display: block;
 }
-#show{
+
+#show {
     display: none;
 }
-.log .open-btn{
+
+.log .open-btn {
     background-color: rgb(101, 125, 197);
     color: blanchedalmond;
     position: absolute;
@@ -138,17 +147,19 @@ display: none;
     right: 47%;
     width: 100px;
     height: 30px;
-    
-    
+
+
 }
-.log a{
+
+.log a {
     font-size: 12px;
 }
 
-#reg{
+#reg {
     display: none;
 }
-.btn{
+
+.btn {
     height: 35px;
     width: 35%;
     margin-top: 20px;
@@ -159,50 +170,57 @@ display: none;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
     margin-bottom: 10px;
 }
-.btn button{
+
+.btn button {
     width: 100%;
     height: 130%;
-    background:none ;
+    background: none;
     border: none;
 
 
-    
+
 }
-.btn:hover{
-    border:rgb(93, 255, 53) 1px solid;
-    box-shadow: 0 0 20px rgba(172, 255, 48,30);
-  
+
+.btn:hover {
+    border: rgb(93, 255, 53) 1px solid;
+    box-shadow: 0 0 20px rgba(172, 255, 48, 30);
+
 }
-.LinkRegister{
+
+.LinkRegister {
     font-size: 12px;
     color: rgb(66, 147, 223);
 }
-.close-btn{
-    background:none;
+
+.close-btn {
+    background: none;
     float: right;
     font-size: 14px;
 }
-.close-btn:hover{
-   color: rgb(243, 29, 13)
+
+.close-btn:hover {
+    color: rgb(243, 29, 13)
 }
 
 
 .video {
     grid-area: video;
-    
-    border:rgb(167, 146, 146) 5px solid;
+
+    background-color: rgba(31, 35, 43, 0);
     margin-top: 40px;
     width: 100%;
+    text-align: center;
 }
 
 .carousel {
-    
+
     grid-area: carousel;
-    
+
     margin-top: 40px;
     height: 700px;
 }
-.carousel-item p{
+
+.carousel-item p {
     text-align: center;
 }
 
@@ -213,7 +231,7 @@ display: none;
 
 
 
-
+/*----FOOTER------*/
 footer {
     grid-area: footer;
     position: absolute;

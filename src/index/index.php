@@ -2,6 +2,10 @@
 <html lang="es">
 
 <head>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 359957d9006cba292f3349343f03095e4fa4f5a7
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,7 +49,11 @@
     <main>
       <div class="maindiv">
         <div class="video">
-            <video src="#">ER VIDEO</video>
+        <video width="500" height="395"  muted loop autoplay> 
+  <source src="rockstar.mp4" type="video/mp4">
+
+
+</video>
         </div>
 
         <div class="carousel">
@@ -54,11 +62,32 @@
             <p>David Guetta</p>
           </div>
           <div class="carousel-item">
+<<<<<<< HEAD
+            <img src="3.jpg" alt="">
+            <p>Alesso</p>
+          </div> 
+          <div class="carousel-item">
+            <img src="4.jpg" alt="">
+            <p>Nick Mira</p>
+            </div>
+            <div class="carousel-item">
+            <img src="5.jpg" alt="">
+            <p>Travis Scott</p>
+            </div>
+            <div class="carousel-item">
+            <img src="6.jpg" alt="">
+            <p>Post Malone</p>
+            </div>
+          </div>   
+=======
             <img src="2.jpg" alt="">
           </div>
-          <div class="carousel-item">
-            <img src="1.png" alt="">
+          <div class="data">
+            <p><br>Password</p>
+            <input type="password" name="password" id="">
           </div>
+
+>>>>>>> 359957d9006cba292f3349343f03095e4fa4f5a7
         </div>
         <div class="log">
           <input type="checkbox" name="" id="show">
@@ -77,7 +106,7 @@
                 <p><br>Password</p>
                 <input type="password" name="password" id="">
               </div>
-              <a href="">Forgot password?</a>
+              <a href="">Forgot password?</a><br>
               <div class="btn">
                 <button type="submit"><i class="fas fa-play"></i></button>
               </div>
@@ -120,6 +149,10 @@
        
     
     
+<<<<<<< HEAD
+=======
+
+>>>>>>> 359957d9006cba292f3349343f03095e4fa4f5a7
 </body>
 
 </html>
