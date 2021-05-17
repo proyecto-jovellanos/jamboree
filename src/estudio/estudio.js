@@ -11,7 +11,8 @@ $(document).ready(function () {
 
     $(".fa-play").click(function (ev) {
         ev.preventDefault()
-        Tone.start()
+        play()
+        //Tone.start()
     })
 
     $(".fa-stop").click(function (ev) {
@@ -35,52 +36,75 @@ $(document).ready(function () {
                     track[pista][i - 1] = 1 : track[pista][i - 1] = 0
             }
         }
-        console.log(track);
+       // console.log(track);
     }
 
-    /* 
-        //AÑADIIIDO UPDATE: there is a problem in chrome with starting audio context
-        //  before a user gesture. This fixes it.
-        document.documentElement.addEventListener('mousedown', () => {
-            if (Tone.context.state !== 'running') Tone.context.resume();
-        });
+    //////////////////////////
 
-        const synths = [
-            new Tone.Synth(),
-            new Tone.Synth(),
-            new Tone.Synth(),
-            new Tone.Synth()
-        ];
+    if (Tone.context.state !== 'running') {
+        Tone.context.resume();
+    }
 
-        synths[0].oscillator.type = 'triangle';
-        synths[1].oscillator.type = 'sine';
-        synths[2].oscillator.type = 'sawtooth';
-        synths[3].oscillator.type = 'sine';
+    console.log(Tone.context.lookAhead); //=0.1
 
-        const gain = new Tone.Gain(0.6);
-        gain.toDestination();
+    const baseSeq = new Tone.ToneAudioBuffers({
+        urls: {
+            kick: "/Kicks/Kick 01.wav",
+            hat: "/Hats/Hat 01.wav",
+            snare: "/Snares/Snare (1).wav",
+            clap: "/Claps/Clap 01.wav",
+        },
+        //autostart: true,
+        baseUrl: "../../media",
+    })
 
-        synths.forEach(synth => synth.connect(gain));
+    function play() {
+        Tone.setContext(new Tone.Context({
+            latencyHint: "playback"
+        }))
 
-        const $rows = $('.track'),
-            notes = ['G5', 'E4', 'C3', 'F3'];
-        let index = 0;
-        Tone.Transport.scheduleRepeat(repeat, '8n');
-        Tone.Transport.start();
+        //get del buffer los sonidos
+        let k = baseSeq.get("kick");
+        let h = baseSeq.get("hat");
+        let s = baseSeq.get("snare");
+        let c = baseSeq.get("clap");
 
-        function repeat(time) {
-            let step = index % 32;
-            for (let i = 0; i < $rows.length; i++) {
-                let synth = synths[i],
-                    note = notes[i],
-                    row = $rows[i];
+        //crear player por cada sonido
+        const playK = new Tone.Player().toDestination();
+        const playH = new Tone.Player().toDestination();
+        const playS = new Tone.Player().toDestination();
+        const playC = new Tone.Player().toDestination();
 
-                let inst = $(row).attr('class').split(' ')[1]
-                console.log(inst);
-                let input = $(`${inst}>.beat.${step+1}`)
-                console.log(input);
-                if ($(`${inst}>.beat.${step+1}`).hasClass("marked")) synth.triggerAttackRelease(note, '8n', time);
+        //cargamos en cada player su sonido
+        playK.buffer = k
+        playH.buffer = h
+        playS.buffer = s
+        playC.buffer = c
+
+        // loaded para asegurar que se carguen en bufer todos los sonidos
+        //Tone.loaded().then(() => {
+        Tone.Transport.scheduleRepeat(repite, '8n')
+        Tone.Transport.start()
+        let index = 0
+
+        function repite(time) {
+            //de 0 a fin de compás, sea 8 o 32...
+            let negra = index % 32
+            for (const sound in track) {
+                let inTrack = track[sound]
+                console.log(inTrack);
             }
-            index++;
-        } */
+        }
+        index++
+    }
 })
+
+/* for (let i = 0; i < 4; i++) {
+    playH.start()
+    playK.start()
+} */
+//en teoria con draw mejor para poner visualizacion
+/* Tone.Draw.schedule(function () {
+    console.log("dentro" + context.state);
+    //play sound and images here
+}, time) */
