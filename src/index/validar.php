@@ -5,7 +5,7 @@
              session_start();
              $_SESSION['usuario']=$usuario;
              include('db.php');
-             $consulta="SELECT*FROM user where  Username='$usuario' and Contra='$contraseña'";
+             $consulta="SELECT*FROM users where  Username='$usuario' and Contra='$contraseña'";
              $resultado=mysqli_query($conexion,$consulta);
              $filas=mysqli_num_rows($resultado);
 
