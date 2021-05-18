@@ -1,41 +1,85 @@
-console.clear();
+window.onload = function () {
+    document.addEventListener("mousedown", function () {
 
-//AÑADIIIDO UPDATE: there is a problem in chrome with starting audio context
-//  before a user gesture. This fixes it.
-document.documentElement.addEventListener('mousedown', () => {
-  if (Tone.context.state !== 'running') Tone.context.resume();
-});
 
-const synths = [
-  new Tone.Synth(),
-  new Tone.Synth(),
-  new Tone.Synth()
-];
+        if (Tone.context.state !== 'running') {
+            Tone.context.resume();
+        }
+        // Tone.context.state === "running"
+        console.clear()
 
-synths[0].oscillator.type = 'triangle';
-synths[1].oscillator.type = 'sine';
-synths[2].oscillator.type = 'sawtooth';
+        console.log(Tone.context.lookAhead); //=0.1
 
-const gain = new Tone.Gain(0.6);
-gain.toMaster();
+        const baseSeq = new Tone.ToneAudioBuffers({
+            urls: {
+                kick: "/Kicks/Kick 01.wav",
+                hat: "/Hats/Hat 01.wav",
+                snare: "/Snares/Snare (1).wav",
+                clap: "/Claps/Clap 01.wav",
+            },
+            //autostart: true,
+            baseUrl: "../media/",
+        })
 
-synths.forEach(synth => synth.connect(gain));
+        document.getElementById("boton").onclick = function () {
+            //var context = new AudioContext();
+            Tone.setContext(new Tone.Context({
+                latencyHint: "playback"
+            }))
 
-const $rows = document.body.querySelectorAll('div > div'),
-      notes = ['G5', 'E4', 'C3'];
-let index = 0;
+            let k = baseSeq.get("kick");
+            let h = baseSeq.get("hat");
+            let s = baseSeq.get("snare");
+            let c = baseSeq.get("clap");
 
-Tone.Transport.scheduleRepeat(repeat, '8n');
-Tone.Transport.start();
 
-function repeat(time) {
-  let step = index % 8;
-  for (let i = 0; i < $rows.length; i++) {
-    let synth = synths[i],
-        note = notes[i],
-        $row = $rows[i],
-        $input = $row.querySelector(`input:nth-child(${step + 1})`);
-    if ($input.checked) synth.triggerAttackRelease(note, '8n', time);
-  }
-  index++;
+            const playK = new Tone.Player().toDestination();
+            const playH = new Tone.Player().toDestination();
+            const playS = new Tone.Player().toDestination();
+            const playC = new Tone.Player().toDestination();
+
+            playK.buffer = k
+            playH.buffer = h
+            playS.buffer = s
+            playC.buffer = c
+
+            // loaded para asegurar que se carguen en bufer todos los sonidos
+            //Tone.loaded().then(() => {
+            Tone.Transport.scheduleRepeat(repite, '8n')
+            Tone.Transport.start(0.1)
+            let index = 0
+
+            function repite(time) {
+                //de 0 a fin de compás, sea 8 o 32...
+                let negra = index % 8
+                for (let i = 0; i < 2; i++) {
+                    playH.start()
+                    playK.start()
+                }
+                index++
+                //en teoria con draw mejor para poner visualizacion
+                /* Tone.Draw.schedule(function () {
+                    console.log("dentro" + context.state);
+                    //play sound and images here
+                }, time) */
+            }
+        }
+    })
 }
+
+//})
+/* 
+    new A.a.Loop(function (t) {
+        A.a.Draw.schedule(function () {
+            var t = document.querySelector("#step" + i.index);
+            t.classList.add("step-playing"),
+            setTimeout(function () {
+                t.classList.remove("step-playing")
+            }, 100)
+        }, t),
+        1 == i.seq3[i.index] && i.drum3.triggerAttackRelease("16n"),
+        1 == i.seq2[i.index] && i.drum2.triggerAttackRelease("16n"),
+        1 == i.seq4[i.index] && i.drum4.triggerAttackRelease("16n"),
+        1 == i.seq1[i.index] && i.drum1.triggerAttackRelease("C1", "16n"),
+    i.index < 15 ? i.index++ : i.index = 0
+}, "16n").start(0) */
