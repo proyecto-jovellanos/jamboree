@@ -18,7 +18,10 @@
 
                include("index.php")
                ?>
+               <div id="error">
                <h1>error autentificacion</h1>
+               <button type="submit" ><a href="index.php">Otra vez</a></button>
+               </div>
                <?php
              }
              mysqli_free_result($resultado);
