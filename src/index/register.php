@@ -14,19 +14,27 @@
 </head>
 
 <body>
-    <form action="index.php" method="post">
+    <form action="/main/main.php" method="post">
         <div class="dataRegister">
             <div class="sectionRegister">
-                <p>Email</p>
-                <input type="text" name="user" id="">
+                <p>Username</p>
+                <input type="text" name="user" id="" required>
             </div>
             <div class="sectionRegister">
                 <p>Contraseña</p>
-                <input type="password" name="password" id="">
+                <input type="password" name="password" id="" required>
             </div>
             <div class="sectionRegister">
                 <p>Repite la Contraseña</p>
-                <input type="text" name="password" id="">
+                <input type="password" name="password" id="" required>
+            </div>
+            <div class="sectionRegister">
+                <p>Fecha</p>
+                <input type="date" name="fecha" id="" required>
+            </div>
+            <div class="sectionRegister">
+                <p>etiquetas</p>
+                <input type="text" name="etiquetas" id="" required>
             </div>
             <input type="submit" value="empieza" class="sendRegister" name="empieza">
 

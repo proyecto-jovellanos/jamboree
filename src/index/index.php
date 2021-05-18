@@ -126,8 +126,10 @@
       if (isset($_POST['empieza'])) {
         $user=$_POST['user'];
         $passw=$_POST['password'];
+        $fecha=$_POST['fecha'];
+        $etiquetas=$_POST['etiquetas'];
         include("db.php");
-        $consulta="INSERT INTO user (Username, Contra) VALUES ('$user','$passw')";
+        $consulta="INSERT INTO user (Username, Contra,fecha,etiquetas) VALUES ('$user','$passw','$fecha','$etiquetas')";
         mysqli_query($conexion,$consulta);
         echo $user;
         echo 'heloo';
