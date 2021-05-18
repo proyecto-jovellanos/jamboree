@@ -1,16 +1,30 @@
 $(document).ready(function () {
+    if (Tone.context.state !== 'running') {
+        Tone.context.resume();
+    } else {
+        Tone.Transport.start()
+    }
 
     console.clear()
 
     let track = {
-        "kick": [],
-        "snare": [],
-        "hihat": [],
-        "clap": []
+        // "name": nombreCookie,
+        //   "track": {
+        "kick": Array(32).fill(0),
+        "snare": Array(32).fill(0),
+        "hat": Array(32).fill(0),
+        "clap": Array(32).fill(0)
+        //    },
+        //"etiquetas": etiquetas
     };
 
     $(".fa-play").click(function (ev) {
         ev.preventDefault()
+        if (Tone.context.state !== 'running') {
+            Tone.context.resume();
+        } else {
+            Tone.Transport.start()
+        }
         play()
         //Tone.start()
     })
@@ -18,6 +32,11 @@ $(document).ready(function () {
     $(".fa-stop").click(function (ev) {
         ev.preventDefault()
         Tone.Transport.pause()
+
+    })
+    $(".fa-save").click(function (ev) {
+        ev.preventDefault()
+        //    fetch(json, header = "guardar", idUser)
 
     })
 
@@ -36,14 +55,11 @@ $(document).ready(function () {
                     track[pista][i - 1] = 1 : track[pista][i - 1] = 0
             }
         }
-       // console.log(track);
+        // console.log(track);
     }
 
     //////////////////////////
 
-    if (Tone.context.state !== 'running') {
-        Tone.context.resume();
-    }
 
     console.log(Tone.context.lookAhead); //=0.1
 
@@ -59,9 +75,12 @@ $(document).ready(function () {
     })
 
     function play() {
+     /*    if (Tone.context.state !== 'running') {
+            Tone.context.resume();
+        }
         Tone.setContext(new Tone.Context({
             latencyHint: "playback"
-        }))
+        })) */
 
         //get del buffer los sonidos
         let k = baseSeq.get("kick");
@@ -70,38 +89,57 @@ $(document).ready(function () {
         let c = baseSeq.get("clap");
 
         //crear player por cada sonido
-        const playK = new Tone.Player().toDestination();
-        const playH = new Tone.Player().toDestination();
-        const playS = new Tone.Player().toDestination();
-        const playC = new Tone.Player().toDestination();
+        const kick = new Tone.Player().toDestination();
+        const hat = new Tone.Player().toDestination();
+        const snare = new Tone.Player().toDestination();
+        const clap = new Tone.Player().toDestination();
 
         //cargamos en cada player su sonido
-        playK.buffer = k
-        playH.buffer = h
-        playS.buffer = s
-        playC.buffer = c
+        kick.buffer = k
+        hat.buffer = h
+        snare.buffer = s
+        clap.buffer = c
 
         // loaded para asegurar que se carguen en bufer todos los sonidos
         //Tone.loaded().then(() => {
-        Tone.Transport.scheduleRepeat(repite, '8n')
-        Tone.Transport.start()
+        Tone.Transport.scheduleRepeat(repite, '2m')
+        //Tone.Transport.start()
         let index = 0
 
         function repite(time) {
-            //de 0 a fin de compás, sea 8 o 32...
-            let negra = index % 32
-            for (const sound in track) {
-                let inTrack = track[sound]
-                console.log(inTrack);
+            for (const pista in track) {
+                for (let i = 1; i < 33; i++) {
+                    // console.log(pista);
+                    if ($(`.${pista}>.beat.${i}`).hasClass("marked"))
+                        switch (pista) {
+                            case "kick":
+                                kick.start("+0.5")
+                                break;
+                            case "snare":
+                                snare.start("+0.5")
+                                break;
+                            case "clap":
+                                clap.start("+0.5")
+                                break;
+                            case "hat":
+                                hat.start("+0.5")
+                                break;
+
+                            default:
+                                console.log("error");
+                                break;
+                        }
+                }
             }
+            index == 32 ? index = 0 : index++
         }
         index++
     }
 })
 
 /* for (let i = 0; i < 4; i++) {
-    playH.start()
-    playK.start()
+    hat.start()
+    kick.start()
 } */
 //en teoria con draw mejor para poner visualizacion
 /* Tone.Draw.schedule(function () {
