@@ -6,14 +6,15 @@ $(document).ready(function () {
     }
 
     console.clear()
+    var sonando = false
 
-    let track = {
+    var tracks = {
         // "name": nombreCookie,
         //   "track": {
-        "kick": Array(32).fill(0),
-        "snare": Array(32).fill(0),
-        "hat": Array(32).fill(0),
-        "clap": Array(32).fill(0)
+        0: [Array(32).fill(0), "kick"],
+        1: [Array(32).fill(0), "snare"],
+        2: [Array(32).fill(0), "hat"],
+        3: [Array(32).fill(0), "clap"]
         //    },
         //"etiquetas": etiquetas
     };
@@ -25,19 +26,44 @@ $(document).ready(function () {
         } else {
             Tone.Transport.start()
         }
-        play()
-        //Tone.start()
+        if (!sonando) {
+            play()
+        } else {
+            Tone.Transport.pause()
+        }
     })
 
     $(".fa-stop").click(function (ev) {
         ev.preventDefault()
-        Tone.Transport.pause()
-
+        Tone.Transport.stop()
+        sonando = false
     })
+    
+    //boton guardar envia por fetch el array de la cancion y el idUser
     $(".fa-save").click(function (ev) {
         ev.preventDefault()
-        //    fetch(json, header = "guardar", idUser)
+        let user = document.cookie
+        let tracksJSON = JSON.stringify(tracks)
+        //let user=document.cookie.split(";")[0]
+        var params = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            },
+            //option=guardar para controlar la operacion en php
+            body: "option=guardar&id_User=" + user + "&track=" + tracksJSON
+        }
 
+        fetch("server.php", params)
+    })
+
+    $(".fa-eraser").click(function (ev) {
+        ev.preventDefault()
+        for (let i = 0; i < tracks.length; i++) {
+            tracks[i].fill(0)
+        }
+        $(".beat").removeClass("marked")
+        Tone.Transport.stop()
     })
 
     /* evento a cada beat para pulsarlo */
@@ -49,19 +75,19 @@ $(document).ready(function () {
 
     //Funcion lectora de todos los beats para crear objeto track
     function leerMarked() {
-        for (const pista in track) {
-            for (let i = 1; i < 33; i++) {
-                $(`.${pista}>.beat.${i}`).hasClass("marked") ?
-                    track[pista][i - 1] = 1 : track[pista][i - 1] = 0
+        for (let i = 0; i < 4; i++) {
+            for (let j = 1; j < 33; j++) {
+                $(`.${tracks[i][1]}>.beat.${j}`).hasClass("marked") ?
+                    tracks[i][0][j - 1] = 1 : tracks[i][0][j - 1] = 0
             }
         }
-        // console.log(track);
+        //  console.log(tracks);
     }
 
     //////////////////////////
 
 
-    console.log(Tone.context.lookAhead); //=0.1
+    //  console.log(Tone.context.lookAhead); //=0.1
 
     const baseSeq = new Tone.ToneAudioBuffers({
         urls: {
@@ -74,75 +100,53 @@ $(document).ready(function () {
         baseUrl: "../../media",
     })
 
+    //get del buffer los sonidos
+    let k = baseSeq.get("kick");
+    let h = baseSeq.get("hat");
+    let s = baseSeq.get("snare");
+    let c = baseSeq.get("clap");
+
+    //crear player por cada sonido
+    const players = [
+        new Tone.Player(),
+        new Tone.Player(),
+        new Tone.Player(),
+        new Tone.Player()
+    ]
+    players.forEach(player => player.toDestination())
+
+    //cargamos en cada player su sonido
+    players[0].buffer = k
+    players[1].buffer = s
+    players[2].buffer = h
+    players[3].buffer = c
+
+    // loaded para asegurar que se carguen en bufer todos los sonidos
+    //Tone.loaded().then(() => {
+
+    var index = 0
+
     function play() {
-     /*    if (Tone.context.state !== 'running') {
-            Tone.context.resume();
-        }
-        Tone.setContext(new Tone.Context({
-            latencyHint: "playback"
-        })) */
-
-        //get del buffer los sonidos
-        let k = baseSeq.get("kick");
-        let h = baseSeq.get("hat");
-        let s = baseSeq.get("snare");
-        let c = baseSeq.get("clap");
-
-        //crear player por cada sonido
-        const kick = new Tone.Player().toDestination();
-        const hat = new Tone.Player().toDestination();
-        const snare = new Tone.Player().toDestination();
-        const clap = new Tone.Player().toDestination();
-
-        //cargamos en cada player su sonido
-        kick.buffer = k
-        hat.buffer = h
-        snare.buffer = s
-        clap.buffer = c
-
-        // loaded para asegurar que se carguen en bufer todos los sonidos
-        //Tone.loaded().then(() => {
-        Tone.Transport.scheduleRepeat(repite, '2m')
-        //Tone.Transport.start()
-        let index = 0
-
-        function repite(time) {
-            for (const pista in track) {
-                for (let i = 1; i < 33; i++) {
-                    // console.log(pista);
-                    if ($(`.${pista}>.beat.${i}`).hasClass("marked"))
-                        switch (pista) {
-                            case "kick":
-                                kick.start("+0.5")
-                                break;
-                            case "snare":
-                                snare.start("+0.5")
-                                break;
-                            case "clap":
-                                clap.start("+0.5")
-                                break;
-                            case "hat":
-                                hat.start("+0.5")
-                                break;
-
-                            default:
-                                console.log("error");
-                                break;
-                        }
+        sonando = true
+        Tone.Transport.scheduleRepeat(function (time) {
+            for (let i = 0; i < 4; i++) {
+                //  console.log(index);
+                let player = players[i]
+                if (tracks[i][0][index] == 1) {
+                    //  console.log("index :" + index);
+                    player.start(0)
+                    //  console.log(Tone.Transport.sampleTime);
+                } else {
+                    // console.log(index, Tone.Transport.toTicks());
+                    //   console.log("NADA" + index);
                 }
             }
-            index == 32 ? index = 0 : index++
-        }
-        index++
+            if (index < 31) {
+                index++
+            } else {
+                index = 0
+            }
+        }, "32n");
+        Tone.Transport.start()
     }
 })
-
-/* for (let i = 0; i < 4; i++) {
-    hat.start()
-    kick.start()
-} */
-//en teoria con draw mejor para poner visualizacion
-/* Tone.Draw.schedule(function () {
-    console.log("dentro" + context.state);
-    //play sound and images here
-}, time) */
