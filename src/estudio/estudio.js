@@ -6,6 +6,7 @@ $(document).ready(function () {
     }
 
     console.clear()
+    var sonando = false
 
     var tracks = {
         // "name": nombreCookie,
@@ -25,19 +26,44 @@ $(document).ready(function () {
         } else {
             Tone.Transport.start()
         }
-        play()
-        //Tone.start()
+        if (!sonando) {
+            play()
+        } else {
+            Tone.Transport.pause()
+        }
     })
 
     $(".fa-stop").click(function (ev) {
         ev.preventDefault()
-        Tone.Transport.pause()
-
+        Tone.Transport.stop()
+        sonando = false
     })
+    
+    //boton guardar envia por fetch el array de la cancion y el idUser
     $(".fa-save").click(function (ev) {
         ev.preventDefault()
-        //    fetch(json, header = "guardar", idUser)
+        let user = document.cookie
+        let tracksJSON = JSON.stringify(tracks)
+        //let user=document.cookie.split(";")[0]
+        var params = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            },
+            //option=guardar para controlar la operacion en php
+            body: "option=guardar&id_User=" + user + "&track=" + tracksJSON
+        }
 
+        fetch("server.php", params)
+    })
+
+    $(".fa-eraser").click(function (ev) {
+        ev.preventDefault()
+        for (let i = 0; i < tracks.length; i++) {
+            tracks[i].fill(0)
+        }
+        $(".beat").removeClass("marked")
+        Tone.Transport.stop()
     })
 
     /* evento a cada beat para pulsarlo */
@@ -55,13 +81,13 @@ $(document).ready(function () {
                     tracks[i][0][j - 1] = 1 : tracks[i][0][j - 1] = 0
             }
         }
-        console.log(tracks);
+        //  console.log(tracks);
     }
 
     //////////////////////////
 
 
-    console.log(Tone.context.lookAhead); //=0.1
+    //  console.log(Tone.context.lookAhead); //=0.1
 
     const baseSeq = new Tone.ToneAudioBuffers({
         urls: {
@@ -98,147 +124,29 @@ $(document).ready(function () {
     // loaded para asegurar que se carguen en bufer todos los sonidos
     //Tone.loaded().then(() => {
 
+    var index = 0
+
     function play() {
-        let index = 0
+        sonando = true
         Tone.Transport.scheduleRepeat(function (time) {
             for (let i = 0; i < 4; i++) {
-                console.log(index);
+                //  console.log(index);
                 let player = players[i]
                 if (tracks[i][0][index] == 1) {
-                    console.log("index :" + index);
-                    player.start()
+                    //  console.log("index :" + index);
+                    player.start(0)
+                    //  console.log(Tone.Transport.sampleTime);
                 } else {
-                   //   console.log("NADA" + index);
+                    // console.log(index, Tone.Transport.toTicks());
+                    //   console.log("NADA" + index);
                 }
-                index == 32 ? index = 0 : index++
+            }
+            if (index < 31) {
+                index++
+            } else {
+                index = 0
             }
         }, "32n");
         Tone.Transport.start()
-
-        /*      function repite(time) {
-            for (const pista in track) {
-                for (let i = 1; i < 33; i++) {
-                    console.log(`pista es ${pista} y el beat es ${i}`);
-                         // console.log(pista);
-                         if ($(`.${pista}>.beat.${i}`).hasClass("marked"))
-                             switch (pista) {
-                                 case "kick":
-                                     kick.start(time)
-                                     break;
-                                 case "snare":
-                                     snare.start("+0.5")
-                                     break;
-                                 case "clap":
-                                     clap.start("+0.5")
-                                     break;
-                                 case "hat":
-                                     hat.start("+0.5")
-                                     break;
-
-                                 default:
-                                     console.log("error");
-                                     break;
-                             }
-                     }
-                 }
-                 index == 32 ? index = 0 : index++
-             } */
     }
 })
-
-/* for (let i = 0; i < 4; i++) {
-    hat.start()
-    kick.start()
-} */
-//en teoria con draw mejor para poner visualizacion
-/* Tone.Draw.schedule(function () {
-    console.log("dentro" + context.state);
-    //play sound and images here
-}, time) */
-// Juste quelques tests à partir des docs du site Tone.js ! https://tonejs.github.io/
-
-// PIANO SAMPLER
-/* const sampler = new Tone.Sampler({
-    urls: {
-        A0: "A0.mp3",
-        C1: "C1.mp3",
-        "D#1": "Ds1.mp3",
-        "F#1": "Fs1.mp3",
-        A1: "A1.mp3",
-        C2: "C2.mp3",
-        "D#2": "Ds2.mp3",
-        "F#2": "Fs2.mp3",
-        A2: "A2.mp3",
-        C3: "C3.mp3",
-        "D#3": "Ds3.mp3",
-        "F#3": "Fs3.mp3",
-        A3: "A3.mp3",
-        C4: "C4.mp3",
-        "D#4": "Ds4.mp3",
-        "F#4": "Fs4.mp3",
-        A4: "A4.mp3",
-        C5: "C5.mp3",
-        "D#5": "Ds5.mp3",
-        "F#5": "Fs5.mp3",
-        A5: "A5.mp3",
-        C6: "C6.mp3",
-        "D#6": "Ds6.mp3",
-        "F#6": "Fs6.mp3",
-        A6: "A6.mp3",
-        C7: "C7.mp3",
-        "D#7": "Ds7.mp3",
-        "F#7": "Fs7.mp3",
-        A7: "A7.mp3",
-        C8: "C8.mp3"
-    },
-
-    // Cela règle la durée de permanence des notes jouées
-    release: 10,
-
-    // Source locale des sons
-    // baseUrl: "./audio/salamander/"
-
-    baseUrl: "https://tonejs.github.io/audio/salamander/"
-}).toDestination();
-
-piano({
-    parent: document.querySelector("#content"),
-    noteon: note => sampler.triggerAttack(note.name),
-    noteoff: note => sampler.triggerRelease(note.name),
-
-});
-
-// Pour ajouter des effets...
-// Exemples..
-// const filter = new Tone.AutoFilter(4).start();
-// const distortion = new Tone.Distortion(0.5);
-
-const reverb = new Tone.Reverb(10);
-
-// connect the player to the filter, distortion and then to the master output
-// sampler.chain(filter, distortion, reverb, Tone.Destination);
-
-sampler.chain(reverb, Tone.Destination);
-
-// SEQUENCEUR
-const keys = new Tone.Players({
-    urls: {
-        0: "A1.mp3",
-        1: "Fs5.mp3",
-        2: "C7.mp3",
-        3: "A6.mp3",
-    },
-    fadeOut: "64n",
-
-    // Source des sons du séquenceur
-    baseUrl: "https://tonejs.github.io/audio/salamander/"
-}).toDestination();
-
-document.querySelector("tone-play-toggle").addEventListener("start", () => Tone.Transport.start());
-document.querySelector("tone-play-toggle").addEventListener("stop", () => Tone.Transport.stop());
-document.querySelector("tone-slider").addEventListener("input", (e) => Tone.Transport.bpm.value = parseFloat(e.target.value));
-document.querySelector("tone-step-sequencer").addEventListener("trigger", ({
-    detail
-}) => {
-    keys.player(detail.row).start(detail.time, 0, "16t");
-}); */
