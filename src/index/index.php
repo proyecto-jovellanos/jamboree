@@ -129,7 +129,7 @@
         $fecha=$_POST['fecha'];
         $etiquetas=$_POST['etiquetas'];
         include("db.php");
-        $consulta="INSERT INTO user (Username, Contra,fecha,etiquetas) VALUES ('$user','$passw','$fecha','$etiquetas')";
+        $consulta="INSERT INTO users (Username, Contra,fecha,etiquetas) VALUES ('$user','$passw','$fecha','$etiquetas')";
         mysqli_query($conexion,$consulta);
         echo $user;
         echo 'heloo';
