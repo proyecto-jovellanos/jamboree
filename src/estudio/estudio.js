@@ -7,13 +7,13 @@ $(document).ready(function () {
 
     console.clear()
 
-    let track = {
+    var tracks = {
         // "name": nombreCookie,
         //   "track": {
-        "kick": Array(32).fill(0),
-        "snare": Array(32).fill(0),
-        "hat": Array(32).fill(0),
-        "clap": Array(32).fill(0)
+        0: [Array(32).fill(0), "kick"],
+        1: [Array(32).fill(0), "snare"],
+        2: [Array(32).fill(0), "hat"],
+        3: [Array(32).fill(0), "clap"]
         //    },
         //"etiquetas": etiquetas
     };
@@ -49,13 +49,13 @@ $(document).ready(function () {
 
     //Funcion lectora de todos los beats para crear objeto track
     function leerMarked() {
-        for (const pista in track) {
-            for (let i = 1; i < 33; i++) {
-                $(`.${pista}>.beat.${i}`).hasClass("marked") ?
-                    track[pista][i - 1] = 1 : track[pista][i - 1] = 0
+        for (let i = 0; i < 4; i++) {
+            for (let j = 1; j < 33; j++) {
+                $(`.${tracks[i][1]}>.beat.${j}`).hasClass("marked") ?
+                    tracks[i][0][j - 1] = 1 : tracks[i][0][j - 1] = 0
             }
         }
-        // console.log(track);
+        console.log(tracks);
     }
 
     //////////////////////////
@@ -74,80 +74,75 @@ $(document).ready(function () {
         baseUrl: "../../media",
     })
 
+    //get del buffer los sonidos
+    let k = baseSeq.get("kick");
+    let h = baseSeq.get("hat");
+    let s = baseSeq.get("snare");
+    let c = baseSeq.get("clap");
+
+    //crear player por cada sonido
+    const players = [
+        new Tone.Player(),
+        new Tone.Player(),
+        new Tone.Player(),
+        new Tone.Player()
+    ]
+    players.forEach(player => player.toDestination())
+
+    //cargamos en cada player su sonido
+    players[0].buffer = k
+    players[1].buffer = s
+    players[2].buffer = h
+    players[3].buffer = c
+
+    // loaded para asegurar que se carguen en bufer todos los sonidos
+    //Tone.loaded().then(() => {
+
     function play() {
-        /*    if (Tone.context.state !== 'running') {
-               Tone.context.resume();
-           }
-           Tone.setContext(new Tone.Context({
-               latencyHint: "playback"
-           })) */
-
-        //get del buffer los sonidos
-        let k = baseSeq.get("kick");
-        let h = baseSeq.get("hat");
-        let s = baseSeq.get("snare");
-        let c = baseSeq.get("clap");
-
-        //crear player por cada sonido
-        const kick = new Tone.Player().toDestination();
-        const hat = new Tone.Player().toDestination();
-        const snare = new Tone.Player().toDestination();
-        const clap = new Tone.Player().toDestination();
-
-        //cargamos en cada player su sonido
-        kick.buffer = k
-        hat.buffer = h
-        snare.buffer = s
-        clap.buffer = c
-
-        // loaded para asegurar que se carguen en bufer todos los sonidos
-        //Tone.loaded().then(() => {
-        //Tone.Transport.scheduleRepeat(repite, '4m')
-           var cont=0
-        Tone.Transport.scheduleRepeat(time => {
-            Tone.Draw.schedule(() => {
-
-                console.log(Tone.Time(time).toBarsBeatsSixteenths())
-                kick.start()
-                //  snare.start("+0.6")
-                //1:0:1.61
-            }, time)
-
-            //    console.log("el tick es " + Tone.Transport.ticks);
-            console.log(Tone.Time(time).toBarsBeatsSixteenths());
-        }, 2);
-        Tone.Transport.start()
         let index = 0
+        Tone.Transport.scheduleRepeat(function (time) {
+            for (let i = 0; i < 4; i++) {
+                console.log(index);
+                let player = players[i]
+                if (tracks[i][0][index] == 1) {
+                    console.log("index :" + index);
+                    player.start()
+                } else {
+                   //   console.log("NADA" + index);
+                }
+                index == 32 ? index = 0 : index++
+            }
+        }, "32n");
+        Tone.Transport.start()
 
-        function repite(time) {
+        /*      function repite(time) {
             for (const pista in track) {
                 for (let i = 1; i < 33; i++) {
                     console.log(`pista es ${pista} y el beat es ${i}`);
-                    // console.log(pista);
-                    if ($(`.${pista}>.beat.${i}`).hasClass("marked"))
-                        switch (pista) {
-                            case "kick":
-                                kick.start(time)
-                                break;
-                            case "snare":
-                                snare.start("+0.5")
-                                break;
-                            case "clap":
-                                clap.start("+0.5")
-                                break;
-                            case "hat":
-                                hat.start("+0.5")
-                                break;
+                         // console.log(pista);
+                         if ($(`.${pista}>.beat.${i}`).hasClass("marked"))
+                             switch (pista) {
+                                 case "kick":
+                                     kick.start(time)
+                                     break;
+                                 case "snare":
+                                     snare.start("+0.5")
+                                     break;
+                                 case "clap":
+                                     clap.start("+0.5")
+                                     break;
+                                 case "hat":
+                                     hat.start("+0.5")
+                                     break;
 
-                            default:
-                                console.log("error");
-                                break;
-                        }
-                }
-            }
-            index == 32 ? index = 0 : index++
-        }
-        index++
+                                 default:
+                                     console.log("error");
+                                     break;
+                             }
+                     }
+                 }
+                 index == 32 ? index = 0 : index++
+             } */
     }
 })
 
