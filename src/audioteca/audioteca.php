@@ -26,6 +26,11 @@
 </head>
 
 <body>
+<?php
+        if(isset($_GET['user'])){
+            setcookie("id_User",$_GET['user'],time() + 3600);
+        }
+        ?>
     <header class="header">
         <div class="animation-header">
             <div class="lft">[</div>

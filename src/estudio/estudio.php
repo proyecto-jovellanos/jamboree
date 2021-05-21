@@ -41,6 +41,12 @@
 </head>
 
 <body>
+<?php
+        if(isset($_GET['user'])){
+            setcookie("id_User",$_GET['user'],time() + 3600);
+        }
+        ?>
+    
     <div class="cabecera">
         <div class="logo">
             JAMBOREE
@@ -217,6 +223,7 @@
         </div>
     </div>
     </main>
+
 
 </body>
 
