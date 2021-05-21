@@ -8,13 +8,13 @@
     <title>Document</title>
     <!--FONT AWESOME-->
     <script src="https://kit.fontawesome.com/e36b117475.js" crossorigin="anonymous"></script>
-     <!-- LESS -->
-     <link rel="stylesheet" href="register.less">
-        
+    <!-- LESS -->
+    <link rel="stylesheet" href="register.less">
+
 </head>
 
 <body>
-    <form action="/main/main.php" method="post">
+    <form action="../main/main.php" method="post">
         <div class="dataRegister">
             <div class="sectionRegister">
                 <p>Username</p>
@@ -42,7 +42,7 @@
 
         </div>
     </form>
-   
+
 </body>
 
 </html>

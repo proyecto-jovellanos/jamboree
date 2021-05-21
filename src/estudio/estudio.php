@@ -22,7 +22,7 @@
     <script src="estudio.js"></script>
     <script>
         //script para pintar en compases de a 4
-        $(document).ready(function () {
+        $(document).ready(function() {
             let cont = 0
             for (let i = 1; i <= 32; i++) {
                 if (cont < 4) {
@@ -41,12 +41,12 @@
 </head>
 
 <body>
-<?php
-        if(isset($_GET['user'])){
-            setcookie("id_User",$_GET['user'],time() + 3600);
-        }
-        ?>
-    
+    <?php
+    if (isset($_GET['user'])) {
+        setcookie("id_User", $_GET['user'], time() + 3600);
+    }
+    ?>
+
     <div class="cabecera">
         <div class="logo">
             JAMBOREE

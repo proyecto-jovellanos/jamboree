@@ -1,3 +1,17 @@
+<?php
+if (isset($_GET['user'])) {
+    setcookie("id_User", $_GET['user'], time() + 3600);
+} elseif (isset($_POST['register'])) {
+    $user = $_POST['user'];
+    $passw = $_POST['password'];
+    $fecha = $_POST['fecha'];
+    $etiquetas = $_POST['etiquetas'];
+    include("db.php");
+    $consulta = "INSERT INTO users (Username, Contra,fecha,etiquetas) VALUES ('$user','$passw','$fecha','$etiquetas')";
+    mysqli_query($conexion, $consulta);
+    setcookie("id_User", $user, time() + 3600);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,9 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <!-- TONE.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.13/Tone.js"
-        integrity="sha512-SAB2YrHeaZfb6W1w+tAMm+IUICzUMyf7TJ8upY+NjLYl8jseufUW4yYzoSHfNL9N2rzDlw5PWJrf7rPIQ6VhNw=="
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.13/Tone.js" integrity="sha512-SAB2YrHeaZfb6W1w+tAMm+IUICzUMyf7TJ8upY+NjLYl8jseufUW4yYzoSHfNL9N2rzDlw5PWJrf7rPIQ6VhNw==" crossorigin="anonymous"></script>
     <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- JS PROPIO -->
@@ -50,14 +62,14 @@
         <div class="boton_canciones">
             <div class="boton_estudio">
                 <button>
-                <?php $user=$_COOKIE['id_User']; 
-                    echo '<a href="../estudio/estudio.php?user='.$user.'">Estudio</a>'?>
+                    <?php $user = $_COOKIE['id_User'];
+                    echo '<a href="../estudio/estudio.php?user=' . $user . '">Estudio</a>' ?>
                 </button>
             </div>
             <div class="boton_audioteca">
                 <button>
-                <?php $user=$_COOKIE['id_User']; 
-                    echo '<a href="../audioteca/audioteca.php?user='.$user.'">Audioteca</a>'?>
+                    <?php $user = $_COOKIE['id_User'];
+                    echo '<a href="../audioteca/audioteca.php?user=' . $user . '">Audioteca</a>' ?>
                 </button>
             </div>
         </div>
@@ -69,29 +81,6 @@
         <div class="year">AÑO y Copyright</div>
     </footer>
 </body>
-<?php
-        if(isset($_GET['user'])){
-            setcookie("id_User",$_GET['user'],time() + 3600);
-        }
-        elseif (isset($_POST['register'])) {
-            $user=$_POST['user'];
-            $passw=$_POST['password'];
-            $fecha=$_POST['fecha'];
-            $etiquetas=$_POST['etiquetas'];
-            include("db.php");
-            $consulta="INSERT INTO users (Username, Contra,fecha,etiquetas) VALUES ('$user','$passw','$fecha','$etiquetas')";
-            mysqli_query($conexion,$consulta);
-            setcookie("id_User",$user,time() + 3600);
-    }
-      
-    
-    
-    
 
-
-
-
-
-?>
 
 </html>
