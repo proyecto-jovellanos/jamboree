@@ -36,7 +36,7 @@
                 <p>etiquetas</p>
                 <input type="text" name="etiquetas" id="" required>
             </div>
-            <input type="submit" value="empieza" class="sendRegister" name="empieza">
+            <input type="submit" value="send" class="sendRegister" name="register">
 
 
 

@@ -102,7 +102,7 @@
               </div>
               <a href="">Forgot password?</a><br>
               <div class="btn">
-                <button type="submit"><i class="fas fa-play"></i></button>
+                <button type="submit" name='log'><i class="fas fa-play"></i></button>
               </div>
               
               <div class="LinkRegister"><br><a href="register.php">No estas registrado?Registrate</a></div>
@@ -122,21 +122,9 @@
     <script >
       
     </script>
-    <?php
-      if (isset($_POST['empieza'])) {
-        $user=$_POST['user'];
-        $passw=$_POST['password'];
-        $fecha=$_POST['fecha'];
-        $etiquetas=$_POST['etiquetas'];
-        include("db.php");
-        $consulta="INSERT INTO users (Username, Contra,fecha,etiquetas) VALUES ('$user','$passw','$fecha','$etiquetas')";
-        mysqli_query($conexion,$consulta);
-        echo $user;
-        echo 'heloo';
-
-
    
-}
+   
+
 
 
 

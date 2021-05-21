@@ -1,17 +1,15 @@
 <?php
-             
              $usuario=$_POST['username'];
              $contraseña=$_POST['password'];
-             session_start();
-             $_SESSION['usuario']=$usuario;
+             setcookie("id_User",$usuario,time() + 3600);
              include('db.php');
              $consulta="SELECT*FROM users where  Username='$usuario' and Contra='$contraseña'";
              $resultado=mysqli_query($conexion,$consulta);
              $filas=mysqli_num_rows($resultado);
-
+              
 
              if($filas){
-               header("location:/main/main.html");
+                header("location:/main/main.php?user=$usuario");    
              }else{
                ?>
                <?php
@@ -26,4 +24,5 @@
              }
              mysqli_free_result($resultado);
              mysqli_close($conexion);
-             ?>
+                
+     ?>        

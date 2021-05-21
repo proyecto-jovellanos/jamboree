@@ -72,7 +72,7 @@ $(document).ready(function () {
         $(this).toggleClass("marked")
         leerMarked()
     })
-
+            console.log(document.cookie.split(';')[0])
     //Funcion lectora de todos los beats para crear objeto track
     function leerMarked() {
         for (let i = 0; i < 4; i++) {
