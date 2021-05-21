@@ -9,7 +9,7 @@
               
 
              if($filas){
-                header("location:/main/main.php?user=$usuario");    
+                header("location:../main/main.php?user=$usuario");    
              }else{
                ?>
                <?php
