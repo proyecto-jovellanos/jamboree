@@ -38,11 +38,13 @@ $(document).ready(function () {
         Tone.Transport.stop()
         sonando = false
     })
-    
+
     //boton guardar envia por fetch el array de la cancion y el idUser
     $(".fa-save").click(function (ev) {
         ev.preventDefault()
-        let user = document.cookie
+
+        //regex para rescatar el valor de la cookie id_User
+        let user = document.cookie.replace(/(?:(?:^|.*;\s*)id_User\s*\=\s*([^;]*).*$)|^.*$/, "$1");
         let tracksJSON = JSON.stringify(tracks)
         //let user=document.cookie.split(";")[0]
         var params = {
@@ -53,8 +55,7 @@ $(document).ready(function () {
             //option=guardar para controlar la operacion en php
             body: "option=guardar&id_User=" + user + "&track=" + tracksJSON
         }
-
-        fetch("server.php", params)
+        fetch("../server.php", params)
     })
 
     $(".fa-eraser").click(function (ev) {
@@ -72,7 +73,7 @@ $(document).ready(function () {
         $(this).toggleClass("marked")
         leerMarked()
     })
-            console.log(document.cookie.split(';')[0])
+
     //Funcion lectora de todos los beats para crear objeto track
     function leerMarked() {
         for (let i = 0; i < 4; i++) {
@@ -87,7 +88,7 @@ $(document).ready(function () {
     //////////////////////////
 
 
-    //  console.log(Tone.context.lookAhead); //=0.1
+    //console.log(Tone.context.lookAhead); //=0.1
 
     const baseSeq = new Tone.ToneAudioBuffers({
         urls: {

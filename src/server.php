@@ -1,16 +1,10 @@
 <?php
 //si se ha dado a cualquiera de los boton de "enviar" se inicia funcion escritora
 if ($_POST['option'] == "guardar") {
-    //$nombre = $_POST['nombre'];
-    //$texto = $_POST['texto'];
     $content = json_decode($_POST['track']);
-    //recoger cookie de id usuario
-    //$Id_User=
-    $name = $content->name;
-    $track = $content->track;
+    $id_User = $_POST['id_User'];
     include("db.php");
-
-    $consulta = "INSERT INTO canciones VALUES (null,'$track',null,'$Id_User','$name')";
+    $consulta = "INSERT INTO canciones(Id_Cancion,Track,Etiquetas,Id_User,Name) VALUES (null,'$content','prueba',$id_User,'prueba')";
     mysqli_query($conexion, $consulta);
 }
 
