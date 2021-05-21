@@ -52,7 +52,7 @@
             JAMBOREE
         </div>
         <div class="volver">
-            <a href="../main/main.html">
+            <a href="../main/main.php">
                 <i class="far fa-times-circle fa-3x"></i>
             </a>
         </div>
