@@ -7,7 +7,7 @@ if (isset($_GET['user'])) {
     $fecha = $_POST['fecha'];
     $etiquetas = $_POST['etiquetas'];
     include("db.php");
-    $consulta = "INSERT INTO users (Username, Contra,fecha,etiquetas) VALUES ('$user','$passw','$fecha','$etiquetas')";
+    $consulta = "INSERT INTO users (username, contra,fecha,etiquetas) VALUES ('$user','$passw','$fecha','$etiquetas')";
     mysqli_query($conexion, $consulta);
     setcookie("id_User", $user, time() + 3600);
 }
@@ -56,7 +56,8 @@ if (isset($_GET['user'])) {
     <main>
         <div class="boton_foro">
             <button>
-                <a href="../foro/fororeal.html">Foro</a>
+            <?php $user = $_COOKIE['id_User'];
+                    echo '<a href="../foro/fororeal.php?user=' . $user . '">Foro</a>' ?>
             </button>
         </div>
         <div class="boton_canciones">
