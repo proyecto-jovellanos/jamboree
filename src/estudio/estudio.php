@@ -69,7 +69,6 @@
             <div class="track kick">
                 <div class="controls">
                     <i class="fas fa-volume-mute"></i>
-                    <i class="fab fa-stripe-s fab-3x"></i>
                 </div>
 
                 <div class="track_name">Kick</div>
@@ -109,7 +108,6 @@
             <div class="track snare">
                 <div class="controls">
                     <i class="fas fa-volume-mute"></i>
-                    <i class="fab fa-stripe-s fab-3x"></i>
                 </div>
                 <div class="track_name">Snare</div>
                 <div class="beat 1"></div>
@@ -148,7 +146,6 @@
             <div class="track hat">
                 <div class="controls">
                     <i class="fas fa-volume-mute"></i>
-                    <i class="fab fa-stripe-s fab-3x"></i>
                 </div>
                 <div class="track_name">Hi-hat</div>
                 <div class="beat 1"></div>
@@ -187,7 +184,6 @@
             <div class="track clap">
                 <div class="controls">
                     <i class="fas fa-volume-mute"></i>
-                    <i class="fab fa-stripe-s fab-3x"></i>
                 </div>
                 <div class="track_name">Clap</div>
                 <div class="beat 1"></div>
@@ -225,21 +221,18 @@
             </div>
 
             <div class="slidecontainer">
-                <input class="slider" type="range" min="1" max="100" value="50" id="myRange">
+                <input class="slider" type="range" min="60" max="240" value="100" id="tempo">
             </div>
 
             <div class="controles">
                 <button>
-                    <i class="fas fa-play fa-2x"></i>
-                </button>
-                <button>
-                    <i class="fas fa-stop fa-2x"></i>
-                </button>
-                <button>
-                    <i class="fas fa-save fa-2x"></i>
+                    <i class="onoff fas fa-play fa-2x"></i>
                 </button>
                 <button>
                     <i class="fas fa-eraser fa-2x"></i>
+                </button>
+                <button>
+                    <i class="fas fa-save fa-2x"></i>
                 </button>
             </div>
         </div>

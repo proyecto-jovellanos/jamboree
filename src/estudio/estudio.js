@@ -19,25 +19,40 @@ $(document).ready(function () {
         //"etiquetas": etiquetas
     };
 
-    $(".fa-play").click(function (ev) {
+    $("#tempo").on('input', function (ev) {
         ev.preventDefault()
-        if (Tone.context.state !== 'running') {
-            Tone.context.resume();
-        } else {
-            Tone.Transport.start()
+        let tiempo = this.value;
+        console.log(tiempo);
+        Tone.Transport.bpm.value = tiempo
+    })
+
+    $(".onoff").click(function (ev) {
+        ev.preventDefault()
+        if ($(this).hasClass("fa-play")) {
+            $(this).removeClass("fa-play").addClass("fa-pause")
+            if (Tone.context.state !== 'running') {
+                Tone.context.resume();
+            } else {
+                Tone.Transport.start()
+            }
+        } else if (($(this).hasClass("fa-pause"))) {
+            $(this).addClass("fa-play").removeClass("fa-pause")
+            Tone.Transport.pause()
         }
-        if (!sonando) {
+        /* if (!sonando) {
             play()
         } else {
             Tone.Transport.pause()
-        }
+        } */
     })
 
-    $(".fa-stop").click(function (ev) {
-        ev.preventDefault()
-        Tone.Transport.stop()
-        sonando = false
-    })
+    /*   $(".fa-pause").click(function (ev) {
+          console.log("pausaa");
+          ev.preventDefault()
+          $(this).toggleClass("fa-pause", false).toggleClass("fa-play")
+          Tone.Transport.stop()
+          //sonando = false
+      }) */
 
     //boton guardar envia por fetch el array de la cancion y el idUser
     $(".fa-save").click(function (ev) {
@@ -64,7 +79,6 @@ $(document).ready(function () {
             tracks[i].fill(0)
         }
         $(".beat").removeClass("marked")
-        Tone.Transport.stop()
     })
 
     /* evento a cada beat para pulsarlo */
@@ -76,53 +90,6 @@ $(document).ready(function () {
 
     //boton para mutear una pista
     $(".fa-volume-mute").click(function (ev) {
-        ev.preventDefault()
-        let instrumento = $(this).parent().parent().attr("class").split(" ")[1];
-        switch (instrumento) {
-            case "kick":
-                if (players[0].mute) {
-                    players[0].mute = false
-                    $(this).css("color", "black")
-                } else {
-                    players[0].mute = true
-                    $(this).css("color", "red")
-                }
-                break;
-            case "snare":
-                if (players[1].mute) {
-                    players[1].mute = false
-                    $(this).css("color", "black")
-                } else {
-                    players[1].mute = true
-                    $(this).css("color", "red")
-                }
-                break;
-            case "hat":
-                if (players[2].mute) {
-                    players[2].mute = false
-                    $(this).css("color", "black")
-                } else {
-                    players[2].mute = true
-                    $(this).css("color", "red")
-                }
-                break;
-            case "clap":
-                if (players[3].mute) {
-                    players[3].mute = false
-                    $(this).css("color", "black")
-                } else {
-                    players[3].mute = true
-                    $(this).css("color", "red")
-                }
-                break;
-
-            default:
-                break;
-        }
-    })
-
-    //boton para dar volumen SOLO a esa pista
-    $(".fa-stripe-s").click(function (ev) {
         ev.preventDefault()
         let instrumento = $(this).parent().parent().attr("class").split(" ")[1];
         switch (instrumento) {
@@ -222,15 +189,16 @@ $(document).ready(function () {
 
     var index = 0
 
-    function play() {
-        sonando = true
-        Tone.Transport.scheduleRepeat(function (time) {
+    //function play() {
+    //sonando = true
+    Tone.Transport.scheduleRepeat(function (time) {
+        Tone.Draw.schedule(function () {
             for (let i = 0; i < 4; i++) {
                 //  console.log(index);
                 let player = players[i]
                 if (tracks[i][0][index] == 1) {
                     //  console.log("index :" + index);
-                    player.start(0)
+                    player.start("+0.9")
                     //  console.log(Tone.Transport.sampleTime);
                 } else {
                     // console.log(index, Tone.Transport.toTicks());
@@ -242,7 +210,8 @@ $(document).ready(function () {
             } else {
                 index = 0
             }
-        }, "32n");
-        Tone.Transport.start()
-    }
+        }, time)
+    }, "32n");
+    //Tone.Transport.start()
+    //}
 })
