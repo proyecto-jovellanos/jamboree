@@ -208,7 +208,6 @@ $(document).ready(function () {
         new Tone.Player(),
         new Tone.Player()
     ]
-    
     players.forEach(player => player.toDestination())
 
     //cargamos en cada player su sonido
