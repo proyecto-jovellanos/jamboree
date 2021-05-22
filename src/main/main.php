@@ -1,6 +1,15 @@
 <?php
+//si viene de validar.php(login)
 if (isset($_GET['user'])) {
-    setcookie("id_User", $_GET['user'], time() + 3600);
+    //si ya existe la cookie, vacia y genera una nueva
+    if (isset($_COOKIE['id_User'])) {
+        unset($_COOKIE['id_User']);
+        setcookie("id_User", $_GET['user'], time() + 3600);
+    } else if (!isset($_COOKIE['id_User'])) {
+        setcookie("id_User", $_GET['user'], time() + 3600);
+    }
+
+    //si viene de register.php
 } elseif (isset($_POST['register'])) {
     $user = $_POST['user'];
     $passw = $_POST['password'];
@@ -56,8 +65,8 @@ if (isset($_GET['user'])) {
     <main>
         <div class="boton_foro">
             <button>
-            <?php $user = $_COOKIE['id_User'];
-                    echo '<a href="../foro/fororeal.php?user=' . $user . '">Foro</a>' ?>
+                <?php $user = $_COOKIE['id_User'];
+                echo '<a href="../foro/fororeal.php?user=' . $user . '">Foro</a>' ?>
             </button>
         </div>
         <div class="boton_canciones">
