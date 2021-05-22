@@ -1,3 +1,6 @@
+<?php
+echo "prueba en xampp hub"
+?>
 <!DOCTYPE html>
 <html lang="en">
 
