@@ -74,6 +74,100 @@ $(document).ready(function () {
         leerMarked()
     })
 
+    //boton para mutear una pista
+    $(".fa-volume-mute").click(function (ev) {
+        ev.preventDefault()
+        let instrumento = $(this).parent().parent().attr("class").split(" ")[1];
+        switch (instrumento) {
+            case "kick":
+                if (players[0].mute) {
+                    players[0].mute = false
+                    $(this).css("color", "black")
+                } else {
+                    players[0].mute = true
+                    $(this).css("color", "red")
+                }
+                break;
+            case "snare":
+                if (players[1].mute) {
+                    players[1].mute = false
+                    $(this).css("color", "black")
+                } else {
+                    players[1].mute = true
+                    $(this).css("color", "red")
+                }
+                break;
+            case "hat":
+                if (players[2].mute) {
+                    players[2].mute = false
+                    $(this).css("color", "black")
+                } else {
+                    players[2].mute = true
+                    $(this).css("color", "red")
+                }
+                break;
+            case "clap":
+                if (players[3].mute) {
+                    players[3].mute = false
+                    $(this).css("color", "black")
+                } else {
+                    players[3].mute = true
+                    $(this).css("color", "red")
+                }
+                break;
+
+            default:
+                break;
+        }
+    })
+
+    //boton para dar volumen SOLO a esa pista
+    $(".fa-stripe-s").click(function (ev) {
+        ev.preventDefault()
+        let instrumento = $(this).parent().parent().attr("class").split(" ")[1];
+        switch (instrumento) {
+            case "kick":
+                if (players[0].mute) {
+                    players[0].mute = false
+                    $(this).css("color", "black")
+                } else {
+                    players[0].mute = true
+                    $(this).css("color", "red")
+                }
+                break;
+            case "snare":
+                if (players[1].mute) {
+                    players[1].mute = false
+                    $(this).css("color", "black")
+                } else {
+                    players[1].mute = true
+                    $(this).css("color", "red")
+                }
+                break;
+            case "hat":
+                if (players[2].mute) {
+                    players[2].mute = false
+                    $(this).css("color", "black")
+                } else {
+                    players[2].mute = true
+                    $(this).css("color", "red")
+                }
+                break;
+            case "clap":
+                if (players[3].mute) {
+                    players[3].mute = false
+                    $(this).css("color", "black")
+                } else {
+                    players[3].mute = true
+                    $(this).css("color", "red")
+                }
+                break;
+
+            default:
+                break;
+        }
+    })
+
     //Funcion lectora de todos los beats para crear objeto track
     function leerMarked() {
         for (let i = 0; i < 4; i++) {
@@ -114,6 +208,7 @@ $(document).ready(function () {
         new Tone.Player(),
         new Tone.Player()
     ]
+
     players.forEach(player => player.toDestination())
 
     //cargamos en cada player su sonido
