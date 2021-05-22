@@ -43,13 +43,14 @@ button {
 
 //------------ESTRUCTURA---------//
 body {
+    background-color: @color-1-dark;
     display: grid;
     grid-template-columns: repeat(9, 1fr);
 
     /* esto verlo, no me gusta
     esta a 20 porq es el % del header */
 
-    grid-auto-rows: minmax(15%, auto);
+    grid-auto-rows: minmax(10%, auto);
 
     grid-template-areas:
         "header header header header header header header header header"
@@ -58,6 +59,7 @@ body {
 
 //------HEADER-------
 .cabecera {
+    background-color: lighten(@color-2-medium-dark, 15%);
     z-index: 100;
     width: 100%;
     min-height: 52px;
@@ -67,7 +69,6 @@ body {
     flex-flow: row nowrap;
     /* position: fixed;
     top: 0px; */
-    background-color: lighten(@color-2-medium-dark, 40%);
 
     .logo {
         align-self: center;

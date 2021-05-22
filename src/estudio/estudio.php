@@ -51,14 +51,14 @@
         <div class="logo">
             JAMBOREE
         </div>
-        <div class="volver">
-            <a href="../main/main.php">
-                <i class="far fa-times-circle fa-3x"></i>
-            </a>
-        </div>
         <div class="ayuda">
             <a href="../ayuda.html">
                 <i class="fas fa-question fa-2x"></i>
+            </a>
+        </div>
+        <div class="volver">
+            <a href="../main/main.php">
+                <i class="far fa-times-circle fa-2x"></i>
             </a>
         </div>
 
