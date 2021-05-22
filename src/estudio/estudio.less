@@ -25,6 +25,7 @@ body::-webkit-scrollbar {
 
 body {
     height: 100vh;
+    //   width: 100vw !important;
 }
 
 .grow:hover {
@@ -43,14 +44,14 @@ button {
 
 //------------ESTRUCTURA---------//
 body {
-    background-color: @color-1-dark;
+    background-color: @color-2-medium-dark;
     display: grid;
     grid-template-columns: repeat(9, 1fr);
 
     /* esto verlo, no me gusta
     esta a 20 porq es el % del header */
 
-    grid-auto-rows: minmax(10%, auto);
+    grid-auto-rows: minmax(5%, auto);
 
     grid-template-areas:
         "header header header header header header header header header"
@@ -61,7 +62,7 @@ body {
 .cabecera {
     background-color: lighten(@color-2-medium-dark, 15%);
     z-index: 100;
-    width: 100%;
+    width: 100vw;
     min-height: 52px;
     //height: 15vh;
     grid-area: header;
@@ -87,7 +88,7 @@ body {
         align-self: center;
 
         i {
-            color: black;
+            color: @color-5-light;
         }
     }
 }
@@ -97,16 +98,16 @@ body {
 .main {
     //quitarlo si queremos hacer scroll, cambiar entonces el margin top a 2%
     //  position: fixed;
-    margin: 5vh 20vh 0 20vh;
+    //  margin: 5% 20% 0 20%;
     grid-area: main;
     color: @color-5-light;
     display: flex;
     align-items: center;
     justify-content: center;
-    //flex-flow: column nowrap;
 
     .channel_rack {
-        height: 70vh;
+        height: 80vh;
+        width: 95%;
 
         .track {
             height: 15%;
@@ -119,8 +120,9 @@ body {
 
             .track_name {
                 align-self: center;
-                flex-basis: 10%;
-                padding-left: 5px;
+                //flex-basis: 10%;
+                padding: 0 5px;
+                margin-right: 50px;
                 /* ordenar el nombre del track bien */
             }
 
@@ -211,13 +213,13 @@ body {
             padding: 0.6%;
             display: flex;
             text-align: center;
-            border: 1px solid @color-2-medium-dark;
+            border: 1px solid @color-5-light;
             align-content: center;
             justify-items: center;
 
             button {
                 display: block;
-                color: @color-2-medium-dark;
+                color: @color-4-medium-light;
             }
         }
     }
