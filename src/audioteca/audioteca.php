@@ -22,7 +22,7 @@
         })
     </script>
     <link rel="stylesheet/less" href="audioteca.less">
-    <script src="less.min.js" type="text/javascript"></script>
+    <script src="../less.min.js" type="text/javascript"></script>
 </head>
 
 <body>
