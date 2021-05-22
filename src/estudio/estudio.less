@@ -6,12 +6,11 @@
 @sombreado: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 /* Colores en Hex */
-@Atlantico-softred: #534486;
-@Atlantico-softmagenta: #D95988;
-@Atlantico-darkblue: #43038c;
-@Atlantico-softblue: #5b339b;
-@Atlantico-white: #F2E8DF;
-@Atlantico-darkest: #0c0d1b;
+@color-1-dark: #030226;
+@color-2-medium-dark: #090740;
+@color-3-medium: #65648C;
+@color-5-light: #D9BFA9;
+@color-4-medium-light: #8C5D5D;
 
 
 * {
@@ -68,7 +67,7 @@ body {
     flex-flow: row nowrap;
     /* position: fixed;
     top: 0px; */
-    background-color: lighten(@Atlantico-softred, 40%);
+    background-color: lighten(@color-2-medium-dark, 40%);
 
     .logo {
         align-self: center;
@@ -78,7 +77,7 @@ body {
         /* ver esto, no me gusta */
         text-size-adjust: 100%;
 
-        color: @Atlantico-softmagenta;
+        color: @color-4-medium-light;
         font-family: @title;
     }
 
@@ -99,7 +98,7 @@ body {
     //  position: fixed;
     margin: 5vh 20vh 0 20vh;
     grid-area: main;
-    color: @Atlantico-darkest;
+    color: @color-5-light;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,7 +109,7 @@ body {
 
         .track {
             height: 15%;
-            background-color: rgba(198, 198, 233, 0.671);
+            background-color: @color-1-dark;
             margin-bottom: 4px;
             display: flex;
             flex-flow: row;
@@ -126,22 +125,22 @@ body {
 
             .beat {
                 flex-basis: 5%;
-                background-color: @Atlantico-softmagenta;
+                background-color: @color-4-medium-light;
                 width: 2.5vw;
                 height: 85%;
                 margin-right: 5px;
                 border-radius: 15%;
 
                 &.marked {
-                    background-color: lighten(@Atlantico-softmagenta, 30%);
-                    border: 1px solid @Atlantico-darkblue;
+                    background-color: lighten(@color-4-medium-light, 30%);
+                    border: 1px solid @color-2-medium-dark;
                 }
 
                 &.impar {
-                    background-color: @Atlantico-darkblue;
+                    background-color: @color-3-medium;
 
                     &.marked {
-                        background-color: lighten(@Atlantico-darkblue, 50%);
+                        background-color: lighten(@color-3-medium, 50%);
                         border: 1px solid rgba(204, 12, 12, 0.76);
                     }
                 }
@@ -188,7 +187,7 @@ body {
             /* Set a specific slider handle width */
             height: 25px;
             /* Slider handle height */
-            background: #04AA6D;
+            background: @color-5-light;
             /* Green background */
             cursor: pointer;
             /* Cursor on hover */
@@ -199,7 +198,7 @@ body {
             /* Set a specific slider handle width */
             height: 25px;
             /* Slider handle height */
-            background: #04AA6D;
+            background: @color-5-light;
             /* Green background */
             cursor: pointer;
             /* Cursor on hover */
