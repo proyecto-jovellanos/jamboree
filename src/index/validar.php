@@ -1,9 +1,8 @@
 <?php
 $usuario = $_POST['username'];
 $contraseña = $_POST['password'];
-setcookie("id_User", $usuario, time() + 3600);
 include('db.php');
-$consulta = "SELECT*FROM users where  Username='$usuario' and Contra='$contraseña'";
+$consulta = "SELECT*FROM users where  username='$usuario' and contra='$contraseña'";
 $resultado = mysqli_query($conexion, $consulta);
 $filas = mysqli_num_rows($resultado);
 

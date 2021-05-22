@@ -25,6 +25,11 @@
 </head>
 
 <body>
+    <?php
+        if (isset($_GET['user'])) {
+        setcookie("id_User", $_GET['user'], time() + 3600);
+       }
+        ?>
     <div class="main">
         <header class="header">
             <div class="animation-header">
