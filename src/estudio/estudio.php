@@ -22,7 +22,7 @@
     <script src="estudio.js"></script>
     <script>
         //script para pintar en compases de a 4
-        $(document).ready(function () {
+        $(document).ready(function() {
             let cont = 0
             for (let i = 1; i <= 32; i++) {
                 if (cont < 4) {
@@ -41,6 +41,12 @@
 </head>
 
 <body>
+    <?php
+    if (isset($_GET['user'])) {
+        setcookie("id_User", $_GET['user'], time() + 3600);
+    }
+    ?>
+
     <div class="cabecera">
         <div class="logo">
             JAMBOREE
@@ -61,6 +67,11 @@
     <div class="main">
         <div class="channel_rack">
             <div class="track kick">
+                <div class="controls">
+                    <i class="fas fa-volume-mute"></i>
+                    <i class="fab fa-stripe-s fab-3x"></i>
+                </div>
+
                 <div class="track_name">Kick</div>
                 <div class="beat 1"></div>
                 <div class="beat 2"></div>
@@ -96,6 +107,10 @@
                 <div class="beat 32"></div>
             </div>
             <div class="track snare">
+                <div class="controls">
+                    <i class="fas fa-volume-mute"></i>
+                    <i class="fab fa-stripe-s fab-3x"></i>
+                </div>
                 <div class="track_name">Snare</div>
                 <div class="beat 1"></div>
                 <div class="beat 2"></div>
@@ -131,6 +146,10 @@
                 <div class="beat 32"></div>
             </div>
             <div class="track hat">
+                <div class="controls">
+                    <i class="fas fa-volume-mute"></i>
+                    <i class="fab fa-stripe-s fab-3x"></i>
+                </div>
                 <div class="track_name">Hi-hat</div>
                 <div class="beat 1"></div>
                 <div class="beat 2"></div>
@@ -166,6 +185,10 @@
                 <div class="beat 32"></div>
             </div>
             <div class="track clap">
+                <div class="controls">
+                    <i class="fas fa-volume-mute"></i>
+                    <i class="fab fa-stripe-s fab-3x"></i>
+                </div>
                 <div class="track_name">Clap</div>
                 <div class="beat 1"></div>
                 <div class="beat 2"></div>
@@ -200,6 +223,11 @@
                 <div class="beat 31"></div>
                 <div class="beat 32"></div>
             </div>
+
+            <div class="slidecontainer">
+                <input class="slider" type="range" min="1" max="100" value="50" id="myRange">
+            </div>
+
             <div class="controles">
                 <button>
                     <i class="fas fa-play fa-2x"></i>
@@ -217,6 +245,7 @@
         </div>
     </div>
     </main>
+
 
 </body>
 
