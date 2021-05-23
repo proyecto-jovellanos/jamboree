@@ -1,26 +1,3 @@
-<?php
-//si viene de validar.php(login)
-if (isset($_GET['user'])) {
-    //si ya existe la cookie, vacia y genera una nueva
-    if (isset($_COOKIE['id_User'])) {
-        unset($_COOKIE['id_User']);
-        setcookie("id_User", $_GET['user'], time() + 3600);
-    } else if (!isset($_COOKIE['id_User'])) {
-        setcookie("id_User", $_GET['user'], time() + 3600);
-    }
-
-    //si viene de register.php
-} elseif (isset($_POST['register'])) {
-    $user = $_POST['user'];
-    $passw = $_POST['password'];
-    $fecha = $_POST['fecha'];
-    $etiquetas = $_POST['etiquetas'];
-    include("db.php");
-    $consulta = "INSERT INTO users (username, contra,fecha,etiquetas) VALUES ('$user','$passw','$fecha','$etiquetas')";
-    mysqli_query($conexion, $consulta);
-    setcookie("id_User", $user, time() + 3600);
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,7 +34,9 @@ if (isset($_GET['user'])) {
         <div class="nav">
             <a href="../perfil.html">Mi perfil</a>
             <a href="../ayuda.html">Ayuda</a>
-            <a href="../index/index.php">LOG OUT</a>
+            <form action="../index/index.php">
+                <input type="submit" value="LOG OUT" name="logout">
+            </form>
         </div>
 
     </header>

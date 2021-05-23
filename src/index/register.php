@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <form action="../main/main.php" method="post">
+    <form action="../index/index.php" method="post">
         <div class="dataRegister">
             <div class="sectionRegister">
                 <p>Username</p>
@@ -37,8 +37,6 @@
                 <input type="text" name="etiquetas" id="" required>
             </div>
             <input type="submit" value="send" class="sendRegister" name="register">
-
-
 
         </div>
     </form>

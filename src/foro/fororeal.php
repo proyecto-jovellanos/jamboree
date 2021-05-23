@@ -13,8 +13,8 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
     <script>
-        $(document).ready(function () {
-            $(".far").on("click", function (ev) {
+        $(document).ready(function() {
+            $(".far").on("click", function(ev) {
                 ev.preventDefault()
                 $(this).toggleClass("fas")
             })
@@ -25,11 +25,6 @@
 </head>
 
 <body>
-    <?php
-        if (isset($_GET['user'])) {
-        setcookie("id_User", $_GET['user'], time() + 3600);
-       }
-        ?>
     <div class="main">
         <header class="header">
             <div class="animation-header">
@@ -97,8 +92,8 @@
             <?php
             include("listadoCanciones.php");
             include("db.php");
-             $leer = mysqli_query($conexion, 'select * from canciones');
-             listar($leer);
+            $leer = mysqli_query($conexion, 'select * from canciones');
+            listar($leer);
             ?>
         </section>
     </div>
