@@ -7,9 +7,14 @@ $resultado = mysqli_query($conexion, $consulta);
 $filas = mysqli_num_rows($resultado);
 
 if ($filas) {
-  header("location:../main/main.php?user=$usuario");
+  var_dump($usuario);
+  if (isset($_COOKIE['id_User'])) {
+    unset($_COOKIE['id_User']);
+    setcookie('id_User', null, -1, '/');
+  }
+  setcookie("id_User", $usuario, time() + 3600, '/');
+  header("location:../main/main.php");
 } else {
-
 
   include("index.php")
 ?>

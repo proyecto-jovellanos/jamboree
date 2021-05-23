@@ -13,8 +13,8 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
     <script>
-        $(document).ready(function () {
-            $(".far").on("click", function (ev) {
+        $(document).ready(function() {
+            $(".far").on("click", function(ev) {
                 ev.preventDefault()
                 $(this).toggleClass("fas")
             })
@@ -26,11 +26,6 @@
 </head>
 
 <body>
-<?php
-        if (isset($_GET['user'])) {
-        setcookie("id_User", $_GET['user'], time() + 3600);
-       }
-        ?>
     <header class="header">
         <div class="animation-header">
             <div class="lft">[</div>
@@ -50,11 +45,11 @@
     </header>
     <div class="main">
         <div class="lista_audioteca">
-        <?php
+            <?php
             include("cancionesUsuario.php");
             include("db.php");
-              $leer = mysqli_query($conexion, 'select Id_User from canciones where c="' . $password . '"');
-             listar($leer); 
+            $leer = mysqli_query($conexion, 'select Id_User from canciones where c="' . $password . '"');
+            listar($leer);
             ?>
             <article class="tema grow">
                 <header class="header-tema">

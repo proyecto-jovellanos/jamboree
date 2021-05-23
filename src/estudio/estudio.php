@@ -42,9 +42,7 @@
 
 <body>
     <?php
-    if (isset($_GET['user'])) {
-        setcookie("id_User", $_GET['user'], time() + 3600);
-    }
+    var_dump($_COOKIE['id_User']);
     ?>
 
     <div class="cabecera">

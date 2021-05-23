@@ -1,10 +1,24 @@
+<?php
+//si el usuario se deslogó, borramos cookie
+if (isset($_REQUEST['logout'])) {
+  unset($_COOKIE['id_User']);
+  setcookie('id_User', null, -1, '/');
+}
+//si viene de register.php introducimos usuario en bbdd
+elseif (isset($_POST['register'])) {
+  $user = $_POST['user'];
+  $passw = $_POST['password'];
+  $fecha = $_POST['fecha'];
+  $etiquetas = $_POST['etiquetas'];
+  include("db.php");
+  $consulta = "INSERT INTO users (username, contra,fecha,etiquetas) VALUES ('$user','$passw','$fecha','$etiquetas')";
+  mysqli_query($conexion, $consulta);
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-
-
-
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -120,20 +134,6 @@
     <div class="lopd">ley organica proteccion datos, cookies...</div>
     <div class="year">AÑO y Copyright</div>
   </footer>
-  <script>
-
-  </script>
-
-
-
-
-
-
-  ?>
-
-
-
-
 </body>
 
 </html>
