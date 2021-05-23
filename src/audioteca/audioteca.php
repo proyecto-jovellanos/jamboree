@@ -33,7 +33,7 @@
             <div class="rght">]</div>
         </div>
         <div class="nav">
-            <a href="../main/main.html">Inicio</a>
+            <a href="../main/main.php">Inicio</a>
             <a href="../ayuda.html">Ayuda</a>
             <a href="../perfil.html">Mi perfil</a>
         </div>
@@ -48,54 +48,9 @@
             <?php
             include("cancionesUsuario.php");
             include("db.php");
-            $leer = mysqli_query($conexion, 'select Id_User from canciones where c="' . $password . '"');
+            $leer = mysqli_query($conexion, 'select nombre from canciones where username="' .$_GET['user'] . '"');
             listar($leer);
             ?>
-            <article class="tema grow">
-                <header class="header-tema">
-                    Tema 1
-                </header>
-                <button class="icono"><i class="far fa-trash-alt"></i></button>
-                <button class="btn"><a href="../estudio/estudio.html">Editar</a></button>
-                <button class="btn">Reproducir</button>
-                <button class="btn">Subir a Foro</button>
-            </article>
-            <article class="tema grow">
-                <header class="header-tema">
-                    Tema 2
-                </header>
-                <button class="icono"><i class="far fa-trash-alt"></i></button>
-                <button class="btn"> <a href="../estudio/estudio.html">Editar</a></button>
-                <button class="btn">Reproducir</button>
-                <button class="btn">Subir a Foro</button>
-            </article>
-            <article class="tema grow">
-                <header class="header-tema">
-                    Tema 3
-                </header>
-                <button class="icono"><i class="far fa-trash-alt"></i></button>
-                <button class="btn"> <a href="../estudio/estudio.html">Editar</a></button>
-                <button class="btn">Reproducir</button>
-                <button class="btn">Subir a Foro</button>
-            </article>
-            <article class="tema grow">
-                <header class="header-tema">
-                    Tema 4
-                </header>
-                <button class="icono"><i class="far fa-trash-alt"></i></button>
-                <button class="btn"> <a href="../estudio/estudio.html">Editar</a></button>
-                <button class="btn">Reproducir</button>
-                <button class="btn">Subir a Foro</button>
-            </article>
-            <article class="tema grow">
-                <header class="header-tema">
-                    Tema 5
-                </header>
-                <button class="icono"><i class="far fa-trash-alt"></i></button>
-                <button class="btn"> <a href="../estudio/estudio.html">Editar</a></button>
-                <button class="btn">Reproducir</button>
-                <button class="btn">Subir a Foro</button>
-            </article>
         </div>
     </div>
 

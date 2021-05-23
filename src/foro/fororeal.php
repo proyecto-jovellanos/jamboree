@@ -33,7 +33,7 @@
                 <div class="rght">]</div>
             </div>
             <div class="nav">
-                <a href="../main/main.html">Inicio</a>
+                <a href="../main/main.php">Inicio</a>
                 <a href="../ayuda.html">Ayuda</a>
                 <a href="../perfil.html">Mi perfil</a>
             </div>

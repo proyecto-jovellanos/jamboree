@@ -4,7 +4,7 @@ function listar($resultado){
         echo
         '<article class="tema grow">
         <header class="header-tema">
-        ' . $row['Id_Cancion'] .'
+        ' . $row['nombre'] .'
         </header>
         <button class="icono"><i class="far fa-trash-alt"></i></button>
         <button class="btn"><a href="../estudio/estudio.html">Editar</a></button>
