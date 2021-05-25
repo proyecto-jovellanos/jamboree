@@ -11,7 +11,7 @@
     <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- JS PROPIO -->
-    <script src="app.js"></script>
+    <!-- <script src="app.js"></script> -->
     <!-- LESS -->
     <link rel="stylesheet" href="main.css">
     <!--FONT AWESOME-->
@@ -45,20 +45,20 @@
         <div class="boton_foro">
             <button>
                 <?php $user = $_COOKIE['id_User'];
-                echo '<a href="../foro/fororeal.php?user=' . $user . '">Foro</a>' ?>
+                echo '<a href="../foro/fororeal.php">Foro</a>' ?>
             </button>
         </div>
         <div class="boton_canciones">
             <div class="boton_estudio">
                 <button>
                     <?php $user = $_COOKIE['id_User'];
-                    echo '<a href="../estudio/estudio.php?user=' . $user . '">Estudio</a>' ?>
+                    echo '<a href="../estudio/estudio.html">Estudio</a>' ?>
                 </button>
             </div>
             <div class="boton_audioteca">
                 <button>
                     <?php $user = $_COOKIE['id_User'];
-                    echo '<a href="../audioteca/audioteca.php?user=' . $user . '">Audioteca</a>' ?>
+                    echo '<a href="../audioteca/audioteca.php">Audioteca</a>' ?>
                 </button>
             </div>
         </div>

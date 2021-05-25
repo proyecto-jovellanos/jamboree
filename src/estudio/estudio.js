@@ -55,20 +55,39 @@ $(document).ready(function () {
       }) */
 
     //boton guardar envia por fetch el array de la cancion y el idUser
+    $(".close").click(function (ev) {
+        ev.preventDefault()
+        $(".form-popup").hide()
+
+    })
+
     $(".fa-save").click(function (ev) {
         ev.preventDefault()
-
+        $(".form-popup").show()
+    })
+    $(".save").click(function (ev) {
+        ev.preventDefault()
+        let song_name = $('input[name="name"]').val()
+        if (song_name == "") {
+            $(".warning").text("Introduce un nombre!")
+        } else {
+            $(".warning").text("Canción guardada en tu audioteca!")
+            setTimeout(() => {
+                $(".form-popup").hide()
+            }, 2000);
+        }
         //regex para rescatar el valor de la cookie id_User
         let user = document.cookie.replace(/(?:(?:^|.*;\s*)id_User\s*\=\s*([^;]*).*$)|^.*$/, "$1");
         let tracksJSON = JSON.stringify(tracks)
-        //let user=document.cookie.split(";")[0]
+        let tag = $("select").children("option:selected").val();
         var params = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
             },
             //option=guardar para controlar la operacion en php
-            body: "option=guardar&id_User=" + user + "&track=" + tracksJSON
+            body: "option=guardar&id_User=" + user + "&track=" + tracksJSON +
+                "&song_name=" + song_name + "&tag=" + tag
         }
         fetch("../server.php", params)
     })
@@ -143,7 +162,7 @@ $(document).ready(function () {
                     tracks[i][0][j - 1] = 1 : tracks[i][0][j - 1] = 0
             }
         }
-        //  console.log(tracks);
+        //  console.log(JSON.stringify(tracks));
     }
 
     //////////////////////////

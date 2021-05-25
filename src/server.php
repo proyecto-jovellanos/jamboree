@@ -1,11 +1,19 @@
 <?php
 //si se ha dado a cualquiera de los boton de "enviar" se inicia funcion escritora
 if ($_POST['option'] == "guardar") {
-    $content = json_decode($_POST['track']);
+    print "funca";
+    //$content = json_decode($_POST['track'], true);
+    $content = $_POST['track'];
     $id_User = $_POST['id_User'];
+    $song_name = $_POST['song_name'];
+    $tag = $_POST['tag'];
+    print $id_User;
+    //var_dump($content);
     include("db.php");
-    $consulta = "INSERT INTO canciones(Id_Cancion,Track,Etiquetas,Id_User,Name) VALUES (null,'$content','prueba',$id_User,'prueba')";
+    $consulta = "INSERT INTO canciones(id_Cancion,track,etiquetas,username,nombre) 
+    VALUES (null,'$content','$tag','$id_User','$song_name')";
     mysqli_query($conexion, $consulta);
+    $conexion->close();
 }
 
 //al cargarse la página se inicia la descarga de datos
