@@ -44,21 +44,18 @@
     <main>
         <div class="boton_foro">
             <button>
-                <?php $user = $_COOKIE['id_User'];
-                echo '<a href="../foro/fororeal.php">Foro</a>' ?>
+                <a href="../foro/fororeal.php">Foro</a>
             </button>
         </div>
         <div class="boton_canciones">
             <div class="boton_estudio">
                 <button>
-                    <?php $user = $_COOKIE['id_User'];
-                    echo '<a href="../estudio/estudio.html">Estudio</a>' ?>
+                    <a href="../estudio/estudio.html">Estudio</a>
                 </button>
             </div>
             <div class="boton_audioteca">
                 <button>
-                    <?php $user = $_COOKIE['id_User'];
-                    echo '<a href="../audioteca/audioteca.php">Audioteca</a>' ?>
+                    <a href="../audioteca/audioteca.php">Audioteca</a>
                 </button>
             </div>
         </div>

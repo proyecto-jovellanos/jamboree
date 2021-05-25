@@ -11,7 +11,10 @@
     <script src="https://kit.fontawesome.com/62afea99ed.js" crossorigin="anonymous"></script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
+    
+    <!-- Script propio -->
+    <script src="audioteca.js"></script>
+    
     <script>
         $(document).ready(function() {
             $(".far").on("click", function(ev) {
@@ -48,7 +51,7 @@
             <?php
             include("cancionesUsuario.php");
             include("db.php");
-            $leer = mysqli_query($conexion, 'select nombre from canciones where username="' .$_GET['user'] . '"');
+            $leer = mysqli_query($conexion, 'select * from canciones where username="' . $_COOKIE['id_User'] . '"');
             listar($leer);
             ?>
         </div>
