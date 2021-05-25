@@ -22,7 +22,7 @@
     <script src="estudio.js"></script>
     <script>
         //script para pintar en compases de a 4
-        $(document).ready(function() {
+        $(document).ready(function () {
             let cont = 0
             for (let i = 1; i <= 32; i++) {
                 if (cont < 4) {
@@ -41,9 +41,7 @@
 </head>
 
 <body>
-    <?php
-    var_dump($_COOKIE['id_User']);
-    ?>
+
 
     <div class="cabecera">
         <div class="logo">
@@ -222,6 +220,7 @@
                 <input class="slider" type="range" min="60" max="240" value="100" id="tempo">
             </div>
 
+
             <div class="controles">
                 <button>
                     <i class="onoff fas fa-play fa-2x"></i>
@@ -232,6 +231,25 @@
                 <button>
                     <i class="fas fa-save fa-2x"></i>
                 </button>
+                <div class="form-popup">
+                    <form>
+                        <h1>Guardar canción</h1>
+
+                        <label for="name"><b>Nombre</b></label>
+                        <input type="text" placeholder="Nombre de la canción" name="name" required><br>
+                        <span class="warning"></span> <br><br>
+                        <label for="tags"><b>Elige etiqueta</b></label>
+                        <select name="tags">
+                            <option value="rock">Rock</option>
+                            <option value="hip-hop">Hip-hop</option>
+                            <option value="techno">Techno</option>
+                            <option value="pop">Pop</option>
+                        </select>
+
+                        <button type="submit" class="btn save">Guardar</button>
+                        <button type="button" class="btn close">Cerrar</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

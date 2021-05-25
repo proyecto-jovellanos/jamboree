@@ -7,7 +7,6 @@ $resultado = mysqli_query($conexion, $consulta);
 $filas = mysqli_num_rows($resultado);
 
 if ($filas) {
-  var_dump($usuario);
   if (isset($_COOKIE['id_User'])) {
     unset($_COOKIE['id_User']);
     setcookie('id_User', null, -1, '/');
