@@ -29,6 +29,7 @@ elseif (isset($_POST['register'])) {
 
   <!-- LESS -->
   <link rel="stylesheet" href="index.less">
+  <script src="../less.min.js" type="text/javascript"></script>
   <!--FONT AWESOME-->
   <script src="https://kit.fontawesome.com/e36b117475.js" crossorigin="anonymous"></script>
   <!--MATERIALIZE-->
@@ -44,9 +45,11 @@ elseif (isset($_POST['register'])) {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="carousel.js"></script>
 
+
   <!--HEADER -->
   <header>
-    <div class="logo">
+    <div class="logo">LOGO</div>
+    <div class="title">
       Jamboree
     </div>
 
@@ -62,6 +65,7 @@ elseif (isset($_POST['register'])) {
 
   <!--MAIN-->
   <main>
+    <div class=text>The fastest way from your brain to your speakers</div>
     <div class="maindiv">
       <div class="video">
         <video width="500" height="395" muted loop autoplay>
@@ -115,7 +119,7 @@ elseif (isset($_POST['register'])) {
             <p><br>Password</p>
             <input type="password" name="password" id="">
           </div>
-          <a href="">Forgot password?</a><br>
+         
           <div class="btn">
             <button type="submit" name='log'><i class="fas fa-play"></i></button>
           </div>

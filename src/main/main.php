@@ -13,7 +13,7 @@
     <!-- JS PROPIO -->
     <!-- <script src="app.js"></script> -->
     <!-- LESS -->
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.less">
     <!--FONT AWESOME-->
     <script src="https://kit.fontawesome.com/e36b117475.js" crossorigin="anonymous"></script>
 </head>
@@ -47,7 +47,7 @@
                 <a href="../foro/fororeal.php">Foro</a>
             </button>
         </div>
-        <div class="boton_canciones">
+        
             <div class="boton_estudio">
                 <button>
                     <a href="../estudio/estudio.html">Estudio</a>
@@ -58,7 +58,7 @@
                     <a href="../audioteca/audioteca.php">Audioteca</a>
                 </button>
             </div>
-        </div>
+        
     </main>
 
     <footer>

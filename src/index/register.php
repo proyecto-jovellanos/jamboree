@@ -14,6 +14,22 @@
 </head>
 
 <body>
+<header>
+    <div class="logo">LOGO</div>
+    <div class="title">
+      Jamboree
+    </div>
+
+    <div class="social">
+      <ul>
+        <li><i class="fab fa-twitter"></i></li>
+        <li><i class="fab fa-facebook"></i></li>
+        <li><i class="fab fa-instagram"></i></li>
+      </ul>
+    </div>
+
+  </header>
+  <main>
     <form action="../index/index.php" method="post">
         <div class="dataRegister">
             <div class="sectionRegister">
@@ -36,10 +52,17 @@
                 <p>etiquetas</p>
                 <input type="text" name="etiquetas" id="" required>
             </div>
-            <input type="submit" value="send" class="sendRegister" name="register">
+            <input type="submit" value="SEND" class="sendRegister" name="register">
 
         </div>
     </form>
+</main>
+    <!--FOOTER-->
+  <footer>
+    <div class="contactos">Nuestros nombres</div>
+    <div class="lopd">ley organica proteccion datos, cookies...</div>
+    <div class="year">AÑO y Copyright</div>
+  </footer>
 
 </body>
 
