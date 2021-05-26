@@ -11,17 +11,16 @@
     <script src="https://kit.fontawesome.com/62afea99ed.js" crossorigin="anonymous"></script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    
+
     <!-- Script propio -->
     <script src="audioteca.js"></script>
-    
+
     <script>
         $(document).ready(function() {
             $(".far").on("click", function(ev) {
                 ev.preventDefault()
                 $(this).toggleClass("fas")
             })
-
         })
     </script>
     <link rel="stylesheet/less" href="audioteca.less">

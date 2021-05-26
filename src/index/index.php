@@ -65,7 +65,7 @@ elseif (isset($_POST['register'])) {
 
   <!--MAIN-->
   <main>
-    <div class=text>The fastest way from your brain to your speakers</div>
+    <div class="text">The fastest way from your brain to your speakers</div>
     <div class="maindiv">
       <div class="video">
         <video width="500" height="395" muted loop autoplay>
@@ -119,7 +119,7 @@ elseif (isset($_POST['register'])) {
             <p><br>Password</p>
             <input type="password" name="password" id="">
           </div>
-         
+
           <div class="btn">
             <button type="submit" name='log'><i class="fas fa-play"></i></button>
           </div>
