@@ -13,7 +13,7 @@
     <!-- JS PROPIO -->
     <script src="app.js"></script>
     <!-- LESS -->
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.less">
     <!--FONT AWESOME-->
     <script src="https://kit.fontawesome.com/e36b117475.js" crossorigin="anonymous"></script>
 </head>
@@ -48,7 +48,7 @@
                 echo '<a href="../foro/fororeal.php?user=' . $user . '">Foro</a>' ?>
             </button>
         </div>
-        <div class="boton_canciones">
+        
             <div class="boton_estudio">
                 <button>
                     <?php $user = $_COOKIE['id_User'];
@@ -61,7 +61,7 @@
                     echo '<a href="../audioteca/audioteca.php?user=' . $user . '">Audioteca</a>' ?>
                 </button>
             </div>
-        </div>
+        
     </main>
 
     <footer>
