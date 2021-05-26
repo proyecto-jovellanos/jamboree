@@ -60,8 +60,19 @@ $(document).ready(function () {
 
     $(".fa-save").click(function (ev) {
         ev.preventDefault()
-        $(".form-popup").show()
+        let empty = true
+        $(".beat").each(function () {
+            if ($(this).hasClass("marked")) {
+                empty = false
+            }
+        })
+        if (empty) {
+            alert("No puedes guardar una canción vacía")
+        } else {
+            $(".form-popup").show()
+        }
     })
+
     $(".save").click(function (ev) {
         ev.preventDefault()
         let song_name = $('input[name="name"]').val()

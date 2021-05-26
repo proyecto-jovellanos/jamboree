@@ -11,8 +11,8 @@ if ($_POST['option'] == "guardar") {
     $tag = $_POST['tag'];
     print $id_User;
     //var_dump($content);
-    $consulta = "INSERT INTO canciones(id_Cancion,track,etiquetas,username,nombre) 
-    VALUES (null,'$content','$tag','$id_User','$song_name')";
+    $consulta = "INSERT INTO canciones(id_Cancion,track,etiquetas,username,nombre,publica,escuchas) 
+    VALUES (null,'$content','$tag','$id_User','$song_name','0',null)";
     mysqli_query($conexion, $consulta);
     $conexion->close();
 }
@@ -30,6 +30,21 @@ elseif ($_POST['option'] == "cargar") {
 elseif ($_POST['option'] == "borrar") {
     $id_song = $_POST['id_song'];
     $consulta = "DELETE FROM canciones where  Id_Cancion='$id_song'";
+    mysqli_query($conexion, $consulta);
+    $conexion->close();
+}
+
+//si se pulsó en subir a foro desde audioteca
+elseif ($_POST['option'] == "makePublic") {
+    $id_song = $_POST['id_song'];
+    $consulta = "UPDATE canciones SET publica='1' where  Id_Cancion='$id_song'";
+    mysqli_query($conexion, $consulta);
+    $conexion->close();
+}
+//si se pulsó en quitar del foro desde audioteca
+elseif ($_POST['option'] == "makePrivated") {
+    $id_song = $_POST['id_song'];
+    $consulta = "UPDATE canciones SET publica='0' where  Id_Cancion='$id_song'";
     mysqli_query($conexion, $consulta);
     $conexion->close();
 }

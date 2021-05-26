@@ -95,7 +95,7 @@
             <?php
             include("listadoCanciones.php");
             include("db.php");
-            $leer = mysqli_query($conexion, 'select * from canciones');
+            $leer = mysqli_query($conexion, 'select * from canciones where publica="1"');
             listar($leer);
             ?>
         </section>

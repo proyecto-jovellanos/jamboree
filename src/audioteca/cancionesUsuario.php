@@ -8,10 +8,21 @@ function listar($resultado)
         ' . $row['nombre'] . '
         </header>
         <button class="icono"><i id=' . $row['id_Cancion'] . ' class="far fa-trash-alt"></i></button>
-        <button class="btn"><a href="../estudio/estudio.html?id_song=' . $row['id_Cancion']
-            . '">Editar</a></button>
-        <button class="btn">Reproducir</button>
-        <button class="btn">Subir a Foro</button>
+        ';
+
+        if ($row['publica'] == '0') {
+            echo '<button class="btn toForo">Subir a Foro</button>';
+        } else {
+            echo '<button class="btn fromForo">Quitar del Foro</button>';
+        }
+
+        echo
+        '<button class="btn">
+            <a href="../estudio/estudio.html?id_song=' . $row['id_Cancion'] . '">Editar</a>
+        </button>
+            <div class="cancion"> ' . $row['track'] . '</div>
+        <button class="btn play">Reproducir</button>
+        <button class="btn pause">Pausar</button>
     </article>';
     }
 }
