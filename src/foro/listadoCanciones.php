@@ -9,10 +9,10 @@ function listar($resultado){
                 <span class="autor">' . $row['username'].'</span> <span>200.000</span>
                 <div class="cancion"> ' . $row['track'].'</div>
                 <button class="play"><i class="fas fa-play"></i></i></button></button>
+                <button class="pause"><i class="fas fa-pause"></i></i></button></button>
                 <button class="edit">
-                    <a href="../estudio/estudio.php"><i class="fas fa-pencil-alt"></i>EDITAR EN ESTUDIO</a>
+                    <a href="../estudio/estudio.js"><i class="fas fa-pencil-alt"></i>EDITAR EN ESTUDIO</a>
                 </button>
             </article>';
     }
 }
-?>

@@ -11,7 +11,10 @@
     <script src="https://kit.fontawesome.com/62afea99ed.js" crossorigin="anonymous"></script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- link para Tone.js -->
+    <script src="https://tonejs.github.io/build/Tone.js"></script>
 
+    <script src="foro.js"></script>
     <script>
         $(document).ready(function() {
             $(".far").on("click", function(ev) {

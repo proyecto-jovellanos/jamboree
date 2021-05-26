@@ -41,11 +41,6 @@ $(document).ready(function () {
             Tone.Transport.pause()
             console.log("pausado");
         }
-        /* if (!sonando) {
-            play()
-        } else {
-            Tone.Transport.pause()
-        } */
     })
 
     /*   $(".fa-pause").click(function (ev) {
@@ -100,6 +95,7 @@ $(document).ready(function () {
             tracks[i].fill(0)
         }
         $(".beat").removeClass("marked")
+        Tone.Transport.stop()
     })
 
     /* evento a cada beat para pulsarlo */
@@ -267,9 +263,6 @@ $(document).ready(function () {
                     //  console.log("index :" + index);
                     player.start("+0.1")
                     //  console.log(Tone.Transport.sampleTime);
-                } else {
-                    // console.log(index, Tone.Transport.toTicks());
-                    //   console.log("NADA" + index);
                 }
             }
             if (index < 31) {
