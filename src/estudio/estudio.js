@@ -34,10 +34,12 @@ $(document).ready(function () {
                 Tone.context.resume();
             } else {
                 Tone.Transport.start()
+                console.log("playing");
             }
         } else if (($(this).hasClass("fa-pause"))) {
             $(this).addClass("fa-play").removeClass("fa-pause")
             Tone.Transport.pause()
+            console.log("pausado");
         }
         /* if (!sonando) {
             play()
@@ -159,14 +161,56 @@ $(document).ready(function () {
         for (let i = 0; i < 4; i++) {
             for (let j = 1; j < 33; j++) {
                 $(`.${tracks[i][1]}>.beat.${j}`).hasClass("marked") ?
-                    tracks[i][0][j - 1] = 1 : tracks[i][0][j - 1] = 0
+                    tracks[i][0][j - 1] = 1 :
+                    tracks[i][0][j - 1] = 0
             }
         }
-        //  console.log(JSON.stringify(tracks));
+        console.log(tracks);
     }
 
-    //////////////////////////
+    function leerTrackJSON() {
+        for (let i = 0; i < 4; i++) {
+            for (let j = 1; j < 33; j++) {
+                if (tracks[i][0][j - 1] == 1) {
+                    $(`.${tracks[i][1]}>.beat.${j}`).addClass("marked")
+                } else {
+                    console.log(tracks[i][0][j - 1]);
+                    // console.log("0");
+                }
+            }
+        }
+    }
 
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('id_song')) {
+        var id_song = urlParams.get("id_song")
+        console.log(id_song);
+        //get json track from db
+        getTrack()
+    } else console.log("NA");
+
+    function getTrack() {
+        var params = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            },
+            //option=get para controlar la operacion en php
+            body: "option=get&id_song=" + id_song
+        }
+        fetch("../server.php", params)
+            .then(function (respuesta) {
+                return respuesta.text()
+            }).then(function (datos) {
+                // console.log(datos);
+                let obj = JSON.parse(datos)
+                for (let i = 0; i < 4; i++) {
+                    tracks[i][0] = obj[i][0]
+                }
+                leerTrackJSON()
+            })
+    }
+    //////////////////////////
 
     //console.log(Tone.context.lookAhead); //=0.1
 
@@ -209,7 +253,7 @@ $(document).ready(function () {
     var index = 0
 
     //function play() {
-    //sonando = true
+
     Tone.Transport.scheduleRepeat(function (time) {
         Tone.Draw.schedule(function () {
             for (let i = 0; i < 4; i++) {

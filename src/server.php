@@ -33,3 +33,16 @@ elseif ($_POST['option'] == "borrar") {
     mysqli_query($conexion, $consulta);
     $conexion->close();
 }
+//si viene de audioteca o foro, devuelve el track pedido
+elseif ($_POST['option'] == "get") {
+    $id_song = $_POST['id_song'];
+    $consulta = "SELECT * FROM canciones where  Id_Cancion='$id_song'";
+    $resultado = mysqli_query($conexion, $consulta);
+
+    while ($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
+        echo $row['track'];
+    }
+    /*  $resultado = json_encode($resultado);
+    echo $resultado; */
+    $conexion->close();
+}
