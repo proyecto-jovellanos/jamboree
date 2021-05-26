@@ -257,11 +257,15 @@ $(document).ready(function () {
     Tone.Transport.scheduleRepeat(function (time) {
         Tone.Draw.schedule(function () {
             for (let i = 0; i < 4; i++) {
+                if (index % 4 == 0) {
+                    $(`.${tracks[i][1]}>.beat.${index+1}`).toggleClass("timeline")
+                    $(`.${tracks[i][1]}>.beat.${index-3}`).toggleClass("timeline")
+                }
                 //  console.log(index);
                 let player = players[i]
                 if (tracks[i][0][index] == 1) {
                     //  console.log("index :" + index);
-                    player.start("+0.9")
+                    player.start("+0.1")
                     //  console.log(Tone.Transport.sampleTime);
                 } else {
                     // console.log(index, Tone.Transport.toTicks());
