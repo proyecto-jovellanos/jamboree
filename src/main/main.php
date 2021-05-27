@@ -44,21 +44,21 @@
     <main>
         <div class="boton_foro">
             <button>
-                <a href="../foro/fororeal.php">Foro</a>
+                <a href="../foro/foro.php">Foro</a>
             </button>
         </div>
-        
-            <div class="boton_estudio">
-                <button>
-                    <a href="../estudio/estudio.html">Estudio</a>
-                </button>
-            </div>
-            <div class="boton_audioteca">
-                <button>
-                    <a href="../audioteca/audioteca.php">Audioteca</a>
-                </button>
-            </div>
-        
+
+        <div class="boton_estudio">
+            <button>
+                <a href="../estudio/estudio.html">Estudio</a>
+            </button>
+        </div>
+        <div class="boton_audioteca">
+            <button>
+                <a href="../audioteca/audioteca.php">Audioteca</a>
+            </button>
+        </div>
+
     </main>
 
     <footer>
