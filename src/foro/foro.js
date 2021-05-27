@@ -21,6 +21,9 @@ $(document).ready(function () {
             body: "option=masLike&id_song=" + id
         }
         fetch("../server.php", params)
+            .then(response => response.text())
+            .then(data => console.log(data));
+
 
         track = $(this).prev().html()
         cargaTrack(track)

@@ -101,10 +101,11 @@ body {
     .audioteca {
         a {
             height: 10vh;
+            line-height: 10vh;
             background-color: lighten(@color-2-medium-dark, 20%);
             border: none;
             color: @color-5-light;
-            padding: 15px 32px;
+            padding: 0px 32px;
             text-align: center;
             -webkit-transition-duration: 0.4s;
             transition-duration: 0.4s;
@@ -194,129 +195,131 @@ body {
         .slidecontainer {
             width: 10%;
             /* Width of the outside container */
-        }
 
-        /* The slider itself */
-        .slider {
-            -webkit-appearance: none;
-            /* Override default CSS styles */
-            appearance: none;
-            width: 100%;
-            /* Full-width */
-            height: 25px;
-            /* Specified height */
-            background: #c36363;
-            /* Grey background */
-            outline: none;
-            /* Remove outline */
-            opacity: 0.7;
-            /* Set transparency (for mouse-over effects on hover) */
-            -webkit-transition: .2s;
-            /* 0.2 seconds transition on hover */
-            transition: opacity .2s;
-        }
-
-        /* Mouse-over effects */
-        .slider:hover {
-            opacity: 1;
-            /* Fully shown on mouse-over */
-        }
-
-        /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-        .slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            /* Override default look */
-            appearance: none;
-            width: 25px;
-            /* Set a specific slider handle width */
-            height: 25px;
-            /* Slider handle height */
-            background: @color-5-light;
-            /* Green background */
-            cursor: pointer;
-            /* Cursor on hover */
-        }
-
-        .slider::-moz-range-thumb {
-            width: 25px;
-            /* Set a specific slider handle width */
-            height: 25px;
-            /* Slider handle height */
-            background: @color-5-light;
-            /* Green background */
-            cursor: pointer;
-            /* Cursor on hover */
-        }
-
-        .controles {
-
-            margin-top: 5%;
-            width: 50vw;
-            padding: 0.6%;
-            display: flex;
-            text-align: center;
-            border: 1px solid @color-5-light;
-            align-content: center;
-            justify-items: center;
-
-            .form-popup {
-                display: none;
-                background-color: @color-5-light;
-                position: fixed;
-                bottom: 5%;
-                right: 15px;
-                border: 3px solid #f1f1f1;
-                z-index: 9;
-
-                form {
-                    max-width: 300px;
-                    padding: 5px;
-                    background-color: @color-4-medium-light;
-
-                    input,
-                    select {
-                        width: 100%;
-                        padding: 15px;
-                        margin: 5px 0 22px 0;
-                        border: none;
-                        background: #f1f1f1;
-
-                        &:focus {
-                            background-color: lighten(@color-4-medium-light, 25%);
-                            outline: none;
-                        }
-                    }
-
-                    button {
-                        background-color: lighten(@color-2-medium-dark, 25%);
-                        color: white;
-                        padding: 16px 20px;
-                        border: none;
-                        cursor: pointer;
-                        width: 100%;
-                        margin-bottom: 10px;
-                        opacity: 0.8;
-
-                        &:hover {
-                            opacity: 1;
-                        }
-                    }
-
-                    .close {
-                        background-color: red;
-                    }
-                }
+            /* The slider itself */
+            .slider {
+                -webkit-appearance: none;
+                /* Override default CSS styles */
+                appearance: none;
+                width: 100%;
+                /* Full-width */
+                height: 25px;
+                /* Specified height */
+                background: #c36363;
+                /* Grey background */
+                outline: none;
+                /* Remove outline */
+                opacity: 0.7;
+                /* Set transparency (for mouse-over effects on hover) */
+                -webkit-transition: .2s;
+                /* 0.2 seconds transition on hover */
+                transition: opacity .2s;
             }
 
-            button {
-                display: block;
-                color: @color-4-medium-light;
+            /* Mouse-over effects */
+            .slider:hover {
+                opacity: 1;
+                /* Fully shown on mouse-over */
             }
 
+            /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+            .slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                /* Override default look */
+                appearance: none;
+                width: 25px;
+                /* Set a specific slider handle width */
+                height: 25px;
+                /* Slider handle height */
+                background: @color-5-light;
+                /* Green background */
+                cursor: pointer;
+                /* Cursor on hover */
+            }
+
+            .slider::-moz-range-thumb {
+                width: 25px;
+                /* Set a specific slider handle width */
+                height: 25px;
+                /* Slider handle height */
+                background: @color-5-light;
+                /* Green background */
+                cursor: pointer;
+                /* Cursor on hover */
+            }
 
         }
 
     }
+
+    .controles {
+
+        margin-top: 5%;
+        width: 50vw;
+        padding: 0.6%;
+        display: flex;
+        text-align: center;
+        border: 1px solid @color-5-light;
+        align-content: center;
+        justify-items: center;
+
+        .form-popup {
+            display: none;
+            background-color: @color-5-light;
+            position: fixed;
+            bottom: 5%;
+            right: 15px;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+
+            form {
+                max-width: 300px;
+                padding: 5px;
+                background-color: @color-4-medium-light;
+
+                input,
+                select {
+                    width: 100%;
+                    padding: 15px;
+                    margin: 5px 0 22px 0;
+                    border: none;
+                    background: #f1f1f1;
+
+                    &:focus {
+                        background-color: lighten(@color-4-medium-light, 25%);
+                        outline: none;
+                    }
+                }
+
+                button {
+                    background-color: lighten(@color-2-medium-dark, 25%);
+                    color: white;
+                    padding: 16px 20px;
+                    border: none;
+                    cursor: pointer;
+                    width: 100%;
+                    margin-bottom: 10px;
+                    opacity: 0.8;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+
+                .close {
+                    background-color: red;
+                }
+            }
+        }
+
+        button {
+            display: block;
+            color: @color-4-medium-light;
+        }
+
+
+    }
+
 
 }
 

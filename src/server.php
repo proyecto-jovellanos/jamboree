@@ -53,12 +53,17 @@ elseif ($_POST['option'] == "masLike") {
     $id_song = $_POST['id_song'];
     $consulta = "SELECT * FROM canciones where  Id_Cancion='$id_song'";
     $escuchas;
-    mysqli_query($conexion, $consulta);
+    $resultado = mysqli_query($conexion, $consulta);
     while ($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
         $escuchas = $row['escuchas'];
     }
-    $escuchas++;
-    $consulta = "UPDATE canciones SET escuchas='$escuchas' where  Id_Cancion='$id_song'";
+
+    $escuchasInt = intval($escuchas);
+    $conexion->close();
+    $escuchasInt++;
+    echo $escuchasInt;
+    include("db.php");
+    $consulta = "UPDATE canciones SET escuchas='$escuchasInt' where  Id_Cancion='$id_song'";
     $conexion->close();
 }
 //si viene de audioteca o foro, devuelve el track pedido
