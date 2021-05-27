@@ -57,55 +57,6 @@
                 $leer = mysqli_query($conexion, 'select * from canciones where publica="1" ORDER BY escuchas LIMIT 10');
                 listar($leer);
                 ?>
-
-                <li>
-                    <a href="#"><span class=par>1.</span>tema Primero</a><br>
-                    <span><i class="far fa-eye"></i> 4525</span>
-                </li>
-                <li>
-                    <span class="nombre-song-top">' . $row['nombre'] . '</span>
-                    <span class="nombre-user-top">' . $row['username'] . '</span>
-                    <span class="id_song"> ' . $row['id_Cancion'] . '</span>
-                    <span class="cancion"> ' . $row['track'] . '</span>
-                    <button class="play"><i class="fas fa-play"></i></i></button></button>
-                    <button class="pause"><i class="fas fa-pause"></i></i></button></button>
-                </li>
-                <li>
-                    <a href="#"><span class=par>2.</span>tema Segundo</a><br>
-                    <span><i class="far fa-eye"></i> 4105</span>
-                </li>
-                <li>
-                    <a href="#"><span class=par>3.</span>tema Tercero</a><br>
-                    <span><i class="far fa-eye"></i> 3215</span>
-                </li>
-                <li>
-                    <a href="#"><span class=par>4.</span>tema Cuarto</a><br>
-                    <span><i class="far fa-eye"></i> 2565</span>
-                </li>
-                <li>
-                    <a href="#"><span class=par>5.</span>tema Quinto</a><br>
-                    <span><i class="far fa-eye"></i> 2005</span>
-                </li>
-                <li>
-                    <a href="#"><span class=par>6.</span>tema Tercero</a><br>
-                    <span><i class="far fa-eye"></i> 3215</span>
-                </li>
-                <li>
-                    <a href="#"><span class=par>7.</span>tema Cuarto</a><br>
-                    <span><i class="far fa-eye"></i> 2565</span>
-                </li>
-                <li>
-                    <a href="#"><span class=par>8.</span>tema Quinto</a><br>
-                    <span><i class="far fa-eye"></i> 2005</span>
-                </li>
-                <li>
-                    <a href="#"><span class=par>9.</span>tema Tercero</a><br>
-                    <span><i class="far fa-eye"></i> 3215</span>
-                </li>
-                <li>
-                    <a href="#"><span class=par>10.</span>tema Cuarto</a><br>
-                    <span><i class="far fa-eye"></i> 2565</span>
-                </li>
             </div>
         </div>
         <section class="noticias">
