@@ -1,5 +1,5 @@
 <?php
-function listar($resultado)
+function listarTop($resultado)
 {
     while ($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
         echo
