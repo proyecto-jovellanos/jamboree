@@ -54,7 +54,7 @@
                 <?php
                 include("listadoCancionesTop.php");
                 include("db.php");
-                $leerTop = mysqli_query($conexion, 'select * from canciones where publica="1" ORDER BY escuchas LIMIT 10');
+                $leerTop = mysqli_query($conexion, 'select * from canciones where publica="1" ORDER BY escuchas DESC LIMIT 10');
                 listarTop($leerTop);
                 ?>
             </div>
