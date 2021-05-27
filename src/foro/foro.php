@@ -51,9 +51,24 @@
         <div class="sidebar">
             <div class="most-visited">
                 <span>HITS DEL MOMENTO</span>
+                <?php
+                include("listadoCancionesTop.php");
+                include("db.php");
+                $leer = mysqli_query($conexion, 'select * from canciones where publica="1" ORDER BY escuchas LIMIT 10');
+                listar($leer);
+                ?>
+
                 <li>
                     <a href="#"><span class=par>1.</span>tema Primero</a><br>
                     <span><i class="far fa-eye"></i> 4525</span>
+                </li>
+                <li>
+                    <span class="nombre-song-top">' . $row['nombre'] . '</span>
+                    <span class="nombre-user-top">' . $row['username'] . '</span>
+                    <span class="id_song"> ' . $row['id_Cancion'] . '</span>
+                    <span class="cancion"> ' . $row['track'] . '</span>
+                    <button class="play"><i class="fas fa-play"></i></i></button></button>
+                    <button class="pause"><i class="fas fa-pause"></i></i></button></button>
                 </li>
                 <li>
                     <a href="#"><span class=par>2.</span>tema Segundo</a><br>
