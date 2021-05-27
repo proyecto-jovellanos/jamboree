@@ -61,10 +61,10 @@ body {
 //------HEADER-------
 .cabecera {
     background-color: lighten(@color-2-medium-dark, 15%);
-    z-index: 100;
+    z-index: 9;
     width: 100vw;
     min-height: 52px;
-    //height: 15vh;
+    height: 10vh;
     grid-area: header;
     display: flex;
     flex-flow: row nowrap;
@@ -89,18 +89,36 @@ body {
     .volver,
     .ayuda {
         align-self: center;
+        justify-content: center;
 
         i {
             color: @color-5-light;
         }
+
     }
 
     .foro,
     .audioteca {
-        font-size: 1.4em;
-        
-    }
+        a {
+            height: 10vh;
+            background-color: lighten(@color-2-medium-dark, 20%);
+            border: none;
+            color: @color-5-light;
+            padding: 15px 32px;
+            text-align: center;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            text-decoration: none;
+            font-size: 1.4em;
+            cursor: pointer;
+            display: inline-block;
 
+            &:hover,
+            &:active {
+                background-color: @color-3-medium;
+            }
+        }
+    }
 }
 
 //-------MAIN-------
