@@ -1,4 +1,11 @@
 $(document).ready(function () {
+    let user = document.cookie.replace(/(?:(?:^|.*;\s*)id_User\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+    
+    if (user == "") {
+        alert("Tu sesión expiró, vuelve a iniciar sesión.")
+        window.location.href = "../index/index.php"
+    }
+
     if (Tone.context.state !== 'running') {
         Tone.context.resume();
     } else {
@@ -7,6 +14,7 @@ $(document).ready(function () {
 
     console.clear()
     console.log(navigator.mediaDevices.getUserMedia)
+
 
     var sonando = false
 
@@ -87,7 +95,7 @@ $(document).ready(function () {
             }, 2000);
         }
         //regex para rescatar el valor de la cookie id_User
-        let user = document.cookie.replace(/(?:(?:^|.*;\s*)id_User\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
         let tracksJSON = JSON.stringify(tracks)
         let tag = $("select").children("option:selected").val();
         var params = {
@@ -290,7 +298,7 @@ $(document).ready(function () {
 
     /////////////////VISUALS///////////////
 
-  /*   let stream = players[0].context.createMediaStreamSource()
+    /*   let stream = players[0].context.createMediaStreamSource()
     let wave = new Wave();
     console.log(stream);
     wave.fromStream(stream, "canvas", {
