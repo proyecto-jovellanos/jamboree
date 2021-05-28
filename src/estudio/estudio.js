@@ -13,8 +13,9 @@ $(document).ready(function () {
     }
 
     console.clear()
-    console.log(navigator.mediaDevices.getUserMedia)
-
+    //console.log(navigator.mediaDevices.getUserMedia)
+      var user = document.cookie.replace(/(?:(?:^|.*;\s*)id_User\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+    console.log(user);
 
     var sonando = false
 
@@ -204,7 +205,7 @@ $(document).ready(function () {
         console.log(id_song);
         //get json track from db
         getTrack()
-    } else console.log("NA");
+    } else console.log("No precargar");
 
     function getTrack() {
         var params = {
