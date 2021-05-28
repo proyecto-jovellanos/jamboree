@@ -290,12 +290,12 @@ $(document).ready(function () {
 
     /////////////////VISUALS///////////////
 
-    let stream = players[0].context.createMediaStreamSource()
+  /*   let stream = players[0].context.createMediaStreamSource()
     let wave = new Wave();
     console.log(stream);
     wave.fromStream(stream, "canvas", {
         type: "shine",
         colors: ["red", "white", "blue"]
     })
-
+ */
 })

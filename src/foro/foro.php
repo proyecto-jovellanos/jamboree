@@ -23,7 +23,7 @@
             })
         })
     </script>
-    <link rel="stylesheet/less" href="styleForo.less"> 
+    <link rel="stylesheet/less" href="styleForo.less">
     <script src="../less.min.js" type="text/javascript"></script>
 </head>
 
@@ -48,6 +48,13 @@
                 <a href="#"><i class="fab fa-facebook-square"></i></a>
             </div>
         </header>
+        <div class="tags">
+            <div><a href="foro.php">Todas</a></div>
+            <div><a href="foro.php?tag=rock">Rock</a></div>
+            <div><a href="foro.php?tag=hip-hop">Hip-hop</a></div>
+            <div><a href="foro.php?tag=techno">Techno</a></div>
+            <div><a href="foro.php?tag=pop">Pop</a></div>
+        </div>
         <div class="sidebar">
             <div class="most-visited">
                 <span>HITS DEL MOMENTO</span>
@@ -63,7 +70,12 @@
             <?php
             include("listadoCanciones.php");
             include("db.php");
-            $leer = mysqli_query($conexion, 'select * from canciones');
+            $consulta = 'select * from canciones where publica="1"';
+            if (isset($_GET['tag'])) {
+                $tag = $_GET['tag'];
+                $consulta = $consulta . " and etiquetas='$tag'";
+            }
+            $leer = mysqli_query($conexion, $consulta);
             listar($leer);
             ?>
         </section>
