@@ -5,14 +5,7 @@
 @sombreado: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 /* Colores en Hex */
-@Atlantico-softred: #F2527D;
-@Atlantico-softmagenta: #D95988;
-@Atlantico-darkblue: #43038c;
-@Atlantico-softblue: #5b339b;
-@Atlantico-white: #F2E8DF;
-@Atlantico-darkest: #0c0d1b;
-@green:#66CDAA;
-@morado: #43038c;
+
 
 
 
@@ -28,6 +21,7 @@ body::-webkit-scrollbar {
 
 body {
     height: 100%;
+    background-color: @color-2-medium-dark;
 }
 
 .animation(@nombre) {
@@ -45,6 +39,7 @@ body {
 	flex-grow:1;
 	font-family: 'Courier New', monospace;
 	font-size:15px;
+    color: @color-5-light;
 }
 
 .grow:hover {
@@ -74,17 +69,17 @@ button {
 
 //------HEADER-------
 .header {
-    z-index: 100;
+    z-index: 9;
+    min-height: 65px;
     width: 100%;
     grid-area: header;
     display: flex;
     flex-flow: row nowrap;
     
 	align-items:center;
-    height: 50px;
     position: fixed;
     top: 0px;
-    background-color:@green;
+    background-color: lighten(@color-2-medium-dark, 15%);
 
     .animation-header {
         position: absolute;
@@ -94,7 +89,7 @@ button {
         flex-flow: row;
         font-size: 2em;
         text-size-adjust: 100%;
-        color: @Atlantico-darkblue;
+        color:@color-5-light;
         font-family: @title;
         animation-delay: 2s;
 
@@ -115,6 +110,9 @@ button {
 .social i{
     padding-left:65px ;
 }
+.social a{
+    color: @color-5-light;
+}
 
 }
 
@@ -124,7 +122,7 @@ button {
     display: flex;
     flex-flow: column nowrap;
     margin-top: 15px;
-    color: @Atlantico-softmagenta;
+    color:@color-4-medium-light;
     .most-visited {
         .aside-style
     }
@@ -133,20 +131,20 @@ button {
 .aside-style {
     box-shadow: @sombreado;
     margin: 2%;
-    color: @Atlantico-darkest;
+    color: @color-3-medium;
     font-weight: bolder;
 
     &>span {
         display: block;
         margin: 4%;
-        color: @Atlantico-softblue;
+        color:@color-4-medium-light;
         font-size: 1.1em;
         min-width: 76px;
     }
 .par{
    font-weight: bolder;
    font-size:15px;
-   color: #0c0d1b;
+   color: @color-4-medium-light;
 }
     li {
         padding-left: 5%;
@@ -157,11 +155,11 @@ button {
         font-size: 0.8em;
 
         &:hover {
-            background-color: lighten(@Atlantico-softmagenta, 25%);
+            background-color: lighten(@color-4-medium-light, 25%);
         }
 
         span {
-            color: lighten(@Atlantico-darkest, 60%);
+            color: lighten(@color-4-medium-light, 60%);
             font-size: 0.7em;
         }
     }
@@ -172,18 +170,22 @@ button {
 .noticias {
     margin: 0 5% 0 2%;
     grid-area: main;
-    color: @Atlantico-darkest;
+    color: @color-4-medium-light;
     display: flex;
     flex-flow: column nowrap;
     flex-shrink: -2;
-    margin-top: 15px;
+    margin-top: 50px;
+    margin-left: 30px;
+    padding: 15px;
     .tema {
         margin: 0 1% 1%;
         padding: 1%;
         font-size: 15px;
         box-shadow: @sombreado;
         font-family: @text;
-        color: @Atlantico-darkest;
+        color: @color-4-medium-light;
+        border: 2px solid #65648C;
+        border-radius: 10px;
 
         .header-tema {
             font-size: 1.5em;
@@ -193,9 +195,17 @@ button {
 
         .nombre-tema {
             font-size: 0.7em;
-            color: lighten(@Atlantico-darkest, 60%);
+            color: lighten(@color-4-medium-light, 60%);
         }
-
+     &:hover{
+            background-color: #ffffff;
+        }
+    }
+    .edit i{
+        color:#D9BFA9;
+    }
+    .edit a{
+        color:#D9BFA9; 
     }
 
 }
@@ -204,13 +214,15 @@ button {
 
 footer {
     grid-area: footer;
-    color: @Atlantico-white;
-    background-color: fade(@Atlantico-darkblue, 60%);
-    height: 80px;
+    background-color: lighten(@color-2-medium-dark, 15%);
+    height: 55px;
     bottom: 0px;
     width: 100%;
     display: flex;
-    line-height: 80px;
+    line-height: 55px;
+    align-items:center;
+    color:@color-5-light;
+    position: fixed;
 }
 
 //-----ANIMATIONS------
@@ -223,7 +235,7 @@ footer {
     }
 
     100% {
-        color: @Atlantico-darkblue;
+        color: @color-4-medium-light;
         left: 0%;
         top: 0px;
     }
@@ -237,7 +249,7 @@ footer {
     }
 
     100% {
-        color: @Atlantico-darkblue;
+        color:@color-4-medium-light;
         right: 0%;
         top: 0px;
     }

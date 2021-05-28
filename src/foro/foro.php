@@ -23,7 +23,7 @@
             })
         })
     </script>
-    <link rel="stylesheet/less" href="styleForo.less">
+    <link rel="stylesheet/less" href="styleForo.less"> 
     <script src="../less.min.js" type="text/javascript"></script>
 </head>
 
@@ -63,7 +63,7 @@
             <?php
             include("listadoCanciones.php");
             include("db.php");
-            $leer = mysqli_query($conexion, 'select * from canciones where publica="1"');
+            $leer = mysqli_query($conexion, 'select * from canciones');
             listar($leer);
             ?>
         </section>
