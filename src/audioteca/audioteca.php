@@ -1,3 +1,12 @@
+<?php
+if (!isset($_COOKIE['id_User'])) {
+    echo '<script type="text/javascript">
+    alert("Tu sesión expiró, vuelve a iniciar sesión.");
+    window.location.href="../index/index.php";
+    </script>';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
