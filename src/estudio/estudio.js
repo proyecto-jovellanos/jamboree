@@ -6,8 +6,10 @@ $(document).ready(function () {
     }
 
     console.clear()
-    console.log(navigator.mediaDevices.getUserMedia)
+    //console.log(navigator.mediaDevices.getUserMedia)
 
+    var user = document.cookie.replace(/(?:(?:^|.*;\s*)id_User\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+    console.log(user);
     var sonando = false
 
     var tracks = {
@@ -87,7 +89,7 @@ $(document).ready(function () {
             }, 2000);
         }
         //regex para rescatar el valor de la cookie id_User
-        let user = document.cookie.replace(/(?:(?:^|.*;\s*)id_User\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
         let tracksJSON = JSON.stringify(tracks)
         let tag = $("select").children("option:selected").val();
         var params = {
@@ -196,7 +198,7 @@ $(document).ready(function () {
         console.log(id_song);
         //get json track from db
         getTrack()
-    } else console.log("NA");
+    } else console.log("No precargar");
 
     function getTrack() {
         var params = {
@@ -290,7 +292,7 @@ $(document).ready(function () {
 
     /////////////////VISUALS///////////////
 
-  /*   let stream = players[0].context.createMediaStreamSource()
+    /*   let stream = players[0].context.createMediaStreamSource()
     let wave = new Wave();
     console.log(stream);
     wave.fromStream(stream, "canvas", {
