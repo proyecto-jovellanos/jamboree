@@ -7,9 +7,10 @@ function listar($resultado)
             <header class="header-tema">
             ' . $row['nombre'] . '
                 </header>
-                <span class="autor">' . $row['username'] . '</span> <span>200.000</span>
+                <span class="autor">' . $row['username'] . '</span> <span class="escuchas">' . $row['escuchas'] . '</span>
                 <div class="id_song"> ' . $row['id_Cancion'] . '</div>
                 <div class="cancion"> ' . $row['track'] . '</div>
+                <div class="etiqueta"> ' . $row['etiquetas'] . '</div>
                 <button class="play"><i class="fas fa-play"></i></i></button></button>
                 <button class="pause"><i class="fas fa-pause"></i></i></button></button>
                 <button class="edit">
@@ -18,3 +19,4 @@ function listar($resultado)
             </article>';
     }
 }
+?>
