@@ -12,6 +12,10 @@
 @color-5-light: #D9BFA9;
 @color-4-medium-light: #8C5D5D;
 
+@green:#66CDAA;
+@morado: #43038c;
+@gris-oscuro: #414141;
+@gris-claro: #525252;
 
 * {
     box-sizing: border-box;
@@ -44,7 +48,7 @@ button {
 
 //------------ESTRUCTURA---------//
 body {
-    background-color: @color-2-medium-dark;
+    background-color: @gris-oscuro;
     display: grid;
     grid-template-columns: repeat(9, 1fr);
 
@@ -60,7 +64,7 @@ body {
 
 //------HEADER-------
 .cabecera {
-    background-color: lighten(@color-2-medium-dark, 15%);
+    background-color: @morado;
     z-index: 9;
     width: 100vw;
     min-height: 52px;
@@ -79,7 +83,7 @@ body {
         /* ver esto, no me gusta */
         text-size-adjust: 100%;
 
-        color: @color-4-medium-light;
+        color: @green;
         font-family: @title;
     }
 
@@ -140,12 +144,13 @@ body {
 
         .track {
             height: 15%;
-            background-color: @color-1-dark;
+            background-color: @gris-claro;
             margin-bottom: 4px;
             display: flex;
             flex-flow: row;
             align-items: center;
             justify-content: space-around;
+            border: 1px solid @color-5-light;
 
             .track_name {
                 align-self: center;
@@ -164,7 +169,7 @@ body {
                 border-radius: 15%;
 
                 &.marked {
-                    background-color: lighten(@color-4-medium-light, 30%);
+                    background-color: lighten(@green, 10%);
                     border: 1px solid @color-2-medium-dark;
 
                 }

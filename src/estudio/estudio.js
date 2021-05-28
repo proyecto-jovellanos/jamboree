@@ -6,6 +6,8 @@ $(document).ready(function () {
     }
 
     console.clear()
+    console.log(navigator.mediaDevices.getUserMedia)
+
     var sonando = false
 
     var tracks = {
@@ -172,7 +174,7 @@ $(document).ready(function () {
                     tracks[i][0][j - 1] = 0
             }
         }
-        console.log(tracks);
+        //  console.log(tracks);
     }
 
     function leerTrackJSON() {
@@ -285,4 +287,15 @@ $(document).ready(function () {
     }, "32n");
     //Tone.Transport.start()
     //}
+
+    /////////////////VISUALS///////////////
+
+    let stream = players[0].context.createMediaStreamSource()
+    let wave = new Wave();
+    console.log(stream);
+    wave.fromStream(stream, "canvas", {
+        type: "shine",
+        colors: ["red", "white", "blue"]
+    })
+
 })
