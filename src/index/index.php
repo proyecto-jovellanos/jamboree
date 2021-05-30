@@ -25,7 +25,7 @@ elseif (isset($_POST['register'])) {
   <title>Bienvenid@ a Jamboree</title>
   <!-- LESS -->
   <link rel="stylesheet/less" href="index.less">
-  <script src="../less.min.js" type="text/javascript"></script>
+    <script src="../less.min.js" type="text/javascript"></script>
   <!--FONT AWESOME-->
   <script src="https://kit.fontawesome.com/e36b117475.js" crossorigin="anonymous"></script>
     
