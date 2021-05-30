@@ -23,7 +23,7 @@ body::-webkit-scrollbar {
 }
 
 body {
-    height: 100%;
+    height: 100vh;
 
 }
 
@@ -54,7 +54,7 @@ header {
     flex-flow: row nowrap;
 
     align-items: center;
-    
+
     min-height: 52px;
     //background-color: @color-3-medium;
 
@@ -70,7 +70,7 @@ header {
 
     .title {
         font-size: x-large;
-        
+
         text-align: center;
 
 
@@ -102,8 +102,9 @@ header {
 main {
     grid-area: main;
     width: 100%;
-    height: 900px;
+    height: 100%;
     
+
 
 
     .maindiv {
@@ -114,35 +115,52 @@ main {
             "video carousel"
             "log log";
         width: 100%;
-        height: 100%;
+        height: 94%;
     }
-    .text{
-    width: 55%;
-    text-align: center;
-    align-items: center;
+
+    .text {
+        width: 55%;
+        text-align: center;
+        align-items: center;
         height: 6%;
-    font-family: Alfa Slab One, display;
-    font-size: 22px;
-    font-weight: 100;
-    color: rgba(0, 0, 0, 1);
-    text-transform: none;
-    font-style: normal;
-    text-decoration: none;
-    line-height: 3em;
-    letter-spacing: 0.9px;
-    text-shadow: 0px 0px 1px rgba(0, 0, 0, 1);
-        
+        font-family: Alfa Slab One, display;
+        font-size: 22px;
+        font-weight: 100;
+        color: rgba(0, 0, 0, 1);
+        text-transform: none;
+        font-style: normal;
+        text-decoration: none;
+        line-height: 3em;
+        letter-spacing: 0.9px;
+        text-shadow: 0px 0px 1px rgba(0, 0, 0, 1);
+
     }
+
     .log {
         grid-area: log;
         height: 100%;
         width: 100%;
-       
-        text-align: center;
+        display: flex;
         align-items: center;
         
-        
-        
+        min-height: 52px;
+
+    }
+
+    .log .open-btn {
+        background-color: #8C5D5D;
+        color: blanchedalmond;
+        position: relative;
+        display: block;
+        width: 100px;
+        height: 30px;
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(41, 39, 39, 0.4);
+    }
+
+    .log a {
+        font-size: 12px;
     }
 
     .Loginform {
@@ -169,22 +187,6 @@ main {
 
     #show {
         display: none;
-    }
-
-    .log .open-btn {
-        background-color: #8C5D5D;
-        color: blanchedalmond;
-        position: relative;
-        display: block;
-        width: 100px;
-        height: 30px;
-        padding: 5px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(41, 39, 39, 0.4);
-    }
-
-    .log a {
-        font-size: 12px;
     }
 
     #reg {
@@ -238,37 +240,40 @@ main {
 
 
     .video {
+        display: block;
         grid-area: video;
         width: 100%;
         height: 100%;
         text-align: center;
-        
+
         align-items: center;
-        
-        
-    }
-    .video > video{
-        margin-top: 6em;
-    }
-    .div-textvideo{
-        
-        display: inline-flex;
-        
+
 
     }
-    .div-textvideo > .textvideo{
-            margin :10px;
+
+    .video>video {
+        margin-top: 6em;
+    }
+
+    .div-textvideo {
+
+        display: inline-flex;
+
+
+    }
+
+    .div-textvideo>.textvideo {
+        margin: 10px;
     }
 
     .card-carousel {
-        
         grid-area: carousel;
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
-        
+
     }
 
     .card-carousel .my-card {
@@ -432,13 +437,11 @@ footer {
     grid-area: footer;
     position: relative;
     bottom: 0;
-    
     overflow: auto;
+
 }
 
 footer {
-
-    height: 60px;
     width: 100%;
     display: flex;
 }
@@ -488,4 +491,18 @@ footer>div {
         0 0 20px #fff,
         0 0 30px #fff;
 
+}
+
+@media all and (max-width:500px) {
+    .maindiv {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(auto, auto);
+        grid-template-areas:
+            "video "
+            "carousel"
+            "log";
+        width: 100%;
+        height: 94%;
+    }
 }
