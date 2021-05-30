@@ -1,6 +1,6 @@
 $(document).ready(function () {
     let user = document.cookie.replace(/(?:(?:^|.*;\s*)id_User\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-    
+
     if (user == "") {
         alert("Tu sesión expiró, vuelve a iniciar sesión.")
         window.location.href = "../index/index.php"
@@ -14,7 +14,7 @@ $(document).ready(function () {
 
     console.clear()
     //console.log(navigator.mediaDevices.getUserMedia)
-      var user = document.cookie.replace(/(?:(?:^|.*;\s*)id_User\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+    //  var user = document.cookie.replace(/(?:(?:^|.*;\s*)id_User\s*\=\s*([^;]*).*$)|^.*$/, "$1");
     console.log(user);
 
     var sonando = false
