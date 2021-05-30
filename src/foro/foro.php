@@ -19,9 +19,11 @@ if (!isset($_COOKIE['id_User'])) {
     <script src="https://kit.fontawesome.com/62afea99ed.js" crossorigin="anonymous"></script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
     <!-- link para Tone.js -->
     <script src="https://tonejs.github.io/build/Tone.js"></script>
 
+    <!-- Script propio -->
     <script src="foro.js"></script>
     <script>
         $(document).ready(function() {
