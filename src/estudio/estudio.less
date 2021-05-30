@@ -29,7 +29,7 @@ body::-webkit-scrollbar {
 
 body {
     height: 100vh;
-    //   width: 100vw !important;
+    width: 100vw;
 }
 
 .grow:hover {
@@ -55,11 +55,16 @@ body {
     /* esto verlo, no me gusta
     esta a 20 porq es el % del header */
 
-    grid-auto-rows: minmax(5%, auto);
+    // grid-auto-rows: minmax(5%, auto);
 
     grid-template-areas:
         "header header header header header header header header header"
-        "main   main   main   main   main   main   main   main   main";
+        "rack   rack   rack   rack   rack   rack   rack   rack   rack"
+        "rack   rack   rack   rack   rack   rack   rack   rack   rack"
+        "rack   rack   rack   rack   rack   rack   rack   rack   rack"
+        "rack   rack   rack   rack   rack   rack   rack   rack   rack"
+        "controls   controls   controls   controls   controls   controls   controls   controls   controls"
+        "controls   controls   controls   controls   controls   controls   controls   controls   controls";
 }
 
 //------HEADER-------
@@ -129,133 +134,137 @@ body {
 //-------MAIN-------
 
 .main {
-    //quitarlo si queremos hacer scroll, cambiar entonces el margin top a 2%
-    //  position: fixed;
-    //  margin: 5% 20% 0 20%;
-    grid-area: main;
     color: @color-5-light;
     display: flex;
-    align-items: center;
     justify-content: center;
 
     .channel_rack {
-        height: 80vh;
-        width: 95%;
+        grid-area: rack;
+        width: 100vw;
+        height: 100%;
+        display: flex;
+        row-gap: 2%;
+        flex-flow: column;
+        justify-content: space-evenly;
+        background-color: @gris-claro;
 
         .track {
-            height: 15%;
-            background-color: @gris-claro;
-            margin-bottom: 4px;
-            display: flex;
-            flex-flow: row;
+            flex-basis: 10vh;
+            background-color: @gris-oscuro;
+            width: 95vw;
+            border: 1px solid @morado;
+            display: grid;
             align-items: center;
-            justify-content: space-around;
-            border: 1px solid @color-5-light;
+            grid-template-columns: 10% 90%;
+            max-height: 12vh;
 
-            .track_name {
-                align-self: center;
-                //flex-basis: 10%;
-                padding: 0 5px;
-                margin-right: 50px;
-                /* ordenar el nombre del track bien */
+            .controls {
+                display: flex;
+                justify-content: space-between;
+                margin: 3%;
+
+                .fas {
+                    display: block;
+                }
+
+                .track_name {
+                    font-weight: bolder;
+                    font-size: 1em;
+                }
             }
 
-            .beat {
-                flex-basis: 5%;
-                background-color: @color-4-medium-light;
-                width: 2.5vw;
-                height: 85%;
-                margin-right: 5px;
-                border-radius: 15%;
 
-                &.marked {
-                    background-color: lighten(@green, 10%);
-                    border: 1px solid @color-2-medium-dark;
+            .beats {
+                //controlar en media q no sobresalga del track background
+                display: grid;
+                grid-template-columns: repeat(32, 1fr);
+                column-gap: 0.3vw;
 
-                }
-
-                &.timeline {
-                    background-color: lighten(@color-4-medium-light, 20%);
-                }
-
-                &.impar {
-                    background-color: @color-3-medium;
+                .beat {
+                    width: 75/32vw;
+                    height: 8vh;
+                    background-color: darken(@green, 27%);
 
                     &.marked {
-                        background-color: lighten(@color-3-medium, 50%);
-                        border: 1px solid rgba(204, 12, 12, 0.76);
-
+                        background-color: lighten(@green, 17%);
                     }
 
-                    &.timeline {
-                        background-color: lighten(@color-3-medium, 10%);
-                    }
+                    &.timeline {}
 
+                    &.impar {
+                        background-color: darken(@green, 33%);
+
+                        &.marked {
+                            background-color: lighten(@green, 17%);
+                        }
+
+                        &.timeline {}
+
+                    }
 
                 }
-
             }
         }
+    }
 
-        .slidecontainer {
-            width: 10%;
-            /* Width of the outside container */
+    .slidecontainer {
+        width: 10%;
+        /* Width of the outside container */
 
-            /* The slider itself */
-            .slider {
-                -webkit-appearance: none;
-                /* Override default CSS styles */
-                appearance: none;
-                width: 100%;
-                /* Full-width */
-                height: 25px;
-                /* Specified height */
-                background: #c36363;
-                /* Grey background */
-                outline: none;
-                /* Remove outline */
-                opacity: 0.7;
-                /* Set transparency (for mouse-over effects on hover) */
-                -webkit-transition: .2s;
-                /* 0.2 seconds transition on hover */
-                transition: opacity .2s;
-            }
+        /* The slider itself */
+        .slider {
+            -webkit-appearance: none;
+            /* Override default CSS styles */
+            appearance: none;
+            width: 100%;
+            /* Full-width */
+            height: 25px;
+            /* Specified height */
+            background: #c36363;
+            /* Grey background */
+            outline: none;
+            /* Remove outline */
+            opacity: 0.7;
+            /* Set transparency (for mouse-over effects on hover) */
+            -webkit-transition: .2s;
+            /* 0.2 seconds transition on hover */
+            transition: opacity .2s;
+        }
 
-            /* Mouse-over effects */
-            .slider:hover {
-                opacity: 1;
-                /* Fully shown on mouse-over */
-            }
+        /* Mouse-over effects */
+        .slider:hover {
+            opacity: 1;
+            /* Fully shown on mouse-over */
+        }
 
-            /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-            .slider::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                /* Override default look */
-                appearance: none;
-                width: 25px;
-                /* Set a specific slider handle width */
-                height: 25px;
-                /* Slider handle height */
-                background: @color-5-light;
-                /* Green background */
-                cursor: pointer;
-                /* Cursor on hover */
-            }
+        /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            /* Override default look */
+            appearance: none;
+            width: 25px;
+            /* Set a specific slider handle width */
+            height: 25px;
+            /* Slider handle height */
+            background: @color-5-light;
+            /* Green background */
+            cursor: pointer;
+            /* Cursor on hover */
+        }
 
-            .slider::-moz-range-thumb {
-                width: 25px;
-                /* Set a specific slider handle width */
-                height: 25px;
-                /* Slider handle height */
-                background: @color-5-light;
-                /* Green background */
-                cursor: pointer;
-                /* Cursor on hover */
-            }
-
+        .slider::-moz-range-thumb {
+            width: 25px;
+            /* Set a specific slider handle width */
+            height: 25px;
+            /* Slider handle height */
+            background: @color-5-light;
+            /* Green background */
+            cursor: pointer;
+            /* Cursor on hover */
         }
 
     }
+
 
     .controles {
 

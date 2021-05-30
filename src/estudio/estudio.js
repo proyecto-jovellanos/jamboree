@@ -299,6 +299,15 @@ $(document).ready(function () {
 
     /////////////////VISUALS///////////////
 
+    //para que la letra no sea menos de 10px, no puedo controlarlo en css
+    $("*").each(function () {
+        var $this = $(this);
+        if (parseInt($this.css("font-size")) < 12) {
+            $this.css({
+                "font-size": "12px"
+            });
+        }
+    });
     /*   let stream = players[0].context.createMediaStreamSource()
     let wave = new Wave();
     console.log(stream);
