@@ -59,11 +59,11 @@ if (!isset($_COOKIE['id_User'])) {
             </div>
         </header>
         <div class="tags">
-            <div><a href="foro.php">Todas</a></div>
-            <div><a href="foro.php?tag=rock">Rock</a></div>
-            <div><a href="foro.php?tag=hip-hop">Hip-hop</a></div>
-            <div><a href="foro.php?tag=techno">Techno</a></div>
-            <div><a href="foro.php?tag=pop">Pop</a></div>
+            <div><a class="etiqueta" href="foro.php">Todas</a></div>
+            <div><a class="etiqueta" href="foro.php?tag=rock">Rock</a></div>
+            <div><a class="etiqueta" href="foro.php?tag=hip-hop">Hip-hop</a></div>
+            <div><a class="etiqueta" href="foro.php?tag=techno">Techno</a></div>
+            <div><a class="etiqueta" href="foro.php?tag=pop">Pop</a></div>
         </div>
         <div class="sidebar">
             <div class="most-visited">
@@ -76,7 +76,7 @@ if (!isset($_COOKIE['id_User'])) {
                 ?>
             </div>
         </div>
-        <section class="noticias">
+        <section class="listado">
             <?php
             include("listadoCanciones.php");
             include("db.php");
@@ -95,7 +95,7 @@ if (!isset($_COOKIE['id_User'])) {
         <div class="contactos">Nuestros nombres</div>
         <div class="lopd">ley organica proteccion datos, cookies...</div>
         <div class="year">AÑO y Copyright</div>
-    </footer>
+      </footer> 
 </body>
 
 </html>

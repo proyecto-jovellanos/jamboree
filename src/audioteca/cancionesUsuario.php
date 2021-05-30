@@ -18,11 +18,11 @@ function listar($resultado)
 
         echo
         '<button class="btn">
-            <a href="../estudio/estudio.html?id_song=' . $row['id_Cancion'] . '">Editar</a>
+            <a href="../estudio/estudio.html?id_song=' . $row['id_Cancion'] . '"><i class="fas fa-pencil-alt"></i></a>
         </button>
             <div class="cancion"> ' . $row['track'] . '</div>
-        <button class="btn play">Reproducir</button>
-        <button class="btn pause">Pausar</button>
+        <button class="btn play"><i class="fas fa-play"></i></button>
+        <button class="btn pause"><i class="fas fa-pause"></i></button>
     </article>';
     }
 }
