@@ -39,6 +39,7 @@ $(document).ready(function () {
 
     $(".onoff").click(function (ev) {
         ev.preventDefault()
+        console.log("NADA");
         if ($(this).hasClass("fa-play")) {
             $(this).removeClass("fa-play").addClass("fa-pause")
             if (Tone.context.state !== 'running') {

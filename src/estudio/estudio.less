@@ -6,6 +6,7 @@
 @sombreado: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 /* Colores en Hex */
+
 @color-1-dark: #030226;
 @color-2-medium-dark: #090740;
 @color-3-medium: #65648C;
@@ -27,11 +28,6 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-body {
-    height: 100vh;
-    width: 100vw;
-}
-
 .grow:hover {
     transform: scale(1.01);
     transition: 60ms ease;
@@ -48,9 +44,11 @@ button {
 
 //------------ESTRUCTURA---------//
 body {
+    height: 100vh;
+    width: 100vw;
     background-color: @gris-oscuro;
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     /* esto verlo, no me gusta
     esta a 20 porq es el % del header */
@@ -58,20 +56,21 @@ body {
     // grid-auto-rows: minmax(5%, auto);
 
     grid-template-areas:
-        "header header header header header header header header header"
-        "rack   rack   rack   rack   rack   rack   rack   rack   rack"
-        "rack   rack   rack   rack   rack   rack   rack   rack   rack"
-        "rack   rack   rack   rack   rack   rack   rack   rack   rack"
-        "rack   rack   rack   rack   rack   rack   rack   rack   rack"
-        "controls   controls   controls   controls   controls   controls   controls   controls   controls"
-        "controls   controls   controls   controls   controls   controls   controls   controls   controls";
+        "header     header      header"
+        "rack       rack        rack"
+        "rack       rack        rack"
+        "rack       rack        rack"
+        "rack       rack        rack"
+        "controls   controls    controls"
+        "controls   controls    controls";
+
 }
 
 //------HEADER-------
 .cabecera {
     background-color: @green;
     z-index: 9;
-    width: 100vw;
+    width: 100%;
     min-height: 52px;
     height: 10vh;
     grid-area: header;
@@ -135,15 +134,12 @@ body {
 
 .main {
     color: @color-5-light;
-    display: flex;
-    justify-content: center;
 
     .channel_rack {
         grid-area: rack;
         width: 100vw;
         height: 100%;
         display: flex;
-        row-gap: 2%;
         flex-flow: column;
         justify-content: space-evenly;
         background-color: @gris-claro;
@@ -189,7 +185,9 @@ body {
                         background-color: lighten(@green, 17%);
                     }
 
-                    &.timeline {}
+                    .timeline {
+                        background-color: lighten(@green, 40%);
+                    }
 
                     &.impar {
                         background-color: darken(@green, 33%);
@@ -197,8 +195,6 @@ body {
                         &.marked {
                             background-color: lighten(@green, 17%);
                         }
-
-                        &.timeline {}
 
                     }
 
@@ -208,88 +204,75 @@ body {
     }
 
     .slidecontainer {
+        grid-area: controls;
         width: 10%;
-        /* Width of the outside container */
+        margin: 1vh auto;
 
-        /* The slider itself */
         .slider {
             -webkit-appearance: none;
-            /* Override default CSS styles */
             appearance: none;
             width: 100%;
-            /* Full-width */
-            height: 25px;
-            /* Specified height */
-            background: #c36363;
-            /* Grey background */
+            height: 4vh;
+            background: fade(@green, 50%);
             outline: none;
-            /* Remove outline */
             opacity: 0.7;
-            /* Set transparency (for mouse-over effects on hover) */
             -webkit-transition: .2s;
-            /* 0.2 seconds transition on hover */
             transition: opacity .2s;
-        }
 
-        /* Mouse-over effects */
-        .slider:hover {
-            opacity: 1;
-            /* Fully shown on mouse-over */
-        }
+            &:hover {
+                opacity: 1;
+            }
 
-        /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-        .slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            /* Override default look */
-            appearance: none;
-            width: 25px;
-            /* Set a specific slider handle width */
-            height: 25px;
-            /* Slider handle height */
-            background: @color-5-light;
-            /* Green background */
-            cursor: pointer;
-            /* Cursor on hover */
-        }
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 4vh;
+                height: 4vh;
+                background: @color-5-light;
+                cursor: ew-resize;
 
-        .slider::-moz-range-thumb {
-            width: 25px;
-            /* Set a specific slider handle width */
-            height: 25px;
-            /* Slider handle height */
-            background: @color-5-light;
-            /* Green background */
-            cursor: pointer;
-            /* Cursor on hover */
-        }
+                &:active {
+                    background-color: lighten(@color-5-light, 15%);
+                    transition: .5s;
+                }
+            }
 
+            &::-moz-range-thumb {
+                width: 4vh;
+                height: 4vh;
+                background: @color-5-light;
+                cursor: ew-resize;
+            }
+        }
     }
 
 
     .controles {
-
-        margin-top: 5%;
+        background-color: @gris-claro;
+        grid-area: controls;
         width: 50vw;
         padding: 0.6%;
         display: flex;
         text-align: center;
-        border: 1px solid @color-5-light;
+        border: 2px solid @color-5-light;
         align-content: center;
         justify-items: center;
 
+
         .form-popup {
             display: none;
-            background-color: @color-5-light;
             position: fixed;
             bottom: 5%;
+            max-width: 350px;
+            max-height: 500px;
             right: 15px;
-            border: 3px solid #f1f1f1;
+            border: 3px solid fade(@green, 45%);
             z-index: 9;
 
             form {
-                max-width: 300px;
+                max-width: 350px;
                 padding: 5px;
-                background-color: @color-4-medium-light;
+                background-color: @gris-oscuro;
 
                 input,
                 select {
@@ -297,16 +280,16 @@ body {
                     padding: 15px;
                     margin: 5px 0 22px 0;
                     border: none;
-                    background: #f1f1f1;
+                    background: #c5c5c5;
 
                     &:focus {
-                        background-color: lighten(@color-4-medium-light, 25%);
+                        background-color: lighten(@gris-claro, 55%);
                         outline: none;
                     }
                 }
 
                 button {
-                    background-color: lighten(@color-2-medium-dark, 25%);
+                    background-color: darken(@green, 35%);
                     color: white;
                     padding: 16px 20px;
                     border: none;
@@ -323,17 +306,20 @@ body {
                 .close {
                     background-color: red;
                 }
+
+                .warning {
+                    color: red;
+                }
             }
         }
 
         button {
-            display: block;
-            color: @color-4-medium-light;
+            display: inline-block;
+            padding: 0.7px;
+            color: spin(@green, 180);
+            transition: all .5s;
         }
-
-
     }
-
 
 }
 
