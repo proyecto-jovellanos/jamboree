@@ -32,21 +32,17 @@ if (!isset($_COOKIE['id_User'])) {
         <div class="logo">
             Jamboree
         </div>
-        <div class="social">
-            <ul>
-                <li><i class="fab fa-twitter"></i></li>
-                <li><i class="fab fa-facebook"></i></li>
-                <li><i class="fab fa-instagram"></i></li>
-            </ul>
-        </div>
-
         <div class="nav">
             <a href="../perfil.html">Mi perfil</a>
             <a href="../ayuda.html">Ayuda</a>
-            <form action="../index/index.php">
-                <input type="submit" value="LOG OUT" name="logout">
-            </form>
         </div>
+        <div class="social">
+        <a><i class="fab fa-twitter"></i></a>
+        <a><i class="fab fa-facebook"></i></a>
+        <a><i class="fab fa-instagram"></i></a>
+    </div>
+
+        
 
     </header>
 

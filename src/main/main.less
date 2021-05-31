@@ -65,151 +65,162 @@ header {
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
-    align-items: center;
+
     height: 10vh;
     min-height: 52px;
     //background-color: @color-3-medium;
+    color: @green;
 
 
 
     .logo {
-        text-align: center;
+        align-self: center;
         font-size: 2em;
-        font-weight: 3px;
-        color: @green;
         font-family: @title;
 
 
-    }
-
-    .title {
-        font-size: x-large;
-
-        text-align: center;
-        color: @green;
 
 
     }
+
+    .nav {
+        align-self: center;
+
+        a {
+            display: inline-flex;
+            margin-left: 3em;
+        }
+
+    }
+
 
     .social {
-        text-align: center;
-        color: @green;
+        align-self: center;
+ 
+
+
+
+        a {
+            display: inline-flex;
+            margin-left: 2em;
+            color: @green;
+
+
+
+            &:hover {
+                font-size: 17px;
+                color: lighten(@green, 20%)
+            }
+        }
+
+    }
     }
 
-    .social a {
-        display: inline-flex;
-        margin-left: 10px;
+//-----MAIN----
+    main {
+        background-color:@gris-oscuro;
+        height: 80vh;
+        grid-area: main;
+        width: 100%;
+
+
+        display: grid;
+        grid-template-areas:
+            "Foro Estudio Audioteca"
+            ;
+
+
+    
+
+    .boton_foro {
+        grid-area: Foro;
+        height: 100%;
+        background-color: black;
+        width: 100%;
+        &:hover{
+            width: 150%;
+            overflow: visible;
+        }
 
     }
 
-    .social>a:hover {
-        font-size: 17px;
-        color: lighten(@green, 20%)
+    .boton_audioteca {
+        grid-area: Audioteca;
+        height: 100%;
+        background-color: rgb(111, 111, 134);
+        width: 100%;
+
     }
-    .nav>*{
-        display: inline-flex;
+
+    .boton_estudio {
+        grid-area: Estudio;
+        height: 100%;
+        background-color: blue;
+        width: 100%;
+
+
+    }
+
+    .boton_foro>button {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(215, 215, 223);
+    }
+
+    .boton_foro>button:hover {
+        background-color: rgb(159, 255, 74);
+        width: 101%;
+        height: 101%;
+    }
+
+    .boton_estudio>button {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(215, 215, 223);
+    }
+
+    .boton_estudio>button:hover {
+        background-color: rgb(159, 255, 74);
+        width: 101%;
+        height: 101%;
+    }
+
+    .boton_audioteca>button {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(215, 215, 223);
+    }
+
+    .boton_audioteca>button:hover {
+        background-color: rgb(159, 255, 74);
+        width: 101%;
+        height: 101%;
     }
 }
 
 
-main {
-    background-color: rgb(221, 221, 221);
-    height: 850px;
-    grid-area: main;
-    width: 100%;
 
 
-    display: grid;
-    grid-template-areas:
-        "Foro Estudio"
-        "Foro Audioteca";
-
-
-}
-
-.boton_foro {
-    grid-area: Foro;
-    height: 100%;
-    background-color: black;
-    width: 100%;
-
-
-}
-
-.boton_audioteca {
-    grid-area: Audioteca;
-    height: 100%;
-    background-color: rgb(111, 111, 134);
-    width: 100%;
-
-}
-
-.boton_estudio {
-    grid-area: Estudio;
-    height: 100%;
-    background-color: blue;
-    width: 100%;
-
-
-}
-
-.boton_foro>button {
-    width: 100%;
-    height: 100%;
-    background-color: rgb(215, 215, 223);
-}
-
-.boton_foro>button:hover {
-    background-color: rgb(159, 255, 74);
-    width: 101%;
-    height: 101%;
-}
-
-.boton_estudio>button {
-    width: 100%;
-    height: 100%;
-    background-color: rgb(215, 215, 223);
-}
-
-.boton_estudio>button:hover {
-    background-color: rgb(159, 255, 74);
-    width: 101%;
-    height: 101%;
-}
-
-.boton_audioteca>button {
-    width: 100%;
-    height: 100%;
-    background-color: rgb(215, 215, 223);
-}
-
-.boton_audioteca>button:hover {
-    background-color: rgb(159, 255, 74);
-    width: 101%;
-    height: 101%;
-}
-
-
-
-
-
+/*----FOOTER------*/
 footer {
-
     grid-area: footer;
-    position: absolute;
+    position: relative;
     bottom: 0;
+    height: 10vh;
+
+
 }
 
 footer {
-    background-color: darkblue;
-    height: 60px;
+    background-color: @gris-oscuro;
     width: 100%;
     display: flex;
+
 }
 
 footer>div {
-    text-align: center;
     margin-right: auto;
     margin-left: auto;
 
 }
+
