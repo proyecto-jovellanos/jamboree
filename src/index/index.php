@@ -25,14 +25,12 @@ elseif (isset($_POST['register'])) {
   <title>Bienvenid@ a Jamboree</title>
   <!-- LESS -->
   <link rel="stylesheet/less" href="index.less">
-    <script src="../less.min.js" type="text/javascript"></script>
+  <script src="../less.min.js" type="text/javascript"></script>
   <!--FONT AWESOME-->
   <script src="https://kit.fontawesome.com/e36b117475.js" crossorigin="anonymous"></script>
-    
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
-        integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" 
-        crossorigin="anonymous">
-  </script> 
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous">
+  </script>
   <script src="carousel.js"></script>
 
 </head>
@@ -50,40 +48,42 @@ elseif (isset($_POST['register'])) {
     </div>
 
     <div class="social">
-     
-        <a><i class="fab fa-twitter"></i></a>
-        <a><i class="fab fa-facebook"></i></a>
-        <a><i class="fab fa-instagram"></i></a>
-      
+
+      <a><i class="fab fa-twitter"></i></a>
+      <a><i class="fab fa-facebook"></i></a>
+      <a><i class="fab fa-instagram"></i></a>
+
     </div>
 
   </header>
 
   <!--MAIN-->
   <main>
-  <div class="text">The fastest way from your brain to your speakers</div>
+    <div class="text">The fastest way from your brain to your speakers</div>
     <div class="maindiv">
       <div class="video">
+
         <video  muted loop autoplay>
+
           <source src="1.mp4" type="video/mp4">
         </video>
         <div class="div-textvideo">
-        <div class="textvideo">
-          <h1>MUSIC</h1>
-          <p>Hola buenas video </p>
-        </div>
-        <div class="textvideo">
-          <h1>MUSIC</h1>
-          <p>Hola buenas video </p>
-        </div>
-        <div class="textvideo">
-          <h1>MUSIC</h1>
-          <p>Hola buenas video </p>
-        </div>
-        <div class="textvideo">
-          <h1>MUSIC</h1>
-          <p>Hola buenas video </p>
-        </div>
+          <div class="textvideo">
+            <h1>MUSIC</h1>
+            <p>Hola buenas video </p>
+          </div>
+          <div class="textvideo">
+            <h1>MUSIC</h1>
+            <p>Hola buenas video </p>
+          </div>
+          <div class="textvideo">
+            <h1>MUSIC</h1>
+            <p>Hola buenas video </p>
+          </div>
+          <div class="textvideo">
+            <h1>MUSIC</h1>
+            <p>Hola buenas video </p>
+          </div>
         </div>
       </div>
       <div class="card-carousel">
@@ -95,36 +95,36 @@ elseif (isset($_POST['register'])) {
       </div>
     </div>
     <div class="log">
-        <input type="checkbox" name="" id="show">
-        <input type="checkbox" name="" id="reg">
-        <label for="show" class="open-btn">Entrar</label>
+      <input type="checkbox" name="" id="show">
+      <input type="checkbox" name="" id="reg">
+      <label for="show" class="open-btn">Entrar</label>
 
-         <div class="Loginform">
-          <label for="show" class="close-btn fas fa-times"></label>Login Form</br>
-          </br>
-          <form action="validar.php" method="post">
+      <div class="Loginform">
+        <label for="show" class="close-btn fas fa-times"></label>Login Form</br>
+        </br>
+        <form action="validar.php" method="post">
 
-            <div class="data">
-              <p>Username</p>
-              <input type="text" name="username" id="">
-            </div>
-            <div class="data">
-              <p><br>Password</p>
-              <input type="password" name="password" id="">
-            </div>
-         
+          <div class="data">
+            <p>Username</p>
+            <input type="text" name="username" id="">
+          </div>
+          <div class="data">
+            <p><br>Password</p>
+            <input type="password" name="password" id="">
+          </div>
+
           <div class="btn">
             <button type="submit" name='log'><i class="fas fa-play"></i></button>
           </div>
 
           <div class="LinkRegister"><br><a href="register.php">No estas registrado?Registrate</a></div>
         </form>
-        </div>
-      <!-- HACER popup para formulario de inicio o registro -->
-    
       </div>
-      
-    
+      <!-- HACER popup para formulario de inicio o registro -->
+
+    </div>
+
+
   </main>
   <!--FOOTER-->
   <footer>

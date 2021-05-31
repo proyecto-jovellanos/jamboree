@@ -9,10 +9,11 @@ if ($_POST['option'] == "guardar") {
     $id_User = $_POST['id_User'];
     $song_name = $_POST['song_name'];
     $tag = $_POST['tag'];
+    $bpm = $_POST['bpm'];
     print $id_User;
     //var_dump($content);
-    $consulta = "INSERT INTO canciones(id_Cancion,track,etiquetas,username,nombre,publica,escuchas) 
-    VALUES (null,'$content','$tag','$id_User','$song_name','0',null)";
+    $consulta = "INSERT INTO canciones(id_Cancion,track,etiquetas,username,nombre,publica,escuchas,bpm) 
+    VALUES (null,'$content','$tag','$id_User','$song_name','0',null,'$bpm')";
     mysqli_query($conexion, $consulta);
     $conexion->close();
 }
@@ -102,5 +103,16 @@ elseif ($_POST['option'] == "get") {
     }
     /*  $resultado = json_encode($resultado);
     echo $resultado; */
+    $conexion->close();
+
+    //para dar los BPM y precargarlos:
+} elseif ($_POST['option'] == "getBPM") {
+    $id_song = $_POST['id_song'];
+    $consulta = "SELECT * FROM canciones where  Id_Cancion='$id_song'";
+    $resultado = mysqli_query($conexion, $consulta);
+
+    while ($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
+        echo $row['bpm'];
+    }
     $conexion->close();
 }
