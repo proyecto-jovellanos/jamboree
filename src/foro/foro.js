@@ -24,7 +24,9 @@ $(document).ready(function () {
             .then(response => response.text())
             .then(data => console.log(data));
         track = $(this).prev().html()
-        cargaTrack(track)
+        let bpm = $(this).prev().prev().prev().html()
+        console.log(bpm);
+        cargaTrack(track, bpm)
         play()
     })
 
@@ -33,24 +35,24 @@ $(document).ready(function () {
     })
 
     //al pulsar cualquiera de las etiquetas se borra el contenido del section y se rellena con las canciones con la etiqueta elegida
-   /*  $(".tags>div").click(function (ev) {
-       FUNCA AL MOSTRAR ESAS CANCIONES, PERO AL NO RECARGAR HTML NO FUNCIONA EL PLAY NI LOS HIDE NI NA
-        ev.preventDefault()
-        $(".noticias").html("data")
-        let etiqueta = $(this).attr("class")
+    /*  $(".tags>div").click(function (ev) {
+        FUNCA AL MOSTRAR ESAS CANCIONES, PERO AL NO RECARGAR HTML NO FUNCIONA EL PLAY NI LOS HIDE NI NA
+         ev.preventDefault()
+         $(".noticias").html("data")
+         let etiqueta = $(this).attr("class")
 
-        var params = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-            },
-            //option=borrar para controlar la operacion en php
-            body: "option=filtrarTag&etiqueta=" + etiqueta
-        }
-        fetch("../server.php", params)
-            .then(response => response.text())
-            .then(function (data) {
-                $(".noticias").html(data)
-            });
-    }) */
+         var params = {
+             method: 'POST',
+             headers: {
+                 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+             },
+             //option=borrar para controlar la operacion en php
+             body: "option=filtrarTag&etiqueta=" + etiqueta
+         }
+         fetch("../server.php", params)
+             .then(response => response.text())
+             .then(function (data) {
+                 $(".noticias").html(data)
+             });
+     }) */
 })

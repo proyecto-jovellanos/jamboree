@@ -92,7 +92,9 @@ $(document).ready(function () {
             $(".warning").text("Introduce un nombre!")
         } else {
             let tracksJSON = JSON.stringify(tracks)
-            let tag = $("select").children("option:selected").val();
+            let tag = $("select").children("option:selected").val()
+            let bpm = $("#tempo").val()
+            console.log(bpm);
             var params = {
                 method: 'POST',
                 headers: {
@@ -100,7 +102,7 @@ $(document).ready(function () {
                 },
                 //option=guardar para controlar la operacion en php
                 body: "option=guardar&id_User=" + user + "&track=" + tracksJSON +
-                    "&song_name=" + song_name + "&tag=" + tag
+                    "&song_name=" + song_name + "&tag=" + tag + "&bpm=" + bpm
             }
             fetch("../server.php", params)
 
@@ -206,6 +208,7 @@ $(document).ready(function () {
         console.log(id_song);
         //get json track from db
         getTrack()
+        getBPM()
     } else console.log("No precargar");
 
     function getTrack() {
@@ -229,7 +232,27 @@ $(document).ready(function () {
                 leerTrackJSON()
             })
     }
-    //////////////////////////
+
+    function getBPM() {
+        var params = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            },
+            //option=get para controlar la operacion en php
+            body: "option=getBPM&id_song=" + id_song
+        }
+        fetch("../server.php", params)
+            .then(function (respuesta) {
+                return respuesta.text()
+            }).then(function (datos) {
+                // console.log(datos);
+                $('#tempo').attr("value", datos)
+                Tone.Transport.bpm.value = datos
+            })
+    }
+
+    ////////////// AUDIO ////////////
 
     //console.log(Tone.context.lookAhead); //=0.1
 

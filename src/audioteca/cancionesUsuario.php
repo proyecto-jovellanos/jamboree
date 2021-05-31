@@ -20,6 +20,7 @@ function listar($resultado)
         '<button class="btn">
             <a href="../estudio/estudio.html?id_song=' . $row['id_Cancion'] . '"><i class="fas fa-pencil-alt"></i></a>
         </button>
+            <div class="bpm"> ' . $row['bpm'] . '</div>
             <div class="cancion"> ' . $row['track'] . '</div>
         <button class="btn play"><i class="fas fa-play"></i></button>
         <button class="btn pause"><i class="fas fa-pause"></i></button>
