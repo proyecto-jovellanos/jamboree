@@ -31,7 +31,7 @@ $(document).ready(function () {
         //"etiquetas": etiquetas
     };
 
-    $("#tempo").on('input', function (ev) {
+    $("#tempo").on('change', function (ev) {
         ev.preventDefault()
         let tiempo = this.value;
         console.log(tiempo);

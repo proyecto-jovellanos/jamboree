@@ -3,6 +3,7 @@ $(document).ready(function () {
     var track;
     $(".cancion").hide()
     $(".id_song").hide()
+    $(".bpm").hide()
 
     $.getScript("../functions.js", function () {
         console.log("script cargado");
