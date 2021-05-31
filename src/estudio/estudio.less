@@ -1,0 +1,352 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@title: Cormorant, serif;
+@text: Nunito, sans-serif;
+@sombreado: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+/* Colores en Hex */
+
+@color-1-dark: #030226;
+@color-2-medium-dark: #090740;
+@color-3-medium: #65648C;
+@color-5-light: #D9BFA9;
+@color-4-medium-light: #8C5D5D;
+
+@green: #66CDAA;
+@morado: #43038c;
+@gris-oscuro: #414141;
+@gris-claro: #525252;
+
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* ocultar barras de scroll */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.grow:hover {
+    transform: scale(1.01);
+    transition: 60ms ease;
+    overflow: hidden;
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+    border: 0px;
+    font-size: 1em;
+    background-color: transparent;
+}
+
+//------------ESTRUCTURA---------//
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: @gris-oscuro;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    /* esto verlo, no me gusta
+    esta a 20 porq es el % del header */
+
+    // grid-auto-rows: minmax(5%, auto);
+
+    grid-template-areas:
+        "header     header      header"
+        "rack       rack        rack"
+        "rack       rack        rack"
+        "rack       rack        rack"
+        "rack       rack        rack"
+        "controls   controls    controls"
+        "controls   controls    controls";
+
+}
+
+//------HEADER-------
+.cabecera {
+    background-color: @green;
+    z-index: 9;
+    width: 100%;
+    min-height: 52px;
+    height: 10vh;
+    grid-area: header;
+    display: flex;
+    flex-flow: row nowrap;
+    /* position: fixed;
+    top: 0px; */
+
+    .logo {
+        align-self: center;
+        font-size: 2em;
+        flex-basis: 50%;
+
+        /* ver esto, no me gusta */
+        text-size-adjust: 100%;
+
+        color: @morado;
+        font-family: @title;
+    }
+
+
+    .foro,
+    .audioteca,
+    .volver,
+    .ayuda {
+        align-self: center;
+        justify-content: center;
+
+        i {
+            color: @color-5-light;
+        }
+
+    }
+
+    .foro,
+    .audioteca {
+        a {
+            height: 10vh;
+            line-height: 10vh;
+            background-color: @green;
+            border: none;
+            color: @color-5-light;
+            padding: 0px 32px;
+            text-align: center;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            text-decoration: none;
+            font-size: 1.4em;
+            cursor: pointer;
+            display: inline-block;
+
+            &:hover,
+            &:active {
+                background-color: @color-3-medium;
+            }
+        }
+    }
+}
+
+//-------MAIN-------
+
+.main {
+    color: @color-5-light;
+
+    .channel_rack {
+        grid-area: rack;
+        width: 100vw;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-evenly;
+        background-color: @gris-claro;
+
+        .track {
+            flex-basis: 10vh;
+            background-color: @gris-oscuro;
+            width: 95vw;
+            border: 1px solid @morado;
+            display: grid;
+            align-items: center;
+            grid-template-columns: 10% 90%;
+            max-height: 12vh;
+
+            .controls {
+                display: flex;
+                justify-content: space-between;
+                margin: 3%;
+
+                .fas {
+                    display: block;
+                }
+
+                .track_name {
+                    font-weight: bolder;
+                    font-size: 1em;
+                }
+            }
+
+
+            .beats {
+                //controlar en media q no sobresalga del track background
+                display: grid;
+                grid-template-columns: repeat(32, 1fr);
+                column-gap: 0.3vw;
+
+                .beat {
+                    width: 75/32vw;
+                    height: 8vh;
+                    background-color: darken(@green, 27%);
+                    &.timeline {
+                        background-color: lighten(@green, 40%);
+                    }
+
+                    &.marked {
+                        background-color: lighten(@green, 17%);
+                    }
+
+
+                    &.impar {
+                        background-color: darken(@green, 33%);
+
+                        &.marked {
+                            background-color: lighten(@green, 17%);
+                        }
+
+                    }
+
+                }
+            }
+        }
+    }
+
+    .slidecontainer {
+        grid-area: controls;
+        width: 10%;
+        margin: 1vh auto;
+
+        .slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 4vh;
+            background: fade(@green, 50%);
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 4vh;
+                height: 4vh;
+                background: @color-5-light;
+                cursor: ew-resize;
+
+                &:active {
+                    background-color: lighten(@color-5-light, 15%);
+                    transition: .5s;
+                }
+            }
+
+            &::-moz-range-thumb {
+                width: 4vh;
+                height: 4vh;
+                background: @color-5-light;
+                cursor: ew-resize;
+            }
+        }
+    }
+
+
+    .controles {
+        background-color: @gris-claro;
+        grid-area: controls;
+        width: 50vw;
+        padding: 0.6%;
+        display: flex;
+        text-align: center;
+        border: 2px solid @color-5-light;
+        align-content: center;
+        justify-items: center;
+
+
+        .form-popup {
+            display: none;
+            position: fixed;
+            bottom: 5%;
+            max-width: 350px;
+            max-height: 500px;
+            right: 15px;
+            border: 3px solid fade(@green, 45%);
+            z-index: 9;
+
+            form {
+                max-width: 350px;
+                padding: 5px;
+                background-color: @gris-oscuro;
+
+                input,
+                select {
+                    width: 100%;
+                    padding: 15px;
+                    margin: 5px 0 22px 0;
+                    border: none;
+                    background: #c5c5c5;
+
+                    &:focus {
+                        background-color: lighten(@gris-claro, 55%);
+                        outline: none;
+                    }
+                }
+
+                button {
+                    background-color: darken(@green, 35%);
+                    color: white;
+                    padding: 16px 20px;
+                    border: none;
+                    cursor: pointer;
+                    width: 100%;
+                    margin-bottom: 10px;
+                    opacity: 0.8;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+
+                .close {
+                    background-color: red;
+                }
+
+                .warning {
+                    color: red;
+                }
+            }
+        }
+
+        button {
+            display: inline-block;
+            padding: 0.7px;
+            color: spin(@green, 180);
+            transition: all .5s;
+        }
+    }
+
+}
+
+//-----ANIMATIONS------
+
+//-----MEDIA-------
+
+@media all and (max-width:400px) {
+    .noticias {
+        margin: 2% 5%;
+    }
+
+    .main {
+        display: grid;
+        grid-auto-rows: minmax(50px, auto);
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main";
+    }
+
+    .sidebar {
+        flex-flow: row nowrap;
+    }
+
+    .contacto {
+        height: 100%;
+        flex-flow: column nowrap;
+    }
+}

@@ -1,3 +1,12 @@
+<?php
+if (!isset($_COOKIE['id_User'])) {
+    echo '<script type="text/javascript">
+    alert("Tu sesión expiró, vuelve a iniciar sesión.");
+    window.location.href="../index/index.php";
+    </script>';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,17 +21,22 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
+    <!-- link para Tone.js -->
+    <script src="https://tonejs.github.io/build/Tone.js"></script>
+
+    <!-- Script propio -->
+    <script src="audioteca.js"></script>
+
     <script>
-        $(document).ready(function () {
-            $(".far").on("click", function (ev) {
+        $(document).ready(function() {
+            $(".far").on("click", function(ev) {
                 ev.preventDefault()
                 $(this).toggleClass("fas")
             })
-
         })
     </script>
     <link rel="stylesheet/less" href="audioteca.less">
-    <script src="less.min.js" type="text/javascript"></script>
+    <script src="../less.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -33,7 +47,9 @@
             <div class="rght">]</div>
         </div>
         <div class="nav">
-            <a href="../main/main.html">Inicio</a>
+            <a href="../main/main.php">Inicio</a>
+            <a href="../foro/foro.php">Foro</a>
+            <a href="../estudio/estudio.html">Estudio</a>
             <a href="../ayuda.html">Ayuda</a>
             <a href="../perfil.html">Mi perfil</a>
         </div>
@@ -45,57 +61,12 @@
     </header>
     <div class="main">
         <div class="lista_audioteca">
-        <?php
+            <?php
             include("cancionesUsuario.php");
             include("db.php");
-              $leer = mysqli_query($conexion, 'select Id_User from canciones where c="' . $password . '"');
-             listar($leer); 
+            $leer = mysqli_query($conexion, 'select * from canciones where username="' . $_COOKIE['id_User'] . '"');
+            listar($leer);
             ?>
-            <article class="tema grow">
-                <header class="header-tema">
-                    Tema 1
-                </header>
-                <button class="icono"><i class="far fa-trash-alt"></i></button>
-                <button class="btn"><a href="../estudio/estudio.html">Editar</a></button>
-                <button class="btn">Reproducir</button>
-                <button class="btn">Subir a Foro</button>
-            </article>
-            <article class="tema grow">
-                <header class="header-tema">
-                    Tema 2
-                </header>
-                <button class="icono"><i class="far fa-trash-alt"></i></button>
-                <button class="btn"> <a href="../estudio/estudio.html">Editar</a></button>
-                <button class="btn">Reproducir</button>
-                <button class="btn">Subir a Foro</button>
-            </article>
-            <article class="tema grow">
-                <header class="header-tema">
-                    Tema 3
-                </header>
-                <button class="icono"><i class="far fa-trash-alt"></i></button>
-                <button class="btn"> <a href="../estudio/estudio.html">Editar</a></button>
-                <button class="btn">Reproducir</button>
-                <button class="btn">Subir a Foro</button>
-            </article>
-            <article class="tema grow">
-                <header class="header-tema">
-                    Tema 4
-                </header>
-                <button class="icono"><i class="far fa-trash-alt"></i></button>
-                <button class="btn"> <a href="../estudio/estudio.html">Editar</a></button>
-                <button class="btn">Reproducir</button>
-                <button class="btn">Subir a Foro</button>
-            </article>
-            <article class="tema grow">
-                <header class="header-tema">
-                    Tema 5
-                </header>
-                <button class="icono"><i class="far fa-trash-alt"></i></button>
-                <button class="btn"> <a href="../estudio/estudio.html">Editar</a></button>
-                <button class="btn">Reproducir</button>
-                <button class="btn">Subir a Foro</button>
-            </article>
         </div>
     </div>
 
