@@ -12,8 +12,11 @@
 @color-4-medium-light: #8C5D5D;
 
 
-
-
+/* Colores en Hex */
+@green: #66CDAA;
+@morado: #43038c;
+@gris-oscuro: #414141;
+@gris-claro: #525252;
 
 * {
     box-sizing: border-box;
@@ -27,14 +30,23 @@ body::-webkit-scrollbar {
 }
 
 body {
-    height: 100%;
+    height: 100vh;
 
 }
 
+.grow:hover {
+    transform: scale(1.01);
+    transition: 60ms ease;
+    overflow: hidden;
+}
+
+//------------ESTRUCTURA---------//
 body {
     display: grid;
+    height: 100vh;
+    width: 100vw;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(auto, auto);
+    //grid-auto-rows: minmax(auto, auto);
     grid-template-areas:
         "header header"
         "main main"
@@ -42,104 +54,139 @@ body {
     ;
 }
 
-header{
+
+/*----HEADER------*/
+header {
     grid-area: header;
-    background-color: rgb(75, 123, 131);
-     width: 100%;
-    height: 60px;
-    overflow: hidden;
-
-
-}
-
-header div{
-    margin-top:20px ;
-}
-header .social ul li:hover{
-    font-size: 20px;
-
-}
-.logo{
-    float: left;
-    margin-left: 50px;
-    font-size: 20px;
-    color: beige;
-}
-.social{
-      float: right;
-}
-ul{
+    background-color: @gris-oscuro;
+    border: 1px solid @gris-claro;
+    border-width: 2px;
+    z-index: 9;
+    width: 100%;
     display: flex;
-}
-li{
-    list-style: none;
-    margin-right: 20px;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: 10vh;
+    min-height: 52px;
+    //background-color: @color-3-medium;
+
+
+
+    .logo {
+        text-align: center;
+        font-size: 2em;
+        font-weight: 3px;
+        color: @green;
+        font-family: @title;
+
+
+    }
+
+    .title {
+        font-size: x-large;
+
+        text-align: center;
+        color: @green;
+
+
+    }
+
+    .social {
+        text-align: center;
+        color: @green;
+    }
+
+    .social a {
+        display: inline-flex;
+        margin-left: 10px;
+
+    }
+
+    .social>a:hover {
+        font-size: 17px;
+        color: lighten(@green, 20%)
+    }
+    .nav>*{
+        display: inline-flex;
+    }
 }
 
 
-main{
- background-color: rgb(221, 221, 221);
+main {
+    background-color: rgb(221, 221, 221);
     height: 850px;
     grid-area: main;
     width: 100%;
-    
-  
-display: grid;
-grid-template-areas: 
-"Foro Estudio"
-"Foro Audioteca";
+
+
+    display: grid;
+    grid-template-areas:
+        "Foro Estudio"
+        "Foro Audioteca";
 
 
 }
-.boton_foro{grid-area: Foro;
+
+.boton_foro {
+    grid-area: Foro;
     height: 100%;
     background-color: black;
     width: 100%;
-    
-    
+
+
 }
-.boton_audioteca{grid-area: Audioteca;
+
+.boton_audioteca {
+    grid-area: Audioteca;
     height: 100%;
     background-color: rgb(111, 111, 134);
     width: 100%;
 
 }
-.boton_estudio{grid-area: Estudio;
+
+.boton_estudio {
+    grid-area: Estudio;
     height: 100%;
     background-color: blue;
     width: 100%;
 
 
 }
-.boton_foro > button{
+
+.boton_foro>button {
     width: 100%;
     height: 100%;
     background-color: rgb(215, 215, 223);
 }
-.boton_foro > button:hover{
-     background-color: rgb(159, 255, 74);
-     width: 101%;
-     height: 101%;
+
+.boton_foro>button:hover {
+    background-color: rgb(159, 255, 74);
+    width: 101%;
+    height: 101%;
 }
-.boton_estudio > button{
+
+.boton_estudio>button {
     width: 100%;
     height: 100%;
     background-color: rgb(215, 215, 223);
 }
-.boton_estudio > button:hover{
-     background-color: rgb(159, 255, 74);
-     width: 101%;
-     height: 101%;
+
+.boton_estudio>button:hover {
+    background-color: rgb(159, 255, 74);
+    width: 101%;
+    height: 101%;
 }
-.boton_audioteca > button{
+
+.boton_audioteca>button {
     width: 100%;
     height: 100%;
     background-color: rgb(215, 215, 223);
 }
-.boton_audioteca > button:hover{
-     background-color: rgb(159, 255, 74);
-     width: 101%;
-     height: 101%;
+
+.boton_audioteca>button:hover {
+    background-color: rgb(159, 255, 74);
+    width: 101%;
+    height: 101%;
 }
 
 
@@ -147,7 +194,7 @@ grid-template-areas:
 
 
 footer {
-   
+
     grid-area: footer;
     position: absolute;
     bottom: 0;
