@@ -11,14 +11,12 @@
 @color-5-light: #D9BFA9;
 @color-4-medium-light: #8C5D5D;
 
-*{padding: 0;margin: 0;}
+/* Colores en Hex */
+@green: #66CDAA;
+@morado: #43038c;
+@gris-oscuro: #414141;
+@gris-claro: #525252;
 
-
-body{
-    background-color: @color-2-medium-dark;
-    height: 458px;
-    
-}
 * {
     box-sizing: border-box;
     margin: 0 auto;
@@ -31,151 +29,164 @@ body::-webkit-scrollbar {
 }
 
 body {
-    height: 100%;
+    height: 100vh;
 
 }
 
+.grow:hover {
+    transform: scale(1.01);
+    transition: 60ms ease;
+    overflow: hidden;
+}
+
+//------------ESTRUCTURA---------//
 body {
     display: grid;
+    height: 100vh;
+    width: 100vw;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(120px, auto);
+    //grid-auto-rows: minmax(auto, auto);
     grid-template-areas:
         "header header"
         "main main"
         "footer footer"
     ;
 }
+
 /*----HEADER------*/
 header {
     grid-area: header;
-}
-
-header {
-    background-color:@color-1-dark;
-    width: 100%;
-    height: 80px;
-    display: inline-flex;
-    justify-content: space-around;
-    overflow: hidden;
-    min-height: 52px;
-
-}
-
-.logo {
-    width: 33%;
-    float: left;
-    margin-left: 0%;
-    text-align: center;
-    padding-top: 20px;
-    
-    
-
-}
-
-.title {
-    width: 30%;
-    text-align: center;
-    padding-top: 20px;
-    margin-right: 20%;
-    
-}
-
-.social {
-    width: 10%;
-    float: right;
-    position: relative;
-    top: 20px;
-   
-    
-
-
-}
-
-.social ul {
-    display: inline-flex;
-    list-style: none;
-
-}
-
-.social>ul li {
-    margin-left: 10px;
-
-}
-
-.social>ul li:hover {
-    font-size: 17px;
-
-}
-
-
-
-
-
-main{
-    grid-area: main;
-    width: 45%;
-}
-form{
-    margin-top: 10%;
-   width: 50%;
-    background:@color-3-medium;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-    border-radius: 5px;
-box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
-
-
-    
-    
-}
-.sectionRegister{
-    margin-top: 20px;
-    text-align: center;
-}
-.sectionRegister p{
-    font-size: 14px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-
-
-}
-.sectionRegister input{
-    height: 20px;
-    width: 90%;
-}
-.dataRegister > input{
-    text-align: center;
-    margin-top: 25px;
-    margin-left: 45%;
-    
-    
-    
-}
-.dataRegister > a{  
-    text-align: center;
-    font-size: 12px;
-}
-
-
-
-footer {
-   
-    grid-area: footer;
-    position: absolute;
-    bottom: 0;
-}
-
-footer {
-    background-color: @color-1-dark;
-    height: 60px;
+    background-color: @gris-oscuro;
+    background-color: @gris-oscuro;
+    border: 1px solid @gris-claro;
+    border-width: 2px;
+    z-index: 9;
     width: 100%;
     display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: 10vh;
+    min-height: 52px;
+
+
+
+    .logo {
+        text-align: center;
+        font-size: 2em;
+        font-weight: 3px;
+        color: @green;
+        font-family: @title;
+
+
+
+
+    }
+
+    .title {
+        font-size: x-large;
+
+        text-align: center;
+        color: @green;
+
+
+    }
+
+    .social {
+        text-align: center;
+        color: @green;
+    }
+
+    .social a {
+        display: inline-flex;
+        margin-left: 10px;
+
+    }
+
+    .social>a:hover {
+        font-size: 17px;
+        color: lighten(@green, 20%)
+    }
+}
+
+
+
+
+
+
+main {
+    grid-area: main;
+    width: 100%;
+    height: 80vh;
+    background-color: @gris-claro;
+    border: 1px solid @gris-oscuro;
+    border-width: 2px;
+
+    form {
+        margin-top: 5%;
+        width: 50%;
+        background: @color-3-medium;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1%;
+        border-radius: 5px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+        height: 60%;
+
+
+
+
+
+        .sectionRegister {
+            margin-top: 4%;
+            text-align: center;
+
+            .sectionRegister p {
+                font-size: 10px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+
+            }
+
+            .sectionRegister input {
+                height: 2%;
+                width: 100%;
+            }
+        }
+
+        .dataRegister>input {
+            margin-top: 2%;
+            margin-left: 45%;
+
+
+
+        }
+
+        .dataRegister>a {
+            text-align: center;
+            font-size: 12px;
+        }
+    }
+}
+
+/*----FOOTER------*/
+footer {
+    grid-area: footer;
+    position: relative;
+    bottom: 0;
+    height: 10vh;
+
+
+}
+
+footer {
+    background-color: @gris-oscuro;
+    width: 100%;
+    display: flex;
+
 }
 
 footer>div {
-    text-align: center;
     margin-right: auto;
     margin-left: auto;
 
 }
-

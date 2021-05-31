@@ -64,7 +64,7 @@ elseif (isset($_POST['register'])) {
   <div class="text">The fastest way from your brain to your speakers</div>
     <div class="maindiv">
       <div class="video">
-        <video  width="500" height="395" muted loop autoplay>
+        <video  muted loop autoplay>
           <source src="1.mp4" type="video/mp4">
         </video>
         <div class="div-textvideo">
