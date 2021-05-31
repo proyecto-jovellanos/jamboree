@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    //regex para rescatar el valor de la cookie id_User
     let user = document.cookie.replace(/(?:(?:^|.*;\s*)id_User\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 
     if (user == "") {
@@ -39,7 +40,6 @@ $(document).ready(function () {
 
     $(".onoff").click(function (ev) {
         ev.preventDefault()
-        console.log("NADA");
         if ($(this).hasClass("fa-play")) {
             $(this).removeClass("fa-play").addClass("fa-pause")
             if (Tone.context.state !== 'running') {
@@ -91,25 +91,25 @@ $(document).ready(function () {
         if (song_name == "") {
             $(".warning").text("Introduce un nombre!")
         } else {
+            let tracksJSON = JSON.stringify(tracks)
+            let tag = $("select").children("option:selected").val();
+            var params = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                },
+                //option=guardar para controlar la operacion en php
+                body: "option=guardar&id_User=" + user + "&track=" + tracksJSON +
+                    "&song_name=" + song_name + "&tag=" + tag
+            }
+            fetch("../server.php", params)
+
             $(".warning").text("Canción guardada en tu audioteca!")
             setTimeout(() => {
                 $(".form-popup").hide()
             }, 2000);
         }
-        //regex para rescatar el valor de la cookie id_User
 
-        let tracksJSON = JSON.stringify(tracks)
-        let tag = $("select").children("option:selected").val();
-        var params = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-            },
-            //option=guardar para controlar la operacion en php
-            body: "option=guardar&id_User=" + user + "&track=" + tracksJSON +
-                "&song_name=" + song_name + "&tag=" + tag
-        }
-        fetch("../server.php", params)
     })
 
     $(".fa-eraser").click(function (ev) {
@@ -179,19 +179,19 @@ $(document).ready(function () {
     function leerMarked() {
         for (let i = 0; i < 4; i++) {
             for (let j = 1; j < 33; j++) {
-                $(`.${tracks[i][1]}>.beat.${j}`).hasClass("marked") ?
+                $(`.${tracks[i][1]} .beats .beat.${j}`).hasClass("marked") ?
                     tracks[i][0][j - 1] = 1 :
                     tracks[i][0][j - 1] = 0
             }
         }
-        //  console.log(tracks);
+        console.log(tracks);
     }
 
     function leerTrackJSON() {
         for (let i = 0; i < 4; i++) {
             for (let j = 1; j < 33; j++) {
                 if (tracks[i][0][j - 1] == 1) {
-                    $(`.${tracks[i][1]}>.beat.${j}`).addClass("marked")
+                    $(`.${tracks[i][1]} .beats .beat.${j}`).addClass("marked")
                 } else {
                     console.log(tracks[i][0][j - 1]);
                     // console.log("0");
@@ -277,8 +277,8 @@ $(document).ready(function () {
         Tone.Draw.schedule(function () {
             for (let i = 0; i < 4; i++) {
                 if (index % 4 == 0) {
-                    $(`.${tracks[i][1]}>.beat.${index+1}`).toggleClass("timeline")
-                    $(`.${tracks[i][1]}>.beat.${index-3}`).toggleClass("timeline")
+                    $(`.${tracks[i][1]} .beats .beat.${index+1}`).toggleClass("timeline")
+                    $(`.${tracks[i][1]} .beats .beat.${index-3}`).toggleClass("timeline")
                 }
                 //  console.log(index);
                 let player = players[i]
@@ -301,14 +301,14 @@ $(document).ready(function () {
     /////////////////VISUALS///////////////
 
     //para que la letra no sea menos de 10px, no puedo controlarlo en css
-    $("*").each(function () {
+    /* $("*").each(function () {
         var $this = $(this);
         if (parseInt($this.css("font-size")) < 12) {
             $this.css({
                 "font-size": "12px"
             });
         }
-    });
+    }); */
     /*   let stream = players[0].context.createMediaStreamSource()
     let wave = new Wave();
     console.log(stream);
