@@ -93,7 +93,8 @@ elseif (isset($_POST['register'])) {
         <div class="my-card"></div>
         <div class="my-card"></div>
       </div>
-      <div class="log">
+    </div>
+    <div class="log">
         <input type="checkbox" name="" id="show">
         <input type="checkbox" name="" id="reg">
         <label for="show" class="open-btn">Entrar</label>
@@ -122,7 +123,6 @@ elseif (isset($_POST['register'])) {
       <!-- HACER popup para formulario de inicio o registro -->
     
       </div>
-    </div>
       
     
   </main>
