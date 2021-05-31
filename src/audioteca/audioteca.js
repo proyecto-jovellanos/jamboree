@@ -2,6 +2,7 @@ $(document).ready(function () {
     console.clear();
     var track;
     $(".cancion").hide()
+    $(".bpm").hide()
 
     $.getScript("../functions.js", function () {
         console.log("script cargado");
@@ -10,7 +11,9 @@ $(document).ready(function () {
 
     $(".play").click(function (ev) {
         track = $(this).prev().html()
-        cargaTrack(track)
+        let bpm = $(this).prev().prev().html()
+        console.log(bpm);
+        cargaTrack(track, bpm)
         play()
     })
     $(".pause").click(function (ev) {

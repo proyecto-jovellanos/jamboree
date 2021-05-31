@@ -39,11 +39,13 @@ players[2].buffer = h
 players[3].buffer = c
 
 
-function cargaTrack(t) {
+function cargaTrack(t, bpm) {
     let obj = JSON.parse(t)
     for (let i = 0; i < 4; i++) {
         tracks[i][0] = obj[i][0]
     }
+    $("#tempo").attr("value", bpm)
+    Tone.Transport.bpm.value = bpm
     console.log("Track cargado");
 }
 
