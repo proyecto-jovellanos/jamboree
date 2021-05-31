@@ -21,7 +21,8 @@ if (!isset($_COOKIE['id_User'])) {
     <!-- JS PROPIO -->
     <!-- <script src="app.js"></script> -->
     <!-- LESS -->
-    <link rel="stylesheet" href="main.less">
+    <link rel="stylesheet/less" href="main.less">
+    <script src="../less.min.js" type="text/javascript"></script>
     <!--FONT AWESOME-->
     <script src="https://kit.fontawesome.com/e36b117475.js" crossorigin="anonymous"></script>
 </head>
