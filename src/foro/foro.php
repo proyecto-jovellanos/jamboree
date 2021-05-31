@@ -95,6 +95,7 @@ if (!isset($_COOKIE['id_User'])) {
         <div class="contactos">Nuestros nombres</div>
         <div class="lopd">ley organica proteccion datos, cookies...</div>
         <div class="year">AÑO y Copyright</div>
+        
       </footer> 
 </body>
 
