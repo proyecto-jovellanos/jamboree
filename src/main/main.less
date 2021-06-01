@@ -29,11 +29,6 @@ body::-webkit-scrollbar {
 
 }
 
-body {
-    height: 100vh;
-
-}
-
 .grow:hover {
     transform: scale(1.01);
     transition: 60ms ease;
@@ -71,16 +66,10 @@ header {
     //background-color: @color-3-medium;
     color: @green;
 
-
-
     .logo {
         align-self: center;
         font-size: 2em;
         font-family: @title;
-
-
-
-
     }
 
     .nav {
@@ -90,112 +79,55 @@ header {
             display: inline-flex;
             margin-left: 3em;
         }
-
     }
-
 
     .social {
         align-self: center;
- 
-
-
 
         a {
             display: inline-flex;
             margin-left: 2em;
             color: @green;
 
-
-
             &:hover {
                 font-size: 17px;
                 color: lighten(@green, 20%)
             }
         }
-
     }
-    }
+}
 
 //-----MAIN----
-    main {
-        background-color:@gris-oscuro;
-        height: 80vh;
-        grid-area: main;
-        width: 100%;
-
-
-        display: grid;
-        grid-template-areas:
-            "Foro Estudio Audioteca"
-            ;
-
-
-    
+main {
+    background-color: @gris-oscuro;
+    height: 90vh;
+    grid-area: main;
+    width: 100%;
+    display: flex;
+    flex-flow: row;
 
     .boton_foro {
-        grid-area: Foro;
         height: 100%;
-        background-color: black;
         width: 100%;
-        &:hover{
-            width: 150%;
-            overflow: visible;
-        }
-
+        flex-grow: 4;
+        background-color: rgb(199, 199, 199);
     }
 
     .boton_audioteca {
-        grid-area: Audioteca;
+        flex-grow: 1;
         height: 100%;
-        background-color: rgb(111, 111, 134);
         width: 100%;
-
+        background-color: grey;
     }
-
+    
     .boton_estudio {
-        grid-area: Estudio;
+        flex-grow: 1;
         height: 100%;
-        background-color: blue;
         width: 100%;
-
-
+        background-color: rgb(87, 87, 87);
     }
 
-    .boton_foro>button {
-        width: 100%;
-        height: 100%;
-        background-color: rgb(215, 215, 223);
-    }
 
-    .boton_foro>button:hover {
-        background-color: rgb(159, 255, 74);
-        width: 101%;
-        height: 101%;
-    }
-
-    .boton_estudio>button {
-        width: 100%;
-        height: 100%;
-        background-color: rgb(215, 215, 223);
-    }
-
-    .boton_estudio>button:hover {
-        background-color: rgb(159, 255, 74);
-        width: 101%;
-        height: 101%;
-    }
-
-    .boton_audioteca>button {
-        width: 100%;
-        height: 100%;
-        background-color: rgb(215, 215, 223);
-    }
-
-    .boton_audioteca>button:hover {
-        background-color: rgb(159, 255, 74);
-        width: 101%;
-        height: 101%;
-    }
 }
 
 
@@ -223,4 +155,3 @@ footer>div {
     margin-left: auto;
 
 }
-

@@ -37,31 +37,22 @@ if (!isset($_COOKIE['id_User'])) {
             <a href="../ayuda.html">Ayuda</a>
         </div>
         <div class="social">
-        <a><i class="fab fa-twitter"></i></a>
-        <a><i class="fab fa-facebook"></i></a>
-        <a><i class="fab fa-instagram"></i></a>
-    </div>
-
-        
-
+            <a><i class="fab fa-twitter"></i></a>
+            <a><i class="fab fa-facebook"></i></a>
+            <a><i class="fab fa-instagram"></i></a>
+        </div>
     </header>
 
     <main>
         <div class="boton_foro">
-            <button>
-                <a href="../foro/foro.php">Foro</a>
-            </button>
+            <a href="../foro/foro.php">Foro</a>
         </div>
 
         <div class="boton_estudio">
-            <button>
-                <a href="../estudio/estudio.html">Estudio</a>
-            </button>
+            <a href="../estudio/estudio.html">Estudio</a>
         </div>
         <div class="boton_audioteca">
-            <button>
-                <a href="../audioteca/audioteca.php">Audioteca</a>
-            </button>
+            <a href="../audioteca/audioteca.php">Audioteca</a>
         </div>
 
     </main>
