@@ -46,6 +46,7 @@ if (!isset($_COOKIE['id_User'])) {
             Jamboree
             <div class="rght">]</div>
         </div>
+        
         <div class="nav">
             <a href="../main/main.php">Inicio</a>
             <a href="../foro/foro.php">Foro</a>
