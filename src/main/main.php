@@ -47,12 +47,12 @@ if (!isset($_COOKIE['id_User'])) {
     </header>
 
     <div class="main">
-        <div class="boton foro active">
+        <div class="boton foro">
             <div class="sombra"></div>
             <a href="../foro/foro.php">Foro</a>
         </div>
 
-        <div class="boton estudio">
+        <div class="boton estudio show">
             <div class="sombra"></div>
             <a href="../estudio/estudio.html">Estudio</a>
         </div>
