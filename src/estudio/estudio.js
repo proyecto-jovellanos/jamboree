@@ -299,10 +299,8 @@ $(document).ready(function () {
     Tone.Transport.scheduleRepeat(function (time) {
         Tone.Draw.schedule(function () {
             for (let i = 0; i < 4; i++) {
-                if (index % 4 == 0) {
-                    $(`.${tracks[i][1]} .beats .beat.${index+1}`).toggleClass("timeline")
-                    $(`.${tracks[i][1]} .beats .beat.${index-3}`).toggleClass("timeline")
-                }
+                $(`.${tracks[i][1]} .beats .beat.${index+1}`).toggleClass("timeline")
+                $(`.${tracks[i][1]} .beats .beat.${index}`).toggleClass("timeline")
                 //  console.log(index);
                 let player = players[i]
                 if (tracks[i][0][index] == 1) {
@@ -322,6 +320,16 @@ $(document).ready(function () {
     //}
 
     /////////////////VISUALS///////////////
+    $(".fullpage-help").hide()
+
+    $(".fa-question").click(function (ev) {
+        ev.preventDefault()
+        $(".fullpage-help").show()
+    })
+    $(".fullpage-help").click(function (ev) {
+        ev.preventDefault()
+        $(".fullpage-help").hide()
+    })
 
     //para que la letra no sea menos de 10px, no puedo controlarlo en css
     /* $("*").each(function () {

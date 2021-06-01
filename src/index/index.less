@@ -124,7 +124,7 @@ main {
 
         text-align: center;
         align-items: center;
-        
+
 
 
 
@@ -150,8 +150,8 @@ main {
             display: flex;
             align-items: center;
             justify-content: center;
-            
-            
+
+
 
         }
 
@@ -326,182 +326,183 @@ main {
             box-shadow: 0 0 10px rgba(41, 39, 39, 0.4);
             margin-bottom: 1%;
         }
-        
 
 
-    .log .open-btn {
-        background-color: #8C5D5D;
-        color: blanchedalmond;
+
+        .log .open-btn {
+            background-color: #8C5D5D;
+            color: blanchedalmond;
+            position: relative;
+            display: block;
+            width: 100px;
+            height: 30px;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(41, 39, 39, 0.4);
+        }
+
+        .log a {
+            font-size: 12px;
+        }
+
+        .Loginform {
+            position: absolute;
+            top: 20%;
+            left: 42%;
+            background-color: rgb(252, 252, 252);
+            width: 300px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 8px rgba(41, 39, 39, 0.4);
+            font-size: 30px;
+            display: none;
+            text-align: center;
+        }
+
+        .data p {
+            font-size: 15px;
+        }
+
+        #show:checked~.Loginform {
+            display: block;
+        }
+
+        #show {
+            display: none;
+        }
+
+        #reg {
+            display: none;
+        }
+
+        .btn {
+            height: 35px;
+            width: 35%;
+            margin-top: 20px;
+            background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+            margin-left: auto;
+            margin-right: auto;
+            overflow: hidden;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+            text-align: center
+        }
+
+        .btn button {
+            width: 100%;
+            height: 130%;
+            background: none;
+            border: none;
+            font-family: Helvetica, Arial, sans-serif;
+
+
+
+        }
+
+        .btn:hover {
+            border: rgb(93, 255, 53) 1px solid;
+            box-shadow: 0 0 20px rgba(172, 255, 48, 30);
+
+        }
+
+        .LinkRegister {
+            font-size: 12px;
+            color: rgb(66, 147, 223);
+        }
+
+        .close-btn {
+            background: none;
+            float: right;
+            font-size: 14px;
+        }
+
+        .close-btn:hover {
+            color: rgb(243, 29, 13)
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+    /*----FOOTER------*/
+    footer {
+        grid-area: footer;
         position: relative;
-        display: block;
-        width: 100px;
-        height: 30px;
-        padding: 5px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(41, 39, 39, 0.4);
+        bottom: 0;
+        height: 10vh;
+
+
     }
 
-    .log a {
-        font-size: 12px;
+    footer {
+        background-color: @gris-oscuro;
+        width: 100%;
+        display: flex;
+
     }
 
-    .Loginform {
+    footer>div {
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+
+
+    /*error*/
+    #error {
         position: absolute;
-        top: 20%;
-        left: 42%;
-        background-color: rgb(252, 252, 252);
-        width: 300px;
+        width: 25%;
+        background-color: aqua;
+        height: 200px;
+        left: 35%;
+
+        top: 30%;
         padding: 10px;
         border-radius: 5px;
-        box-shadow: 0 0 8px rgba(41, 39, 39, 0.4);
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
         font-size: 30px;
-        display: none;
+
         text-align: center;
     }
 
-    .data p {
-        font-size: 15px;
-    }
+    #error>h1 {
+        font-size: 20px;
 
-    #show:checked~.Loginform {
-        display: block;
-    }
-
-    #show {
-        display: none;
-    }
-
-    #reg {
-        display: none;
-    }
-
-    .btn {
-        height: 35px;
-        width: 35%;
-        margin-top: 20px;
-        background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
-        margin-left: auto;
-        margin-right: auto;
-        overflow: hidden;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-        margin-bottom: 10px;
-        text-align: center
-    }
-
-    .btn button {
-        width: 100%;
-        height: 130%;
-        background: none;
-        border: none;
-        font-family: Helvetica, Arial, sans-serif;
-
-
+        font-family: 'Times New Roman', Times, serif;
+        margin-top: 30%;
 
     }
 
-    .btn:hover {
-        border: rgb(93, 255, 53) 1px solid;
-        box-shadow: 0 0 20px rgba(172, 255, 48, 30);
+
+
+    .text {
+        transition: 3s linear;
+    }
+
+    .text:hover {
+        font-size: 23px;
+        text-shadow: 0 0 10px #fff,
+            0 0 20px #fff,
+            0 0 30px #fff;
 
     }
 
-    .LinkRegister {
-        font-size: 12px;
-        color: rgb(66, 147, 223);
-    }
+    //-----MEDIA-------
 
-    .close-btn {
-        background: none;
-        float: right;
-        font-size: 14px;
-    }
-
-    .close-btn:hover {
-        color: rgb(243, 29, 13)
-    }
-
-
-}
-
-
-
-
-
-
-
-
-/*----FOOTER------*/
-footer {
-    grid-area: footer;
-    position: relative;
-    bottom: 0;
-    height: 10vh;
-
-
-}
-
-footer {
-    background-color: @gris-oscuro;
-    width: 100%;
-    display: flex;
-
-}
-
-footer>div {
-    margin-right: auto;
-    margin-left: auto;
-
-}
-
-
-/*error*/
-#error {
-    position: absolute;
-    width: 25%;
-    background-color: aqua;
-    height: 200px;
-    left: 35%;
-
-    top: 30%;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
-    font-size: 30px;
-
-    text-align: center;
-}
-
-#error>h1 {
-    font-size: 20px;
-
-    font-family: 'Times New Roman', Times, serif;
-    margin-top: 30%;
-
-}
-
-
-
-.text {
-    transition: 3s linear;
-}
-
-.text:hover {
-    font-size: 23px;
-    text-shadow: 0 0 10px #fff,
-        0 0 20px #fff,
-        0 0 30px #fff;
-
-}
-
-//-----MEDIA-------
-
-@media all and (max-width:400px) {
-    .maindiv {
-        display: grid;
-        grid-auto-rows: minmax(50px, auto);
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "video"
-            "carousel";
+    @media all and (max-width:400px) {
+        .maindiv {
+            display: grid;
+            grid-auto-rows: minmax(50px, auto);
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "video"
+                "carousel";
+        }
     }
 }
