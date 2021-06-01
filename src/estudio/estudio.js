@@ -16,9 +16,8 @@ $(document).ready(function () {
     console.clear()
     //console.log(navigator.mediaDevices.getUserMedia)
     //  var user = document.cookie.replace(/(?:(?:^|.*;\s*)id_User\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-    console.log(user);
+    //console.log(user);
 
-    var sonando = false
 
     var tracks = {
         // "name": nombreCookie,
@@ -34,13 +33,19 @@ $(document).ready(function () {
     $("#tempo").on('change', function (ev) {
         ev.preventDefault()
         let tiempo = this.value;
-        console.log(tiempo);
+        // console.log(tiempo);
         Tone.Transport.bpm.value = tiempo
     })
+    var sonando = false
 
     $(".onoff").click(function (ev) {
         ev.preventDefault()
         if ($(this).hasClass("fa-play")) {
+            if (!sonando) {
+                Tone.Transport.start()
+                play()
+                sonando = true
+            }
             $(this).removeClass("fa-play").addClass("fa-pause")
             if (Tone.context.state !== 'running') {
                 Tone.context.resume();
@@ -56,12 +61,11 @@ $(document).ready(function () {
     })
 
     /*   $(".fa-pause").click(function (ev) {
-          console.log("pausaa");
-          ev.preventDefault()
-          $(this).toggleClass("fa-pause", false).toggleClass("fa-play")
-          Tone.Transport.stop()
-          //sonando = false
-      }) */
+        console.log("pausaa");
+        ev.preventDefault()
+        $(this).toggleClass("fa-pause", false).toggleClass("fa-play")
+        Tone.Transport.stop()
+    }) */
 
     //boton guardar envia por fetch el array de la cancion y el idUser
     $(".close").click(function (ev) {
@@ -94,7 +98,7 @@ $(document).ready(function () {
             let tracksJSON = JSON.stringify(tracks)
             let tag = $("select").children("option:selected").val()
             let bpm = $("#tempo").val()
-            console.log(bpm);
+            //  console.log(bpm);
             var params = {
                 method: 'POST',
                 headers: {
@@ -186,7 +190,7 @@ $(document).ready(function () {
                     tracks[i][0][j - 1] = 0
             }
         }
-        console.log(tracks);
+        //  console.log(tracks);
     }
 
     function leerTrackJSON() {
@@ -252,6 +256,7 @@ $(document).ready(function () {
             })
     }
 
+
     ////////////// AUDIO ////////////
 
     //console.log(Tone.context.lookAhead); //=0.1
@@ -294,37 +299,37 @@ $(document).ready(function () {
 
     var index = 0
 
-    //function play() {
+    function play() {
 
-    Tone.Transport.scheduleRepeat(function (time) {
-        Tone.Draw.schedule(function () {
-            for (let i = 0; i < 4; i++) {
-                if (index == 32) {
-                    $(`.${tracks[i][1]} .beats .beat.${index}`).addClass("timeline")
-                } else if (index == 0) {
-                    $(`.${tracks[i][1]} .beats .beat.32`).removeClass("timeline")
-                    $(`.${tracks[i][1]} .beats .beat.${index+1}`).toggleClass("timeline")
+        Tone.Transport.scheduleRepeat(function (time) {
+            Tone.Draw.schedule(function () {
+                for (let i = 0; i < 4; i++) {
+                    if (index == 32) {
+                        $(`.${tracks[i][1]} .beats .beat.${index}`).addClass("timeline")
+                    } else if (index == 0) {
+                        $(`.${tracks[i][1]} .beats .beat.32`).removeClass("timeline")
+                        $(`.${tracks[i][1]} .beats .beat.${index+1}`).toggleClass("timeline")
+                    } else {
+                        $(`.${tracks[i][1]} .beats .beat.${index+1}`).toggleClass("timeline")
+                        $(`.${tracks[i][1]} .beats .beat.${index}`).toggleClass("timeline")
+                    }
+                    //  console.log(index);
+                    let player = players[i]
+                    if (tracks[i][0][index] == 1) {
+                        //  console.log("index :" + index);
+                        player.start("+0.1")
+                        //  console.log(Tone.Transport.sampleTime);
+                    }
+                }
+                if (index < 31) {
+                    index++
                 } else {
-                    $(`.${tracks[i][1]} .beats .beat.${index+1}`).toggleClass("timeline")
-                    $(`.${tracks[i][1]} .beats .beat.${index}`).toggleClass("timeline")
+                    index = 0
                 }
-                //  console.log(index);
-                let player = players[i]
-                if (tracks[i][0][index] == 1) {
-                    //  console.log("index :" + index);
-                    player.start("+0.1")
-                    //  console.log(Tone.Transport.sampleTime);
-                }
-            }
-            if (index < 31) {
-                index++
-            } else {
-                index = 0
-            }
-        }, time)
-    }, "32n");
-    //Tone.Transport.start()
-    //}
+            }, time)
+        }, "32n");
+        //Tone.Transport.start()
+    }
 
     /////////////////VISUALS///////////////
     $(".fullpage-help").hide()

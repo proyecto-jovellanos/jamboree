@@ -6,6 +6,7 @@ function listarTop($resultado)
         '<li>
             <span class="nombre-song-top">' . $row['nombre'] . '</span> by 
             <span class="nombre-user-top">' . $row['username'] . '</span>
+            <div class="bpm"> ' . $row['bpm'] . '</div>
             <span class="id_song"> ' . $row['id_Cancion'] . '</span>
             <span class="cancion"> ' . $row['track'] . '</span>
             <button class="play"><i class="fas fa-play"></i></i></button></button>

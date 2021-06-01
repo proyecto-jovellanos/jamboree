@@ -6,98 +6,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- link para Tone.js -->
-    <script src="https://tonejs.github.io/build/Tone.js"></script>
-    <script src="testing.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <style>
-        #boton {
-            height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        #text {
+            background-color: bisque;
+            width: 100vw;
+            height: 60vh;
         }
 
-        button {
-            width: 25%;
-            height: 15%;
-            background-color: darkgreen;
-            color: darksalmon;
-            font-size: 2em;
+        .texto {
+            width: 100vw;
+            height: 60vh;
+            display: none;
+            background-color: aqua;
         }
     </style>
 </head>
 
 <body>
-    <div id="boton">
-        <button>Play</button>
-        </button>
-    <!--     <script>
-            console.clear()
-            //var started = false
+    <div id="text">
+        <div class="texto 1">
+            Crea cnaicno es en estudio
+        </div>
+        <div class="texto 2">
+            Comparte canciones en foro
+        </div>
+        <div class="texto 3">
+            NAvega por las creaciones de otros usuarios
+        </div>
+        <div class="texto 4">
+            maneja tu poropia audioteca
+        </div>
+    </div>
 
-            document.getElementById("boton").onclick = function () {
-                /* const baseSeq = new Tone.ToneAudioBuffers({
-                    urls: {
-                        kick: "/Kicks/Kick 01.wav",
-                        hat: "/Hats/Hat 01.wav",
-                        snare: "/Snares/Snare (1).wav",
-                        clap: "/Claps/Clap 01.wav",
-                    },
-                    //autostart: true,
-                    baseUrl: "../media/",
-                }) 
-                 
-                let k = baseSeq.get("clap");
+    <script>
+        $(document).ready(function () {
+            setTimeout(pasaTexto, 60)
 
-                const player = new Tone.Player().toDestination();
-
-                player.buffer = k
-
-                // loaded para asegurar que se carguen en bufer todos los sonidos
-                Tone.loaded().then(() => {
-                    Tone.Transport.scheduleRepeat((time) => {
-                        // use the callback time to schedule events
-                        // repeated event every 8th note
-
-                        player.start(time)
-                        //.stopAll(time+0.1);
-
-                    }, "4n");
-                    player.context._context.resume()
-                    Tone.Transport.start()
-                }) */
-                //.toDestination();
-
-                const sampler = new Tone.Sampler({
-                    urls: {
-                        kick: "/Kicks/Kick 01.wav",
-                        hat: "/Hats/Hat 01.wav",
-                        snare: "/Snares/Snare (1).wav",
-                        clap: "/Claps/Clap 01.wav",
-                    },
-                    //autostart: true,
-                    baseUrl: "../media/",
-                }).toDestination();
-
-                sampler.onload = () => {
-                    console.log(sampler.get());
-                    //sampler.triggerAttackRelease(["snare", "kick"], 0.5);
-                }
-
-
-
-                // transport must be started before it starts invoking events
-                /* if (!started) {
-                    console.log("naas");
-                    Tone.Transport.start();
-                    started = true
-                } else {
-                    player.context._context.resume()
-                    Tone.Transport.stop();
-                    started = false
-                } */
-            }
-        </script> -->
+            $("#text").click(function (ev) {
+                console.log("HOLA?")
+                // t[i - 1].style.display("none")
+                $(`.texto.1`).show()
+                //$(`.texto.1`).hide()
+            })
+        })
+    </script>
 </body>
 
 </html>
