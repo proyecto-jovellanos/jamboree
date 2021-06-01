@@ -315,7 +315,7 @@ main {
 
         .open-btn {
             text-align: center;
-            background-color:@green;
+            background-color: @green;
             color: blanchedalmond;
             position: relative;
             display: block;
@@ -326,22 +326,8 @@ main {
             box-shadow: 0 0 10px rgba(41, 39, 39, 0.4);
         }
 
-
-
-        .log .open-btn {
-            background-color: #8C5D5D;
-            color: blanchedalmond;
-            position: relative;
-            display: block;
-            width: 100px;
-            height: 30px;
-            padding: 5px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(41, 39, 39, 0.4);
-        }
-
-        .log a {
-            font-size: 12px;
+        a {
+            font-size: 2em;
         }
 
         .Loginform {
@@ -421,6 +407,7 @@ main {
 
 
     }
+}
 
 
 
@@ -429,79 +416,78 @@ main {
 
 
 
-    /*----FOOTER------*/
-    footer {
-        grid-area: footer;
-        position: relative;
-        bottom: 0;
-        height: 10vh;
+/*----FOOTER------*/
+footer {
+    grid-area: footer;
+    position: relative;
+    bottom: 0;
+    height: 10vh;
 
 
-    }
-
-    footer {
-        background-color: @gris-oscuro;
-        width: 100%;
-        display: flex;
-
-    }
-
-    footer>div {
-        margin-right: auto;
-        margin-left: auto;
-
-    }
 
 
-    /*error*/
-    #error {
-        position: absolute;
-        width: 25%;
-        background-color: aqua;
-        height: 200px;
-        left: 35%;
 
-        top: 30%;
-        padding: 10px;
-        border-radius: 5px;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
-        font-size: 30px;
+    background-color: @gris-oscuro;
+    width: 100%;
+    display: flex;
 
-        text-align: center;
-    }
 
-    #error>h1 {
-        font-size: 20px;
 
-        font-family: 'Times New Roman', Times, serif;
-        margin-top: 30%;
+    div {
+        align-self: center;
 
     }
+}
+
+
+/*error*/
+#error {
+    position: absolute;
+    width: 25%;
+    background-color: aqua;
+    height: 200px;
+    left: 35%;
+
+    top: 30%;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    font-size: 30px;
+
+    text-align: center;
+}
+
+#error>h1 {
+    font-size: 20px;
+
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 30%;
+
+}
 
 
 
-    .text {
-        transition: 3s linear;
-    }
+.text {
+    transition: 3s linear;
+}
 
-    .text:hover {
-        font-size: 23px;
-        text-shadow: 0 0 10px #fff,
-            0 0 20px #fff,
-            0 0 30px #fff;
+.text:hover {
+    font-size: 23px;
+    text-shadow: 0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 30px #fff;
 
-    }
+}
 
-    //-----MEDIA-------
+//-----MEDIA-------
 
-    @media all and (max-width:400px) {
-        .maindiv {
-            display: grid;
-            grid-auto-rows: minmax(50px, auto);
-            grid-template-columns: 1fr;
-            grid-template-areas:
-                "video"
-                "carousel";
-        }
+@media all and (max-width:400px) {
+    .maindiv {
+        display: grid;
+        grid-auto-rows: minmax(50px, auto);
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "video"
+            "carousel";
     }
 }
