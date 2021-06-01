@@ -299,8 +299,15 @@ $(document).ready(function () {
     Tone.Transport.scheduleRepeat(function (time) {
         Tone.Draw.schedule(function () {
             for (let i = 0; i < 4; i++) {
-                $(`.${tracks[i][1]} .beats .beat.${index+1}`).toggleClass("timeline")
-                $(`.${tracks[i][1]} .beats .beat.${index}`).toggleClass("timeline")
+                if (index == 32) {
+                    $(`.${tracks[i][1]} .beats .beat.${index}`).addClass("timeline")
+                } else if (index == 0) {
+                    $(`.${tracks[i][1]} .beats .beat.32`).removeClass("timeline")
+                    $(`.${tracks[i][1]} .beats .beat.${index+1}`).toggleClass("timeline")
+                } else {
+                    $(`.${tracks[i][1]} .beats .beat.${index+1}`).toggleClass("timeline")
+                    $(`.${tracks[i][1]} .beats .beat.${index}`).toggleClass("timeline")
+                }
                 //  console.log(index);
                 let player = players[i]
                 if (tracks[i][0][index] == 1) {
