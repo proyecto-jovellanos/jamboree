@@ -119,37 +119,47 @@ main {
     .maindiv {
         display: flex;
         //grid-template-columns: 50% 50%;
-        width: 100vw;
+        width: 100%;
         height: 88%;
 
         text-align: center;
         align-items: center;
+        overflow: hidden;
 
 
 
 
-        .video>video {
-            width: 70%;
-            height: 50%;
-            margin-top: 6em;
-        }
+        .video {
+            
+            video {
 
-        .div-textvideo {
+                width: 90%;
+                height: 80%;
+                margin-top: 2em;
+                margin-left: 1em;
+            }
 
-            display: inline-flex;
+            .div-textvideo {
 
+                display: inline-flex;
+                .textvideo {
+                    margin: 10px;
+                }
 
-        }
+            }
 
-        .div-textvideo>.textvideo {
-            margin: 10px;
+           
+            
         }
 
         .card-carousel {
+            
+           
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
 
 
 
@@ -172,7 +182,7 @@ main {
 
         .card-carousel .my-card:after {
             content: '';
-            position: absolute;
+            position: relative;
             height: 2px;
             width: 100%;
             border-radius: 100%;
@@ -180,6 +190,7 @@ main {
             bottom: -5rem;
             -webkit-filter: blur(4px);
             filter: blur(4px);
+            
         }
 
         .card-carousel .my-card.active {
@@ -199,6 +210,7 @@ main {
             opacity: 0.6;
             pointer-events: auto;
             transition: 1s;
+            
         }
 
         .card-carousel .my-card:nth-child(0):before {
@@ -208,7 +220,7 @@ main {
             width: 100%;
             height: 100%;
             content: "";
-            position: absolute;
+            position: relative;
             top: 50%;
             left: 50%;
             -webkit-transform: translateX(-50%) translateY(-50%);
@@ -216,6 +228,7 @@ main {
             font-size: 3rem;
             font-weight: 300;
             color: #fff;
+            
         }
 
         .card-carousel .my-card:nth-child(1):before {
@@ -225,7 +238,7 @@ main {
             width: 100%;
             height: 100%;
             content: "";
-            position: absolute;
+            position: relative;
             top: 50%;
             left: 50%;
             -webkit-transform: translateX(-50%) translateY(-50%);
@@ -233,6 +246,8 @@ main {
             font-size: 3rem;
             font-weight: 300;
             color: #fff;
+            
+           
         }
 
         .card-carousel .my-card:nth-child(2):before {
@@ -242,7 +257,7 @@ main {
             width: 100%;
             height: 100%;
             content: "";
-            position: absolute;
+            position: relative;
             top: 50%;
             left: 50%;
             -webkit-transform: translateX(-50%) translateY(-50%);
@@ -259,7 +274,7 @@ main {
             width: 100%;
             height: 100%;
             content: "";
-            position: absolute;
+            position: relative;
             top: 50%;
             left: 50%;
             -webkit-transform: translateX(-50%) translateY(-50%);
@@ -267,6 +282,7 @@ main {
             font-size: 3rem;
             font-weight: 300;
             color: #fff;
+            
         }
 
         .card-carousel .my-card:nth-child(4):before {

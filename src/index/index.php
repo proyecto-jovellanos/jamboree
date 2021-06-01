@@ -69,21 +69,22 @@ elseif (isset($_POST['register'])) {
         </video>
         <div class="div-textvideo">
           <div class="textvideo">
-            <h1>MUSIC</h1>
-            <p>Hola buenas video </p>
+            <!--<h1>Foro</h1>
+            <p>Descubre las canciones
+                    <br>mas originales-->
+            </p>
           </div>
           <div class="textvideo">
-            <h1>MUSIC</h1>
-            <p>Hola buenas video </p>
+            <!--<h1>Audioteca</h1>
+            <p>Guarda tus canciones
+              <br>para seguirlas-->
+            </p>
           </div>
           <div class="textvideo">
-            <h1>MUSIC</h1>
-            <p>Hola buenas video </p>
+            <!--<h1>Estudio</h1>
+            <p>Deja fluir tu <br>creatividad</p>-->
           </div>
-          <div class="textvideo">
-            <h1>MUSIC</h1>
-            <p>Hola buenas video </p>
-          </div>
+          
         </div>
       </div>
       <div class="card-carousel">
