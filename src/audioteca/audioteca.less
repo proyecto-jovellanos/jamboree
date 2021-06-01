@@ -55,6 +55,7 @@ button {
 
 //------------ESTRUCTURA---------//
 .main {
+    margin-top:80px;
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     grid-auto-rows: minmax(50px, auto);
@@ -136,6 +137,18 @@ li {
         font-size: 0.7em;
     }
 }
+.titulo{
+    margin: 0 5% 0 2%;
+    color: @blanco;
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: 400px;
+    padding-top: 40px;
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+}
+
 .lista_audioteca {
     margin: 0 5% 0 2%;
     grid-area: main;
@@ -143,7 +156,7 @@ li {
     display: flex;
     flex-flow: column nowrap;
     flex-shrink: -2;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-left: 80px;
     padding: 15px;
     .tema {
@@ -195,7 +208,6 @@ footer {
     width: 100%;
     display: flex;
     line-height: 55px;
-    position: fixed;
 }
 
 //-----ANIMATIONS------

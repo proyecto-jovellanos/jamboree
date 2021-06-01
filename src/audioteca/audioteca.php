@@ -46,6 +46,7 @@ if (!isset($_COOKIE['id_User'])) {
             Jamboree
             <div class="rght">]</div>
         </div>
+        
         <div class="nav">
             <a href="../main/main.php">Inicio</a>
             <a href="../foro/foro.php">Foro</a>
@@ -60,6 +61,11 @@ if (!isset($_COOKIE['id_User'])) {
         </div>
     </header>
     <div class="main">
+        <div class="titulo">
+            <?php
+            echo 'Audioteca de ' . $_COOKIE['id_User'] . '';
+            ?>
+        </div>
         <div class="lista_audioteca">
             <?php
             include("cancionesUsuario.php");
