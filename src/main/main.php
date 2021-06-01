@@ -31,6 +31,9 @@ if (!isset($_COOKIE['id_User'])) {
 </head>
 
 <body>
+    <div id="loading">
+        <img id="loading-image" src="../../media/Images/loading.gif" alt="Loading..." />
+    </div>
     <header>
         <div class="logo">
             Jamboree
@@ -68,6 +71,9 @@ if (!isset($_COOKIE['id_User'])) {
         <div class="lopd">ley organica proteccion datos, cookies...</div>
         <div class="year">AÑO y Copyright</div>
     </footer>
+    <script>
+      
+    </script>
 </body>
 
 
