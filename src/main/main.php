@@ -14,17 +14,20 @@ if (!isset($_COOKIE['id_User'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <!-- TONE.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.13/Tone.js" integrity="sha512-SAB2YrHeaZfb6W1w+tAMm+IUICzUMyf7TJ8upY+NjLYl8jseufUW4yYzoSHfNL9N2rzDlw5PWJrf7rPIQ6VhNw==" crossorigin="anonymous"></script>
+
+    <!--FONT AWESOME-->
+    <script src="https://kit.fontawesome.com/e36b117475.js" crossorigin="anonymous"></script>
+
     <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <!-- JS PROPIO -->
-    <!-- <script src="app.js"></script> -->
+    <script src="main.js"></script>
+
     <!-- LESS -->
     <link rel="stylesheet/less" href="main.less">
     <script src="../less.min.js" type="text/javascript"></script>
-    <!--FONT AWESOME-->
-    <script src="https://kit.fontawesome.com/e36b117475.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -43,19 +46,22 @@ if (!isset($_COOKIE['id_User'])) {
         </div>
     </header>
 
-    <main>
-        <div class="boton_foro">
+    <div class="main">
+        <div class="boton foro active">
+            <div class="sombra"></div>
             <a href="../foro/foro.php">Foro</a>
         </div>
 
-        <div class="boton_estudio">
+        <div class="boton estudio">
+            <div class="sombra"></div>
             <a href="../estudio/estudio.html">Estudio</a>
         </div>
-        <div class="boton_audioteca">
+        <div class="boton audioteca">
+            <div class="sombra"></div>
             <a href="../audioteca/audioteca.php">Audioteca</a>
         </div>
 
-    </main>
+    </div>
 
     <footer>
         <div class="contactos">Nuestros nombres</div>
