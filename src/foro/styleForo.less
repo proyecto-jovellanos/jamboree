@@ -130,7 +130,6 @@ button {
     color: @color-4-medium-light;
     border: 2px solid #65648C;
     border-radius: 10px;
-
     .most-visited {
         .aside-style
     }
@@ -192,7 +191,7 @@ button {
      padding: 10px;
      text-align: center;
      width:80px;
-     background-color:@morado;
+     background-color: fade(@morado, 60%);
      display: inline-block;
      border-radius: 10px;
     }
@@ -247,15 +246,13 @@ button {
 
 footer {
     grid-area: footer;
-    background-color:@morado;
+    color: @green;
+    background-color: fade(@morado, 60%);
     height: 55px;
     bottom: 0px;
     width: 100%;
     display: flex;
     line-height: 55px;
-    align-items: center;
-    color: @green;
-    position: fixed;
 }
 
 //-----ANIMATIONS------

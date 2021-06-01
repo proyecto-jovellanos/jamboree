@@ -38,8 +38,7 @@ if (!isset($_COOKIE['id_User'])) {
 </head>
 
 <body>
-    <div class="main">
-        <header class="header">
+<header class="header">
             <div class="animation-header">
                 <div class="lft">[</div>
                 Jamboree
@@ -58,6 +57,7 @@ if (!isset($_COOKIE['id_User'])) {
                 <a href="#"><i class="fab fa-facebook-square"></i></a>
             </div>
         </header>
+    <div class="main">
         <div class="tags">
             <div><a class="etiqueta" href="foro.php">Todas</a></div>
             <div><a class="etiqueta" href="foro.php?tag=rock">Rock</a></div>
