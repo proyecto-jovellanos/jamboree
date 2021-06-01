@@ -128,6 +128,32 @@ body {
             }
         }
     }
+
+    .fullpage-help {
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.849);
+        z-index: 22;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-width: 85vw;
+            max-height: 85vh;
+            z-index: 50;
+        }
+    }
 }
 
 //-------MAIN-------
@@ -180,6 +206,7 @@ body {
                     width: 75/32vw;
                     height: 8vh;
                     background-color: darken(@green, 27%);
+
                     &.timeline {
                         background-color: lighten(@green, 40%);
                     }
@@ -194,6 +221,10 @@ body {
 
                         &.marked {
                             background-color: lighten(@green, 17%);
+                        }
+
+                        &.timeline {
+                            background-color: lighten(@green, 40%);
                         }
 
                     }

@@ -12,8 +12,11 @@
 @color-4-medium-light: #8C5D5D;
 
 
-
-
+/* Colores en Hex */
+@green: #66CDAA;
+@morado: #43038c;
+@gris-oscuro: #414141;
+@gris-claro: #525252;
 
 * {
     box-sizing: border-box;
@@ -26,15 +29,19 @@ body::-webkit-scrollbar {
 
 }
 
-body {
-    height: 100%;
-
+.grow:hover {
+    transform: scale(1.01);
+    transition: 60ms ease;
+    overflow: hidden;
 }
 
+//------------ESTRUCTURA---------//
 body {
     display: grid;
+    height: 100vh;
+    width: 100vw;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(auto, auto);
+    //grid-auto-rows: minmax(auto, auto);
     grid-template-areas:
         "header header"
         "main main"
@@ -42,126 +49,171 @@ body {
     ;
 }
 
-header{
+
+/*----HEADER------*/
+header {
     grid-area: header;
-    background-color: rgb(75, 123, 131);
-     width: 100%;
-    height: 60px;
-    overflow: hidden;
-
-
-}
-
-header div{
-    margin-top:20px ;
-}
-header .social ul li:hover{
-    font-size: 20px;
-
-}
-.logo{
-    float: left;
-    margin-left: 50px;
-    font-size: 20px;
-    color: beige;
-}
-.social{
-      float: right;
-}
-ul{
+    background-color: @gris-oscuro;
+    border: 1px solid @gris-claro;
+    border-width: 2px;
+    z-index: 9;
+    width: 100%;
     display: flex;
-}
-li{
-    list-style: none;
-    margin-right: 20px;
+    flex-flow: row nowrap;
+
+    height: 10vh;
+    min-height: 52px;
+    //background-color: @color-3-medium;
+    color: @green;
+
+    .logo {
+        align-self: center;
+        font-size: 2em;
+        font-family: @title;
+    }
+
+    .nav {
+        align-self: center;
+
+        a {
+            display: inline-flex;
+            margin-left: 3em;
+        }
+    }
+
+    .social {
+        align-self: center;
+
+        a {
+            display: inline-flex;
+            margin-left: 2em;
+            color: @green;
+
+            &:hover {
+                font-size: 17px;
+                color: lighten(@green, 20%)
+            }
+        }
+    }
 }
 
-
-main{
- background-color: rgb(221, 221, 221);
-    height: 850px;
+//-----MAIN----
+.main {
+    background-color: @gris-oscuro;
+    height: 90vh;
     grid-area: main;
-    width: 100%;
-    
-  
-display: grid;
-grid-template-areas: 
-"Foro Estudio"
-"Foro Audioteca";
+    width: 100vw;
+    display: flex;
+    flex-flow: row;
+    overflow: hidden;
+    align-items: stretch;
+
+    .boton.foro {
+        background-color: rgb(199, 199, 199);
+        background-image: url("../../media/Images/foro-main2.jpg");
+    }
+
+    .boton.audioteca {
+        background-color: grey;
+        background-image: url("../../media/Images/audioteca-main.jpg");
+    }
+
+    .boton.estudio {
+        background-color: rgb(87, 87, 87);
+        background-image: url("../../media/Images/studio-main2.jpg");
+    }
+
+    .boton {
+        position: relative;
+        overflow: hidden;
+        min-width: 60px;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /*      background: #E6E9ED;
+        background-size: auto 120%;
+        background-position: center; */
+
+        cursor: pointer;
+        // transition: .4s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+
+        &.show {
+            flex-grow: 10000;
+            transform: scale(1);
+            max-width: 600px;
+            margin: 0px;
+            border-radius: 40px;
+            background-size: auto 100%;
+
+            .sombra {
+                box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+            }
+
+        }
+
+        &:not(.show) {
+            flex-grow: 1;
+            border-radius: 30px;
+
+            .shadow {
+                bottom: -40px;
+                box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
+            }
+        }
+
+        .sombra {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            height: 120px;
+            // transition: .5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+        }
+
+        a {
+            border: none;
+            color: @green;
+            text-align: center;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            text-decoration: none;
+            font-size: 2.5em;
+            cursor: pointer;
+            display: inline-block;
+
+            &:hover,
+            &:active {
+                background-color: @color-3-medium;
+            }
+        }
+    }
+
 
 
 }
-.boton_foro{grid-area: Foro;
-    height: 100%;
-    background-color: black;
-    width: 100%;
-    
-    
-}
-.boton_audioteca{grid-area: Audioteca;
-    height: 100%;
-    background-color: rgb(111, 111, 134);
-    width: 100%;
-
-}
-.boton_estudio{grid-area: Estudio;
-    height: 100%;
-    background-color: blue;
-    width: 100%;
-
-
-}
-.boton_foro > button{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(215, 215, 223);
-}
-.boton_foro > button:hover{
-     background-color: rgb(159, 255, 74);
-     width: 101%;
-     height: 101%;
-}
-.boton_estudio > button{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(215, 215, 223);
-}
-.boton_estudio > button:hover{
-     background-color: rgb(159, 255, 74);
-     width: 101%;
-     height: 101%;
-}
-.boton_audioteca > button{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(215, 215, 223);
-}
-.boton_audioteca > button:hover{
-     background-color: rgb(159, 255, 74);
-     width: 101%;
-     height: 101%;
-}
 
 
 
 
-
+/*----FOOTER------*/
 footer {
-   
     grid-area: footer;
-    position: absolute;
+    position: relative;
     bottom: 0;
+    height: 10vh;
+
+
 }
 
 footer {
-    background-color: darkblue;
-    height: 60px;
+    background-color: @gris-oscuro;
     width: 100%;
     display: flex;
+
 }
 
 footer>div {
-    text-align: center;
     margin-right: auto;
     margin-left: auto;
 

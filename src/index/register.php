@@ -9,8 +9,8 @@
     <!--FONT AWESOME-->
     <script src="https://kit.fontawesome.com/e36b117475.js" crossorigin="anonymous"></script>
     <!-- LESS -->
-    <link rel="stylesheet" href="register.less">
-
+    <link rel="stylesheet/less" href="register.less">
+    <script src="../less.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -21,11 +21,9 @@
     </div>
 
     <div class="social">
-      <ul>
-        <li><i class="fab fa-twitter"></i></li>
-        <li><i class="fab fa-facebook"></i></li>
-        <li><i class="fab fa-instagram"></i></li>
-      </ul>
+        <a><i class="fab fa-twitter"></i></a>
+        <a><i class="fab fa-facebook"></i></a>
+        <a><i class="fab fa-instagram"></i></a>
     </div>
 
   </header>

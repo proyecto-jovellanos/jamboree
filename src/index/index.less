@@ -114,42 +114,54 @@ main {
         line-height: 3em;
         letter-spacing: 0.9px;
         text-shadow: 0px 0px 1px rgba(0, 0, 0, 1);
-        background-color: @green;
     }
 
     .maindiv {
         display: flex;
         //grid-template-columns: 50% 50%;
-        width: 100vw;
+        width: 100%;
         height: 88%;
+
+        text-align: center;
+        align-items: center;
+        overflow: hidden;
+
+
 
 
         .video {
-            text-align: center;
-            align-items: center;
+            
+            video {
 
+                width: 90%;
+                height: 80%;
+                margin-top: 2em;
+                margin-left: 1em;
+            }
 
-        }
+            .div-textvideo {
 
-        .video>video {
-            margin-top: 6em;
-        }
+                display: inline-flex;
+                .textvideo {
+                    margin: 10px;
+                }
 
-        .div-textvideo {
+            }
 
-            display: inline-flex;
-
-
-        }
-
-        .div-textvideo>.textvideo {
-            margin: 10px;
+           
+            
         }
 
         .card-carousel {
+            
+           
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+
+
 
         }
 
@@ -170,7 +182,7 @@ main {
 
         .card-carousel .my-card:after {
             content: '';
-            position: absolute;
+            position: relative;
             height: 2px;
             width: 100%;
             border-radius: 100%;
@@ -178,6 +190,7 @@ main {
             bottom: -5rem;
             -webkit-filter: blur(4px);
             filter: blur(4px);
+            
         }
 
         .card-carousel .my-card.active {
@@ -197,6 +210,7 @@ main {
             opacity: 0.6;
             pointer-events: auto;
             transition: 1s;
+            
         }
 
         .card-carousel .my-card:nth-child(0):before {
@@ -206,7 +220,7 @@ main {
             width: 100%;
             height: 100%;
             content: "";
-            position: absolute;
+            position: relative;
             top: 50%;
             left: 50%;
             -webkit-transform: translateX(-50%) translateY(-50%);
@@ -214,6 +228,7 @@ main {
             font-size: 3rem;
             font-weight: 300;
             color: #fff;
+            
         }
 
         .card-carousel .my-card:nth-child(1):before {
@@ -223,7 +238,7 @@ main {
             width: 100%;
             height: 100%;
             content: "";
-            position: absolute;
+            position: relative;
             top: 50%;
             left: 50%;
             -webkit-transform: translateX(-50%) translateY(-50%);
@@ -231,6 +246,8 @@ main {
             font-size: 3rem;
             font-weight: 300;
             color: #fff;
+            
+           
         }
 
         .card-carousel .my-card:nth-child(2):before {
@@ -240,7 +257,7 @@ main {
             width: 100%;
             height: 100%;
             content: "";
-            position: absolute;
+            position: relative;
             top: 50%;
             left: 50%;
             -webkit-transform: translateX(-50%) translateY(-50%);
@@ -257,7 +274,7 @@ main {
             width: 100%;
             height: 100%;
             content: "";
-            position: absolute;
+            position: relative;
             top: 50%;
             left: 50%;
             -webkit-transform: translateX(-50%) translateY(-50%);
@@ -265,6 +282,7 @@ main {
             font-size: 3rem;
             font-weight: 300;
             color: #fff;
+            
         }
 
         .card-carousel .my-card:nth-child(4):before {
@@ -308,103 +326,103 @@ main {
         width: 100%;
         display: flex;
         align-items: center;
+        min-height: 20px;
 
-        min-height: 52px;
+
+        .open-btn {
+            text-align: center;
+            background-color: @green;
+            color: blanchedalmond;
+            position: relative;
+            display: block;
+            width: 100px;
+            height: 30px;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(41, 39, 39, 0.4);
+        }
+
+        a {
+            font-size: 2em;
+        }
+
+        .Loginform {
+            position: absolute;
+            top: 20%;
+            left: 42%;
+            background-color: rgb(252, 252, 252);
+            width: 300px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 8px rgba(41, 39, 39, 0.4);
+            font-size: 30px;
+            display: none;
+            text-align: center;
+        }
+
+        .data p {
+            font-size: 15px;
+        }
+
+        #show:checked~.Loginform {
+            display: block;
+        }
+
+        #show {
+            display: none;
+        }
+
+        #reg {
+            display: none;
+        }
+
+        .btn {
+            height: 35px;
+            width: 35%;
+            margin-top: 20px;
+            background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+            margin-left: auto;
+            margin-right: auto;
+            overflow: hidden;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+            text-align: center
+        }
+
+        .btn button {
+            width: 100%;
+            height: 130%;
+            background: none;
+            border: none;
+            font-family: Helvetica, Arial, sans-serif;
+
+
+
+        }
+
+        .btn:hover {
+            border: rgb(93, 255, 53) 1px solid;
+            box-shadow: 0 0 20px rgba(172, 255, 48, 30);
+
+        }
+
+        .LinkRegister {
+            font-size: 12px;
+            color: rgb(66, 147, 223);
+        }
+
+        .close-btn {
+            background: none;
+            float: right;
+            font-size: 14px;
+        }
+
+        .close-btn:hover {
+            color: rgb(243, 29, 13)
+        }
+
 
     }
-
-    .log .open-btn {
-        background-color: #8C5D5D;
-        color: blanchedalmond;
-        position: relative;
-        display: block;
-        width: 100px;
-        height: 30px;
-        padding: 5px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(41, 39, 39, 0.4);
-    }
-
-    .log a {
-        font-size: 12px;
-    }
-
-    .Loginform {
-        position: absolute;
-        top: 20%;
-        left: 42%;
-        background-color: rgb(252, 252, 252);
-        width: 300px;
-        padding: 10px;
-        border-radius: 5px;
-        box-shadow: 0 0 8px rgba(41, 39, 39, 0.4);
-        font-size: 30px;
-        display: none;
-        text-align: center;
-    }
-
-    .data p {
-        font-size: 15px;
-    }
-
-    #show:checked~.Loginform {
-        display: block;
-    }
-
-    #show {
-        display: none;
-    }
-
-    #reg {
-        display: none;
-    }
-
-    .btn {
-        height: 35px;
-        width: 35%;
-        margin-top: 20px;
-        background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
-        margin-left: auto;
-        margin-right: auto;
-        overflow: hidden;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-        margin-bottom: 10px;
-        text-align: center
-    }
-
-    .btn button {
-        width: 100%;
-        height: 130%;
-        background: none;
-        border: none;
-        font-family: Helvetica, Arial, sans-serif;
-
-
-
-    }
-
-    .btn:hover {
-        border: rgb(93, 255, 53) 1px solid;
-        box-shadow: 0 0 20px rgba(172, 255, 48, 30);
-
-    }
-
-    .LinkRegister {
-        font-size: 12px;
-        color: rgb(66, 147, 223);
-    }
-
-    .close-btn {
-        background: none;
-        float: right;
-        font-size: 14px;
-    }
-
-    .close-btn:hover {
-        color: rgb(243, 29, 13)
-    }
-
-
 }
 
 
@@ -422,19 +440,19 @@ footer {
     height: 10vh;
 
 
-}
 
-footer {
+
+
     background-color: @gris-oscuro;
     width: 100%;
     display: flex;
 
-}
 
-footer>div {
-    margin-right: auto;
-    margin-left: auto;
 
+    div {
+        align-self: center;
+
+    }
 }
 
 

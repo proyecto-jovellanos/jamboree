@@ -1,103 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+<div class="options">
+    <div class="option active"
+        style="--optionBackground:url(https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg);">
+        <div class="shadow"></div>
+        <div class="label">
+        </div>
+    </div>
+    <div class="option"
+        style="--optionBackground:url(https://66.media.tumblr.com/8b69cdde47aa952e4176b4200052abf4/tumblr_o51p7mFFF21qho82wo1_1280.jpg);">
+        <div class="shadow"></div>
+        <div class="label">
+        </div>
+    </div>
+    <div class="option"
+        style="--optionBackground:url(https://66.media.tumblr.com/5af3f8303456e376ceda1517553ba786/tumblr_o4986gakjh1qho82wo1_1280.jpg);">
+        <div class="shadow"></div>
+        <div class="label">
+        </div>
+    </div>
+    <div class="option"
+        style="--optionBackground:url(https://66.media.tumblr.com/5516a22e0cdacaa85311ec3f8fd1e9ef/tumblr_o45jwvdsL11qho82wo1_1280.jpg);">
+        <div class="shadow"></div>
+        <div class="label">
+        </div>
+    </div>
+    <div class="option"
+        style="--optionBackground:url(https://66.media.tumblr.com/f19901f50b79604839ca761cd6d74748/tumblr_o65rohhkQL1qho82wo1_1280.jpg);">
+        <div class="shadow"></div>
+        <div class="label">
+        </div>
+    </div>
+</div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- link para Tone.js -->
-    <script src="https://tonejs.github.io/build/Tone.js"></script>
-    <script src="testing.js"></script>
-    <style>
-        #boton {
-            height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        button {
-            width: 25%;
-            height: 15%;
-            background-color: darkgreen;
-            color: darksalmon;
-            font-size: 2em;
-        }
-    </style>
-</head>
-
-<body>
-    <div id="boton">
-        <button>Play</button>
-        </button>
-    <!--     <script>
-            console.clear()
-            //var started = false
-
-            document.getElementById("boton").onclick = function () {
-                /* const baseSeq = new Tone.ToneAudioBuffers({
-                    urls: {
-                        kick: "/Kicks/Kick 01.wav",
-                        hat: "/Hats/Hat 01.wav",
-                        snare: "/Snares/Snare (1).wav",
-                        clap: "/Claps/Clap 01.wav",
-                    },
-                    //autostart: true,
-                    baseUrl: "../media/",
-                }) 
-                 
-                let k = baseSeq.get("clap");
-
-                const player = new Tone.Player().toDestination();
-
-                player.buffer = k
-
-                // loaded para asegurar que se carguen en bufer todos los sonidos
-                Tone.loaded().then(() => {
-                    Tone.Transport.scheduleRepeat((time) => {
-                        // use the callback time to schedule events
-                        // repeated event every 8th note
-
-                        player.start(time)
-                        //.stopAll(time+0.1);
-
-                    }, "4n");
-                    player.context._context.resume()
-                    Tone.Transport.start()
-                }) */
-                //.toDestination();
-
-                const sampler = new Tone.Sampler({
-                    urls: {
-                        kick: "/Kicks/Kick 01.wav",
-                        hat: "/Hats/Hat 01.wav",
-                        snare: "/Snares/Snare (1).wav",
-                        clap: "/Claps/Clap 01.wav",
-                    },
-                    //autostart: true,
-                    baseUrl: "../media/",
-                }).toDestination();
-
-                sampler.onload = () => {
-                    console.log(sampler.get());
-                    //sampler.triggerAttackRelease(["snare", "kick"], 0.5);
-                }
-
-
-
-                // transport must be started before it starts invoking events
-                /* if (!started) {
-                    console.log("naas");
-                    Tone.Transport.start();
-                    started = true
-                } else {
-                    player.context._context.resume()
-                    Tone.Transport.stop();
-                    started = false
-                } */
-            }
-        </script> -->
-</body>
-
-</html>
+<a href="http://victorofvalencia-blog.tumblr.com" target="_blank" class="credit">Photos from Victor of Valencia on
+    tumblr</a>

@@ -62,26 +62,29 @@ elseif (isset($_POST['register'])) {
     <div class="text">The fastest way from your brain to your speakers</div>
     <div class="maindiv">
       <div class="video">
-        <video width="500" height="395" muted loop autoplay>
+
+        <video  muted loop autoplay>
+
           <source src="1.mp4" type="video/mp4">
         </video>
         <div class="div-textvideo">
           <div class="textvideo">
-            <h1>MUSIC</h1>
-            <p>Hola buenas video </p>
+            <!--<h1>Foro</h1>
+            <p>Descubre las canciones
+                    <br>mas originales-->
+            </p>
           </div>
           <div class="textvideo">
-            <h1>MUSIC</h1>
-            <p>Hola buenas video </p>
+            <!--<h1>Audioteca</h1>
+            <p>Guarda tus canciones
+              <br>para seguirlas-->
+            </p>
           </div>
           <div class="textvideo">
-            <h1>MUSIC</h1>
-            <p>Hola buenas video </p>
+            <!--<h1>Estudio</h1>
+            <p>Deja fluir tu <br>creatividad</p>-->
           </div>
-          <div class="textvideo">
-            <h1>MUSIC</h1>
-            <p>Hola buenas video </p>
-          </div>
+          
         </div>
       </div>
       <div class="card-carousel">
