@@ -39,13 +39,15 @@ if (!isset($_COOKIE['id_User'])) {
             Jamboree
         </div>
         <div class="nav">
-            <a href="../perfil.html">Mi perfil</a>
-            <a href="../ayuda.html">Ayuda</a>
-        </div>
-        <div class="social">
-            <a><i class="fab fa-twitter"></i></a>
-            <a><i class="fab fa-facebook"></i></a>
-            <a><i class="fab fa-instagram"></i></a>
+            <div class="social">
+                <a><i class="fab fa-twitter"></i></a>
+                <a><i class="fab fa-facebook"></i></a>
+                <a><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="links">
+                <a href="../perfil.html">Mi perfil</a>
+                <a href="../ayuda.html">Ayuda</a>
+            </div>
         </div>
     </header>
 
@@ -72,7 +74,7 @@ if (!isset($_COOKIE['id_User'])) {
         <div class="year">AÑO y Copyright</div>
     </footer>
     <script>
-      
+
     </script>
 </body>
 
