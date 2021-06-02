@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-@title: Cormorant, serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+@title: Monoton, serif;
 @text: Nunito, sans-serif;
 @sombreado: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
@@ -58,7 +61,7 @@ body {
     display: grid;
     height: 100vh;
     width: 100vw;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     //grid-auto-rows: minmax(auto, auto);
     grid-template-areas:
         "header header"
@@ -78,52 +81,70 @@ header {
     box-shadow: inset 0 0 10px #000000;
     border-width: 2px;
     z-index: 9;
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-flow: row nowrap;
-
+    justify-content: center;
+    align-items: center;
     height: 10vh;
     min-height: 52px;
     //background-color: @color-3-medium;
     color: @green;
+    text-align: center;
 
     .logo {
-        align-self: center;
+        position: absolute;
+        //align-self: center;
+        //justify-self: center;
         font-size: 2em;
         font-family: @title;
+        width: 66vw;
     }
 
     .nav {
+        position: absolute;
+        right: 0.05vw;
+        display: flex;
+        flex-direction: column;
+        width: 34vw;
         align-self: center;
+        justify-content: space-evenly;
 
-        a {
-            display: inline-flex;
-            margin-left: 3em;
+        .social {
+            align-self: center;
 
-            &:link,
-            &:visited,
-            &:hover,
-            &:active {
-                text-decoration: none;
+            a {
+                display: inline-flex;
+                margin-left: 1em;
                 color: @green;
+
+                &:hover {
+                    color: lighten(@green, 20%)
+                }
+            }
+        }
+
+        .links {
+            display: flex;
+            flex-direction: row;
+            margin-top: 0.5em;
+
+            a {
+                display: inline-block;
+                margin-left: 1em;
+                font-size: 1.2em;
+
+                &:link,
+                &:visited,
+                &:hover,
+                &:active {
+                    text-decoration: none;
+                    color: @green;
+                }
             }
         }
     }
 
-    .social {
-        align-self: center;
-
-        a {
-            display: inline-flex;
-            margin-left: 2em;
-            color: @green;
-
-            &:hover {
-                font-size: 17px;
-                color: lighten(@green, 20%)
-            }
-        }
-    }
 }
 
 //-----MAIN----
