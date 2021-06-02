@@ -317,7 +317,7 @@ $(document).ready(function () {
                     let player = players[i]
                     if (tracks[i][0][index] == 1) {
                         //  console.log("index :" + index);
-                        player.start("+0.1")
+                        player.start("+0.01")
                         //  console.log(Tone.Transport.sampleTime);
                     }
                 }

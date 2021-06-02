@@ -71,8 +71,11 @@ body {
 /*----HEADER------*/
 header {
     grid-area: header;
-    background-color: @gris-oscuro;
-    border: 1px solid @gris-claro;
+    background-color: lighten(@gris-claro, 1%);
+    //border: 1px solid @gris-claro;
+    -moz-box-shadow: inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #000000;
     border-width: 2px;
     z-index: 9;
     width: 100%;
@@ -139,18 +142,29 @@ header {
         background-size: 66vw;
         image-rendering: -webkit-optimize-contrast;
 
+        a {
+            color: darken(@gris-claro, 50%);
+        }
     }
 
     .boton.audioteca {
         background-image: url("../../media/Images/audioteca-main.jpg");
         background-size: 66vw;
         image-rendering: -webkit-optimize-contrast;
+
+        a {
+            color: darken(@gris-claro, 50%);
+        }
     }
 
     .boton.estudio {
         background-image: url("../../media/Images/studio-main2.jpg");
         background-size: 66vw;
         image-rendering: -webkit-optimize-contrast;
+
+        a {
+            color: lighten(@gris-claro, 50%);
+        }
     }
 
     .boton {
@@ -161,12 +175,7 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-        /*      background: #E6E9ED;
-        background-size: auto 120%;
-        background-position: center; */
-
         cursor: pointer;
-        // transition: .4s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 
         &.show {
             flex-grow: 10000;
@@ -198,12 +207,10 @@ header {
             left: 0px;
             right: 0px;
             height: 120px;
-            // transition: .5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
         }
 
         a {
             border: none;
-            color: @green;
             text-align: center;
             -webkit-transition-duration: 0.4s;
             transition-duration: 0.4s;
@@ -222,13 +229,7 @@ header {
             }
         }
     }
-
-
-
 }
-
-
-
 
 /*----FOOTER------*/
 footer {
@@ -236,8 +237,6 @@ footer {
     position: relative;
     bottom: 0;
     height: 10vh;
-
-
 }
 
 footer {
