@@ -1,4 +1,26 @@
 $(document).ready(function () {
+  
+  let botonHouse = document.querySelector(".reproductorHouse")
+  let botonReguetoon = document.querySelector(".reproductorRap")
+  botonReguetoon.addEventListener("click", () => {
+    let etiquetaAudio = document.createElement("audio")
+    etiquetaAudio.setAttribute("src", "../../media/Ritmo2.wav")
+    etiquetaAudio.play()
+  })
+  botonHouse.addEventListener("click", () => {
+    let etiquetaAudio = document.createElement("audio")
+    etiquetaAudio.setAttribute("src", "../../media/House.wav")
+    etiquetaAudio.play()
+  })
+  
+
+
+
+
+
+
+
+
 $num = $('.my-card').length;
 $even = $num / 2;
 $odd = ($num + 1) / 2;
