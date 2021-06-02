@@ -97,7 +97,10 @@ header {
             display: inline-flex;
             margin-left: 3em;
 
-            &:visited {
+            &:link,
+            &:visited,
+            &:hover,
+            &:active {
                 text-decoration: none;
                 color: @green;
             }
@@ -168,7 +171,7 @@ header {
         &.show {
             flex-grow: 10000;
             transform: scale(1);
-            max-width: 600px;
+            max-width: 66vw;
             margin: 0px;
             border-radius: 40px;
             background-size: auto 100%;
