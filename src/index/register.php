@@ -46,10 +46,6 @@
                 <p>Fecha</p>
                 <input type="date" name="fecha" id="" required>
             </div>
-            <div class="sectionRegister">
-                <p>etiquetas</p>
-                <input type="text" name="etiquetas" id="" required>
-            </div>
             <input type="submit" value="SEND" class="sendRegister" name="register">
 
         </div>

@@ -96,28 +96,21 @@ elseif (isset($_POST['register'])) {
 
           <source src="1.mp4" type="video/mp4">
         </video>
-        <div class="div-textvideo">
-          <div class="textvideo">
-            <!--<h1>Foro</h1>
-            <p>Descubre las canciones
-                    <br>mas originales-->
-            </p>
+        <div class="div-musicboton">
+          <div class="buton">
+          <button class="reproductorHouse">House</button>
+          <p><br>¿Como se hace?<img src="../../media/Images/House.PNG" alt=""></p>    
           </div>
-          <div class="textvideo">
-            <!--<h1>Audioteca</h1>
-            <p>Guarda tus canciones
-              <br>para seguirlas-->
-            </p>
-          </div>
-          <div class="textvideo">
-            <!--<h1>Estudio</h1>
-            <p>Deja fluir tu <br>creatividad</p>-->
+
+          <div class="buton">
+          <button class="reproductorRap">Reggueton</button>
+          <p><br>¿Como se hace?<img src="../../media/Images/Regueton.PNG" alt=""></p>
           </div>
           
         </div>
       </div>
-      
     </div>
+
     <div class="divcarousel">
       
     <div class="card-carousel">
