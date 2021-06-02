@@ -59,43 +59,7 @@ elseif (isset($_POST['register'])) {
 
   <!--MAIN-->
   <main>
-    <div class="text">The fastest way from your brain to your speakers</div>
-    <div class="maindiv">
-      <div class="video">
-
-        <video  muted loop autoplay>
-
-          <source src="1.mp4" type="video/mp4">
-        </video>
-        <div class="div-textvideo">
-          <div class="textvideo">
-            <!--<h1>Foro</h1>
-            <p>Descubre las canciones
-                    <br>mas originales-->
-            </p>
-          </div>
-          <div class="textvideo">
-            <!--<h1>Audioteca</h1>
-            <p>Guarda tus canciones
-              <br>para seguirlas-->
-            </p>
-          </div>
-          <div class="textvideo">
-            <!--<h1>Estudio</h1>
-            <p>Deja fluir tu <br>creatividad</p>-->
-          </div>
-          
-        </div>
-      </div>
-      <div class="card-carousel">
-        <div class="my-card"></div>
-        <div class="my-card"></div>
-        <div class="my-card"></div>
-        <div class="my-card"></div>
-        <div class="my-card"></div>
-      </div>
-    </div>
-    <div class="log">
+  <div class="log">
       <input type="checkbox" name="" id="show">
       <input type="checkbox" name="" id="reg">
       <label for="show" class="open-btn">Entrar</label>
@@ -124,6 +88,58 @@ elseif (isset($_POST['register'])) {
       <!-- HACER popup para formulario de inicio o registro -->
 
     </div>
+    <div class="text">The fastest way from your brain to your speakers</div>
+    <div class="maindiv">
+      <div class="video">
+
+        <video  muted loop autoplay>
+
+          <source src="1.mp4" type="video/mp4">
+        </video>
+        <div class="div-textvideo">
+          <div class="textvideo">
+            <!--<h1>Foro</h1>
+            <p>Descubre las canciones
+                    <br>mas originales-->
+            </p>
+          </div>
+          <div class="textvideo">
+            <!--<h1>Audioteca</h1>
+            <p>Guarda tus canciones
+              <br>para seguirlas-->
+            </p>
+          </div>
+          <div class="textvideo">
+            <!--<h1>Estudio</h1>
+            <p>Deja fluir tu <br>creatividad</p>-->
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+    <div class="divcarousel">
+      
+    <div class="card-carousel">
+        <div class="my-card"></div>
+        <div class="my-card"></div>
+        <div class="my-card"></div>
+        <div class="my-card"></div>
+        <div class="my-card"></div>
+      </div>
+      <div class="textcarousel">
+          <div id="title"><h1>Conviertete en tus artistas favoritos</h1></div>
+          <div><h2>Estudio</h2>
+            <p>Saca tu artista con nuestro propio estudio integrado</p>
+          </div>
+          <div><h2>Foro</h2>
+          <p>Comparte todas tus canciones ,modifica y visualiza las de otros usarios</p></div>
+          <div><h2>Audioteca</h2>
+          <p>Almacena tus creaciones o la de otros usarios para seguir luego</p>
+        </div>
+      </div>
+      </div>
+    
 
 
   </main>
