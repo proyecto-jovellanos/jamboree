@@ -40,29 +40,15 @@ body {
     animation-timing-function: ease-out;
 }
 
-.grow:hover {
-    transform: scale(1.01);
-    transition: 60ms ease;
-    overflow: hidden;
-}
-
-button {
-    outline: none;
-    cursor: pointer;
-    border: 0px;
-    font-size: 1em;
-    background-color: transparent;
-}
-
 //------------ESTRUCTURA---------//
 .main {
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    grid-auto-rows: minmax(50px, auto);
+    grid-template-columns: repeat(3, 1fr);
+    //grid-auto-rows: minmax(50px, auto);
     grid-template-areas:
-        "header header header header header header header header header"
-        "main   main   main   main   main   main   main   aside   aside"
-        "footer footer footer footer footer footer footer footer footer";
+        "header header header"
+        "main   main   main"
+        "footer footer footer";
 }
 
 //------HEADER-------
@@ -70,6 +56,7 @@ button {
     z-index: 9;
     min-height: 65px;
     width: 100%;
+    height: 10vh;
     grid-area: header;
     display: flex;
     flex-flow: row nowrap;
@@ -99,160 +86,103 @@ button {
         }
     }
 
-    .nav a {
+    .nav {
         color: @morado;
-        padding: 0px 32px;
-        text-align: center;
-        text-decoration: none;
-        font-size: 1.4em;
-        cursor: pointer;
-        display: inline-block;
+        display: flex;
+        width: 50%;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 1.4em;
+            cursor: pointer;
+
+        }
     }
 
     .social {
+        width: 20vw;
         position: absolute;
-        width: 300px;
-        right: 2%;
+        right: 1vw;
         color: @morado;
 
         i {
-            padding-left: 65px;
+            padding-left: 1rem;
             color: @morado;
         }
-
     }
-
-}
-
-//------ASIDE-------
-.sidebar {
-    grid-area: aside;
-    display: flex;
-    flex-flow: column nowrap;
-    margin-top: 50px;
-    color: @color-4-medium-light;
-    border: 2px solid #65648C;
-    border-radius: 10px;
-
-    .most-visited {
-        .aside-style
-    }
-}
-
-.aside-style {
-    margin: 2%;
-    color: @color-3-medium;
-    font-weight: bolder;
-
-    &>span {
-        display: block;
-        margin: 4%;
-        color: @color-4-medium-light;
-        font-size: 1.1em;
-        min-width: 76px;
-    }
-
-    .par {
-        font-weight: bolder;
-        font-size: 15px;
-        color: @color-4-medium-light;
-    }
-
-    li {
-        padding-left: 5%;
-        list-style: none;
-        display: block;
-        font-weight: initial;
-        font-family: @text;
-        font-size: 0.8em;
-
-        &:hover {
-            background-color: lighten(@color-4-medium-light, 25%);
-        }
-
-        span {
-            color: lighten(@color-4-medium-light, 60%);
-        }
-    }
-
 }
 
 //-------MAIN-------
 /* author miguel */
-.tags {
 
-    position: absolute;
-    width: 70vw;
-    top: 80px;
-    margin-left: 60px;
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    justify-content: space-between;
-
-    & .etiqueta {
-        text-decoration: none;
-        color: @green;
-        font-size: 1em;
-        padding: 10px;
-        text-align: center;
-        width: 80px;
-        background-color: fade(@morado, 60%);
-        display: inline-block;
-        border-radius: 10px;
-    }
-}
-
-.listado {
-    margin: 0 5% 0 2%;
+.main {
     grid-area: main;
     color: @green;
     display: flex;
     flex-flow: column nowrap;
-    flex-shrink: -2;
-    margin-top: 70px;
-    margin-left: 80px;
     padding: 15px;
+    height: 85vh;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
 
-    .tema {
-        margin: 0 1% 1%;
-        padding: 1%;
+    .profile {
+        width: 60%;
+        height: 70vh;
         font-size: 15px;
+        padding: 2rem;
+        padding-left: 5rem;
         box-shadow: @sombreado;
         font-family: @text;
         border: 2px solid #65648C;
         border-radius: 10px;
-        background-color: @gris-claro;
+        background-color: lighten(@gris-claro, 12%);
+        display: flex;
+        flex-flow: column;
 
-        .header-tema {
-            font-size: 1.5em;
+        .user {
+            font-size: 4em;
             font-weight: bolder;
             font-family: @title;
-            color: @morado;
+            color: lighten(@morado, 14%);
+            margin-bottom: 2rem;
         }
 
-        &:hover {
-            background-color: @blanco;
+        .data {
+            color: @blanco;
+            font-size: 1.7em;
+            font-family: @text;
+
+            button {
+                // outline: none;
+                cursor: pointer;
+                border: 0px;
+                font-size: 1em;
+                // background-color: transparent;
+            }
+
+            * {
+                margin-top: 1rem;
+            }
+
+            #formChange {
+                background-color: @color-3-medium;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 15vh;
+
+                * {
+                    display: inline-block;
+                }
+            }
         }
     }
 }
 
-.autor {
-    color: @color-5-light
-}
-
-.etiqueta {
-    color: @color-2-medium-dark;
-}
-
-.escuchas {
-    color: @color-3-medium;
-}
-
-button,
-.edit {
-    color: @green;
-}
 
 //------FOOTER------
 
@@ -261,6 +191,7 @@ footer {
     color: @green;
     background-color: fade(@morado, 60%);
     height: 55px;
+    position: absolute;
     bottom: 0px;
     width: 100%;
     display: flex;

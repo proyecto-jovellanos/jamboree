@@ -29,11 +29,12 @@ $(document).ready(function () {
         //    },
         //"etiquetas": etiquetas
     };
-
+    $("#currentBPM").html(Tone.Transport.bpm.value)
     $("#tempo").on('change', function (ev) {
         ev.preventDefault()
         let tiempo = this.value;
         // console.log(tiempo);
+        $("#currentBPM").html(tiempo)
         Tone.Transport.bpm.value = tiempo
     })
     var sonando = false

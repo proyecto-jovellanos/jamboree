@@ -44,33 +44,30 @@
 </head>
 
 <body>
-    <div class="cabecera">
-        <div class="logo">
-            JAMBOREE
-        </div>
-        <div class="foro">
-            <a href="../foro/foro.php">
-                Foro
-            </a>
-        </div>
-        <div class="audioteca">
-            <a href="../audioteca/audioteca.php">
-                Audioteca
-            </a>
-        </div>
-        <div class="ayuda">
-            <div class="fullpage-help">
-                <img src="../../media/Images/help.png" alt="ayuda">
-            </div>
-            <i class="fas fa-question fa-2x"></i>
-        </div>
-        <div class="volver">
-            <a href="../main/main.php">
-                <i class="far fa-times-circle fa-2x"></i>
-            </a>
-        </div>
 
-    </div>
+    <header class="header">
+        <div class="animation-header">
+
+            Jamboree
+
+        </div>
+        <div class="nav">
+            <a href="../main/main.php">Inicio</a>
+            <a href="../audioteca/audioteca.php">Audioteca</a>
+            <a href="../foro/foro.php">Foro</a>
+            <div class="ayuda">
+                <div class="fullpage-help">
+                    <img src="../../media/Images/help.png" alt="ayuda">
+                </div>
+                <i class="fas fa-question fa-2x"></i>
+            </div>
+        </div>
+        <div class="social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+        </div>
+    </header>
 
     <div class="main">
         <div class="channel_rack">
@@ -239,6 +236,7 @@
 
         <div class="slidecontainer">
             <input class="slider" type="range" min="60" max="240" value="100" id="tempo">
+            <div id="currentBPM"></div>
         </div>
         <!--    
         <canvas id="canvas">
