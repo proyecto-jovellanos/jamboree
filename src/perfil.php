@@ -66,6 +66,9 @@ if (!isset($_COOKIE['id_User'])) {
                         Introduce nueva contraseña: <input type="password"  name="new_p" autocomplete="new-password" required>
                         <input id="btnC" type="submit" name="btnChange" value="Actualizar a esta contraseña" >
                     </form>
+                    <form action="index/index.php">
+                        <input type="submit" value="LOG OUT" name="logout">
+                    </form>
                 </div>        
             </div>';
         }
