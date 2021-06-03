@@ -65,17 +65,6 @@ if (!isset($_COOKIE['id_User'])) {
             <div><a class="etiqueta" href="foro.php?tag=techno">Techno</a></div>
             <div><a class="etiqueta" href="foro.php?tag=pop">Pop</a></div>
         </div>
-        <div class="sidebar">
-            <div class="most-visited">
-                <span>HITS DEL MOMENTO</span>
-                <?php
-                include("listadoCancionesTop.php");
-                include("db.php");
-                $leerTop = mysqli_query($conexion, 'select * from canciones where publica="1" ORDER BY escuchas DESC LIMIT 10');
-                listarTop($leerTop);
-                ?>
-            </div>
-        </div>
         <section class="listado">
             <?php
             include("listadoCanciones.php");
@@ -90,6 +79,20 @@ if (!isset($_COOKIE['id_User'])) {
             ?>
         </section>
     </div>
+    <div class="aside">
+        <div class="sidebar">
+            <div class="most-visited">
+                <span>HITS DEL MOMENTO</span>
+                <?php
+                include("listadoCancionesTop.php");
+                include("db.php");
+                $leerTop = mysqli_query($conexion, 'select * from canciones where publica="1" ORDER BY escuchas DESC LIMIT 10');
+                listarTop($leerTop);
+                ?>
+            </div>
+        </div>
+    </div>
+
 
     <footer>
         <div class="contactos">Nuestros nombres</div>
