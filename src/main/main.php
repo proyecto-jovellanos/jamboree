@@ -31,28 +31,33 @@ if (!isset($_COOKIE['id_User'])) {
 </head>
 
 <body>
+    <div id="loading">
+        <img id="loading-image" src="../../media/Images/loading.gif" alt="Loading..." />
+    </div>
     <header>
         <div class="logo">
             Jamboree
         </div>
         <div class="nav">
-            <a href="../perfil.html">Mi perfil</a>
-            <a href="../ayuda.html">Ayuda</a>
-        </div>
-        <div class="social">
-            <a><i class="fab fa-twitter"></i></a>
-            <a><i class="fab fa-facebook"></i></a>
-            <a><i class="fab fa-instagram"></i></a>
+            <div class="social">
+                <a><i class="fab fa-twitter"></i></a>
+                <a><i class="fab fa-facebook"></i></a>
+                <a><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="links">
+                <a href="../perfil.html">Mi perfil</a>
+                <a href="../ayuda.html">Ayuda</a>
+            </div>
         </div>
     </header>
 
     <div class="main">
-        <div class="boton foro active">
+        <div class="boton foro">
             <div class="sombra"></div>
             <a href="../foro/foro.php">Foro</a>
         </div>
 
-        <div class="boton estudio">
+        <div class="boton estudio show">
             <div class="sombra"></div>
             <a href="../estudio/estudio.html">Estudio</a>
         </div>
@@ -68,6 +73,9 @@ if (!isset($_COOKIE['id_User'])) {
         <div class="lopd">ley organica proteccion datos, cookies...</div>
         <div class="year">AÑO y Copyright</div>
     </footer>
+    <script>
+
+    </script>
 </body>
 
 

@@ -124,7 +124,12 @@ $(document).ready(function () {
             tracks[i].fill(0)
         }
         $(".beat").removeClass("marked")
-        Tone.Transport.stop()
+        $(".onoff").addClass("fa-play").removeClass("fa-pause")
+        Tone.Transport.pause()
+        console.log("pausado");
+        leerMarked()
+        $(".beat").removeClass("timeline")
+        index = -1
     })
 
     /* evento a cada beat para pulsarlo */
@@ -317,7 +322,7 @@ $(document).ready(function () {
                     let player = players[i]
                     if (tracks[i][0][index] == 1) {
                         //  console.log("index :" + index);
-                        player.start("+0.1")
+                        player.start("+0.01")
                         //  console.log(Tone.Transport.sampleTime);
                     }
                 }

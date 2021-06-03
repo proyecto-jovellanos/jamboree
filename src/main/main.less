@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-@title: Cormorant, serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+@title: Monoton, serif;
 @text: Nunito, sans-serif;
 @sombreado: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
@@ -17,6 +20,24 @@
 @morado: #43038c;
 @gris-oscuro: #414141;
 @gris-claro: #525252;
+
+#loading {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    opacity: 0.7;
+    background-color: #fff;
+    z-index: 99;
+    text-align: center;
+}
+
+#loading-image {
+
+    z-index: 100;
+}
 
 * {
     box-sizing: border-box;
@@ -40,7 +61,7 @@ body {
     display: grid;
     height: 100vh;
     width: 100vw;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     //grid-auto-rows: minmax(auto, auto);
     grid-template-areas:
         "header header"
@@ -53,48 +74,77 @@ body {
 /*----HEADER------*/
 header {
     grid-area: header;
-    background-color: @gris-oscuro;
-    border: 1px solid @gris-claro;
+    background-color: lighten(@gris-claro, 1%);
+    //border: 1px solid @gris-claro;
+    -moz-box-shadow: inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #000000;
     border-width: 2px;
     z-index: 9;
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-flow: row nowrap;
-
+    justify-content: center;
+    align-items: center;
     height: 10vh;
     min-height: 52px;
     //background-color: @color-3-medium;
     color: @green;
+    text-align: center;
 
     .logo {
-        align-self: center;
+        position: absolute;
+        //align-self: center;
+        //justify-self: center;
         font-size: 2em;
         font-family: @title;
+        width: 66vw;
     }
 
     .nav {
+        position: absolute;
+        right: 0.05vw;
+        display: flex;
+        flex-direction: column;
+        width: 34vw;
         align-self: center;
+        justify-content: space-evenly;
 
-        a {
-            display: inline-flex;
-            margin-left: 3em;
+        .social {
+            align-self: center;
+
+            a {
+                display: inline-flex;
+                margin-left: 1em;
+                color: @green;
+
+                &:hover {
+                    color: lighten(@green, 20%)
+                }
+            }
         }
-    }
 
-    .social {
-        align-self: center;
+        .links {
+            display: flex;
+            flex-direction: row;
+            margin-top: 0.5em;
 
-        a {
-            display: inline-flex;
-            margin-left: 2em;
-            color: @green;
+            a {
+                display: inline-block;
+                margin-left: 1em;
+                font-size: 1.2em;
 
-            &:hover {
-                font-size: 17px;
-                color: lighten(@green, 20%)
+                &:link,
+                &:visited,
+                &:hover,
+                &:active {
+                    text-decoration: none;
+                    color: @green;
+                }
             }
         }
     }
+
 }
 
 //-----MAIN----
@@ -109,18 +159,33 @@ header {
     align-items: stretch;
 
     .boton.foro {
-        background-color: rgb(199, 199, 199);
         background-image: url("../../media/Images/foro-main2.jpg");
+        background-size: 66vw;
+        image-rendering: -webkit-optimize-contrast;
+
+        a {
+            color: darken(@gris-claro, 50%);
+        }
     }
 
     .boton.audioteca {
-        background-color: grey;
         background-image: url("../../media/Images/audioteca-main.jpg");
+        background-size: 66vw;
+        image-rendering: -webkit-optimize-contrast;
+
+        a {
+            color: darken(@gris-claro, 50%);
+        }
     }
 
     .boton.estudio {
-        background-color: rgb(87, 87, 87);
         background-image: url("../../media/Images/studio-main2.jpg");
+        background-size: 66vw;
+        image-rendering: -webkit-optimize-contrast;
+
+        a {
+            color: lighten(@gris-claro, 50%);
+        }
     }
 
     .boton {
@@ -131,17 +196,12 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-        /*      background: #E6E9ED;
-        background-size: auto 120%;
-        background-position: center; */
-
         cursor: pointer;
-        // transition: .4s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 
         &.show {
             flex-grow: 10000;
             transform: scale(1);
-            max-width: 600px;
+            max-width: 66vw;
             margin: 0px;
             border-radius: 40px;
             background-size: auto 100%;
@@ -156,7 +216,7 @@ header {
             flex-grow: 1;
             border-radius: 30px;
 
-            .shadow {
+            .sombra {
                 bottom: -40px;
                 box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
             }
@@ -168,12 +228,10 @@ header {
             left: 0px;
             right: 0px;
             height: 120px;
-            // transition: .5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
         }
 
         a {
             border: none;
-            color: @green;
             text-align: center;
             -webkit-transition-duration: 0.4s;
             transition-duration: 0.4s;
@@ -181,20 +239,18 @@ header {
             font-size: 2.5em;
             cursor: pointer;
             display: inline-block;
+            padding: 100%;
 
             &:hover,
             &:active {
-                background-color: @color-3-medium;
+                background-color: rgba(71, 71, 71, 0.336);
+                color: honeydew;
+                font-size: 2.8em;
+                transition: .5s;
             }
         }
     }
-
-
-
 }
-
-
-
 
 /*----FOOTER------*/
 footer {
@@ -202,8 +258,6 @@ footer {
     position: relative;
     bottom: 0;
     height: 10vh;
-
-
 }
 
 footer {
