@@ -110,7 +110,7 @@ elseif (isset($_POST['register'])) {
         </div>
       </div>
     </div>
-
+    
     <div class="divcarousel">
       
     <div class="card-carousel">
@@ -132,6 +132,7 @@ elseif (isset($_POST['register'])) {
         </div>
       </div>
       </div>
+      
       <div class="section">
         <div class="textimg"><h2>Estudio</h2>
         <p>El estudio sera tu espacion de creacion ,tu pequeña cueva musical o como lo quieras llamar...Basicamente en el dejaras fluir tu creatividad con el chanel rack que tiene integrado y diviersas funcionalidades como el control de bpm ,para poder crear diferentes estilos musicales</p></div>
