@@ -30,7 +30,7 @@ body::-webkit-scrollbar {
 //------------ESTRUCTURA---------//
 body {
     display: grid;
-    height: 300vh;
+    height: 350vh;
     width: 100vw;
     grid-template-columns: repeat(2, 1fr);
     //grid-auto-rows: minmax(auto, auto);
@@ -95,7 +95,7 @@ header {
 main {
     grid-area: main;
     width: 100%;
-    height: 280vh;
+    height: 330vh;
     background-color: @gris-claro;
     border: 1px solid @gris-oscuro;
     border-width: 2px;
@@ -220,6 +220,7 @@ main {
     
 
     .divcarousel {
+       
         
         
 
@@ -262,8 +263,9 @@ main {
         
         .card-carousel {
             
+            
 
-
+            box-sizing:content-box;
             position: relative;
             display: flex;
             align-items: center;
@@ -464,7 +466,7 @@ main {
             height: 85%;
             align-self: center;
             h2{
-                font-size: 3em;
+                font-size: 2em;
             }
             p{
                 color: @green;
