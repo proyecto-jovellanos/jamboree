@@ -38,25 +38,25 @@ if (!isset($_COOKIE['id_User'])) {
 </head>
 
 <body>
-<header class="header">
-            <div class="animation-header">
-                <div class="lft">[</div>
-                Jamboree
-                <div class="rght">]</div>
-            </div>
-            <div class="nav">
-                <a href="../main/main.php">Inicio</a>
-                <a href="../estudio/estudio.html">Estudio</a>
-                <a href="../audioteca/audioteca.php">Audioteca</a>
-                <a href="../ayuda.html">Ayuda</a>
-                <a href="../perfil.html">Mi perfil</a>
-            </div>
-            <div class="social">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-facebook-square"></i></a>
-            </div>
-        </header>
+    <header class="header">
+        <div class="animation-header">
+            <div class="lft">[</div>
+            Jamboree
+            <div class="rght">]</div>
+        </div>
+        <div class="nav">
+            <a href="../main/main.php">Inicio</a>
+            <a href="../estudio/estudio.html">Estudio</a>
+            <a href="../audioteca/audioteca.php">Audioteca</a>
+            <a href="../ayuda.html">Ayuda</a>
+            <a href="../perfil.php">Mi perfil</a>
+        </div>
+        <div class="social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+        </div>
+    </header>
     <div class="main">
         <div class="tags">
             <div><a class="etiqueta" href="foro.php">Todas</a></div>
@@ -95,8 +95,8 @@ if (!isset($_COOKIE['id_User'])) {
         <div class="contactos">Nuestros nombres</div>
         <div class="lopd">ley organica proteccion datos, cookies...</div>
         <div class="year">AÑO y Copyright</div>
-        
-      </footer> 
+
+    </footer>
 </body>
 
 </html>

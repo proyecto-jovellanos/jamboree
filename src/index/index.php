@@ -132,6 +132,21 @@ elseif (isset($_POST['register'])) {
         </div>
       </div>
       </div>
+      <div class="section">
+        <div class="textimg"><h2>Estudio</h2>
+        <p>El estudio sera tu espacion de creacion ,tu pequeña cueva musical o como lo quieras llamar...Basicamente en el dejaras fluir tu creatividad con el chanel rack que tiene integrado y diviersas funcionalidades como el control de bpm ,para poder crear diferentes estilos musicales</p></div>
+        <div class="img"><img src="../../media/Images/Estudio.png" alt=""></div>
+      </div>
+      <div class="section">
+      <div class="img"><img src="../../media/Images/Foro.png" alt=""></div>
+        <div class="textimg"><h2>Foro</h2>
+        <p>El foro es un sitio agradable que comparte la comunidad para mostrar canciones o escucharlas ya seas un aficionado de la produccion o un simple amante de la musica o incluso un manager de talentos musicales</p></div>
+      </div>
+      <div class="section">
+        <div class="textimg"><h2>Audioteca</h2>
+        <p>La Audioteca es un espacio donde podras guardar todas aquellas canciones o beats que mas te interesen desde el estudio.Ademas desde ahi tendras la opcion de subirlas al foro para que todos los artistas las observen</p></div>
+        <div class="img"><img src="../../media/Images/Audioteca.png" alt=""></div>
+      </div>
     
 
 
