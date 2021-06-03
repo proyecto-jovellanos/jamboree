@@ -45,7 +45,7 @@ if (!isset($_COOKIE['id_User'])) {
                 <a><i class="fab fa-instagram"></i></a>
             </div>
             <div class="links">
-                <a href="../perfil.html">Mi perfil</a>
+                <a href="../perfil.php">Mi perfil</a>
                 <a href="../ayuda.html">Ayuda</a>
             </div>
         </div>

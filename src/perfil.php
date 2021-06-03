@@ -2,7 +2,7 @@
 if (!isset($_COOKIE['id_User'])) {
     echo '<script type="text/javascript">
     alert("Tu sesión expiró, vuelve a iniciar sesión.");
-    window.location.href="../index/index.php";
+    window.location.href="/index/index.php";
     </script>';
 }
 ?>
@@ -49,26 +49,34 @@ if (!isset($_COOKIE['id_User'])) {
         <?php
         include("db.php");
         $user = $_COOKIE["id_User"];
-        $consulta = "select * from user where username='$user'";
+        $consulta = "select * from users where username='$user'";
         $resultado = mysqli_query($conexion, $consulta);
 
-        if ($resultado->num_rows > 0) {
-
-            while ($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
-                echo
-                '<div class="profile">
-                        <header class="user">
-                        ' . $row['username'] . '
-                        </header>
-                        <main>
-                            <div id=""> Fecha de nacimiento:' . $row['fecha'] . ' </div>
-                            <div id=""> Contraseña:' . $row['contra'] . '</div>
-                        </main>        
-                </div>';
-            }
+        while ($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
+            echo
+            '<div class="profile">
+                <header class="user">
+                  ' . $row['username'] . '
+                </header>
+                <div class="data">
+                    <div> Fecha de nacimiento: ' . $row['fecha'] . ' </div>
+                    <div class="contrap"> Contraseña: ' . $row['contra'] . '</div>
+                        <button id="abrirForm">Cambiar contraseña</button>
+                    <form style="display: none;" id="formChange" action="perfil.php" method="get">
+                        Introduce nueva contraseña: <input type="password"  name="new_p" autocomplete="new-password" required>
+                        <input id="btnC" type="submit" name="btnChange" value="Actualizar a esta contraseña" >
+                    </form>
+                </div>        
+            </div>';
+        }
+        if (isset($_GET['new_p'])) {
+            $new_pass = $_GET['new_p'];
+            $consulta = "update users SET contra='$new_pass' where username='$user'";
+            mysqli_query($conexion, $consulta);
         }
 
         ?>
+
     </div>
 
     <footer>
