@@ -14,30 +14,33 @@
 @morado: #43038c;
 @gris-oscuro: #414141;
 @gris-claro: #525252;
-@blanco:#fff;
+@blanco: #fff;
 
 * {
     box-sizing: border-box;
     margin: 0 auto;
 }
-        body::-webkit-scrollbar {
+
+body::-webkit-scrollbar {
     display: none;
 }
 
 body {
     height: 100%;
-    background-color:@gris-claro;
+    background-color: @gris-claro;
 }
+
 .header {
     z-index: 9;
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
     min-height: 52px;
-	align-items:center;
+    height: 10vh;
+    align-items: center;
     position: fixed;
     top: 0px;
-    background-color:@green;
+    background-color: @green;
 
     .animation-header {
         position: absolute;
@@ -47,12 +50,12 @@ body {
         flex-flow: row;
         font-size: 2em;
         text-size-adjust: 100%;
-        color:@morado;
+        color: @morado;
         font-family: Cormorant, serif;
         animation-delay: 2s;
     }
 
-    
+
     .nav a {
         color: @morado;
         padding: 0px 32px;
@@ -62,44 +65,49 @@ body {
         cursor: pointer;
         display: inline-block;
     }
+
     .social {
         position: absolute;
-        width:300px;
+        width: 300px;
         right: 2%;
     }
-    .social i{
-        padding-left:65px ;
-        color:@morado;
+
+    .social i {
+        padding-left: 65px;
+        color: @morado;
     }
 }
+
 .main {
-    margin-top:80px;
+    margin-top: 80px;
     margin-left: 20px;
-    align-items:justify ;
+    align-items: justify;
 
-        .apartados{
-            margin-top: 90px;
-            padding: 10px;
+    .apartados {
+        margin-top: 90px;
+        padding: 10px;
 
-            .jamboree{
-                font-size:40px;
-                color:@green;
-                margin-top: 10px;
-                margin-bottom: 10px;
-            }
-            .titulo{
-                color: @blanco;  
-                width: 100%;
-                font-size: 20px;
-                margin-bottom:20px; 
+        .jamboree {
+            font-size: 40px;
+            color: @green;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
 
-                .word{
-                    color:@morado;
-                    font-size:25px;
-                }   
+        .titulo {
+            color: @blanco;
+            width: 100%;
+            font-size: 20px;
+            margin-bottom: 20px;
+
+            .word {
+                color: @morado;
+                font-size: 25px;
             }
         }
+    }
 }
+
 footer {
     color: @green;
     background-color: @morado;
@@ -110,6 +118,7 @@ footer {
     line-height: 55px;
     position: fixed;
 }
+
 @media all and (max-width:400px) {
 
     .main {
@@ -128,4 +137,4 @@ footer {
         height: 100%;
         flex-flow: column nowrap;
     }
-} 
+}

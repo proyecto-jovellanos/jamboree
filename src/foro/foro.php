@@ -72,7 +72,9 @@ if (!isset($_COOKIE['id_User'])) {
             $consulta = 'select * from canciones where publica="1"';
             if (isset($_GET['tag'])) {
                 $tag = $_GET['tag'];
-                $consulta = $consulta . " and etiquetas='$tag'";
+                $consulta = $consulta . " and etiquetas='$tag' ORDER BY 1 DESC";
+            } else {
+                $consulta = $consulta . " ORDER BY 1 DESC";
             }
             $leer = mysqli_query($conexion, $consulta);
             listar($leer);

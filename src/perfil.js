@@ -5,9 +5,12 @@ $(document).ready(function () {
         $("#formChange").show()
 
     })
-    $("#btnC").click(function (ev) {
-        ev.preventDefault()
+
+    //si en url hay new password ocultar form y mostrar nueva contraseña
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('new_p')) {
+        var new_p = urlParams.get("new_p")
         $("#formChange").hide()
-        $(".contrap").html("Contraseña recién cambiada")
-    })
+        $(".contrap").html("Contraseña recién cambiada a: " + new_p)
+    }
 })

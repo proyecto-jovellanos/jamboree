@@ -14,7 +14,7 @@
 @morado: #43038c;
 @gris-oscuro: #414141;
 @gris-claro: #525252;
-@blanco:#fff;
+@blanco: rgb(230, 230, 230);
 
 
 * {
@@ -30,7 +30,7 @@ body::-webkit-scrollbar {
 body {
     height: 100vh;
     width: 100vw;
-    
+    background-color: @gris-oscuro;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
@@ -46,6 +46,7 @@ body {
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
 }
+
 .grow:hover {
     transform: scale(1.01);
     transition: 60ms ease;
@@ -70,8 +71,8 @@ button {
     display: flex;
     flex-flow: row nowrap;
     min-height: 52px;
-	align-items:center;
-    background-color:@green;
+    align-items: center;
+    background-color: @green;
     position: fixed;
 
     .animation-header {
@@ -94,6 +95,7 @@ button {
             .animation(right-slide);
         }
     }
+
     .nav a {
         color: @morado;
         padding: 0px 32px;
@@ -103,159 +105,204 @@ button {
         cursor: pointer;
         display: inline-block;
     }
+
     .social {
         position: absolute;
         width: 300px;
         right: 2%;
-        color:@morado;
+        color: @morado;
 
-    i {
-        padding-left: 65px;
-        color:@morado;
-    }
+        i {
+            padding-left: 65px;
+            color: @morado;
+        }
 
     }
 
 }
-.aside{
+
+.aside {
     grid-area: aside;
-   background-color:@gris-oscuro;
-   width: 100%;
-   padding-top: 15vh;
+    background-color: @gris-oscuro;
+    //width: 100%;
+    width: 17vw;
+    //margin-top: 11vh;
+    position: absolute;
+    right: 10vw;
+    top: 13vh;
+    bottom: 15%;
+    height: 50vh;
+    max-height: 500px;
+
+    // padding-top: 15vh;
     .sidebar {
         width: 70%;
         display: flex;
-        margin-top: 50px;
+        // margin-top: 50px;
         color: @color-4-medium-light;
         border: 2px solid #65648C;
         max-width: 300;
         border-radius: 10px;
+
         .most-visited {
             .aside-style
         }
     }
-    
+
     .aside-style {
-        margin: 2%;
+        margin: 1%;
         color: @color-3-medium;
         font-weight: bolder;
-    
+
         &>span {
             display: block;
             margin: 4%;
             color: @color-4-medium-light;
             font-size: 1.1em;
             min-width: 76px;
+            text-align: center;
         }
-    
+
         .par {
             font-weight: bolder;
             font-size: 15px;
             color: @color-4-medium-light;
         }
-    
+
         li {
             list-style: none;
             display: block;
             font-weight: initial;
             font-family: @text;
             font-size: 0.8em;
-            padding: 15px;
-    
+            padding: 10px;
+
             &:hover {
                 background-color: lighten(@color-4-medium-light, 25%);
             }
-    
+
             span {
                 color: lighten(@color-4-medium-light, 60%);
             }
         }
-    
+
     }
 }
 
-button,.edit{
-    color:@green;
+button,
+.edit {
+    color: @green;
 }
+
 .main {
     grid-area: main;
-   background-color:@gris-oscuro;
-   width: 100%;
-   padding-top: 10vh;
+    background-color: @gris-oscuro;
+    width: 100%;
+    padding-top: 4vh;
 
-/* author miguel */
-.tags {
+    /* author miguel */
+    .tags {
 
-    position: absolute;
-    width: 70vw;
-    top: 80px;
-    margin-left:60px;
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    justify-content: space-between;
-    & .etiqueta{
-     text-decoration: none;
-     color:@green;
-     font-size: 1em;
-     padding: 10px;
-     text-align: center;
-     width:80px;
-     background-color: fade(@morado, 60%);
-     display: inline-block;
-     border-radius: 10px;
+        position: relative;
+        width: 70vw;
+        top: 80px;
+        margin-left: 60px;
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        justify-content: space-between;
+
+        & .etiqueta {
+            text-decoration: none;
+            color: @green;
+            font-size: 1em;
+            padding: 10px;
+            text-align: center;
+            width: 80px;
+            background-color: fade(@morado, 60%);
+            display: inline-block;
+            border-radius: 10px;
+        }
+    }
+
+    .listado {
+        margin: 0 5% 0 2%;
+        grid-area: main;
+        color: @green;
+        display: flex;
+        flex-flow: column nowrap;
+        flex-shrink: -2;
+        margin-top: 70px;
+        margin-left: 80px;
+        padding: 15px;
+
+        .tema {
+
+            margin: 0 1% 1%;
+            padding: 1%;
+            font-size: 15px;
+            box-shadow: @sombreado;
+            font-family: @text;
+            border: 2px solid #65648C;
+            border-radius: 10px;
+            background-color: lighten(@gris-claro, 20%);
+
+            .header-tema {
+                font-size: 1.5em;
+                font-weight: bolder;
+                font-family: @title;
+                color: @morado;
+            }
+
+            &:hover {
+                background-color: @blanco;
+            }
+
+            .popup {
+                display: none;
+            }
+
+            a:hover .popup {
+                display: inline-block;
+                background-color: fade(@green, 15%);
+                padding: 0.25em;
+                border-radius: 25px;
+            }
+
+
+            a {
+
+                &:link,
+                &:visited,
+                &:hover,
+                &:active {
+                    text-decoration: none;
+                    color: @morado;
+                }
+            }
+        }
+    }
+
+    .autor {
+        color: @color-5-light
+    }
+
+    .etiqueta {
+        color: @color-2-medium-dark;
+    }
+
+    .escuchas {
+        color: @color-3-medium;
     }
 }
 
-.listado {
-    margin: 0 5% 0 2%;
-    grid-area: main;
-    color: @green;
-    display: flex;
-    flex-flow: column nowrap;
-    flex-shrink: -2;
-    margin-top: 70px;
-    margin-left: 80px;
-    padding: 15px;
-
-    .tema {
-        margin: 0 1% 1%;
-        padding: 1%;
-        font-size: 15px;
-        box-shadow: @sombreado;
-        font-family: @text;
-        border: 2px solid #65648C;
-        border-radius: 10px;
-        background-color:@gris-claro;
-
-        .header-tema {
-            font-size: 1.5em;
-            font-weight: bolder;
-            font-family: @title;
-            color: @morado;
-        }
-        &:hover {
-            background-color: @blanco;
-        }
-    }
-}
-.autor{
-    color:@color-5-light
-   }
-   .etiqueta{
-   color: @color-2-medium-dark;
-   }
-   .escuchas{
-   color: @color-3-medium;
-   }
-}
 //------FOOTER------
 
 footer {
     grid-area: footer;
     color: @green;
     position: relative;
-    background-color:@morado;
+    background-color: @morado;
     height: 10vh;
     bottom: 0px;
     width: 100%;
@@ -267,7 +314,7 @@ footer {
 
 @keyframes left-slide {
     0% {
-        color:@blanco;
+        color: @blanco;
         left: -50%;
         top: 0px;
     }
