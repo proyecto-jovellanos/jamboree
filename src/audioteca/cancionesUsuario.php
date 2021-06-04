@@ -15,10 +15,12 @@ function listar($resultado)
         } else {
             echo '<button class="btn fromForo">Quitar del Foro</button>';
         }
-
         echo
         '<button class="btn">
-            <a href="../estudio/estudio.html?id_song=' . $row['id_Cancion'] . '"><i class="fas fa-pencil-alt"></i></a>
+        <a href="../estudio/estudio.html?id_song=' . $row['id_Cancion'] . '">
+        <i class="fas fa-pencil-alt"></i>
+            <span class="popup">Editar esta canción en el estudio</span>
+        </a>
         </button>
             <div class="bpm"> ' . $row['bpm'] . '</div>
             <div class="cancion"> ' . $row['track'] . '</div>

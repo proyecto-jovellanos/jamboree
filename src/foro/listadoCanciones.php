@@ -17,8 +17,10 @@ function listar($resultado)
             <button class="pause"><i class="fas fa-pause"></i></button>
             <div class="etiqueta"> ' . $row['etiquetas'] . '</div>
             <button class="edit">
-            <i class="fas fa-pencil-alt"></i>
-            <a href="../estudio/estudio.html?id_song=' . $row['id_Cancion'] . '">Editar en estudio</a>
+            <a href="../estudio/estudio.html?id_song=' . $row['id_Cancion'] . '">
+                <i class="fas fa-pencil-alt"></i>
+                <span class="popup">Editar esta canción en el estudio</span>
+            </a>
             </button>
             </article>';
         }

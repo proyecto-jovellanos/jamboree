@@ -31,9 +31,10 @@ if (!isset($_COOKIE['id_User'])) {
 </head>
 
 <body>
-    <div id="loading">
+    <!-- esto era una imagen de cara, pero tardaba la propia imagen de carga -->
+    <!-- <div id="loading">
         <img id="loading-image" src="../../media/Images/loading.gif" alt="Loading..." />
-    </div>
+    </div> -->
     <header>
         <div class="logo">
             Jamboree

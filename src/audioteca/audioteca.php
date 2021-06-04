@@ -69,7 +69,7 @@ if (!isset($_COOKIE['id_User'])) {
             <?php
             include("cancionesUsuario.php");
             include("db.php");
-            $leer = mysqli_query($conexion, 'select * from canciones where username="' . $_COOKIE['id_User'] . '"');
+            $leer = mysqli_query($conexion, 'select * from canciones where username="' . $_COOKIE['id_User'] . '" order by 1 desc');
             listar($leer);
             ?>
         </div>
