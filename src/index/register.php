@@ -39,10 +39,6 @@
                 <input type="password" name="password" id="" required>
             </div>
             <div class="sectionRegister">
-                <p>Repite la Contraseña</p>
-                <input type="password" name="password" id="" required>
-            </div>
-            <div class="sectionRegister">
                 <p>Fecha</p>
                 <input type="date" name="fecha" id="" required>
             </div>
