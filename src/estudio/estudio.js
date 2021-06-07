@@ -94,7 +94,7 @@ $(document).ready(function () {
         ev.preventDefault()
         let song_name = $('input[name="name"]').val()
         if (song_name == "") {
-            $(".warning").text("Introduce un nombre!")
+            $(".warning").text("Introduce un nombre")
         } else {
             let tracksJSON = JSON.stringify(tracks)
             let tag = $("select").children("option:selected").val()
@@ -111,7 +111,7 @@ $(document).ready(function () {
             }
             fetch("../server.php", params)
 
-            $(".warning").text("Canción guardada en tu audioteca!")
+            $(".warning-good").html("Canción guardada en tu <a href='../audioteca/audioteca.php'>audioteca</a>")
             setTimeout(() => {
                 $(".form-popup").hide()
             }, 2000);
