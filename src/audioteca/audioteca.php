@@ -25,6 +25,7 @@ if (!isset($_COOKIE['id_User'])) {
     <script src="https://tonejs.github.io/build/Tone.js"></script>
 
     <!-- Script propio -->
+    <script src="app.js"></script>
     <script src="audioteca.js"></script>
 
     <script>
@@ -40,7 +41,7 @@ if (!isset($_COOKIE['id_User'])) {
 </head>
 
 <body>
-<header class="menu">
+<nav class="menu">
         <label class="logo">Jamboree</label>
         <ul class="menu-items">
             <li><a href="../main/main.php">Inicio</a></li>
@@ -52,7 +53,7 @@ if (!isset($_COOKIE['id_User'])) {
         <span class="btn_menu">
             <i class="fas fa-bars"></i>
         </span>
-    </header>
+    </nav>
     <div class="main">
         <div class="titulo">
             <?php
