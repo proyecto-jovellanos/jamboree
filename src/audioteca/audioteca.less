@@ -19,6 +19,8 @@
 * {
     box-sizing: border-box;
     margin: 0 auto;
+    text-decoration: none;
+    list-style: none;
 }
 
 /* ocultar barras de scroll */
@@ -62,10 +64,8 @@ button {
 
 .main {
     grid-area: main;
-    background-color: @gris-oscuro;
     width: 100%;
-    padding-top: 10vh;
-
+    margin-top:10vh;
     .titulo {
         color: @blanco;
         display: flex;
@@ -78,7 +78,7 @@ button {
 
 
     .lista_audioteca {
-        z-index: 10;
+        z-index:10;
         margin: 0 5% 0 2%;
         grid-area: main;
         color: @morado;
@@ -150,98 +150,65 @@ button {
 }
 
 //------HEADER-------
-.header {
-    z-index: 9;
-    height: 10vh;
-    width: 100%;
-    grid-area: header;
+.menu{
+    grid-area:header;
+    height:75px;
+    width:100%;
+    background-color:#4495e3;
     display: flex;
-    flex-flow: row nowrap;
-    min-height: 52px;
+    justify-content: space-between;
     align-items: center;
-    background-color: @green;
-    position: fixed;
-
-    .animation-header {
-        position: absolute;
-        left: 5%;
-        align-self: center;
-        display: flex;
-        flex-flow: row;
-        font-size: 2em;
-        text-size-adjust: 100%;
-        color: @morado;
-        font-family: @title;
-        animation-delay: 2s;
-
-        .lft {
-            .animation(left-slide)
-        }
-
-        .rght {
-            .animation(right-slide);
-        }
-    }
-
-    .nav a {
-        color: @morado;
-        padding: 0px 32px;
-        text-align: center;
-        text-decoration: none;
-        font-size: 1.4em;
-        cursor: pointer;
-        display: inline-block;
-
-    }
-
+    border-bottom: 1px solid white;
+    box-shadow: 5px 0 10px rgb(0, 0, 0, .6);
 }
-
-.social {
-    position: absolute;
-    width: 300px;
-    right: 2%;
+.logo{
+    color:white;
+    font-size: 35px;
+    padding:0 80px;
+    font-weight: bold;
 }
-
-.social i {
-    padding-left: 65px;
-    color: @morado;
+.menu-items{
+    display:flex;
+    margin-right:30px;
 }
-
-
-//-------MAIN-------
-li {
-    padding-left: 5%;
-    list-style: none;
+.menu-items li{
+    border-radius: 3px;
+    margin: 0 5px;
+}
+.menu-items li a{
+    padding:7px 13px;
+    font-size:18px;
     display: block;
-    font-weight: initial;
-    font-family: @text;
-    font-size: 0.8em;
-    z-index: 9;
-
-    &:hover {
-        background-color: lighten(@morado, 25%);
-    }
-
-    span {
-        color: lighten(@morado, 60%);
-        font-size: 0.7em;
-    }
+    color:white;
 }
-
+.menu-items li:hover{
+    background-color: rgb(0, 0, 0, .3);
+    transition:.4s;
+}
+.btn_menu{
+margin-right:30px;
+font-size: 25px;
+color:white;
+cursor:pointer;
+display:none;
+}
+ul.show{
+    top:65px;
+    width:100%;
+}
 
 //------FOOTER------
 
 footer {
     grid-area: footer;
     color: @green;
-    position: fixed;
-    z-index: 1;
+    position: relative;
     background-color: @morado;
     height: 10vh;
     bottom: 0px;
     width: 100%;
     display: flex;
-    line-height: 55px;
+    line-height: 10vh;
 }
 
 //-----ANIMATIONS------

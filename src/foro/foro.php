@@ -44,13 +44,15 @@ if (!isset($_COOKIE['id_User'])) {
             Jamboree
             <div class="rght">]</div>
         </div>
-        <div class="nav">
-            <a href="../main/main.php">Inicio</a>
-            <a href="../estudio/estudio.html">Estudio</a>
-            <a href="../audioteca/audioteca.php">Audioteca</a>
-            <a href="../ayuda.html">Ayuda</a>
-            <a href="../perfil.php">Mi perfil</a>
-        </div>
+        <nav class="nav">
+            <ul>
+            <li><a href="../main/main.php">Inicio</a></li>
+            <li><a href="../estudio/estudio.html">Estudio</a></li>
+            <li><a href="../audioteca/audioteca.php">Audioteca</a></li>
+            <li><a href="../ayuda.html">Ayuda</a></li>
+            <li><a href="../perfil.php">Mi perfil</a></li>
+    </ul>
+    </nav>
         <div class="social">
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>

@@ -96,55 +96,60 @@ button {
         }
     }
 
-    .nav a {
-        color: @morado;
-        padding: 0px 32px;
-        text-align: center;
+    .nav ul{
+        margin:0;
+        padding:0;
+        list-style: none;
+     li{
+        display: inline-block;
+     a {
+        display: block;
+        padding: 0.5rem 1rem;
+        color:@morado;
         text-decoration: none;
         font-size: 1.4em;
         cursor: pointer;
-        display: inline-block;
     }
+}
+}
 
     .social {
+        width: 20vw;
         position: absolute;
-        width: 300px;
-        right: 2%;
+        right: -5%;
         color: @morado;
 
         i {
-            padding-left: 65px;
+            padding-left: 1rem;
             color: @morado;
         }
-
+    }
     }
 
-}
 
 .aside {
     grid-area: aside;
     background-color: @gris-oscuro;
     //width: 100%;
-    width: 17vw;
+    width: 20vw;
     //margin-top: 11vh;
     position: absolute;
-    right: 10vw;
-    top: 13vh;
+    right: 6vw;
+    top: 16vh;
     bottom: 15%;
-    height: 50vh;
-    max-height: 500px;
+    height:82vh;
 
     // padding-top: 15vh;
     .sidebar {
-        width: 70%;
+        width:100%;
         display: flex;
         // margin-top: 50px;
         color: @color-4-medium-light;
         border: 2px solid #65648C;
-        max-width: 300;
         border-radius: 10px;
 
         .most-visited {
+            width: 100%;
             .aside-style
         }
     }
@@ -159,14 +164,9 @@ button {
             margin: 4%;
             color: @color-4-medium-light;
             font-size: 1.1em;
-            min-width: 76px;
+            width: 90%;
+            
             text-align: center;
-        }
-
-        .par {
-            font-weight: bolder;
-            font-size: 15px;
-            color: @color-4-medium-light;
         }
 
         li {
@@ -183,6 +183,10 @@ button {
 
             span {
                 color: lighten(@color-4-medium-light, 60%);
+                
+            }
+            .hit{
+                float: right;
             }
         }
 
@@ -211,6 +215,7 @@ button,
         flex-flow: row;
         align-items: center;
         justify-content: space-between;
+        padding-bottom: 20px;
 
         & .etiqueta {
             text-decoration: none;
@@ -366,3 +371,9 @@ footer {
         flex-flow: column nowrap;
     }
 }
+@media all and (max-width:730px) {
+
+    .main{
+        width: 100%;
+    }
+    }
