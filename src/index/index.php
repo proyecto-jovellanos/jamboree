@@ -9,9 +9,8 @@ elseif (isset($_POST['register'])) {
   $user = $_POST['user'];
   $passw = $_POST['password'];
   $fecha = $_POST['fecha'];
-  $etiquetas = $_POST['etiquetas'];
   include("db.php");
-  $consulta = "INSERT INTO users (username, contra,fecha,etiquetas) VALUES ('$user','$passw','$fecha','$etiquetas')";
+  $consulta = "INSERT INTO users (username,contra,fecha) VALUES ('$user','$passw','$fecha')";
   mysqli_query($conexion, $consulta);
 }
 ?>
@@ -59,6 +58,7 @@ elseif (isset($_POST['register'])) {
 
   <!--MAIN-->
   <main>
+  <div class="maindiv">
   <div class="log">
       <input type="checkbox" name="" id="show">
       <input type="checkbox" name="" id="reg">
@@ -89,38 +89,18 @@ elseif (isset($_POST['register'])) {
 
     </div>
     <div class="text">The fastest way from your brain to your speakers</div>
-    <div class="maindiv">
+    
       <div class="video">
 
         <video  muted loop autoplay>
 
           <source src="1.mp4" type="video/mp4">
         </video>
-        <div class="div-musicboton">
-          <div class="buton">
-          <button class="reproductorHouse">House</button>
-          <p><br>¿Como se hace?<img src="../../media/Images/House.PNG" alt=""></p>    
-          </div>
-
-          <div class="buton">
-          <button class="reproductorRap">Reggueton</button>
-          <p><br>¿Como se hace?<img src="../../media/Images/Regueton.PNG" alt=""></p>
-          </div>
-          
-        </div>
+        
       </div>
     </div>
-    
     <div class="divcarousel">
-      
-    <div class="card-carousel">
-        <div class="my-card"></div>
-        <div class="my-card"></div>
-        <div class="my-card"></div>
-        <div class="my-card"></div>
-        <div class="my-card"></div>
-      </div>
-      <div class="textcarousel">
+    <div class="textcarousel">
           <div id="title"><h1>Conviertete en tus artistas favoritos</h1></div>
           <div><h2>Estudio</h2>
             <p>Saca tu artista con nuestro propio estudio integrado</p>
@@ -131,22 +111,42 @@ elseif (isset($_POST['register'])) {
           <p>Almacena tus creaciones o la de otros usarios para seguir luego</p>
         </div>
       </div>
+    <div class="card-carousel">
+        <div class="my-card"></div>
+        <div class="my-card"></div>
+        <div class="my-card"></div>
+        <div class="my-card"></div>
+        <div class="my-card"></div>
       </div>
-      
+      <div class="div-musicboton">
+          <div class="buton">
+          <button class="reproductorHouse">House</button>
+          <p><br>¿Como se hace?<img src="../../media/Images/House.PNG" alt=""></p>    
+          </div>
+
+          <div class="buton">
+          <button class="reproductorRap">Reggueton</button>
+          <p><br>¿Como se hace?<img src="../../media/Images/Regueton.PNG" alt=""></p>
+          </div>
+          
+        </div>  
+      </div>
+      <div class="finaldiv">
       <div class="section">
         <div class="textimg"><h2>Estudio</h2>
         <p>El estudio sera tu espacion de creacion ,tu pequeña cueva musical o como lo quieras llamar...Basicamente en el dejaras fluir tu creatividad con el chanel rack que tiene integrado y diviersas funcionalidades como el control de bpm ,para poder crear diferentes estilos musicales</p></div>
         <div class="img"><img src="../../media/Images/Estudio.png" alt=""></div>
       </div>
       <div class="section">
-      <div class="img"><img src="../../media/Images/Foro.png" alt=""></div>
         <div class="textimg"><h2>Foro</h2>
         <p>El foro es un sitio agradable que comparte la comunidad para mostrar canciones o escucharlas ya seas un aficionado de la produccion o un simple amante de la musica o incluso un manager de talentos musicales</p></div>
+        <div class="img"><img src="../../media/Images/Foro.png" alt=""></div>
       </div>
       <div class="section">
         <div class="textimg"><h2>Audioteca</h2>
         <p>La Audioteca es un espacio donde podras guardar todas aquellas canciones o beats que mas te interesen desde el estudio.Ademas desde ahi tendras la opcion de subirlas al foro para que todos los artistas las observen</p></div>
         <div class="img"><img src="../../media/Images/Audioteca.png" alt=""></div>
+      </div>
       </div>
     
 
