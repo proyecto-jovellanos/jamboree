@@ -40,24 +40,18 @@ if (!isset($_COOKIE['id_User'])) {
 </head>
 
 <body>
-    <header class="header">
-        <div class="animation-header">
-            <div class="lft">[</div>
-            Jamboree
-            <div class="rght">]</div>
-        </div>
-        <div class="nav">
-            <a href="../main/main.php">Inicio</a>
-            <a href="../foro/foro.php">Foro</a>
-            <a href="../estudio/estudio.html">Estudio</a>
-            <a href="../ayuda.html">Ayuda</a>
-            <a href="../perfil.php">Mi perfil</a>
-        </div>
-        <div class="social">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook-square"></i></a>
-        </div>
+<header class="menu">
+        <label class="logo">Jamboree</label>
+        <ul class="menu-items">
+            <li><a href="../main/main.php">Inicio</a></li>
+            <li><a href="../foro/foro.php">Foro</a></li>
+            <li><a href="../estudio/estudio.html">Estudio</a></li>
+            <li><a href="../ayuda.html">Ayuda</a></li>
+            <li><a href="../perfil.php">Mi perfil</a></li>
+        </ul>
+        <span class="btn_menu">
+            <i class="fas fa-bars"></i>
+        </span>
     </header>
     <div class="main">
         <div class="titulo">

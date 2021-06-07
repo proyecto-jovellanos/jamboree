@@ -9,9 +9,9 @@ function listarTop($resultado)
             <div class="bpm"> ' . $row['bpm'] . '</div>
             <span class="id_song"> ' . $row['id_Cancion'] . '</span>
             <span class="cancion"> ' . $row['track'] . '</span>
-            <button class="play"><i class="fas fa-play"></i></i></button></button>
-            <button class="pause"><i class="fas fa-pause"></i></i></button></button><br>
-            <span class="escuchasTop"> ' . $row['escuchas'] . '</span>
+            <button class="play hit"><i class="fas fa-play"></i></button>
+            <button class="pause hit"><i class="fas fa-pause"></i></button><br><br>
+            <span class="escuchasTop"> ' . $row['escuchas'] . ' <i class="fas fa-headphones-alt"></i></span>
 
         </li>';
     }
