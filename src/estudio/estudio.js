@@ -306,10 +306,16 @@ $(document).ready(function () {
     var index = 0
 
     function play() {
-
         Tone.Transport.scheduleRepeat(function (time) {
             Tone.Draw.schedule(function () {
                 for (let i = 0; i < 4; i++) {
+                    if (index == 1 || index == 9 || index == 17 || index == 25) {
+                        $(`.controles`).addClass("drummed")
+                    } else {
+                        $(`.controles`).removeClass("drummed")
+
+                    }
+                    //mostrar por donde va el sonido
                     if (index == 32) {
                         $(`.${tracks[i][1]} .beats .beat.${index}`).addClass("timeline")
                     } else if (index == 0) {
@@ -322,9 +328,12 @@ $(document).ready(function () {
                     //  console.log(index);
                     let player = players[i]
                     if (tracks[i][0][index] == 1) {
-                        //  console.log("index :" + index);
+                        //al sonar una track marco esa fila entera para visualizacion
+                        $(`.${tracks[i][1]}`).addClass("drummed")
+                        //reproduzco ese sonido
                         player.start("+0.01")
-                        //  console.log(Tone.Transport.sampleTime);
+                    } else {
+                        $(`.${tracks[i][1]}`).removeClass("drummed")
                     }
                 }
                 if (index < 31) {

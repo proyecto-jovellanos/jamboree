@@ -12,13 +12,13 @@ $(document).ready(function () {
 
     $(".play").click(function () {
         let id = $(this).prev().prev().html()
-        console.log(id);
+      //  console.log(id);
         var params = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
             },
-            //option=borrar para controlar la operacion en php
+            //option=maslike para sumar una escucha al track en php
             body: "option=masLike&id_song=" + id
         }
         fetch("../server.php", params)
@@ -26,7 +26,7 @@ $(document).ready(function () {
             .then(data => console.log(data));
         track = $(this).prev().html()
         let bpm = $(this).prev().prev().prev().html()
-        console.log(bpm);
+       // console.log(bpm);
         cargaTrack(track, bpm)
         play()
     })

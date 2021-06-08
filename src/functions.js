@@ -70,6 +70,19 @@ function loop() {
 }
 
 function play() {
+    const stream = Tone.getContext().createMediaStreamDestination();
+    Tone.getDestination().connect(stream);
+    //    console.log(stream)
+    let wave = new Wave();
+    wave.fromStream(stream, "can", {
+        type: "shine",
+        colors: ["red", "white", "blue"]
+    });
+
+    button.onclick = () => {
+        wave.stopStream()
+    }
+
     if (Tone.context.state !== 'running') {
         Tone.context.resume();
     } else {
