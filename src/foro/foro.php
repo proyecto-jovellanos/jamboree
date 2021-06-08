@@ -18,10 +18,14 @@ if (!isset($_COOKIE['id_User'])) {
     <!-- kit de iconos -->
     <script src="https://kit.fontawesome.com/62afea99ed.js" crossorigin="anonymous"></script>
 
+    <!-- JQUERY -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
     <!-- link para Tone.js -->
     <script src="https://tonejs.github.io/build/Tone.js"></script>
+
+    <!-- link para Wave.js -->
+    <script src="https://cdn.jsdelivr.net/gh/foobar404/wave.js/dist/bundle.iife.js"></script>
 
     <!-- Script propio -->
     <script src="foro.js"></script>

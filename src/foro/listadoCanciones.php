@@ -22,6 +22,7 @@ function listar($resultado)
                 <span class="popup">Editar esta canción en el estudio</span>
             </a>
             </button>
+            <canvas id="can"></canvas>
             </article>';
         }
     } else {
