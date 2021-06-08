@@ -136,7 +136,7 @@ button {
         flex-flow: column nowrap;
         flex-shrink: -2;
         margin-top: 20px;
-        margin-left: 80px;
+        margin-left: 10%;
         padding: 15px;
 
         .tema {
@@ -198,6 +198,22 @@ button {
 
     }
 }
+//------FOOTER------
+
+footer {
+    grid-area: footer;
+    color: @green;
+    position: relative;
+    background-color: @morado;
+    height: 10vh;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    line-height: 10vh;
+    a{
+        color:@green;
+    }
+    }
 
 
 @media screen and (max-width:952px){
@@ -244,16 +260,10 @@ button {
     }
 }
 
-//------FOOTER------
-
-footer {
-    grid-area: footer;
-    color: @green;
-    position: relative;
-    background-color: @morado;
-    height: 10vh;
-    bottom: 0px;
-    width: 100%;
-    display: flex;
-    line-height: 10vh;
+@media screen and (max-width:500PX){
+    footer{
+        height: 100%;
+        flex-flow: column nowrap;
+    }
 }
+
