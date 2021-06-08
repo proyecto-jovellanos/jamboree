@@ -25,7 +25,7 @@ if (!isset($_COOKIE['id_User'])) {
     <script src="https://tonejs.github.io/build/Tone.js"></script>
 
     <!-- Script propio -->
-    <script src="app.js"></script>
+    <script src="../menu.js"></script>
     <script src="audioteca.js"></script>
 
     <script>
@@ -73,7 +73,11 @@ if (!isset($_COOKIE['id_User'])) {
     <footer>
         <div class="contactos">Nuestros nombres</div>
         <div class="lopd">ley organica proteccion datos, cookies...</div>
-        <div class="year">AÑO y Copyright</div>
+        <div class="social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+        </div>
     </footer>
 </body>
 
