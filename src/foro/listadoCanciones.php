@@ -22,7 +22,8 @@ function listar($resultado)
                 <span class="popup">Editar esta canción en el estudio</span>
             </a>
             </button>
-            <canvas id="can"></canvas>
+            <div class="cancion"> ' . $row['track'] . '</div>
+            <canvas  width="100%" height="100%" id="' . $row['id_Cancion'] . '"></canvas>
             </article>';
         }
     } else {
