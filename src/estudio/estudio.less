@@ -81,11 +81,11 @@ body {
     align-items: center;
     position: fixed;
     top: 0px;
-    background-color: @green;
+    background-color: darken(@green, 19%);
 
-    -moz-box-shadow: inset 0 0 10px #000000;
-    -webkit-box-shadow: inset 0 0 10px #000000;
-    box-shadow: inset 0 0 10px #000000;
+    -moz-box-shadow: inset 0 0 5px #000000;
+    -webkit-box-shadow: inset 0 0 5px #000000;
+    box-shadow: inset 0 0 5px #000000;
 
     .animation-header {
         position: absolute;
@@ -93,7 +93,7 @@ body {
         left: 2%;
         font-size: 1.7em;
         text-size-adjust: 100%;
-        color: spin(@green, 180);
+        color: spin(@green, 190);
         font-family: Monoton, sans-serif;
     }
 
@@ -416,7 +416,7 @@ body {
         button {
             display: inline-block;
             padding: 0.7px;
-            color: spin(@green, 180);
+            color: spin(@green, 190);
             transition: all .5s;
         }
     }

@@ -54,6 +54,7 @@ function loop() {
     Tone.Transport.scheduleRepeat(function (time) {
         Tone.Draw.schedule(function () {
             for (let i = 0; i < 4; i++) {
+                draw(i, index)
                 let player = players[i]
                 if (tracks[i][0][index] == 1) {
                     player.start("+0.1")
@@ -69,19 +70,18 @@ function loop() {
     Tone.Transport.start()
 }
 
-function play() {
-    const stream = Tone.getContext().createMediaStreamDestination();
-    Tone.getDestination().connect(stream);
-    //    console.log(stream)
-    let wave = new Wave();
-    wave.fromStream(stream, "can", {
-        type: "shine",
-        colors: ["red", "white", "blue"]
-    });
-
-    button.onclick = () => {
-        wave.stopStream()
+function draw(i, index) {
+    if (tracks[i][0][index] == 1) {
+        //al sonar una track marco esa fila entera para visualizacion
+        $(`.${tracks[i][1]}`).addClass("drummed")
+        //reproduzco ese sonido
+        player.start("+0.01")
+    } else {
+        $(`.${tracks[i][1]}`).removeClass("drummed")
     }
+}
+
+function play() {
 
     if (Tone.context.state !== 'running') {
         Tone.context.resume();
