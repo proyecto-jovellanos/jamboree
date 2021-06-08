@@ -4,7 +4,7 @@ $(document).ready(function () {
     $(".cancion").hide()
     $(".bpm").hide()
     $(".id_song").hide()
-
+    
     $("canvas").each(function () {
         let id = $(this).attr("id")
         let track = JSON.parse($(this).prev().html())
