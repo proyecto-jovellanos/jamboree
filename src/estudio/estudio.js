@@ -310,7 +310,6 @@ $(document).ready(function () {
         Tone.Transport.scheduleRepeat(function (time) {
             Tone.Draw.schedule(function () {
                 //let w = new Tone.FrequencyClass(players[0].context).toFrequency()
-                console.log(w);
                 for (let i = 0; i < 4; i++) {
                     if (index == 1 || index == 9 || index == 17 || index == 25) {
                         $(`.controles`).addClass("drummed")

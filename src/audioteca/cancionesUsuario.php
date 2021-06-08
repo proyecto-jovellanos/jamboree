@@ -25,7 +25,10 @@ function listar($resultado)
             <div class="bpm"> ' . $row['bpm'] . '</div>
             <div class="cancion"> ' . $row['track'] . '</div>
         <button class="btn play"><i class="fas fa-play"></i></button>
+        <div class="id_song"> ' . $row['id_Cancion'] . '</div>
         <button class="btn pause"><i class="fas fa-pause"></i></button>
+        <div class="cancion"> ' . $row['track'] . '</div>
+        <canvas width="100%" height="100%" id="' . $row['id_Cancion'] . '"></canvas>
     </article>';
     }
 }

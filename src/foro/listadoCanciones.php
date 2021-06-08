@@ -22,7 +22,8 @@ function listar($resultado)
             <button class="play"><i class="fas fa-play"></i></button>
             <button class="pause"><i class="fas fa-pause"></i></button>
             </button>
-            <canvas id="can"></canvas>
+            <div class="cancion"> ' . $row['track'] . '</div>
+            <canvas  width="100%" height="100%" id="' . $row['id_Cancion'] . '"></canvas>
             </article>';
         }
     } else {
