@@ -1,6 +1,9 @@
 $(document).ready(function () {
     console.clear()
+    var id;
+    var bpm;
     var track;
+
     $(".cancion").hide()
     $(".id_song").hide()
     $(".bpm").hide()
@@ -25,7 +28,6 @@ $(document).ready(function () {
     function draw(i, j, id) {
         var colores = ["#6D5FF5", "#DE6262", "#F5CA5F", "#6DEB5B"]
         var canvas = document.getElementById(`${id}`)
-        console.log(canvas);
         var ctx = canvas.getContext("2d");
 
         /* quiero q se dibuje la 32ª parte que corresponda
@@ -46,11 +48,21 @@ $(document).ready(function () {
         console.log("script cargado");
         loop()
     });
-
     $(".play").click(function () {
-        let id = $(this).next().next().next().attr("id")
+        console.log($(this).hasClass("listado"))
+        if ($(this).hasClass("listado")) {
+            id = $(this).next().next().next().attr("id")
+            track = $(this).next().next().html()
+            bpm = $(this).prev().html()
+        } else {
+            id = $(this).prev().attr("id")
+            track = $(this).prev().prev().html()
+            bpm = $(this).prev().prev().prev().html()
+        }
+        /* console.log(id);
+        console.log(bpm);
+        console.log(track); */
 
-        //console.log(id);
         var params = {
             method: 'POST',
             headers: {
@@ -62,9 +74,6 @@ $(document).ready(function () {
         fetch("../server.php", params)
         //  .then(response => response.text())
         //  .then(data => console.log(data));
-        track = $(this).next().next().html()
-        let bpm = $(this).prev().html()
-        // console.log(bpm);
         cargaTrack(track, bpm)
         play(id)
     })
