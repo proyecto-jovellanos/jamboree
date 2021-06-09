@@ -18,7 +18,6 @@ $(document).ready(function () {
                 //else
                 //    console.log("JSONN");
                 //console.log(track[i][0][j]);
-
             }
         }
     });
@@ -26,6 +25,7 @@ $(document).ready(function () {
     function draw(i, j, id) {
         var colores = ["#6D5FF5", "#DE6262", "#F5CA5F", "#6DEB5B"]
         var canvas = document.getElementById(`${id}`)
+        console.log(canvas);
         var ctx = canvas.getContext("2d");
 
         /* quiero q se dibuje la 32ª parte que corresponda
@@ -46,11 +46,11 @@ $(document).ready(function () {
         console.log("script cargado");
         loop()
     });
-    
-    $(".play").click(function () {
-        let id = $(this).prev().prev().html()
 
-        //  console.log(id);
+    $(".play").click(function () {
+        let id = $(this).next().next().next().attr("id")
+
+        //console.log(id);
         var params = {
             method: 'POST',
             headers: {
@@ -60,10 +60,10 @@ $(document).ready(function () {
             body: "option=masLike&id_song=" + id
         }
         fetch("../server.php", params)
-            .then(response => response.text())
-            .then(data => console.log(data));
-        track = $(this).prev().html()
-        let bpm = $(this).prev().prev().prev().html()
+        //  .then(response => response.text())
+        //  .then(data => console.log(data));
+        track = $(this).next().next().html()
+        let bpm = $(this).prev().html()
         // console.log(bpm);
         cargaTrack(track, bpm)
         play(id)
