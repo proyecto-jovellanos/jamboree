@@ -40,17 +40,20 @@ players[3].buffer = c
 
 
 function cargaTrack(t, bpm) {
+    index = 0
     let obj = JSON.parse(t)
     for (let i = 0; i < 4; i++) {
         tracks[i][0] = obj[i][0]
     }
+
     $("#tempo").attr("value", bpm)
     Tone.Transport.bpm.value = bpm
     console.log("Track cargado");
 }
 
+var index = 0
+
 function loop() {
-    var index = 0
     Tone.Transport.scheduleRepeat(function (time) {
         Tone.Draw.schedule(function () {
             //console.log(ctx);

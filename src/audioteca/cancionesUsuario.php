@@ -7,7 +7,8 @@ function listar($resultado)
         <header class="header-tema">
         ' . $row['nombre'] . '
         </header>
-        <button class="icono"><i id=' . $row['id_Cancion'] . ' class="far fa-trash-alt"></i></button>
+        <div class="id_song"> ' . $row['id_Cancion'] . '</div>
+        <button class="icono"><i class="far fa-trash-alt"></i></button>
         ';
 
         if ($row['publica'] == '0') {

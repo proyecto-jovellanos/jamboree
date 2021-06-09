@@ -4,11 +4,11 @@ $(document).ready(function () {
     $(".cancion").hide()
     $(".bpm").hide()
     $(".id_song").hide()
-    
+
     $("canvas").each(function () {
         let id = $(this).attr("id")
         let track = JSON.parse($(this).prev().html())
-        // console.log(track);
+        console.log(track);
         for (let i = 0; i < 4; i++) {
             for (let j = 0; j <= 31; j++) {
                 if (track[i][0][j] == 1) {
@@ -18,7 +18,6 @@ $(document).ready(function () {
                 //else
                 //    console.log("JSONN");
                 //console.log(track[i][0][j]);
-
             }
         }
     });
@@ -26,6 +25,7 @@ $(document).ready(function () {
     function draw(i, j, id) {
         var colores = ["#6D5FF5", "#DE6262", "#F5CA5F", "#6DEB5B"]
         var canvas = document.getElementById(`${id}`)
+        console.log(canvas);
         var ctx = canvas.getContext("2d");
 
         /* quiero q se dibuje la 32ª parte que corresponda
@@ -49,7 +49,7 @@ $(document).ready(function () {
     $(".play").click(function (ev) {
         track = $(this).prev().html()
         let bpm = $(this).prev().prev().html()
-        console.log(bpm);
+        // console.log(bpm);
         cargaTrack(track, bpm)
 
         let id = $(this).next().html()
@@ -63,8 +63,8 @@ $(document).ready(function () {
 
     //boton para borrar
     $(".fa-trash-alt").click(function () {
-        let id = $(this).attr("id")
-        console.log(id);
+        let id = $(this).parent().prev().html()
+        // console.log(id);
         var params = {
             method: 'POST',
             headers: {
@@ -79,8 +79,8 @@ $(document).ready(function () {
     })
     $(".toForo").click(function (ev) {
         ev.preventDefault()
-        let id = $(this).prev().contents().attr("id")
-        console.log(id);
+        let id = $(this).prev().prev().html()
+        // console.log(id);
         var params = {
             method: 'POST',
             headers: {
@@ -94,8 +94,8 @@ $(document).ready(function () {
     })
     $(".fromForo").click(function (ev) {
         ev.preventDefault()
-        let id = $(this).prev().contents().attr("id")
-        console.log(id);
+        let id = $(this).prev().prev().html()
+        // console.log(id);
         var params = {
             method: 'POST',
             headers: {
