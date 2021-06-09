@@ -57,7 +57,6 @@ body {
 .logo{
     color:@morado;
     font-size: 35px;
-    padding:0 80px;
     font-weight: bold;
 }
 .menu-items{
@@ -314,16 +313,20 @@ footer {
 
 //-----MEDIA-------
 
-@media screen and (max-width:952px){
+@media screen and (max-width:750px){
     .logo{
         font-size:30px;
-        padding-left:35px;
+        padding-left:15px;
     }
     .menu-items li a {
         font-size: 16px;
+        padding:0;
+    }
+    .menu-items{
+        margin-right:15px;
     }
 }
-@media screen and (max-width:858px){
+@media screen and (max-width:500px){
     .menu{
        height: 65px;
     }
@@ -356,9 +359,6 @@ footer {
         font-size:25px;
         padding-left: 35px;
     }
-}
-
-@media screen and (max-width:500PX){
     footer{
         height: 100%;
         flex-flow: column nowrap;
