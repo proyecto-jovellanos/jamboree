@@ -38,7 +38,7 @@ if (!isset($_COOKIE['id_User'])) {
             })
         })
     </script>
-    <link rel="stylesheet/less" href="foro.less">
+    <link rel="stylesheet/less" href="styleForo.less">
     <script src="../less.min.js" type="text/javascript"></script>
 </head>
 
