@@ -6,24 +6,47 @@ function listar($resultado)
         while ($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
             echo
             '<article class="tema grow">
-            <header class="header-tema">
-            ' . $row['nombre'] . '
-            </header>
-            <span class="autor">Created by: ' . $row['username'] . '</span><br> <span class="escuchas">' . $row['escuchas'] . ' <i class="fas fa-headphones-alt"></i></span>
-            <div class="id_song"> ' . $row['id_Cancion'] . '</div>
-            <div class="cancion"> ' . $row['track'] . '</div>
-            <div class="etiqueta"> ' . $row['etiquetas'] . '</div>
-            <button class="edit">
-            <a href="../estudio/estudio.html?id_song=' . $row['id_Cancion'] . '">
-            <i class="fas fa-pencil-alt"></i>
-            <span class="popup">Editar esta canción en el estudio</span>
-            </a>
-            </button>
-            <div class="bpm"> ' . $row['bpm'] . '</div>
-            <button class="play listado"><i class="fas fa-play"></i></button>
-            <button class="pause"><i class="fas fa-pause"></i></button>
-            <div class="cancion"> ' . $row['track'] . '</div>
-            <canvas  width="100%" height="100%" id="' . $row['id_Cancion'] . '"></canvas>
+
+                <div class="left-theme">
+            
+                    <div class="auth-theme">
+                        <header class="header-tema">
+                            ' . $row['nombre'] . '
+                        </header>
+                        <div class="autor">' . $row['username'] . '</div>
+                    </div>
+                    
+                    <div class="tag-likes">
+                        <div class="escuchas"> 
+                            <i class="fas fa-headphones-alt"><span>' . $row['escuchas'] . '</span></i>
+                        </div>
+                        <div class="etiqueta"> ' . $row['etiquetas'] . '</div>
+                    </div>
+
+                    <div class="controles">
+                        <button class="edit">
+                            <a href="../estudio/estudio.html?id_song=' . $row['id_Cancion'] . '">
+                                <i class="fas fa-pencil-alt"> 
+                                    <span class="popup">Editar esta canción en el estudio</span>
+                                </i>
+                            </a>
+                        </button>
+                        <div class="bpm"> ' . $row['bpm'] . '</div>
+                        <button class="play lista">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <div class="id_song">' . $row['id_Cancion'] . '</div>
+                        <div class="cancion"> ' . $row['track'] . '</div>
+                        <button class="pause">
+                            <i class="fas fa-pause"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="right-theme">
+                    <div class="cancion"> ' . $row['track'] . '</div>
+                    <canvas id="' . $row['id_Cancion'] . '"></canvas>
+                </div>
             </article>';
         }
     } else {

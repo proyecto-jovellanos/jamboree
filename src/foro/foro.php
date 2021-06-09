@@ -38,12 +38,12 @@ if (!isset($_COOKIE['id_User'])) {
             })
         })
     </script>
-    <link rel="stylesheet/less" href="styleForo.less">
+    <link rel="stylesheet/less" href="foro.less">
     <script src="../less.min.js" type="text/javascript"></script>
 </head>
 
 <body>
-<nav class="menu">
+    <nav class="menu">
         <label class="logo">Jamboree</label>
         <ul class="menu-items">
             <li><a href="../main/main.php">Inicio</a></li>
@@ -57,14 +57,14 @@ if (!isset($_COOKIE['id_User'])) {
         </span>
     </nav>
     <div class="main">
-        <div class="tags">
-            <div><a class="etiqueta" href="foro.php">Todas</a></div>
-            <div><a class="etiqueta" href="foro.php?tag=rock">Rock</a></div>
-            <div><a class="etiqueta" href="foro.php?tag=hip-hop">Hip-hop</a></div>
-            <div><a class="etiqueta" href="foro.php?tag=techno">Techno</a></div>
-            <div><a class="etiqueta" href="foro.php?tag=pop">Pop</a></div>
-        </div>
         <section class="listado">
+            <div class="tags">
+                <div><a class="etiqueta" href="foro.php">Todas</a></div>
+                <div><a class="etiqueta" href="foro.php?tag=rock">Rock</a></div>
+                <div><a class="etiqueta" href="foro.php?tag=hip-hop">Hip-hop</a></div>
+                <div><a class="etiqueta" href="foro.php?tag=techno">Techno</a></div>
+                <div><a class="etiqueta" href="foro.php?tag=pop">Pop</a></div>
+            </div>
             <?php
             include("listadoCanciones.php");
             include("db.php");
