@@ -30,9 +30,9 @@ body::-webkit-scrollbar {
 //------------ESTRUCTURA---------//
 body {
     display: grid;
-    height:400vh;
+    height: 400vh;
     width: 100vw;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     //grid-auto-rows: minmax(auto, auto);
     grid-template-areas:
         "header header"
@@ -59,7 +59,7 @@ header {
     height: 10vh;
     min-height: 52px;
     //background-color: @color-3-medium;
-
+    box-shadow: 0 0 8px rgba(0, 0, 0, 1);
     .logo {
         text-align: center;
         font-size: 2em;
@@ -104,7 +104,7 @@ main {
 
         //grid-template-columns: 50% 50%;
         width: 100%;
-        height: 90vh;
+        height: 85vh;
 
         align-self: center;
         align-items: center;
@@ -139,11 +139,12 @@ main {
             }
 
             .Loginform {
+                
                 z-index: 10;
                 position: absolute;
                 top: 20%;
                 left: 42%;
-                background-color: rgb(252, 252, 252);
+                background-color:@gris-claro;
                 width: 300px;
                 padding: 10px;
                 border-radius: 5px;
@@ -152,6 +153,7 @@ main {
                 display: none;
                 text-align: center;
                 overflow: hidden;
+                color: darken(@green,10%);
             }
 
             .data p {
@@ -174,7 +176,7 @@ main {
                 height: 35px;
                 width: 35%;
                 margin-top: 20px;
-                background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+                background-image: linear-gradient(315deg, @green 0%, @green 74%);
                 margin-left: auto;
                 margin-right: auto;
                 overflow: hidden;
@@ -195,8 +197,8 @@ main {
             }
 
             .btn:hover {
-                border: rgb(93, 255, 53) 1px solid;
-                box-shadow: 0 0 20px rgba(172, 255, 48, 30);
+                border: darken(@green,10%) 0.5px solid;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 1);
 
             }
 
@@ -220,7 +222,7 @@ main {
 
 
         .text {
-            width: 100vw;
+            width: 105vw;
             text-align: center;
             align-items: center;
             height: 3%;
@@ -246,6 +248,9 @@ main {
 
 
             video {
+                
+                box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+
 
                 width: 100%;
                 height: 100%;
@@ -278,11 +283,11 @@ main {
             display: flex;
             flex-flow: row nowrap;
             align-items: center;
-            
+
 
 
             .buton {
-                
+
 
                 align-self: center;
                 border-radius: 6px;
@@ -357,8 +362,10 @@ main {
                 background-color: darken(@gris-claro, 6%);
                 border: 2px solid @gris-claro;
                 border-radius: 3px;
-                box-shadow: 0 0 10px darken(@green, 50%);
+                box-shadow: 0 0 10px darken(@green, 90%);
                 text-align: center;
+                width: 75%;
+                min-height: 3em;
 
                 &:hover {
                     transition-duration: 0.6s;
@@ -389,6 +396,7 @@ main {
 
 
 
+
             box-sizing: content-box;
             position: relative;
             display: flex;
@@ -401,6 +409,7 @@ main {
         }
 
         .card-carousel .my-card {
+            
             height: 22rem;
             width: 14rem;
             position: relative;
@@ -561,19 +570,19 @@ main {
 
         .section {
             background-color: darken(@gris-claro, 6%);
-                border: 2px solid @gris-claro;
-                //border-radius: 3px;
-                box-shadow: 0 0 10px darken(@green, 50%);
+            border: 2px solid @gris-claro;
+            //border-radius: 3px;
+            box-shadow: 0 0 10px darken(@green, 50%);
             height: 31%;
             width: 70%;
-           
+            
             margin-top: 2em;
             border-radius: 10px;
             overflow: hidden;
-            
+
 
             .img {
-                
+
                 text-align: center;
                 width: 80%;
                 height: 70%;
@@ -581,8 +590,8 @@ main {
                 align-self: center;
 
                 img {
-                   
-                    
+
+
                     background-color: darken(@gris-claro, 3%);
 
                     box-shadow: 0 0 10px darken(@green, 50%);
@@ -600,22 +609,26 @@ main {
             }
 
             .textimg {
-
                 
+                
+
                 text-align: center;
                 //width: 100%;
                 //height: 90%;
                 //align-self: center;
 
                 h2 {
+                    
+                    font-family:@title;
                     font-size: 2em;
                 }
 
                 p {
+                    font-family: @text;
                     color: @green;
                     justify-content: start;
                     text-align: justify;
-                    font-size: 1.2em;
+                    font-size: 1.3em;
                     padding: 0.8em;
 
                 }
@@ -641,7 +654,7 @@ footer {
     position: relative;
     bottom: 0;
     height: 10vh;
-
+    box-shadow: 0 0 8px rgba(0, 0, 0, 1);
 
 
 
@@ -701,12 +714,56 @@ footer {
 //-----MEDIA-------
 
 @media all and (max-width:400px) {
-    .maindiv {
+
+
+    .main {
         display: grid;
         grid-auto-rows: minmax(50px, auto);
         grid-template-columns: 1fr;
         grid-template-areas:
-            "video"
-            "carousel";
+            "header header"
+            "main main"
+            "footer footer"
+        ;
+    }
+
+    .buton {
+        display: none;
+    }
+
+    .maindiv {
+
+        //grid-template-columns: 50% 50%;
+        width: 100%;
+        height: 85vh;
+        
+
+        align-self: center;
+        align-items: center;
+        overflow: hidden;
+        border-width: 2px;
+
+        .video {
+            margin-top: 5em;
+            width: 70%;
+
+
+            video {
+
+                width: 100%;
+                height: 100%;
+                margin-top: em;
+                margin-left: 1em;
+            }
+
+
+        }
+
+        .text {
+           font-size: small;
+           
+        }
+
+
     }
 }

@@ -70,11 +70,11 @@ elseif (isset($_POST['register'])) {
         <form action="validar.php" method="post">
 
           <div class="data">
-            <p>Username</p>
+            <p>Usuario</p>
             <input type="text" name="username" id="">
           </div>
           <div class="data">
-            <p><br>Password</p>
+            <p><br>Contraseña</p>
             <input type="password" name="password" id="">
           </div>
 
