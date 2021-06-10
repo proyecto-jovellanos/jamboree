@@ -214,14 +214,19 @@ button,
 
         & .etiqueta {
             text-decoration: none;
-            color: @green;
+            color: darken(@green, 35%);
             font-size: 1em;
             padding: 10px;
             text-align: center;
             width: 80px;
-            background-color: fade(@morado, 60%);
+            background-color: fade(white, 60%);
             display: inline-block;
             border-radius: 10px;
+
+            &:hover {
+                background-color: white;
+                transition: 600ms ease;
+            }
         }
     }
 
