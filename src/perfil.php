@@ -20,31 +20,26 @@ if (!isset($_COOKIE['id_User'])) {
     <!-- JQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <!-- Script propio -->
+    <script src="menu.js"></script>
     <script src="perfil.js"></script>
     <link rel="stylesheet/less" href="perfil.less">
     <script src="less.min.js" type="text/javascript"></script>
 </head>
 
 <body>
-    <header class="header">
-        <div class="animation-header">
-            <div class="lft">[</div>
-            Jamboree
-            <div class="rght">]</div>
-        </div>
-        <div class="nav">
-            <a href="main/main.php">Inicio</a>
-            <a href="estudio/estudio.html">Estudio</a>
-            <a href="audioteca/audioteca.php">Audioteca</a>
-            <a href="foro/foro.php">Foro</a>
-            <a href="ayuda.html">Ayuda</a>
-        </div>
-        <div class="social">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook-square"></i></a>
-        </div>
-    </header>
+<nav class="menu">
+        <label class="logo">Jamboree</label>
+        <ul class="menu-items">
+            <li><a href="main/main.php">Inicio</a></li>
+            <li><a href="foro/foro.php">Foro</a></li>
+            <li><a href="audioteca/audioteca.php">Audioteca</a></li>
+            <li><a href="estudio/estudio.html">Estudio</a></li>
+            <li><a href="perfil.php">Mi perfil</a></li>
+        </ul>
+        <span class="btn_menu">
+            <i class="fas fa-bars"></i>
+        </span>
+    </nav>
     <div class="main">
         <?php
         include("db.php");
@@ -60,14 +55,13 @@ if (!isset($_COOKIE['id_User'])) {
                 </header>
                 <div class="data">
                     <div> Fecha de nacimiento: ' . $row['fecha'] . ' </div>
-                    <div class="contrap"> Contraseña: ' . $row['contra'] . '</div>
+                    <form action="index/index.php">
+                        <input class="logout" type="submit" value="Cerrar sesión" name="logout">
+                    </form>
                         <button id="abrirForm">Cambiar contraseña</button>
                     <form style="display: none;" id="formChange" action="perfil.php" method="get">
                         Introduce nueva contraseña: <input type="password"  name="new_p" autocomplete="new-password" required>
                         <input id="btnC" type="submit" name="btnChange" value="Actualizar a esta contraseña" >
-                    </form>
-                    <form action="index/index.php">
-                        <input type="submit" value="LOG OUT" name="logout">
                     </form>
                 </div>        
             </div>';
@@ -85,8 +79,11 @@ if (!isset($_COOKIE['id_User'])) {
     <footer>
         <div class="contactos">Nuestros nombres</div>
         <div class="lopd">ley organica proteccion datos, cookies...</div>
-        <div class="year">AÑO y Copyright</div>
-
+        <div class="social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+        </div>
     </footer>
 </body>
 
