@@ -14,7 +14,6 @@
 @morado: #43038c;
 @gris-oscuro: #414141;
 @gris-claro: #525252;
-@blanco: rgb(230, 230, 230);
 
 
 * {
@@ -42,50 +41,58 @@ body {
 }
 
 //------HEADER-------
-.menu{
+.menu {
     grid-area: header;
-    z-index:9;
-    height:75px;
-    width:100%;
-    background-color:@green;
+    z-index: 9;
+    height: 75px;
+    width: 100%;
+    background-color: @green;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid @morado;
     position: fixed;
 }
-.logo{
-    color:@morado;
+
+.logo {
+    color: @morado;
     font-size: 35px;
+    padding: 0 80px;
     font-weight: bold;
 }
-.menu-items{
-    display:flex;
-    margin-right:30px;
+
+.menu-items {
+    display: flex;
+    margin-right: 30px;
 }
-.menu-items li{
+
+.menu-items li {
     border-radius: 3px;
     margin: 0 5px;
 }
-.menu-items li a{
-    padding:7px 13px;
-    font-size:18px;
+
+.menu-items li a {
+    padding: 7px 13px;
+    font-size: 18px;
     display: block;
-    color:@morado;
+    color: @morado;
 }
-.menu-items li a:hover{
-        color:red
-    }
-.btn_menu{
-margin-right:30px;
-font-size: 25px;
-color:@morado;
-cursor:pointer;
-display:none;
+
+.menu-items li a:hover {
+    color: red
 }
-ul.show{
-    top:65px;
-    width:100%;
+
+.btn_menu {
+    margin-right: 30px;
+    font-size: 25px;
+    color: @morado;
+    cursor: pointer;
+    display: none;
+}
+
+ul.show {
+    top: 65px;
+    width: 100%;
     height: 400px;
     position: absolute;
 }
@@ -124,11 +131,12 @@ button {
     right: 6vw;
     top: 16vh;
     bottom: 15%;
-    height:82vh;
+    height: 82vh;
 
     // padding-top: 15vh;
     .sidebar {
-        width:100%;
+        margin-top: 11vh;
+        width: 100%;
         display: flex;
         // margin-top: 50px;
         color: @color-4-medium-light;
@@ -152,7 +160,7 @@ button {
             color: @color-4-medium-light;
             font-size: 1.1em;
             width: 90%;
-            
+
             text-align: center;
         }
 
@@ -165,14 +173,15 @@ button {
             padding: 10px;
 
             &:hover {
-                background-color: lighten(@color-4-medium-light, 25%);
+                background-color: lighten(@morado, 1%);
             }
 
             span {
                 color: lighten(@color-4-medium-light, 60%);
-                
+
             }
-            .hit{
+
+            .hit {
                 float: right;
             }
         }
@@ -195,10 +204,8 @@ button,
     /* author miguel */
     .tags {
 
-        position: relative;
-        width: 70vw;
+        width: 80%;
         top: 80px;
-        margin-left: 60px;
         display: flex;
         flex-flow: row;
         align-items: center;
@@ -219,77 +226,161 @@ button,
     }
 
     .listado {
-        margin: 0 5% 0 2%;
+        margin-top: 11vh;
         grid-area: main;
         color: @green;
         display: flex;
         flex-flow: column nowrap;
-        flex-shrink: -2;
-        margin-top: 70px;
-        margin-left: 80px;
-        padding: 15px;
+        justify-content: center;
+        align-items: center;
+        gap: 2vh;
 
         .tema {
-
-            margin: 0 1% 1%;
-            padding: 1%;
-            font-size: 15px;
-            box-shadow: @sombreado;
+            width: 80%;
             font-family: @text;
             border: 2px solid #65648C;
-            border-radius: 10px;
-            background-color: lighten(@gris-claro, 20%);
+            border-radius: 25px;
+            box-shadow: @sombreado;
+            background-color: lighten(@gris-claro, 5%);
 
-            .header-tema {
-                font-size: 2.5em;
-                font-weight: bolder;
-                font-family: @title;
-                color: @morado;
-                margin:5px 10px;
+            display: grid;
+            grid-template-areas:
+                "data canvas"
+                "data canvas";
+
+            .left-theme {
+                grid-area: data;
+                width: 50%;
+
+                display: grid;
+                grid-template-areas:
+                    "name"
+                    "control"
+                    "tag-likes";
+
+                .auth-theme {
+                    grid-area: name;
+
+                    .header-tema {
+                        width: 100%;
+                        min-width: 100px;
+                        font-size: 1.2em;
+                        font-weight: bolder;
+                        font-family: @title;
+                        color: white;
+                        margin-top: 0.5rem;
+                        border-radius: 15px;
+                        padding: 1%;
+                        background-color: fade(@green, 25%);
+                        text-align: center;
+                    }
+
+                    .autor {
+                        margin-top: 2px;
+                        width: 50%;
+                        text-align: center;
+                        font-size: 0.6em;
+                        color: darken(white, 35%);
+                        border-radius: 15px;
+                        padding: 1%;
+                        background-color: fade(@morado, 35%);
+                    }
+                }
+
+                .tag-likes {
+                    grid-area: tag-likes;
+                    font-size: 0.9em;
+                    margin-top: 1.5vh;
+                    padding: 0.3em;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 50%;
+                    margin-bottom: 1vh;
+
+                    .etiqueta {
+                        color: darken(@green, 25%);
+                        border-radius: 10px;
+                        padding: 0.2em;
+                        background-color: lighten(@gris-claro, 50%);
+                        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                    }
+
+                    .escuchas {
+                        color: spin(@green, 151);
+
+                        span {
+                            margin-left: 3px;
+                            color: white;
+                        }
+                    }
+
+                }
+
+                .controles {
+                    grid-area: control;
+                    margin-top: 1em;
+                    background-color: @gris-claro;
+                    padding: 0.3em;
+                    border-radius: 12px;
+                    box-shadow: -3px -3px 30px 3px @green, 3px 3px 30px 3px @morado;
+
+                    .fa-pencil-alt {
+                        color: @green;
+                    }
+
+                    .popup {
+                        display: none;
+                    }
+                }
+
+                a:hover .popup {
+                    display: inline-block;
+                    position: absolute;
+                    background-color: fade(white, 81%);
+                    top: 20%;
+                    right: 30vw;
+                    padding: 0.25em;
+                    border-radius: 25px;
+                    color: @gris-oscuro;
+                }
+
+                .fa-pencil-alt,
+                .play,
+                .pause {
+
+                    &:link,
+                    &:visited,
+                    &:hover,
+                    &:active {
+                        color: spin(@green, 180);
+                    }
+                }
+
+                /*  a {
+
+                    &:link,
+                    &:visited,
+                    &:hover,
+                    &:active {
+                        text-decoration: none;
+                        color: @morado;
+                    }
+                } */
             }
 
-            &:hover {
-                background-color: @blanco;
-            }
-            .autor {
-                font-size: 2em;
-                color:#234739;
-                padding:5px 10px;
-                font-family: cursive;
-            }
-            .etiqueta {
-                color: red;
-                font-size: 1.5em;
-                padding:5px 10px;
-                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            }
-            .escuchas {
-                color: @color-3-medium;
-                font-size: 1.5em;
-                padding:5px 10px;
-            }
-            .popup {
-                display: none;
-            }
+            .right-theme {
+                grid-area: canvas;
+                display: flex;
 
-            a:hover .popup {
-                display: inline-block;
-                background-color: fade(@green, 15%);
-                padding: 0.25em;
-                border-radius: 25px;
-            }
+                canvas {
+                    width: 60%;
+                    height: 100%;
 
-
-            a {
-
-                &:link,
-                &:visited,
-                &:hover,
-                &:active {
-                    text-decoration: none;
-                    color: @morado;
                 }
             }
+
         }
     }
 }
@@ -306,18 +397,20 @@ footer {
     width: 100%;
     display: flex;
     line-height: 10vh;
-    a{
-        color:@green;
+
+    a {
+        color: @green;
     }
-    }
+}
 
 //-----MEDIA-------
 
-@media screen and (max-width:750px){
-    .logo{
-        font-size:30px;
-        padding-left:15px;
+@media screen and (max-width:952px) {
+    .logo {
+        font-size: 30px;
+        padding-left: 35px;
     }
+
     .menu-items li a {
         font-size: 16px;
         padding:0;
@@ -326,40 +419,49 @@ footer {
         margin-right:15px;
     }
 }
-@media screen and (max-width:500px){
-    .menu{
-       height: 65px;
+
+@media screen and (max-width:858px) {
+    .menu {
+        height: 65px;
     }
+
     .btn_menu {
-        display:inline-flex;
+        display: inline-flex;
     }
-    .menu-items{
+
+    .menu-items {
         position: fixed;
-        width:100vh;
+        width: 100vh;
         height: calc(100%-65px);
         background-color: @gris-oscuro;
-        top:-100vh;
+        top: -100vh;
         text-align: center;
         transition: all .4s;
         flex-direction: column;
     }
-    .menu-items li{
+
+    .menu-items li {
         margin: 30px 0 0 0;
         line-height: 30px;
     }
-    .menu-items li:hover{
+
+    .menu-items li:hover {
         background-color: none;
     }
+
     .menu-items li a {
         font-size: 20px;
-        color: @blanco;
         font-weight: bold;
     }
-    .logo{
-        font-size:25px;
+
+    .logo {
+        font-size: 25px;
         padding-left: 35px;
     }
-    footer{
+}
+
+@media screen and (max-width:500PX) {
+    footer {
         height: 100%;
         flex-flow: column nowrap;
     }
@@ -390,9 +492,10 @@ footer {
         flex-flow: column nowrap;
     }
 }
+
 @media all and (max-width:730px) {
 
-    .main{
+    .main {
         width: 100%;
     }
-    }
+}

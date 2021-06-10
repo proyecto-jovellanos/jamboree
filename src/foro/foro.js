@@ -49,9 +49,9 @@ $(document).ready(function () {
         loop()
     });
     $(".play").click(function () {
-        console.log($(this).hasClass("listado"))
-        if ($(this).hasClass("listado")) {
-            id = $(this).next().next().next().attr("id")
+        console.log($(this).hasClass("lista"))
+        if ($(this).hasClass("lista")) {
+            id = $(this).next().html()
             track = $(this).next().next().html()
             bpm = $(this).prev().html()
         } else {
@@ -59,7 +59,7 @@ $(document).ready(function () {
             track = $(this).prev().prev().html()
             bpm = $(this).prev().prev().prev().html()
         }
-        /* console.log(id);
+       /*  console.log(id);
         console.log(bpm);
         console.log(track); */
 
