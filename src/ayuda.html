@@ -5,32 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Audioteca</title>
+    <title>Ayuda</title>
     <link rel="icon" type="image/x-icon" href="/" />
     <!-- kit de iconos -->
     <script src="https://kit.fontawesome.com/62afea99ed.js" crossorigin="anonymous"></script>
+
+    <!-- Script propio -->
+    <script src="menu.js"></script>
     
     <link rel="stylesheet/less" href="ayuda.less">
     <script src="less.min.js" type="text/javascript"></script>
 </head>
 
 <body>
-    <header class="header">
-        <div class="animation-header">
-            <div class="lft">[</div>
-            Jamboree
-            <div class="rght">]</div>
-        </div>
-        <div class="nav">
-            <a href="main/main.php">Inicio</a>
-            <a href="perfil.php">Mi perfil</a>
-            <a href="foro/foro.php">Foro</a>
-        </div>
-        <div class="social">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook-square"></i></a>
-        </div>
+    <nav class="menu">
+        <label class="logo">Jamboree</label>
+        <ul class="menu-items">
+            <li><a href="main/main.php">Inicio</a></li>
+            <li><a href="foro/foro.php">Foro</a></li>
+            <li><a href="audioteca/audioteca.php">Audioteca</a></li>
+            <li><a href="estudio/estudio.html">Estudio</a></li>
+            <li><a href="perfil.php">Mi perfil</a></li>
+        </ul>
+        <span class="btn_menu">
+            <i class="fas fa-bars"></i>
+        </span>
+    </nav>
     </header>
     <div class="main">
         <div class="apartados">
@@ -61,7 +61,11 @@
     <footer>
         <div class="contactos">Nuestros nombres</div>
         <div class="lopd">ley organica proteccion datos, cookies...</div>
-        <div class="year">AÑO y Copyright</div>
+        <div class="social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+        </div>
     </footer>
 </body>
 
