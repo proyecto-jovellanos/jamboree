@@ -211,7 +211,7 @@ $(document).ready(function () {
             }
         }
     }
-
+    //recoger id si existe en url, eso significairia que hay que preecargar ese track
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has('id_song')) {
         var id_song = urlParams.get("id_song")
@@ -311,11 +311,11 @@ $(document).ready(function () {
             Tone.Draw.schedule(function () {
                 //let w = new Tone.FrequencyClass(players[0].context).toFrequency()
                 for (let i = 0; i < 4; i++) {
+                    //mostrar animacion cada negra
                     if (index == 1 || index == 9 || index == 17 || index == 25) {
                         $(`.controles`).addClass("drummed")
                     } else {
                         $(`.controles`).removeClass("drummed")
-
                     }
                     //mostrar por donde va el sonido
                     if (index == 32) {
