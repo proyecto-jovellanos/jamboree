@@ -241,13 +241,12 @@ button,
         gap: 2vh;
 
         .tema {
-            width: 80%;
+            width: 65vw;
             font-family: @text;
             border: 2px solid #65648C;
             border-radius: 25px;
             box-shadow: @sombreado;
             background-color: lighten(@gris-claro, 5%);
-
             display: grid;
             grid-template-areas:
                 "data canvas"
@@ -255,25 +254,22 @@ button,
 
             .left-theme {
                 grid-area: data;
-                width: 50%;
-
                 display: grid;
                 grid-template-areas:
                     "name"
-                    "control"
-                    "tag-likes";
+                    "control";
 
                 .auth-theme {
                     grid-area: name;
 
                     .header-tema {
                         width: 100%;
-                        min-width: 100px;
+                        min-width: 150px;
                         font-size: 1.2em;
                         font-weight: bolder;
                         font-family: @title;
                         color: white;
-                        margin-top: 0.5rem;
+                        margin-top: 1vh;
                         border-radius: 15px;
                         padding: 1%;
                         background-color: fade(@green, 25%);
@@ -281,10 +277,10 @@ button,
                     }
 
                     .autor {
-                        margin-top: 2px;
+                        margin-top: 1vh;
                         width: 50%;
                         text-align: center;
-                        font-size: 0.6em;
+                        font-size: 0.7em;
                         color: darken(white, 35%);
                         border-radius: 15px;
                         padding: 1%;
@@ -292,16 +288,73 @@ button,
                     }
                 }
 
+                .controles {
+                    grid-area: control;
+                    margin: 1vh 0 2vh 0;
+                    background-color: @gris-claro;
+                    border-radius: 12px;
+                    box-shadow: -3px -3px 30px 3px @green, 3px 3px 30px 3px @morado;
+                    display: flex;
+                    flex-flow: row;
+                    justify-content: center;
+                    align-items: center;
+
+                    .fa-pencil-alt {
+                        color: @green;
+                    }
+
+                    .popup {
+                        display: none;
+                    }
+                }
+
+                a:hover .popup {
+                    display: inline-block;
+                    position: absolute;
+                    top: 40%;
+                    left: 0;
+                    background-color: fade(white, 81%);
+                    right: 30vw;
+                    padding: 0.25em;
+                    border-radius: 25px;
+                    color: @gris-oscuro;
+                }
+
+                .fa-pencil-alt,
+                .play,
+                .pause {
+
+                    &:link,
+                    &:visited,
+                    &:hover,
+                    &:active {
+                        color: spin(@green, 180);
+                    }
+                }
+            }
+
+            .right-theme {
+                grid-area: canvas;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+
+                canvas {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+
                 .tag-likes {
-                    grid-area: tag-likes;
                     font-size: 0.9em;
-                    margin-top: 1.5vh;
+                    margin-top: 2vh;
                     padding: 0.3em;
                     display: flex;
                     flex-direction: row;
                     justify-content: center;
                     align-items: center;
-                    gap: 50%;
+                    gap: 100%;
                     margin-bottom: 1vh;
 
                     .etiqueta {
@@ -320,68 +373,6 @@ button,
                             color: white;
                         }
                     }
-
-                }
-
-                .controles {
-                    grid-area: control;
-                    margin-top: 1em;
-                    background-color: @gris-claro;
-                    padding: 0.3em;
-                    border-radius: 12px;
-                    box-shadow: -3px -3px 30px 3px @green, 3px 3px 30px 3px @morado;
-
-                    .fa-pencil-alt {
-                        color: @green;
-                    }
-
-                    .popup {
-                        display: none;
-                    }
-                }
-
-                a:hover .popup {
-                    display: inline-block;
-                    position: absolute;
-                    background-color: fade(white, 81%);
-                    top: 20%;
-                    right: 30vw;
-                    padding: 0.25em;
-                    border-radius: 25px;
-                    color: @gris-oscuro;
-                }
-
-                .fa-pencil-alt,
-                .play,
-                .pause {
-
-                    &:link,
-                    &:visited,
-                    &:hover,
-                    &:active {
-                        color: spin(@green, 180);
-                    }
-                }
-
-                /*  a {
-
-                    &:link,
-                    &:visited,
-                    &:hover,
-                    &:active {
-                        text-decoration: none;
-                        color: @morado;
-                    }
-                } */
-            }
-
-            .right-theme {
-                grid-area: canvas;
-                display: flex;
-
-                canvas {
-                    width: 60%;
-                    height: 100%;
 
                 }
             }

@@ -16,29 +16,23 @@ function listar($resultado)
                         <div class="autor">' . $row['username'] . '</div>
                     </div>
                     
-                    <div class="tag-likes">
-                        <div class="escuchas"> 
-                            <i class="fas fa-headphones-alt"><span>' . $row['escuchas'] . '</span></i>
-                        </div>
-                        <div class="etiqueta"> ' . $row['etiquetas'] . '</div>
-                    </div>
-
+                    
                     <div class="controles">
                         <button class="edit">
-                            <a href="../estudio/estudio.html?id_song=' . $row['id_Cancion'] . '">
+                        <a href="../estudio/estudio.html?id_song=' . $row['id_Cancion'] . '">
                                 <i class="fas fa-pencil-alt"> 
-                                    <span class="popup">Editar esta canción en el estudio</span>
+                                <span class="popup">Editar esta canción en el estudio</span>
                                 </i>
-                            </a>
-                        </button>
-                        <div class="bpm"> ' . $row['bpm'] . '</div>
-                        <button class="play lista">
+                                </a>
+                                </button>
+                                <div class="bpm"> ' . $row['bpm'] . '</div>
+                                <button class="play lista">
                             <i class="fas fa-play"></i>
-                        </button>
+                            </button>
                         <div class="id_song">' . $row['id_Cancion'] . '</div>
                         <div class="cancion"> ' . $row['track'] . '</div>
                         <button class="pause">
-                            <i class="fas fa-pause"></i>
+                        <i class="fas fa-pause"></i>
                         </button>
                     </div>
                 </div>
@@ -46,6 +40,12 @@ function listar($resultado)
                 <div class="right-theme">
                     <div class="cancion"> ' . $row['track'] . '</div>
                     <canvas id="' . $row['id_Cancion'] . '"></canvas>
+                    <div class="tag-likes">
+                        <div class="escuchas"> 
+                            <i class="fas fa-headphones-alt"><span>' . $row['escuchas'] . '</span></i>
+                        </div>
+                        <div class="etiqueta"> ' . $row['etiquetas'] . '</div>
+                    </div>
                 </div>
             </article>';
         }
