@@ -38,14 +38,14 @@ function listar($resultado)
                 </div>
                 
                 <div class="right-theme">
-                    <div class="cancion"> ' . $row['track'] . '</div>
-                    <canvas id="' . $row['id_Cancion'] . '"></canvas>
                     <div class="tag-likes">
                         <div class="escuchas"> 
                             <i class="fas fa-headphones-alt"><span>' . $row['escuchas'] . '</span></i>
                         </div>
                         <div class="etiqueta"> ' . $row['etiquetas'] . '</div>
                     </div>
+                <div class="cancion"> ' . $row['track'] . '</div>
+                <canvas id="' . $row['id_Cancion'] . '"></canvas>
                 </div>
             </article>';
         }

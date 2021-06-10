@@ -241,15 +241,15 @@ button,
         gap: 2vh;
 
         .tema {
+            padding: 1vh;
             width: 65vw;
             font-family: @text;
             border: 2px solid #65648C;
             border-radius: 25px;
-            box-shadow: @sombreado;
-            background-color: lighten(@gris-claro, 5%);
+            //box-shadow: @sombreado;
+            background-color: lighten(@gris-claro, 15%);
             display: grid;
             grid-template-areas:
-                "data canvas"
                 "data canvas";
 
             .left-theme {
@@ -261,34 +261,40 @@ button,
 
                 .auth-theme {
                     grid-area: name;
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    min-width: 20vw;
+
 
                     .header-tema {
-                        width: 100%;
-                        min-width: 150px;
                         font-size: 1.2em;
                         font-weight: bolder;
                         font-family: @title;
                         color: white;
-                        margin-top: 1vh;
+                        // margin-top: 0.9vh;
                         border-radius: 15px;
-                        padding: 1%;
-                        background-color: fade(@green, 25%);
+                        // padding: 1%;
+                        // background-color: fade(@green, 25%);
                         text-align: center;
                     }
 
                     .autor {
-                        margin-top: 1vh;
+                        margin-top: 0.5vh;
                         width: 50%;
                         text-align: center;
                         font-size: 0.7em;
-                        color: darken(white, 35%);
+                        color: darken(white, 25%);
                         border-radius: 15px;
-                        padding: 1%;
-                        background-color: fade(@morado, 35%);
+                        padding: 0.5vh;
+                        //background-color: fade(@morado, 35%);
                     }
                 }
 
                 .controles {
+                    width: 100%;
                     grid-area: control;
                     margin: 1vh 0 2vh 0;
                     background-color: @gris-claro;
@@ -298,6 +304,7 @@ button,
                     flex-flow: row;
                     justify-content: center;
                     align-items: center;
+                    padding: 0;
 
                     .fa-pencil-alt {
                         color: @green;
@@ -334,27 +341,21 @@ button,
             }
 
             .right-theme {
+                width: 70%;
                 grid-area: canvas;
                 display: flex;
                 flex-flow: column;
                 justify-content: center;
                 align-items: center;
 
-                canvas {
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                }
-
                 .tag-likes {
-                    font-size: 0.9em;
-                    margin-top: 2vh;
-                    padding: 0.3em;
+                    margin-left: 95%;
+                    font-size: 0.6em;
                     display: flex;
                     flex-direction: row;
-                    justify-content: center;
+                    justify-content: right;
                     align-items: center;
-                    gap: 100%;
+                    //gap: 80%;
                     margin-bottom: 1vh;
 
                     .etiqueta {
@@ -367,13 +368,20 @@ button,
 
                     .escuchas {
                         color: spin(@green, 151);
+                        margin-right: 3px;
 
                         span {
-                            margin-left: 3px;
+                            margin-left: 2px;
                             color: white;
                         }
                     }
 
+                }
+
+                canvas {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
                 }
             }
 
