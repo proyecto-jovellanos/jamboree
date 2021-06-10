@@ -88,12 +88,15 @@ function loop() {
     Tone.Transport.start()
 }
 
-var colores = ["#6D5FF5", "#DE6262", "#F5CA5F", "#6DEB5B"]
+var colores = ["#b9e8d8", "#71e3bd", "#58b093", "#50635d"]
+
 /*
  @param i= el track [0,1,2,3]
  @param index= el beat [0-31]
 */
 var x = 0
+let prevX;
+let prevY;
 
 function draw(i, index, id) {
     var canvas = document.getElementById(`${id}`)
@@ -101,18 +104,25 @@ function draw(i, index, id) {
     /* quiero q se dibuje la 32ª parte que corresponda
     si index es 4 que se dibuja la 4 linea de 32. 
     beatwidth es el ancho del canvas / cada hueco de los beats */
-    let beatWidth = canvas.width / 32
-    ctx.fillStyle = colores[i];
-    x = beatWidth * index
-    //ctx.clearRect(x, canvas.height / 2, beatWidth, canvas.height / 2)
-
     /* quiero q se dibuje la track que corresponda
-     si i es 1 que se dibuja la barra de snare. 
-    beatwidth es el ancho del canvas / cada hueco de los beats */
-    ctx.fillStyle = "#fff";
-    ctx.fillRect(x, canvas.height / 2, beatWidth, canvas.height / 2);
-    //ctx.fillStyle = colores[i];
-    //ctx.fillRect(x, canvas.height / 2, beatWidth, canvas.height / 2);
+     si i es 1 que se dibuja la barra de snare. */
+
+    let beatWidth = canvas.width / 32
+    let x = beatWidth * index
+    let beatHeight = canvas.height / 4
+    let y = (beatHeight * i)
+    ctx.fillStyle = colores[i];
+
+    if (index == 31) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+    } else if (index == 0) {
+        ctx.fillRect(x, y, beatWidth, canvas.height);
+    } else {
+        ctx.clearRect(prevX, prevY, canvas.width, canvas.height)
+        ctx.fillRect(x, y, beatWidth, canvas.height);
+    }
+    prevX = x
+    prevY = y
 }
 var t_id;
 
