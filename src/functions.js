@@ -89,10 +89,10 @@ function loop() {
 }
 
 var colores = ["#b9e8d8", "#71e3bd", "#58b093", "#50635d"]
-
+var colores2 = ["#412166", "#5504B3", "#6E05E6", "#954BEA"]
 /*
- @param i= el track [0,1,2,3]
- @param index= el beat [0-31]
+@param i= el track [0,1,2,3]
+@param index= el beat [0-31]
 */
 var x = 0
 let prevX;
@@ -105,21 +105,23 @@ function draw(i, index, id) {
     si index es 4 que se dibuja la 4 linea de 32. 
     beatwidth es el ancho del canvas / cada hueco de los beats */
     /* quiero q se dibuje la track que corresponda
-     si i es 1 que se dibuja la barra de snare. */
+    si i es 1 que se dibuja la barra de snare. */
 
     let beatWidth = canvas.width / 32
     let x = beatWidth * index
     let beatHeight = canvas.height / 4
     let y = (beatHeight * i)
     ctx.fillStyle = colores[i];
-
+    console.log(index);
     if (index == 31) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        ctx.fillStyle = colores2[i];
+        ctx.fillRect(x, y, beatWidth, canvas.height)
     } else if (index == 0) {
         ctx.fillRect(x, y, beatWidth, canvas.height);
     } else {
-        ctx.clearRect(prevX, prevY, canvas.width, canvas.height)
         ctx.fillRect(x, y, beatWidth, canvas.height);
+        ctx.fillStyle = colores2[i];
+        ctx.fillRect(prevX, prevY, beatWidth, canvas.height)
     }
     prevX = x
     prevY = y
