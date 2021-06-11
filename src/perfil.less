@@ -150,25 +150,30 @@ button {
         background-color: lighten(@gris-claro, 12%);
         display: flex;
         flex-flow: column;
-
+      
         .user {
             font-size: 4em;
             font-weight: bolder;
             font-family: @title;
             color: lighten(@morado, 14%);
             margin-bottom: 2rem;
+            .fas{
+                color: @green;
+                margin-right:70px;
+            }
         }
 
         .data {
             color: @green;
             font-size: 1.7em;
             font-family: @text;
+        }
 
          .logout,#abrirForm{
+            margin-top: 1rem;
             font-family: Georgia;
             color:@green;
             font-size:25px;
-            padding: 14px;
             border-radius: 10px;
             background:@morado;
             border:1px solid black;
@@ -176,6 +181,12 @@ button {
             &:hover{
                 color:@blanco
             }
+          }
+          .logout{
+              padding: 14px 53px;
+          }
+          #abrirForm{
+              padding: 14px 15px;
           }
             button {
                 // outline: none;
@@ -185,22 +196,28 @@ button {
                 // background-color: transparent;
             }
 
-            * {
-                margin-top: 1rem;
-            }
 
             #formChange {
-                background-color: @color-3-medium;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 height: 15vh;
+                border-radius: 10px;
 
                 * {
                     display: inline-block;
                 }
+                #btnC{
+                    font-family: Georgia;
+                    margin-left: 20px;
+                    color:@green;
+                    padding:10px;
+                    border-radius:5px;
+                    background:@morado;
+                    border:1px solid black;
+                    cursor:pointer;
+                }
             }
-        }
     }
 }
 
@@ -225,6 +242,11 @@ footer {
 
 //-----MEDIA-------
 
+@media screen and (max-width:875px){
+    .data{
+        width:80%;
+    }
+}
 @media screen and (max-width:750px){
     .logo{
         font-size:30px;
@@ -233,6 +255,16 @@ footer {
     .menu-items li a {
         font-size: 16px;
         padding:0;
+    }
+    #formChange{
+        margin-top: 10px;
+        flex-flow: column nowrap;
+        #btnC{
+            margin-top: 10px;
+    }
+}
+    .botones{
+        width:80%;
     }
 }
 @media screen and (max-width:500px){

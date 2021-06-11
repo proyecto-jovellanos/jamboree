@@ -2,7 +2,7 @@
 if (!isset($_COOKIE['id_User'])) {
     echo '<script type="text/javascript">
     alert("Tu sesión expiró, vuelve a iniciar sesión.");
-    window.location.href="/index/index.php";
+    window.location.href="../src/index/index.php";
     </script>';
 }
 ?>
@@ -51,19 +51,21 @@ if (!isset($_COOKIE['id_User'])) {
             echo
             '<div class="profile">
                 <header class="user">
-                  ' . $row['username'] . '
+                <i class="fas fa-user"></i>' . $row['username'] . '
                 </header>
                 <div class="data">
                     <div> Fecha de nacimiento: ' . $row['fecha'] . ' </div>
+                </div>
+                <div class="botones">
                     <form action="index/index.php">
                         <input class="logout" type="submit" value="Cerrar sesión" name="logout">
                     </form>
                         <button id="abrirForm">Cambiar contraseña</button>
+                </div>
                     <form style="display: none;" id="formChange" action="perfil.php" method="get">
-                        Introduce nueva contraseña: <input type="password"  name="new_p" autocomplete="new-password" required>
-                        <input id="btnC" type="submit" name="btnChange" value="Actualizar a esta contraseña" >
-                    </form>
-                </div>        
+                        <input type="password"  placeholder="Introduce nueva contraseña" name="new_p" autocomplete="new-password" required>
+                        <input id="btnC" type="submit" name="btnChange" value="Actualizar contraseña" >
+                    </form>        
             </div>';
         }
         if (isset($_GET['new_p'])) {
