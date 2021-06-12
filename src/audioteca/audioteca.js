@@ -12,20 +12,17 @@ $(document).ready(function () {
         for (let i = 0; i < 4; i++) {
             for (let j = 0; j <= 31; j++) {
                 if (track[i][0][j] == 1) {
-                    //console.log(track[i][0][j]);
                     draw(i, j, id)
                 }
-                //else
-                //    console.log("JSONN");
-                //console.log(track[i][0][j]);
             }
         }
     });
 
+    //@param i=0,1,2,3 ; j= 0-31 
     function draw(i, j, id) {
-        var colores = ["#6D5FF5", "#DE6262", "#F5CA5F", "#6DEB5B"]
+        //var colores = ["#6D5FF5", "#DE6262", "#F5CA5F", "#6DEB5B"]
+        var colores = ["#412166", "#5504B3", "#6E05E6", "#954BEA"]
         var canvas = document.getElementById(`${id}`)
-        console.log(canvas);
         var ctx = canvas.getContext("2d");
 
         /* quiero q se dibuje la 32ª parte que corresponda
@@ -33,12 +30,15 @@ $(document).ready(function () {
         beatwidth es el ancho del canvas / cada hueco de los beats */
         let beatWidth = canvas.width / 32
         let x = beatWidth * j
+        let beatHeight = canvas.height / 4
+        //let y = beatHeight * i+canvas.height
+        let y = (beatHeight * i)
 
         /* quiero q se dibuje la track que corresponda
          si i es 1 que se dibuja la barra de snare. 
         beatwidth es el ancho del canvas / cada hueco de los beats */
         ctx.fillStyle = colores[i];
-        ctx.fillRect(x, canvas.height / 2, beatWidth, canvas.height / 2);
+        ctx.fillRect(x, y, beatWidth, canvas.height);
     }
 
     $.getScript("../functions.js", function () {
@@ -53,11 +53,31 @@ $(document).ready(function () {
         cargaTrack(track, bpm)
 
         let id = $(this).next().html()
-        console.log(id);
+        $("canvas").each(function () {
+            for (let i = 0; i < 4; i++) {
+                for (let j = 0; j <= 31; j++) {
+                    if (track[i][0][j] == 1) {
+                        draw(i, j, id)
+                    }
+                }
+            }
+        });
+
         play(id)
     })
 
     $(".pause").click(function (ev) {
+        $("canvas").each(function () {
+            let id = $(this).attr("id")
+            let track = JSON.parse($(this).prev().html())
+            for (let i = 0; i < 4; i++) {
+                for (let j = 0; j <= 31; j++) {
+                    if (track[i][0][j] == 1) {
+                        draw(i, j, id)
+                    }
+                }
+            }
+        });
         stop()
     })
 

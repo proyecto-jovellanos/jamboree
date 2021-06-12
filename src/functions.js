@@ -82,6 +82,22 @@ function loop() {
                 index++
             } else {
                 index = 0
+                var canvas = document.getElementById(`${t_id}`)
+                var ctx = canvas.getContext("2d");
+                ctx.clearRect(0, 0, canvas.width, canvas.height)
+                for (let i = 0; i < 4; i++) {
+                    for (let j = 0; j <= 31; j++) {
+                        if (tracks[i][0][j] == 1) {
+                            let beatWidth = canvas.width / 32
+                            let x = beatWidth * j
+                            let beatHeight = canvas.height / 4
+                            let y = (beatHeight * i)
+
+                            ctx.fillStyle = colores2[i];
+                            ctx.fillRect(x, y, beatWidth, canvas.height);
+                        }
+                    }
+                }
             }
         }, time)
     }, "32n");

@@ -48,8 +48,8 @@ $(document).ready(function () {
         console.log("script cargado");
         loop()
     });
+    
     $(".play").click(function () {
-        console.log($(this).hasClass("lista"))
         if ($(this).hasClass("lista")) {
             id = $(this).next().html()
             track = $(this).next().next().html()
@@ -59,9 +59,18 @@ $(document).ready(function () {
             track = $(this).prev().prev().html()
             bpm = $(this).prev().prev().prev().html()
         }
-        /*  console.log(id);
-         console.log(bpm);
-         console.log(track); */
+
+        $("canvas").each(function () {
+            let id = $(this).attr("id")
+            let track = JSON.parse($(this).prev().html())
+            for (let i = 0; i < 4; i++) {
+                for (let j = 0; j <= 31; j++) {
+                    if (track[i][0][j] == 1) {
+                        draw(i, j, id)
+                    }
+                }
+            }
+        });
 
         var params = {
             method: 'POST',
@@ -79,6 +88,17 @@ $(document).ready(function () {
     })
 
     $(".pause").click(function () {
+        $("canvas").each(function () {
+            let id = $(this).attr("id")
+            let track = JSON.parse($(this).prev().html())
+            for (let i = 0; i < 4; i++) {
+                for (let j = 0; j <= 31; j++) {
+                    if (track[i][0][j] == 1) {
+                        draw(i, j, id)
+                    }
+                }
+            }
+        });
         stop()
     })
 
