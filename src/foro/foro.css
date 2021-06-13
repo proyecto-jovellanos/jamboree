@@ -23,61 +23,6 @@
 body::-webkit-scrollbar {
   display: none;
 }
-body {
-  height: 100vh;
-  width: 100vw;
-  background-color: #414141;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: "header header header header" "main   main   main   aside" "footer footer footer footer";
-}
-.menu {
-  grid-area: header;
-  z-index: 9;
-  height: 75px;
-  width: 100%;
-  background-color: #66CDAA;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #43038c;
-  position: fixed;
-}
-.logo {
-  color: #43038c;
-  font-size: 35px;
-  font-weight: bold;
-}
-.menu-items {
-  display: flex;
-  margin-right: 20px;
-}
-.menu-items li {
-  border-radius: 3px;
-  margin: 0 5px;
-}
-.menu-items li a {
-  padding: 7px 13px;
-  font-size: 18px;
-  display: block;
-  color: #43038c;
-}
-.menu-items li a:hover {
-  color: red;
-}
-.btn_menu {
-  margin-right: 30px;
-  font-size: 25px;
-  color: #43038c;
-  cursor: pointer;
-  display: none;
-}
-ul.show {
-  top: 65px;
-  width: 100%;
-  height: 400px;
-  position: absolute;
-}
 .grow:hover {
   transform: scale(1.01);
   transition: 60ms ease;
@@ -89,6 +34,74 @@ button {
   border: 0px;
   font-size: 1em;
   background-color: transparent;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #414141;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "header header header header" "main   main   main   aside" "footer footer footer footer";
+}
+.header {
+  z-index: 9;
+  min-height: 65px;
+  width: 100%;
+  height: 10vh;
+  grid-area: header;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  background-color: #349e7a;
+  -moz-box-shadow: inset 0 0 5px #000000;
+  -webkit-box-shadow: inset 0 0 5px #000000;
+  box-shadow: inset 0 0 5px #000000;
+}
+.header .animation-header {
+  position: absolute;
+  max-width: 50px;
+  left: 2%;
+  font-size: 1.9em;
+  text-size-adjust: 100%;
+  color: #cd6678;
+  font-family: Monoton, sans-serif;
+}
+.header .menu-items {
+  display: flex;
+  align-items: center;
+}
+.header .menu-items li {
+  border-radius: 3px;
+  margin: 0 5px;
+}
+.header .menu-items li a {
+  padding: 9px 13px;
+  font-size: 22px;
+  display: block;
+}
+.header .btn_menu {
+  margin-right: 30px;
+  font-size: 25px;
+  color: #43038c;
+  cursor: pointer;
+}
+.header ul.show {
+  top: 65px;
+  width: 100%;
+  height: 250px;
+  position: absolute;
+}
+.header .social {
+  width: 20vw;
+  position: absolute;
+  right: -5%;
+  color: #43038c;
+}
+.header .social i {
+  padding-left: 1rem;
+  color: #43038c;
 }
 .aside {
   grid-area: aside;
@@ -216,7 +229,7 @@ button,
 }
 .main .listado .tema {
   padding: 1vh;
-  width: 65vw;
+  width: 60vw;
   font-family: Nunito, sans-serif;
   border: 2px solid #65648C;
   border-radius: 25px;
@@ -239,7 +252,7 @@ button,
   min-width: 20vw;
 }
 .main .listado .tema .left-theme .auth-theme .header-tema {
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: bolder;
   font-family: Cormorant, serif;
   color: white;
@@ -250,7 +263,7 @@ button,
   margin-top: 0.5vh;
   width: 50%;
   text-align: center;
-  font-size: 0.7em;
+  font-size: 1em;
   color: #bfbfbf;
   border-radius: 15px;
   padding: 0.5vh;
@@ -300,24 +313,35 @@ button,
   color: #cd6689;
 }
 .main .listado .tema .right-theme {
-  width: 70%;
+  width: 45%;
   grid-area: canvas;
   display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
+  flex-flow: row;
+  justify-content: space-around;
+}
+.main .listado .tema .right-theme canvas {
+  cursor: pointer;
+  display: block;
+  background-color: #b9e8d8a8;
+  padding: 0.4em;
+  border-radius: 12px;
+  box-shadow: -2px -2px 20px 2px #43038c, 2px 2px 20px 2px #66CDAA;
+  /* width: 100%;
+                    height: 100%; */
 }
 .main .listado .tema .right-theme .tag-likes {
-  margin-left: 95%;
   font-size: 0.6em;
   display: flex;
-  flex-direction: row;
+  flex-flow: column nowrap;
   justify-content: right;
   align-items: center;
+  margin-left: 1vw;
   margin-bottom: 1vh;
 }
 .main .listado .tema .right-theme .tag-likes .etiqueta {
+  width: 3vw;
   color: #2c8768;
+  text-align: center;
   border-radius: 10px;
   padding: 0.2em;
   background-color: #d2d2d2;
@@ -325,16 +349,10 @@ button,
 }
 .main .listado .tema .right-theme .tag-likes .escuchas {
   color: #cd66bb;
-  margin-right: 3px;
 }
 .main .listado .tema .right-theme .tag-likes .escuchas span {
   margin-left: 2px;
   color: white;
-}
-.main .listado .tema .right-theme canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
 }
 footer {
   grid-area: footer;
@@ -344,24 +362,42 @@ footer {
   height: 10vh;
   bottom: 0px;
   width: 100%;
+  margin-top: 2%;
   display: flex;
   line-height: 10vh;
 }
 footer a {
   color: #66CDAA;
 }
-@media screen and (max-width: 750px) {
-  .logo {
-    font-size: 30px;
-    padding-left: 15px;
+@media screen and (max-width: 2560px) {
+  .btn_menu {
+    display: none;
+  }
+  .menu-items li a {
+    color: #43038c;
+  }
+  .socialFo {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .socialFo {
+    display: block;
+  }
+  .menu-items {
+    position: absolute;
+    right: 2%;
   }
   .menu-items li a {
     font-size: 16px;
     padding: 0;
   }
+  .social {
+    display: none;
+  }
 }
 @media screen and (max-width: 500px) {
-  .menu {
+  .header {
     height: 65px;
   }
   .btn_menu {
@@ -376,6 +412,7 @@ footer a {
     text-align: center;
     transition: all 0.4s;
     flex-direction: column;
+    right: 0;
   }
   .menu-items li {
     margin: 30px 0 0 0;
@@ -386,30 +423,8 @@ footer a {
   }
   .menu-items li a {
     font-size: 20px;
-    color: white;
+    color: #66CDAA;
     font-weight: bold;
-  }
-  .logo {
-    font-size: 25px;
-    padding-left: 35px;
-  }
-  footer {
-    height: 100%;
-    flex-flow: column nowrap;
-  }
-}
-@media all and (max-width: 300px) {
-  .listado {
-    margin: 2% 5%;
-  }
-  .main {
-    display: grid;
-    grid-auto-rows: minmax(50px, auto);
-    grid-template-columns: 1fr;
-    grid-template-areas: "header" "main" "aside" "footer";
-  }
-  .sidebar {
-    flex-flow: row nowrap;
   }
   footer {
     height: 100%;

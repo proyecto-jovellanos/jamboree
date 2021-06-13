@@ -1,0 +1,135 @@
+@font-face {
+  font-family: 'Cormorant';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/cormorant/v11/H4cgBXOCl9bbnla_nHIiVL6Ygg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v16/XRXV3I6Li01BKof4Mg.ttf) format('truetype');
+}
+/* Colores en Hex */
+/* Colores en Hex */
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+/* ocultar barras de scroll */
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  height: 100vh;
+}
+.grow:hover {
+  transform: scale(1.01);
+  transition: 60ms ease;
+  overflow: hidden;
+}
+body {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "header header" "main main" "footer footer";
+}
+/*----HEADER------*/
+header {
+  grid-area: header;
+  background-color: #414141;
+  border: 1px solid #525252;
+  border-width: 2px;
+  z-index: 9;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 10vh;
+  min-height: 52px;
+}
+header .logo {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 3px;
+  color: #66CDAA;
+  font-family: Cormorant, serif;
+}
+header .title {
+  font-size: x-large;
+  text-align: center;
+  color: #66CDAA;
+}
+header .social {
+  text-align: center;
+  color: #66CDAA;
+}
+header .social a {
+  display: inline-flex;
+  margin-left: 10px;
+}
+header .social > a:hover {
+  font-size: 17px;
+  color: #b3e6d5;
+}
+main {
+  grid-area: main;
+  width: 100%;
+  height: 80vh;
+  background-color: #525252;
+  border: 1px solid #414141;
+  border-width: 2px;
+}
+main form {
+  margin-top: 5%;
+  width: 50%;
+  background: #414141;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1%;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  height: 60%;
+}
+main form .sectionRegister {
+  margin-top: 4%;
+  text-align: center;
+}
+main form .sectionRegister * {
+  box-sizing: border-box;
+}
+main form .sectionRegister .sectionRegister p {
+  font-size: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+main form .sectionRegister .sectionRegister input {
+  height: 2%;
+  width: 100%;
+}
+main form .dataRegister > input {
+  margin-top: 2%;
+  margin-left: 45%;
+}
+main form .dataRegister > a {
+  text-align: center;
+  font-size: 12px;
+}
+/*----FOOTER------*/
+footer {
+  grid-area: footer;
+  position: relative;
+  bottom: 0;
+  height: 10vh;
+}
+footer {
+  background-color: #414141;
+  width: 100%;
+  display: flex;
+}
+footer > div {
+  margin-right: auto;
+  margin-left: auto;
+}
