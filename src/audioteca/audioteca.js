@@ -110,7 +110,8 @@ $(document).ready(function () {
             body: "option=makePublic&id_song=" + id
         }
         fetch("../server.php", params)
-        $(this).hide()
+        //$(this).hide()
+        $(this).html('<button class="btn fromForo"><i class="fas fa-download"></i><span class= "popup" > Quitar track del foro < /span></button>')
     })
     $(".fromForo").click(function (ev) {
         ev.preventDefault()
@@ -125,6 +126,7 @@ $(document).ready(function () {
             body: "option=makePrivated&id_song=" + id
         }
         fetch("../server.php", params)
-        $(this).hide()
+        //$(this).hide()
+        $(this).html('<button class="btn toForo"><i class="fas fa-upload"></i><span class= "popup" > Subir track a foro < /span></button>')
     })
 })
