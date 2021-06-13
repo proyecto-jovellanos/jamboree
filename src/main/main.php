@@ -41,9 +41,9 @@ if (!isset($_COOKIE['id_User'])) {
         </div>
         <div class="nav">
             <div class="social">
-                <a><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/jamboreeoficial/"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/Jambore29165571"><i class="fab fa-twitter"></i></a>
                 <a><i class="fab fa-facebook"></i></a>
-                <a><i class="fab fa-instagram"></i></a>
             </div>
             <div class="links">
                 <a href="../perfil.php">Mi perfil</a>
@@ -70,9 +70,8 @@ if (!isset($_COOKIE['id_User'])) {
     </div>
 
     <footer>
-        <div class="contactos">Nuestros nombres</div>
-        <div class="lopd">ley organica proteccion datos, cookies...</div>
-        <div class="year">AÑO y Copyright</div>
+        <div class="contactos">© 2021 Jamboree Software</div>
+        <div class="lopd"><a href="../privacidad.html">Política de privacidad</a></div>
     </footer>
     <script>
 

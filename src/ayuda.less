@@ -26,7 +26,21 @@
 body::-webkit-scrollbar {
     display: none;
 }
+.grow:hover {
+    transform: scale(1.01);
+    transition: 60ms ease;
+    overflow: hidden;
+}
 
+button {
+    outline: none;
+    cursor: pointer;
+    border: 0px;
+    font-size: 1em;
+    background-color: transparent;
+}
+
+//------ESTRUCTURA-------
 body {
     height: 100vh;
     width: 100vw;
@@ -40,74 +54,75 @@ body {
 }
 
 //------HEADER-------
-.menu{
+.header {
+    z-index: 9;
+    min-height: 65px;
+    width: 100%;
+    height: 10vh;
     grid-area: header;
-    z-index:9;
-    height:75px;
-    width:100%;
-    background-color:@green;
     display: flex;
-    justify-content: space-between;
+    flex-flow: row nowrap;
     align-items: center;
-    border-bottom: 1px solid @morado;
     position: fixed;
-}
-.logo{
-    color:@morado;
-    font-size: 35px;
-    font-weight: bold;
-}
-.menu-items{
-    display:flex;
-    margin-right:20px;
-}
-.menu-items li{
-    border-radius: 3px;
-    margin: 0 5px;
-}
-.menu-items li a{
-    padding:7px 13px;
-    font-size:18px;
-    display: block;
-    color:@morado;
-}
-.menu-items li a:hover{
-        color:red
+    top: 0px;
+    background-color: darken(@green, 19%);
+
+    -moz-box-shadow: inset 0 0 5px #000000;
+    -webkit-box-shadow: inset 0 0 5px #000000;
+    box-shadow: inset 0 0 5px #000000;
+
+    .animation-header {
+        position: absolute;
+        max-width: 50px;
+        left: 2%;
+        font-size: 1.9em;
+        text-size-adjust: 100%;
+        color: spin(@green, 190);
+        font-family: Monoton, sans-serif;
+
     }
-.btn_menu{
-margin-right:30px;
-font-size: 25px;
-color:@morado;
-cursor:pointer;
-display:none;
-}
-ul.show{
-    top:65px;
-    width:100%;
-    height: 400px;
-    position: absolute;
-}
 
-.animation(@nombre) {
-    position: relative;
-    animation-name: @nombre;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-}
+    .menu-items {
+        display: flex;
+        align-items: center;
+    }
 
-.grow:hover {
-    transform: scale(1.01);
-    transition: 60ms ease;
-    overflow: hidden;
-}
+    .menu-items li {
+        border-radius: 3px;
+        margin: 0 5px;
+    }
 
-button {
-    outline: none;
-    cursor: pointer;
-    border: 0px;
-    font-size: 1em;
-    background-color: transparent;
+    .menu-items li a {
+        padding: 9px 13px;
+        font-size: 22px;
+        display: block;
+    }
+
+    .btn_menu {
+        margin-right: 30px;
+        font-size: 25px;
+        color: @morado;
+        cursor: pointer;
+    }
+
+    ul.show {
+        top: 65px;
+        width: 100%;
+        height: 250px;
+        position: absolute;
+    }
+
+    .social {
+        width: 20vw;
+        position: absolute;
+        right: -5%;
+        color: @morado;
+
+        i {
+            padding-left: 1rem;
+            color: @morado;
+        }
+    }
 }
 
 //-------MAIN-------
@@ -147,7 +162,6 @@ footer {
     color: @green;
     background-color: @morado;
     position: relative;
-    height: 10vh;
     bottom: 0px;
     width: 100%;
     display: flex;
@@ -157,11 +171,46 @@ footer {
         color: @green;
     }
 }
+
+//------MEDIA------
+
+@media screen and (max-width:2560px) {
+
+    .btn_menu {
+        display: none;
+    }
+
+    .menu-items li a {
+        color: @morado;
+    }
+
+    .socialFo {
+        display: none;
+    }
+
+}
+
 @media screen and (max-width:768px){
+
+    .menu-items {
+        position: absolute;
+        right: 2%;
+
+        li a {
+            font-size: 16px;
+            padding: 0;
+        }
+    }
+    .social {
+        display: none;
+    }
     .main{
         .apartados{
             margin-top:0;
         }
+    }
+    .socialFo {
+        display: block;
     }
 }
 @media screen and (max-width:750px){
@@ -182,39 +231,43 @@ footer {
     }
 }
 @media screen and (max-width:500px){
-    .menu{
-       height: 65px;
+    .header {
+        height: 65px;
     }
+
     .btn_menu {
-        display:inline-flex;
+        display: inline-flex;
     }
-    .menu-items{
+
+    .menu-items {
         position: fixed;
-        width:100vh;
+        width: 100vh;
         height: calc(100%-65px);
         background-color: @gris-oscuro;
-        top:-100vh;
+        top: -100vh;
         text-align: center;
         transition: all .4s;
         flex-direction: column;
+        right: 0;
     }
-    .menu-items li{
+
+    .menu-items li {
         margin: 30px 0 0 0;
         line-height: 30px;
     }
-    .menu-items li:hover{
+
+    .menu-items li:hover {
         background-color: none;
     }
+
     .menu-items li a {
         font-size: 20px;
-        color: @blanco;
+        color: @green;
         font-weight: bold;
     }
-    .logo{
-        font-size:25px;
-        padding-left: 35px;
-    }
-    footer{
+
+
+    footer {
         height: 100%;
         flex-flow: column nowrap;
     }
