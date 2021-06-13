@@ -29,9 +29,23 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+.grow:hover {
+    transform: scale(1.01);
+    transition: 60ms ease;
+    overflow: hidden;
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+    border: 0px;
+    font-size: 1em;
+    background-color: transparent;
+}
+//------ESTRUCTURA-------
 body {
     height: 100%;
-    background-color: @gris-claro;
+    background-color: @gris-oscuro;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     //grid-auto-rows: minmax(50px, auto);
@@ -51,76 +65,74 @@ body {
 
 
 //------HEADER-------
-.menu{
+.header{
+    z-index: 9;
+    min-height: 65px;
+    width: 100%;
+    height: 10vh;
     grid-area: header;
-    z-index:9;
-    height:75px;
-    width:100%;
-    background-color:@green;
     display: flex;
-    justify-content: space-between;
+    flex-flow: row nowrap;
     align-items: center;
-    border-bottom: 1px solid @morado;
     position: fixed;
-}
-.logo{
-    color:@morado;
-    font-size: 35px;
-    font-weight: bold;
-}
+    top: 0px;
+    background-color: darken(@green, 19%);
+
+    -moz-box-shadow: inset 0 0 5px #000000;
+    -webkit-box-shadow: inset 0 0 5px #000000;
+    box-shadow: inset 0 0 5px #000000;
+
+   .animation-header {
+        position: absolute;
+        max-width: 50px;
+        left: 2%;
+        font-size: 1.9em;
+        text-size-adjust: 100%;
+        color: spin(@green, 190);
+        font-family: Monoton, sans-serif;
+        
+    }
+
 .menu-items{
-    display:flex;
-    margin-right:20px;
+        display: flex;
+        align-items: center;
+        width: 40%;
 }
 .menu-items li{
     border-radius: 3px;
     margin: 0 5px;
 }
 .menu-items li a{
-    padding:7px 13px;
+    padding:9px 13px;
     font-size:18px;
     display: block;
-    color:@morado;
-}
-.menu-items li a:hover{
-        color:red
-    }
+        }
+
 .btn_menu{
 margin-right:30px;
 font-size: 25px;
 color:@morado;
 cursor:pointer;
-display:none;
 }
 ul.show{
     top:65px;
     width:100%;
-    height: 400px;
+    height: 250px;
     position: absolute;
 }
 
-.animation(@nombre) {
-    position: relative;
-    animation-name: @nombre;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-}
+.social {
+        width: 20vw;
+        position: absolute;
+        right: -5%;
+        color: @morado;
 
-.grow:hover {
-    transform: scale(1.01);
-    transition: 60ms ease;
-    overflow: hidden;
+        i {
+            padding-left: 1rem;
+            color: @morado;
+        }
 }
-
-button {
-    outline: none;
-    cursor: pointer;
-    border: 0px;
-    font-size: 1em;
-    background-color: transparent;
 }
-
 
 //-------MAIN-------
 /* author miguel */
@@ -138,11 +150,8 @@ button {
     margin-top: 10vh;
 
     .profile {
-        width: 60%;
         height: 70vh;
         font-size: 15px;
-        padding: 2rem;
-        padding-left: 5rem;
         box-shadow: @sombreado;
         font-family: @text;
         border: 2px solid #65648C;
@@ -168,6 +177,7 @@ button {
             font-size: 1.7em;
             font-family: @text;
         }
+         .botones{
 
          .logout,#abrirForm{
             margin-top: 1rem;
@@ -195,7 +205,7 @@ button {
                 font-size: 1em;
                 // background-color: transparent;
             }
-
+        }
 
             #formChange {
                 display: flex;
@@ -234,20 +244,31 @@ footer {
     width: 100%;
     display: flex;
     line-height: 10vh;
-
+    
     a {
         color: @green;
     }
 }
 
 //-----MEDIA-------
-
-@media screen and (max-width:875px){
-    .data{
-        width:80%;
+@media screen and (max-width:2560px){
+    .profile{
+        width: 60%;
+        padding: 2rem;
+        padding-left: 5rem;
     }
+    .btn_menu{
+        display:none;
+    }
+    .menu-items li a{
+        color: @morado;
+    }
+    .socialFo{
+        display: none;
+    }
+    
 }
-@media screen and (max-width:750px){
+@media screen and (max-width:768px){
     .logo{
         font-size:30px;
         padding-left:15px;
@@ -263,9 +284,16 @@ footer {
             margin-top: 10px;
     }
 }
-    .botones{
-        width:80%;
-    }
+.profile{
+    width: 100%;
+}
+.social{
+    display: none;
+}
+.socialFo{
+    display: block;
+}
+
 }
 @media screen and (max-width:500px){
     .menu{
@@ -293,7 +321,7 @@ footer {
     }
     .menu-items li a {
         font-size: 20px;
-        color: @blanco;
+        color: @green;
         font-weight: bold;
     }
     .logo{
@@ -305,5 +333,22 @@ footer {
         flex-flow: column nowrap;
     }
 }
+@media screen and (max-width:425px){
+    .profile{
+        width: 100%;
+        padding-left: 3rem;
+    }
 
+}
+@media screen and (max-width:375px){
+    .profile{
+        padding: 1rem;
+    }
 
+}
+@media screen and (max-width:325px){
+    .data{
+        width: 100%;
+    }
+
+}
