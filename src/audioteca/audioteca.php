@@ -41,8 +41,12 @@ if (!isset($_COOKIE['id_User'])) {
 </head>
 
 <body>
-<nav class="menu">
-        <label class="logo">Jamboree</label>
+<header class="header">
+    <div class="animation-header">
+
+            Jamboree
+
+        </div>
         <ul class="menu-items">
             <li><a href="../main/main.php">Inicio</a></li>
             <li><a href="../foro/foro.php">Foro</a></li>
@@ -50,10 +54,15 @@ if (!isset($_COOKIE['id_User'])) {
             <li><a href="../ayuda.html">Ayuda</a></li>
             <li><a href="../perfil.php">Mi perfil</a></li>
         </ul>
+        <div class="social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+        </div>
         <span class="btn_menu">
             <i class="fas fa-bars"></i>
         </span>
-    </nav>
+</header>
     <div class="main">
         <div class="titulo">
             <?php
@@ -73,7 +82,7 @@ if (!isset($_COOKIE['id_User'])) {
     <footer>
         <div class="contactos">Nuestros nombres</div>
         <div class="lopd">ley organica proteccion datos, cookies...</div>
-        <div class="social">
+        <div class="socialFo">
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-facebook-square"></i></a>
