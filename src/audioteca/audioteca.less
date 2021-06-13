@@ -27,6 +27,7 @@
 body::-webkit-scrollbar {
     display: none;
 }
+
 .grow:hover {
     transform: scale(1.01);
     transition: 60ms ease;
@@ -40,6 +41,7 @@ button {
     font-size: 1em;
     background-color: transparent;
 }
+
 //-------ESTRUCTURA-----
 body {
     height: 100vh;
@@ -79,33 +81,37 @@ body {
         text-size-adjust: 100%;
         color: spin(@green, 190);
         font-family: Monoton, sans-serif;
-        
+
     }
-    .menu-items{
+
+    .menu-items {
         display: flex;
         align-items: center;
-}
-    .menu-items li{
-    border-radius: 3px;
-    margin: 0 5px;
-}
-    .menu-items li a{
-    padding:9px 13px;
-    font-size:22px;
-    display: block;
-}
+    }
 
-    .btn_menu{
-    margin-right:30px;
-    font-size: 25px;
-    color:@morado;
-    cursor:pointer;
-}
-    ul.show{
-   top:65px;
-   width:100%;
-   height: 250px;
-   position: absolute;
+    .menu-items li {
+        border-radius: 3px;
+        margin: 0 5px;
+    }
+
+    .menu-items li a {
+        padding: 9px 13px;
+        font-size: 22px;
+        display: block;
+    }
+
+    .btn_menu {
+        margin-right: 30px;
+        font-size: 25px;
+        color: @morado;
+        cursor: pointer;
+    }
+
+    ul.show {
+        top: 65px;
+        width: 100%;
+        height: 250px;
+        position: absolute;
     }
 
     .social {
@@ -245,6 +251,7 @@ body {
                 width: 50%;
 
                 canvas {
+                    cursor: pointer;
                     overflow: hidden;
                     display: block;
                     background-color: #b9e8d8a8;
@@ -280,34 +287,38 @@ footer {
 }
 
 //------MEDIA------
-@media screen and (max-width:2560px){
+@media screen and (max-width:2560px) {
 
-    .btn_menu{
-        display:none;
-    }
-    .menu-items li a{
-        color: @morado;
-    }
-   
-    .socialFo{
+    .btn_menu {
         display: none;
     }
-    
+
+    .menu-items li a {
+        color: @morado;
+    }
+
+    .socialFo {
+        display: none;
+    }
+
 }
+
 @media screen and (max-width:768px) {
-    .socialFo{
+    .socialFo {
         display: block;
     }
-    .menu-items{
+
+    .menu-items {
         position: absolute;
         right: 2%;
+
         li a {
             font-size: 16px;
             padding: 0;
         }
     }
 
-    .social{
+    .social {
         display: none;
     }
 }

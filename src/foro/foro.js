@@ -18,6 +18,10 @@ $(document).ready(function () {
                 }
             }
         }
+    })
+    $('canvas').click(function () {
+        let id = $(this).attr("id")
+        window.location.replace("../estudio/estudio.html?id_song=" + id);
     });
 
     //@param i=0,1,2,3 ; j= 0-31 
@@ -48,7 +52,7 @@ $(document).ready(function () {
         console.log("script cargado");
         loop()
     });
-    
+
     $(".play").click(function () {
         if ($(this).hasClass("lista")) {
             id = $(this).next().html()

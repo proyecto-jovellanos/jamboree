@@ -17,7 +17,10 @@ $(document).ready(function () {
             }
         }
     });
-
+    $('canvas').click(function () {
+        let id = $(this).attr("id")
+        window.location.replace("../estudio/estudio.html?id_song=" + id);
+    });
     //@param i=0,1,2,3 ; j= 0-31 
     function draw(i, j, id) {
         //var colores = ["#6D5FF5", "#DE6262", "#F5CA5F", "#6DEB5B"]
@@ -83,19 +86,29 @@ $(document).ready(function () {
 
     //boton para borrar
     $(".fa-trash-alt").click(function () {
-        let id = $(this).parent().prev().html()
-        // console.log(id);
-        var params = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-            },
-            //option=borrar para controlar la operacion en php
-            body: "option=borrar&id_song=" + id
-        }
-        fetch("../server.php", params)
+        var userselection = confirm("¿Estás seguro de borrar este tema para siempre?");
 
-        $(this).parent().parent().hide()
+        if (userselection == true) {
+            let id = $(this).parent().prev().html()
+            var params = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                },
+                //option=borrar para controlar la operacion en php
+                body: "option=borrar&id_song=" + id
+            }
+            fetch("../server.php", params)
+
+            $(this).parent().parent().parent().parent().hide()
+
+            alert("Tema eliminado!");
+
+        } else {
+
+            alert("Tema no eliminado");
+
+        }
     })
     $(".toForo").click(function (ev) {
         ev.preventDefault()
@@ -111,7 +124,7 @@ $(document).ready(function () {
         }
         fetch("../server.php", params)
         //$(this).hide()
-        $(this).html('<button class="btn fromForo"><i class="fas fa-download"></i><span class= "popup" > Quitar track del foro < /span></button>')
+        $(this).html('<button class="btn fromForo"><i class="fas fa-download"></i><span class= "popup" >Quitar track del foro</span></button>')
     })
     $(".fromForo").click(function (ev) {
         ev.preventDefault()
@@ -127,6 +140,6 @@ $(document).ready(function () {
         }
         fetch("../server.php", params)
         //$(this).hide()
-        $(this).html('<button class="btn toForo"><i class="fas fa-upload"></i><span class= "popup" > Subir track a foro < /span></button>')
+        $(this).html('<button class="btn toForo"><i class="fas fa-upload"></i><span class= "popup" >Subir track a foro</span></button>')
     })
 })
