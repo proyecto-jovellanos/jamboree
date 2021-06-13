@@ -27,83 +27,6 @@
 body::-webkit-scrollbar {
     display: none;
 }
-
-body {
-    height: 100vh;
-    width: 100vw;
-    background-color: @gris-oscuro;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas:
-        "header header"
-        "main   main"
-        "footer footer";
-}
-
-//------HEADER-------
-.menu {
-    grid-area: header;
-    z-index: 9;
-    height: 75px;
-    width: 100%;
-    background-color: @green;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid @morado;
-    position: fixed;
-}
-
-.logo {
-    color: @morado;
-    font-size: 35px;
-    font-weight: bold;
-}
-
-.menu-items {
-    display: flex;
-    margin-right: 20px;
-
-    li {
-        border-radius: 3px;
-        margin: 0 5px;
-
-        a {
-            padding: 7px 13px;
-            font-size: 18px;
-            display: block;
-            color: @morado;
-
-            &:hover {
-                color: red
-            }
-        }
-    }
-}
-
-.btn_menu {
-    margin-right: 30px;
-    font-size: 25px;
-    color: @morado;
-    cursor: pointer;
-    display: none;
-}
-
-ul.show {
-    top: 65px;
-    width: 100%;
-    height: 400px;
-    position: absolute;
-}
-
-.animation(@nombre) {
-    position: relative;
-    animation-name: @nombre;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-}
-
 .grow:hover {
     transform: scale(1.01);
     transition: 60ms ease;
@@ -117,7 +40,88 @@ button {
     font-size: 1em;
     background-color: transparent;
 }
+//-------ESTRUCTURA-----
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: @gris-oscuro;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+        "header header"
+        "main   main"
+        "footer footer";
+}
 
+//------HEADER-------
+.header {
+    z-index: 9;
+    min-height: 65px;
+    width: 100%;
+    height: 10vh;
+    grid-area: header;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    background-color: darken(@green, 19%);
+
+    -moz-box-shadow: inset 0 0 5px #000000;
+    -webkit-box-shadow: inset 0 0 5px #000000;
+    box-shadow: inset 0 0 5px #000000;
+
+    .animation-header {
+        position: absolute;
+        max-width: 50px;
+        left: 2%;
+        font-size: 1.9em;
+        text-size-adjust: 100%;
+        color: spin(@green, 190);
+        font-family: Monoton, sans-serif;
+        
+    }
+    .menu-items{
+        display: flex;
+        align-items: center;
+}
+    .menu-items li{
+    border-radius: 3px;
+    margin: 0 5px;
+}
+    .menu-items li a{
+    padding:9px 13px;
+    font-size:22px;
+    display: block;
+}
+
+    .btn_menu{
+    margin-right:30px;
+    font-size: 25px;
+    color:@morado;
+    cursor:pointer;
+}
+    ul.show{
+   top:65px;
+   width:100%;
+   height: 250px;
+   position: absolute;
+    }
+
+    .social {
+        width: 20vw;
+        position: absolute;
+        right: -5%;
+        color: @morado;
+
+        i {
+            padding-left: 1rem;
+            color: @morado;
+        }
+    }
+}
+
+//-----MAIN--------
 .main {
     grid-area: main;
     width: 100%;
@@ -276,20 +280,40 @@ footer {
 }
 
 //------MEDIA------
-@media screen and (max-width:750px) {
-    .logo {
-        font-size: 30px;
-        padding-left: 15px;
+@media screen and (max-width:2560px){
+
+    .btn_menu{
+        display:none;
+    }
+    .menu-items li a{
+        color: @morado;
+    }
+   
+    .socialFo{
+        display: none;
+    }
+    
+}
+@media screen and (max-width:768px) {
+    .socialFo{
+        display: block;
+    }
+    .menu-items{
+        position: absolute;
+        right: 2%;
+        li a {
+            font-size: 16px;
+            padding: 0;
+        }
     }
 
-    .menu-items li a {
-        font-size: 16px;
-        padding: 0;
+    .social{
+        display: none;
     }
 }
 
 @media screen and (max-width:500px) {
-    .menu {
+    .header {
         height: 65px;
     }
 
@@ -306,6 +330,7 @@ footer {
         text-align: center;
         transition: all .4s;
         flex-direction: column;
+        right: 0;
     }
 
     .menu-items li {
@@ -319,14 +344,10 @@ footer {
 
     .menu-items li a {
         font-size: 20px;
-        color: @blanco;
+        color: @green;
         font-weight: bold;
     }
 
-    .logo {
-        font-size: 25px;
-        padding-left: 35px;
-    }
 
     footer {
         height: 100%;
