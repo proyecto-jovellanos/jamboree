@@ -43,8 +43,8 @@ if (!isset($_COOKIE['id_User'])) {
 </head>
 
 <body>
-<header class="header">
-    <div class="animation-header">
+    <header class="header">
+        <div class="animation-header">
 
             Jamboree
 
@@ -64,7 +64,7 @@ if (!isset($_COOKIE['id_User'])) {
         <span class="btn_menu">
             <i class="fas fa-bars"></i>
         </span>
-</header>
+    </header>
     <div class="main">
         <section class="listado">
             <div class="tags">
@@ -88,17 +88,17 @@ if (!isset($_COOKIE['id_User'])) {
             listar($leer);
             ?>
         </section>
-    </div>
-    <div class="aside">
-        <div class="sidebar">
-            <div class="most-visited">
-                <span>HITS DEL MOMENTO</span>
-                <?php
-                include("listadoCancionesTop.php");
-                include("db.php");
-                $leerTop = mysqli_query($conexion, 'select * from canciones where publica="1" ORDER BY escuchas DESC LIMIT 10');
-                listarTop($leerTop);
-                ?>
+        <div class="aside">
+            <div class="sidebar">
+                <div class="most-visited">
+                    <span>HITS DEL MOMENTO</span>
+                    <?php
+                    include("listadoCancionesTop.php");
+                    include("db.php");
+                    $leerTop = mysqli_query($conexion, 'select * from canciones where publica="1" ORDER BY escuchas DESC LIMIT 10');
+                    listarTop($leerTop);
+                    ?>
+                </div>
             </div>
         </div>
     </div>
