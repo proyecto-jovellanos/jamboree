@@ -41,8 +41,8 @@ if (!isset($_COOKIE['id_User'])) {
 </head>
 
 <body>
-<header class="header">
-    <div class="animation-header">
+    <header class="header">
+        <div class="animation-header">
 
             Jamboree
 
@@ -55,14 +55,14 @@ if (!isset($_COOKIE['id_User'])) {
             <li><a href="../perfil.php">Mi perfil</a></li>
         </ul>
         <div class="social">
-            <a href="https://www.instagram.com/jamboreeoficial/"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/Jambore29165571"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-facebook-square"></i></a>
         </div>
         <span class="btn_menu">
             <i class="fas fa-bars"></i>
         </span>
-</header>
+    </header>
     <div class="main">
         <div class="titulo">
             <?php
@@ -78,17 +78,16 @@ if (!isset($_COOKIE['id_User'])) {
             ?>
         </div>
     </div>
-
     <footer>
-        <div class="contactos">© 2021 Jamboree Software</div>
-        <div class="lopd"><a href="../privacidad.html">Política de privacidad</a></div>
+        <div class="contactos">Nuestros nombres</div>
+        <div class="lopd">ley organica proteccion datos, cookies...</div>
         <div class="socialFo">
-            <a href="https://www.instagram.com/jamboreeoficial/"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/Jambore29165571"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-facebook-square"></i></a>
         </div>
-
     </footer>
+
 </body>
 
 </html>

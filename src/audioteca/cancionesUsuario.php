@@ -1,9 +1,10 @@
 <?php
 function listar($resultado)
 {
-    while ($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
-        echo
-        '<article class="tema grow">
+    if ($resultado->num_rows > 0) {
+        while ($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
+            echo
+            '<article class="tema grow">
         <div class="left-theme">
             <header class="header-tema">
                 ' . $row['nombre'] . '
@@ -15,19 +16,19 @@ function listar($resultado)
                 <button class="icono"><i class="far fa-trash-alt"></i></button>
                 ';
 
-        if ($row['publica'] == '0') {
-            echo '<button class="btn toForo"><i class="fas fa-upload">
+            if ($row['publica'] == '0') {
+                echo '<button class="btn toForo"><i class="fas fa-upload">
             </i>
             <span class="popup">Subir track a foro</span>
             </button>';
-        } else {
-            echo '<button class="btn fromForo"><i class="fas fa-download">
+            } else {
+                echo '<button class="btn fromForo"><i class="fas fa-download">
             </i>
             <span class="popup">Quitar track del foro</span>
             </button>';
-        }
-        echo
-        '<button class="btn">
+            }
+            echo
+            '<button class="btn">
                     <a href="../estudio/estudio.html?id_song=' . $row['id_Cancion'] . '">
                         <i class="fas fa-pencil-alt">
                         <span class="popup">Editar esta canción en el estudio</span>
@@ -48,5 +49,8 @@ function listar($resultado)
         </div>
     
     </article>';
+        }
+    } else {
+        echo '<div class="empty">Aún no tienes ningún tema guardado, crea uno en tu <a href="../estudio/estudio.html">audioteca</a>.</div>';
     }
 }

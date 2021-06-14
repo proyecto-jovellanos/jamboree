@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
 @title: Cormorant, serif;
 @text: Nunito, sans-serif;
 @sombreado: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -27,6 +29,7 @@
 body::-webkit-scrollbar {
     display: none;
 }
+
 .grow:hover {
     transform: scale(1.01);
     transition: 60ms ease;
@@ -67,7 +70,7 @@ body {
     align-items: center;
     position: fixed;
     top: 0px;
-    background-color: darken(@green, 19%);
+    background-color: @green;
 
     -moz-box-shadow: inset 0 0 5px #000000;
     -webkit-box-shadow: inset 0 0 5px #000000;
@@ -79,7 +82,7 @@ body {
         left: 2%;
         font-size: 1.9em;
         text-size-adjust: 100%;
-        color: spin(@green, 190);
+        color: spin(@morado, 25);
         font-family: Monoton, sans-serif;
 
     }
@@ -148,7 +151,7 @@ body {
         display: flex;
         // margin-top: 50px;
         color: @color-4-medium-light;
-        border: 2px solid #65648C;
+        border: 5px solid #65648C;
         border-radius: 10px;
 
         .most-visited {
@@ -161,6 +164,9 @@ body {
         margin: 1%;
         color: @color-3-medium;
         font-weight: bolder;
+        display: flex;
+        flex-flow: column;
+        gap: 10px;
 
         &>span {
             display: block;
@@ -173,19 +179,28 @@ body {
         }
 
         li {
+            width: 100%;
             list-style: none;
             display: block;
             font-weight: initial;
             font-family: @text;
             font-size: 0.8em;
             padding: 10px;
+            background-color: fade(@green, 75%);
+            border: 2px solid #65648C;
+            border-radius: 15px;
+
+            .hit {
+                color: lighten(@green,25%);
+            }
 
             &:hover {
                 background-color: lighten(@morado, 1%);
+
             }
 
             span {
-                color: lighten(@color-4-medium-light, 60%);
+                color: lighten(@color-4-medium-light, 80%);
 
             }
 
@@ -208,6 +223,31 @@ button,
     background-color: @gris-oscuro;
     width: 100%;
     padding-top: 4vh;
+
+    .empty {
+        width: 80vw;
+        height: 60vh;
+        line-height: 60vh;
+        box-shadow: @sombreado;
+        font-family: @text;
+        color: @green;
+        font-size: 1.5em;
+        text-align: center;
+        border: 2px solid #65648C;
+        border-radius: 25px;
+        background-color: lighten(@gris-claro, 15%);
+
+        a {
+            color: @green;
+
+            &:link,
+            &:visited,
+            &:hover,
+            &:active {
+                color: spin(@green, 180);
+            }
+        }
+    }
 
     /* author miguel */
     .tags {
