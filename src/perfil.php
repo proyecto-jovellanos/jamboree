@@ -28,7 +28,7 @@ if (!isset($_COOKIE['id_User'])) {
 
 <body>
     <header class="header">
-    <div class="animation-header">
+        <div class="animation-header">
 
             Jamboree
 
@@ -88,7 +88,7 @@ if (!isset($_COOKIE['id_User'])) {
     </div>
 
     <footer>
-        <div class="contactos">© 2021 Jamboree Software</div>
+        <div class="contactos">© 2021 Jamboree S.L</div>
         <div class="lopd"><a href="./privacidad.html">Política de privacidad</a></div>
         <div class="socialFo">
             <a href="https://www.instagram.com/jamboreeoficial/"><i class="fab fa-instagram"></i></a>
