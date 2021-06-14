@@ -51,6 +51,6 @@ function listar($resultado)
             </article>';
         }
     } else {
-        echo 'Esta etiqueta no tienen ninguna canción aún, pincha en otra o en "todas".';
+        echo '<div class="empty">No existen temas en este apartado, crea uno en tu <a href="../estudio/estudio.html">audioteca</a>.</div>';
     }
 }
