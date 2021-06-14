@@ -51,6 +51,6 @@ function listar($resultado)
             </article>';
         }
     } else {
-        echo '<div class="empty">No existen temas en este apartado, crea uno en tu <a href="../estudio/estudio.html">audioteca</a>.</div>';
+        echo '<div class="empty">No existen temas en este apartado, crea uno en tu <a href="../estudio/estudio.html">estudio</a>.</div>';
     }
 }
