@@ -141,7 +141,7 @@ body {
     grid-template-areas: "listado aside";
 
     .empty {
-        width: 80vw;
+        width: 70vw;
         height: 60vh;
         line-height: 60vh;
         box-shadow: @sombreado;
@@ -204,7 +204,8 @@ body {
 
         .tema {
             padding: 0.5rem;
-            width: 60vw;
+            width: 70vw;
+            min-width: 60vw;
             font-family: @text;
             border: 2px solid #65648C;
             border-radius: 25px;
@@ -361,8 +362,8 @@ body {
     .aside {
         grid-area: aside;
         background-color: @gris-oscuro;
-        min-height: 80vh;
-        width: 20vw;
+        //min-height: 80vh;
+        width: 80%;
         //right: 6vw;
         margin-top: 11vh;
         //top: 16vh;
@@ -476,8 +477,8 @@ footer {
     background-color: @morado;
     height: 10vh;
     bottom: 0px;
-    width: 100%;
-    margin-top: 2%;
+    width: 100vw;
+    // margin-top: 2%;
     display: flex;
     line-height: 10vh;
 
@@ -503,7 +504,7 @@ footer {
 
 }
 
-@media screen and (max-width:768px) {
+@media all and (max-width:800px) {
     .socialFo {
         display: block;
     }
@@ -518,14 +519,32 @@ footer {
         }
     }
 
+    .main {
+        display: grid;
+        grid-template-areas:
+            "listado"
+            "aside";
+    }
+
+
+
     .social {
         display: none;
     }
 }
 
-@media screen and (max-width:500px) {
+
+@media all and (max-width:730px) {
+
+    .main {
+        width: 100%;
+    }
+
+}
+
+@media all and (max-width:500px) {
     .header {
-        height: 65px;
+        height: 10vh;
     }
 
     .btn_menu {
@@ -562,13 +581,7 @@ footer {
 
     footer {
         height: 100%;
+        width: 100vw;
         flex-flow: column nowrap;
-    }
-}
-
-@media all and (max-width:730px) {
-
-    .main {
-        width: 100%;
     }
 }
