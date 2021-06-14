@@ -92,7 +92,7 @@ body {
         max-width: 50px;
         left: 2%;
         font-size: 1.9em;
-        text-size-adjust: 100%;
+       text-size-adjust: 100%;
         color: spin(@morado, 25);
         font-family: Monoton, sans-serif;
     }
@@ -428,26 +428,22 @@ body {
 
 //-----MEDIA-------
 
-@media all and (max-width:400px) {
-    .noticias {
-        margin: 2% 5%;
+@media all and (max-width:500px) {
+    .track_name {
+        display: none;
     }
 
-    .main {
+    .track {
+        width: 100vw;
         display: grid;
-        grid-auto-rows: minmax(50px, auto);
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "header"
-            "main";
+        align-items: center;
+        grid-template-columns: 1% 99%;
+        max-height: 12vh;
     }
-
-    .sidebar {
-        flex-flow: row nowrap;
+    .animation-header{
+        font-size: 1em;
     }
-
-    .contacto {
-        height: 100%;
-        flex-flow: column nowrap;
+    .controles {
+        font-size: 10px;
     }
 }
