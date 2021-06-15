@@ -21,24 +21,6 @@
 @gris-oscuro: #414141;
 @gris-claro: #525252;
 
-#loading {
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    position: fixed;
-    display: block;
-    opacity: 0.7;
-    background-color: #fff;
-    z-index: 99;
-    text-align: center;
-}
-
-#loading-image {
-
-    z-index: 100;
-}
-
 * {
     box-sizing: border-box;
     margin: 0 auto;
@@ -162,7 +144,9 @@ header {
     .boton.foro {
         background-image: url("../../media/Images/foro-main2.jpg");
         background-size: 66vw;
+        background-size: auto 100%;
         image-rendering: -webkit-optimize-contrast;
+        background-repeat: no-repeat;
 
         a {
             color: darken(@gris-claro, 50%);
@@ -172,7 +156,9 @@ header {
     .boton.audioteca {
         background-image: url("../../media/Images/audioteca-main.jpg");
         background-size: 66vw;
+        background-size: auto 100%;
         image-rendering: -webkit-optimize-contrast;
+        background-repeat: no-repeat;
 
         a {
             color: darken(@gris-claro, 50%);
@@ -182,7 +168,9 @@ header {
     .boton.estudio {
         background-image: url("../../media/Images/studio-main2.jpg");
         background-size: 66vw;
+        background-size: auto 100%;
         image-rendering: -webkit-optimize-contrast;
+        background-repeat: no-repeat;
 
         a {
             color: lighten(@gris-claro, 50%);
@@ -262,7 +250,8 @@ footer {
     background-color: @gris-oscuro;
     width: 100vw;
     display: flex;
-    a{
+
+    a {
         color: black;
     }
 
@@ -272,4 +261,26 @@ footer>div {
     margin-right: auto;
     margin-left: auto;
 
+}
+
+/* MEDIA */
+@media all and (max-width:560px) {
+    .main {
+        display: flex;
+        flex-flow: column !important;
+        overflow: hidden;
+        align-items: stretch;
+
+        .boton {
+            min-width: 100vw;
+            max-width: 100vw;
+            background-size: 100vw !important;
+            background-size: auto 100%;
+            image-rendering: -webkit-optimize-contrast;
+            background-repeat: no-repeat;
+            flex-grow: 1;
+            border-radius: 30px;
+            margin: 0.5rem !important;
+        }
+    }
 }

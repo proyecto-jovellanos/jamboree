@@ -31,7 +31,7 @@ if (!isset($_COOKIE['id_User'])) {
 </head>
 
 <body>
-    <!-- esto era una imagen de cara, pero tardaba la propia imagen de carga -->
+    <!-- esto era una imagen de carga, pero tardaba la propia imagen de carga -->
     <!-- <div id="loading">
         <img id="loading-image" src="../../media/Images/loading.gif" alt="Loading..." />
     </div> -->
