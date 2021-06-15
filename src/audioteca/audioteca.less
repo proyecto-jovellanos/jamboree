@@ -185,17 +185,16 @@ body {
         }
 
         .tema {
-            width: 80vw;
-            margin: 0 1% 1%;
-            padding: 1%;
-            // font-size: 2em;
-            box-shadow: @sombreado;
+            padding: 0.5rem;
+            width: 70vw;
+            min-width: 60vw;
             font-family: @text;
-            color: @morado;
             border: 2px solid #65648C;
             border-radius: 25px;
+            //box-shadow: @sombreado;
             background-color: lighten(@gris-claro, 15%);
             display: grid;
+
             grid-template-areas:
                 "data canvas";
 
@@ -214,13 +213,14 @@ body {
                 .header-tema {
                     grid-area: name;
                     font-size: 1.7em;
-                    color: lighten(@morado, 60%);
+                    color:@blanco;
                     font-weight: bolder;
                     font-family: @title;
                     text-align: center;
                     border-radius: 15px;
                     min-width: 25vw;
                 }
+
 
                 span {
                     color: lighten(@green, 55%);
@@ -276,20 +276,25 @@ body {
             }
 
             .right-theme {
+                // width: 45%;
                 grid-area: canvas;
-                //display: flex;
-                width: 50%;
+                display: flex;
+                flex-flow: row;
+                justify-content: space-around;
+                //align-items: center;
+                //gap: 5%;
+
 
                 canvas {
+
                     cursor: pointer;
-                    overflow: hidden;
                     display: block;
                     background-color: #b9e8d8a8;
                     padding: 0.4em;
                     border-radius: 12px;
                     box-shadow: -2px -2px 20px 2px @morado, 2px 2px 20px 2px @green;
-                    /* width: 100%;
-                    height: 100%; */
+                    width: 100%;
+                    height: 100%;
                 }
             }
 
@@ -353,8 +358,10 @@ footer {
 }
 
 @media screen and (max-width:700px) {
-    .header {
-        height: 65px;
+.header {
+        height: 10vh;
+        width: 100vw;
+        max-width: 100vw;
     }
 
     .btn_menu {
@@ -371,28 +378,47 @@ footer {
         transition: all .4s;
         flex-direction: column;
         right: 0;
+
+        li {
+            margin: 30px 0 0 0;
+            line-height: 30px;
+
+            &:hover {
+                background-color: none;
+            }
+
+            a {
+                font-size: 20px;
+                color: @green;
+                font-weight: bold;
+            }
+        }
+    }
+    
+    .tema {
+        display: grid !important;
+        grid-template-areas:
+            "data"
+            "canvas" !important;
     }
 
-    .menu-items li {
-        margin: 30px 0 0 0;
-        line-height: 30px;
-    }
+    .left-theme {
+        width:60%;
+        }
 
-    .menu-items li:hover {
-        background-color: none;
+    .right-theme {
+        display: flex;
+        flex-flow: row wrap !important;
+        justify-content: space-around;
+        }
     }
-
-    .menu-items li a {
-        font-size: 20px;
-        color: @green;
-        font-weight: bold;
-    }
-
-}
-@media screen and (max-width:500px) {
+@media all and (max-width:500px) {
 
     footer {
+        position: relative;
         height: 100%;
+        width: 100vw;
+        bottom: 0px;
         flex-flow: column nowrap;
     }
 }
