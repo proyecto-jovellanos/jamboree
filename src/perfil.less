@@ -91,7 +91,6 @@ body {
     .menu-items {
         display: flex;
         align-items: center;
-        width: 40%;
     }
 
     .menu-items li {
@@ -195,13 +194,6 @@ body {
                 }
             }
 
-            .logout {
-                padding: 14px 53px;
-            }
-
-            #abrirForm {
-                padding: 14px 15px;
-            }
 
             button {
                 // outline: none;
@@ -275,27 +267,17 @@ footer {
     .socialFo {
         display: none;
     }
+    .logout {
+        padding: 14px 53px;
+    }
+
+    #abrirForm {
+        padding: 14px 15px;
+    }
 
 }
 
-@media screen and (max-width:768px) {
-    .menu-items li a {
-        font-size: 16px;
-        padding: 0;
-    }
-
-    #formChange {
-        margin-top: 10px;
-        flex-flow: column nowrap;
-
-        #btnC {
-            margin-top: 10px;
-        }
-    }
-
-    .profile {
-        width: 100%;
-    }
+@media all and (max-width:865px) {
 
     .social {
         display: none;
@@ -305,11 +287,24 @@ footer {
         display: block;
     }
 
+    .menu-items {
+        position: absolute;
+        right: 2%;
+
+        li a {
+            font-size: 16px;
+            padding: 0;
+        }
+    }
+
 }
 
-@media screen and (max-width:500px) {
-    .menu {
-        height: 65px;
+@media screen and (max-width:768px) {
+
+    .header {
+        height: 10vh;
+        width: 100vw;
+        max-width: 100vw;
     }
 
     .btn_menu {
@@ -325,28 +320,40 @@ footer {
         text-align: center;
         transition: all .4s;
         flex-direction: column;
+        right: 0;
+
+        li {
+            margin: 30px 0 0 0;
+            line-height: 30px;
+
+            &:hover {
+                background-color: none;
+            }
+
+            a {
+                font-size: 20px;
+                color: @green;
+                font-weight: bold;
+            }
+        }
     }
 
-    .menu-items li {
-        margin: 30px 0 0 0;
-        line-height: 30px;
+    #formChange {
+        margin-top: 10px;
+        flex-flow: column nowrap;
+
+        #btnC {
+            margin-top: 10px;
+        }
     }
 
-    .menu-items li:hover {
-        background-color: none;
+    .profile {
+        width: 100%;
     }
+}
 
-    .menu-items li a {
-        font-size: 20px;
-        color: @green;
-        font-weight: bold;
-    }
-
-    .logo {
-        font-size: 25px;
-        padding-left: 35px;
-    }
-
+@media screen and (max-width:500px) {
+   
     footer {
         height: 100%;
         flex-flow: column nowrap;
@@ -369,8 +376,16 @@ footer {
 }
 
 @media screen and (max-width:325px) {
+
     .data {
         width: 100%;
+    }
+    .logout {
+        padding: 14px 45px;
+    }
+
+    #abrirForm {
+        padding: 14px 12px;
     }
 
 }
