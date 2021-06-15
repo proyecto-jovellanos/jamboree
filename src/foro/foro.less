@@ -504,11 +504,14 @@ footer {
 
 }
 
-@media all and (max-width:800px) {
+@media screen and (max-width:865px) {
+
+    .social {
+        display: none;
+    }
     .socialFo {
         display: block;
     }
-
     .menu-items {
         position: absolute;
         right: 2%;
@@ -519,30 +522,9 @@ footer {
         }
     }
 
-    .main {
-        display: grid;
-        grid-template-areas:
-            "listado"
-            "aside";
-    }
-
-
-
-    .social {
-        display: none;
-    }
 }
 
-
-@media all and (max-width:730px) {
-
-    .main {
-        width: 100%;
-    }
-
-}
-
-@media all and (max-width:500px) {
+@media screen and (max-width:730px) {
     .header {
         height: 10vh;
     }
@@ -577,7 +559,9 @@ footer {
         color: @green;
         font-weight: bold;
     }
+}
 
+@media screen and (max-width:500px) {
 
     footer {
         height: 100%;
