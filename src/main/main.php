@@ -22,6 +22,7 @@ if (!isset($_COOKIE['id_User'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- JS PROPIO -->
+    <script src="../menu.js"></script>
     <script src="main.js"></script>
 
     <!-- LESS -->
@@ -35,21 +36,19 @@ if (!isset($_COOKIE['id_User'])) {
     <!-- <div id="loading">
         <img id="loading-image" src="../../media/Images/loading.gif" alt="Loading..." />
     </div> -->
-    <header>
-        <div class="logo">
+    <header class="header">
+        <div class="animation-header">
+
             Jamboree
+
         </div>
-        <div class="nav">
-            <div class="social">
-                <a href="https://www.instagram.com/jamboreeoficial/"><i class="fab fa-instagram"></i></a>
-                <a href="https://twitter.com/Jambore29165571"><i class="fab fa-twitter"></i></a>
-                <a><i class="fab fa-facebook"></i></a>
-            </div>
-            <div class="links">
-                <a href="../perfil.php">Mi perfil</a>
-                <a href="../ayuda.html">Ayuda</a>
-            </div>
-        </div>
+        <ul class="menu-items">
+            <li><a href="../perfil.php">Mi perfil</a></li>
+            <li><a href="../ayuda.html">Ayuda</a></li>
+        </ul>
+        <span class="btn_menu">
+            <i class="fas fa-bars"></i>
+        </span>
     </header>
 
     <div class="main">
@@ -72,6 +71,11 @@ if (!isset($_COOKIE['id_User'])) {
     <footer>
         <div class="contactos">© 2021 Jamboree Software</div>
         <div class="lopd"><a href="../privacidad.html">Política de privacidad</a></div>
+        <div class="socialFo">
+            <a href="https://www.instagram.com/jamboreeoficial/"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/Jambore29165571"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+        </div>
     </footer>
     <script>
 
