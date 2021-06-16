@@ -71,7 +71,7 @@ body {
     align-items: center;
     position: fixed;
     top: 0px;
-    background-color: @green;
+    background-color: darken(@green, 15%);
 
     -moz-box-shadow: inset 0 0 5px #000000;
     -webkit-box-shadow: inset 0 0 5px #000000;
@@ -86,24 +86,35 @@ body {
         color: spin(@morado, 25);
         font-family: Monoton, serif;
 
+        a {
+
+            &:link,
+            &:visited,
+            &:hover,
+            &:active {
+                text-decoration: none;
+                color: @morado;
+            }
+        }
     }
 
     .menu-items {
         display: flex;
         align-items: center;
-    
 
-   li {
-        margin: 0 5px;
-        a {
-            padding: 9px 13px;
-            font-size: 22px;
-            display: block;
+
+        li {
+            margin: 0 5px;
+
+            a {
+                padding: 9px 13px;
+                font-size: 22px;
+                display: block;
+            }
         }
-    }
 
-   
-}
+
+    }
 
     .btn_menu {
         margin-right: 30px;
@@ -160,6 +171,7 @@ body {
         flex-flow: column nowrap;
         padding: 15px;
         gap: 1rem;
+
         .empty {
             width: 80vw;
             height: 60vh;
@@ -174,13 +186,13 @@ body {
             background-color: lighten(@gris-claro, 15%);
 
             a {
-                color: @green;
+                color: @morado;
 
                 &:link,
                 &:visited,
                 &:hover,
                 &:active {
-                    color: spin(@green, 180);
+                    color: @morado;
                 }
             }
         }
@@ -214,7 +226,7 @@ body {
                 .header-tema {
                     grid-area: name;
                     font-size: 1.7em;
-                    color:@blanco;
+                    color: @blanco;
                     font-weight: bolder;
                     font-family: @title;
                     text-align: center;
@@ -343,9 +355,11 @@ footer {
     .social {
         display: none;
     }
+
     .socialFo {
         display: block;
     }
+
     .menu-items {
         position: absolute;
         right: 2%;
@@ -359,7 +373,7 @@ footer {
 }
 
 @media screen and (max-width:700px) {
-.header {
+    .header {
         height: 10vh;
         width: 100vw;
         max-width: 100vw;
@@ -395,7 +409,7 @@ footer {
             }
         }
     }
-    
+
     .tema {
         display: grid !important;
         grid-template-areas:
@@ -404,15 +418,16 @@ footer {
     }
 
     .left-theme {
-        width:60%;
-        }
+        width: 60%;
+    }
 
     .right-theme {
         display: flex;
         flex-flow: row wrap !important;
         justify-content: space-around;
-        }
     }
+}
+
 @media all and (max-width:500px) {
 
     footer {

@@ -265,7 +265,6 @@ $(document).ready(function () {
 
     ////////////// AUDIO ////////////
 
-    //console.log(Tone.context.lookAhead); //=0.1
 
     const baseSeq = new Tone.ToneAudioBuffers({
         urls: {
@@ -274,7 +273,6 @@ $(document).ready(function () {
             snare: "/Snares/Snare (1).wav",
             clap: "/Claps/Clap 01.wav",
         },
-        //autostart: true,
         baseUrl: "../../media",
     })
 
@@ -291,61 +289,60 @@ $(document).ready(function () {
         new Tone.Player(),
         new Tone.Player()
     ]
-
     players.forEach(player => player.toDestination())
-
     //cargamos en cada player su sonido
     players[0].buffer = k
     players[1].buffer = s
     players[2].buffer = h
     players[3].buffer = c
 
-    // loaded para asegurar que se carguen en bufer todos los sonidos
-    //Tone.loaded().then(() => {
 
     var index = 0
 
     function play() {
+        // loaded para asegurar que se carguen en bufer todos los sonidos
+        Tone.loaded().then(() => {
 
-        Tone.Transport.scheduleRepeat(function (time) {
-            Tone.Draw.schedule(function () {
-                //let w = new Tone.FrequencyClass(players[0].context).toFrequency()
-                for (let i = 0; i < 4; i++) {
-                    //mostrar animacion cada negra
-                    if (index == 1 || index == 9 || index == 17 || index == 25) {
-                        $(`.controles`).addClass("drummed")
-                    } else {
-                        $(`.controles`).removeClass("drummed")
+            Tone.Transport.scheduleRepeat(function (time) {
+                Tone.Draw.schedule(function () {
+                    //let w = new Tone.FrequencyClass(players[0].context).toFrequency()
+                    for (let i = 0; i < 4; i++) {
+                        //mostrar animacion cada negra
+                        if (index == 1 || index == 9 || index == 17 || index == 25) {
+                            $(`.controles`).addClass("drummed")
+                        } else {
+                            $(`.controles`).removeClass("drummed")
+                        }
+                        //mostrar por donde va el sonido
+                        if (index == 32) {
+                            $(`.${tracks[i][1]} .beats .beat.${index}`).addClass("timeline")
+                        } else if (index == 0) {
+                            $(`.${tracks[i][1]} .beats .beat.32`).removeClass("timeline")
+                            $(`.${tracks[i][1]} .beats .beat.${index+1}`).toggleClass("timeline")
+                        } else {
+                            $(`.${tracks[i][1]} .beats .beat.${index+1}`).toggleClass("timeline")
+                            $(`.${tracks[i][1]} .beats .beat.${index}`).toggleClass("timeline")
+                        }
+                        //  console.log(index);
+                        let player = players[i]
+                        if (tracks[i][0][index] == 1) {
+                            //al sonar una track marco esa fila entera para visualizacion
+                            $(`.${tracks[i][1]}`).addClass("drummed")
+                            //reproduzco ese sonido
+                            player.start("+0.01")
+                        } else {
+                            $(`.${tracks[i][1]}`).removeClass("drummed")
+                        }
                     }
-                    //mostrar por donde va el sonido
-                    if (index == 32) {
-                        $(`.${tracks[i][1]} .beats .beat.${index}`).addClass("timeline")
-                    } else if (index == 0) {
-                        $(`.${tracks[i][1]} .beats .beat.32`).removeClass("timeline")
-                        $(`.${tracks[i][1]} .beats .beat.${index+1}`).toggleClass("timeline")
+                    if (index < 31) {
+                        index++
                     } else {
-                        $(`.${tracks[i][1]} .beats .beat.${index+1}`).toggleClass("timeline")
-                        $(`.${tracks[i][1]} .beats .beat.${index}`).toggleClass("timeline")
+                        index = 0
                     }
-                    //  console.log(index);
-                    let player = players[i]
-                    if (tracks[i][0][index] == 1) {
-                        //al sonar una track marco esa fila entera para visualizacion
-                        $(`.${tracks[i][1]}`).addClass("drummed")
-                        //reproduzco ese sonido
-                        player.start("+0.01")
-                    } else {
-                        $(`.${tracks[i][1]}`).removeClass("drummed")
-                    }
-                }
-                if (index < 31) {
-                    index++
-                } else {
-                    index = 0
-                }
-            }, time)
-        }, "32n");
-        //Tone.Transport.start()
+                }, time)
+            }, "32n");
+            //Tone.Transport.start()
+        })
     }
 
     /////////////////VISUALS///////////////

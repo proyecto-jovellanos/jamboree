@@ -61,6 +61,7 @@ header {
     min-height: 52px;
     //background-color: @color-3-medium;
     box-shadow: 0 0 8px rgba(0, 0, 0, 1);
+
     .logo {
         text-align: center;
         font-size: 2em;
@@ -107,7 +108,7 @@ main {
         //grid-template-columns: 50% 50%;
         width: 100%;
         height: 85vh;
-
+        position: relative;
         align-self: center;
         align-items: center;
         overflow: hidden;
@@ -120,6 +121,7 @@ main {
             width: 100%;
             display: flex;
             align-items: center;
+            justify-content: center;
             min-height: 20px;
 
 
@@ -141,13 +143,11 @@ main {
             }
 
             .Loginform {
-                
-                z-index: 10;
                 position: absolute;
-                top: 20%;
-                left: 39%;
-                background-color:@gris-claro;
-                width: 300px;
+                z-index: 10;
+                background-color: @gris-claro;
+                width: 50%;
+                top: 15%;
                 padding: 10px;
                 border-radius: 5px;
                 box-shadow: 0 0 8px rgba(41, 39, 39, 0.4);
@@ -155,7 +155,7 @@ main {
                 display: none;
                 text-align: center;
                 overflow: hidden;
-                color: darken(@green,10%);
+                color: darken(@green, 10%);
             }
 
             .data p {
@@ -199,7 +199,7 @@ main {
             }
 
             .btn:hover {
-                border: darken(@green,10%) 0.5px solid;
+                border: darken(@green, 10%) 0.5px solid;
                 box-shadow: 0 0 5px rgba(0, 0, 0, 1);
 
             }
@@ -207,8 +207,9 @@ main {
             .LinkRegister {
                 font-size: 12px;
                 color: rgb(66, 147, 223);
-                a{
-                    color:white;
+
+                a {
+                    color: white;
                     text-decoration: none;
                 }
             }
@@ -254,7 +255,7 @@ main {
 
 
             video {
-                
+
                 box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 
 
@@ -415,7 +416,7 @@ main {
         }
 
         .card-carousel .my-card {
-            
+
             height: 22rem;
             width: 14rem;
             position: relative;
@@ -581,7 +582,7 @@ main {
             box-shadow: 0 0 10px darken(@green, 50%);
             height: 31%;
             width: 70%;
-            
+
             margin-top: 2em;
             border-radius: 10px;
             overflow: hidden;
@@ -615,8 +616,8 @@ main {
             }
 
             .textimg {
-                
-                
+
+
 
                 text-align: center;
                 //width: 100%;
@@ -624,8 +625,8 @@ main {
                 //align-self: center;
 
                 h2 {
-                    
-                    font-family:@title;
+
+                    font-family: @title;
                     font-size: 2em;
                 }
 
@@ -661,8 +662,8 @@ footer {
     bottom: 0;
     height: 10vh;
     box-shadow: 0 0 8px rgba(0, 0, 0, 1);
-   
-    a{
+
+    a {
         color: black;
         text-decoration: none;
     }
@@ -746,7 +747,7 @@ footer {
         //grid-template-columns: 50% 50%;
         width: 100%;
         height: 85vh;
-        
+
 
         align-self: center;
         align-items: center;
@@ -770,8 +771,8 @@ footer {
         }
 
         .text {
-           font-size: small;
-           
+            font-size: small;
+
         }
 
 

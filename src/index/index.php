@@ -36,9 +36,6 @@ elseif (isset($_POST['register'])) {
 
 <body>
 
-
-
-
   <!--HEADER -->
   <header>
     <div class="logo">LOGO</div>
@@ -48,10 +45,10 @@ elseif (isset($_POST['register'])) {
 
     <div class="social">
 
-    <a href="https://www.instagram.com/jamboreeoficial/"><i class="fab fa-instagram"></i></a>
-    <a href="https://twitter.com/Jambore29165571"><i class="fab fa-twitter"></i></a>
-    <a><i class="fab fa-facebook"></i></a>
-      
+      <a href="https://www.instagram.com/jamboreeoficial/"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/Jambore29165571"><i class="fab fa-twitter"></i></a>
+      <a><i class="fab fa-facebook"></i></a>
+
     </div>
 
   </header>
@@ -65,7 +62,7 @@ elseif (isset($_POST['register'])) {
         <label for="show" class="open-btn">Entrar</label>
 
         <div class="Loginform">
-          <label for="show" class="close-btn fas fa-times"></label>Login Form</br>
+          <label for="show" class="close-btn fas fa-times"></label>Inicio de sesión</br>
           </br>
           <form action="validar.php" method="post">
 
@@ -82,7 +79,7 @@ elseif (isset($_POST['register'])) {
               <button type="submit" name='log'><i class="fas fa-play"></i></button>
             </div>
 
-            <div class="LinkRegister"><br><a href="register.php">No estas registrado?Registrate</a></div>
+            <div class="LinkRegister"><br><a href="register.php">¿No estas registrado? Registrate</a></div>
           </form>
         </div>
         <!-- HACER popup para formulario de inicio o registro -->

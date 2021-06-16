@@ -132,13 +132,14 @@ function draw(i, index, id) {
     ctx.fillStyle = colores[i];
     console.log(index);
     if (index == 31) {
-        ctx.fillStyle = colores2[i];
+        ctx.fillStyle = colores[i];
         ctx.fillRect(x, y, beatWidth, canvas.height)
     } else if (index == 0) {
         ctx.fillRect(x, y, beatWidth, canvas.height);
     } else {
         ctx.fillRect(x, y, beatWidth, canvas.height);
-        ctx.fillStyle = colores2[i];
+        ctx.fillStyle = colores[i];
+        ctx.clearRect(prevX, prevY, beatWidth, canvas.height)
         ctx.fillRect(prevX, prevY, beatWidth, canvas.height)
     }
     prevX = x

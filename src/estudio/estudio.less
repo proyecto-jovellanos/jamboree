@@ -83,7 +83,7 @@ body {
     align-items: center;
     position: fixed;
     top: 0px;
-    background-color: @green;
+    background-color: darken(@green, 15%);
 
     -moz-box-shadow: inset 0 0 5px #000000;
     -webkit-box-shadow: inset 0 0 5px #000000;
@@ -98,22 +98,41 @@ body {
         color: spin(@morado, 25);
         font-family: Monoton, serif;
 
+        a {
+
+            &:link,
+            &:visited,
+            &:hover,
+            &:active {
+                text-decoration: none;
+                color: @morado;
+            }
+        }
     }
 
     .menu-items {
         display: flex;
         align-items: center;
-    
+        color: @morado;
 
-     li {
-        margin: 0 5px;
-        a {
-            padding: 9px 13px;
-            font-size: 22px;
-            display: block;
+        li {
+            margin: 0 5px;
+
+            a {
+                padding: 9px 13px;
+                font-size: 22px;
+                display: block;
+
+                &:link,
+                &:visited,
+                &:hover,
+                &:active {
+                    text-decoration: none;
+                    color: @morado;
+                }
+            }
         }
     }
-}
 
     .btn_menu {
         margin-right: 30px;
@@ -446,7 +465,8 @@ body {
 
     .menu-items li {
         color: @morado;
-        .ayuda{
+
+        .ayuda {
             margin-left: 1.5em;
         }
     }
@@ -458,6 +478,7 @@ body {
     .social {
         display: none;
     }
+
     .menu-items {
         position: absolute;
         right: 2%;
@@ -471,7 +492,7 @@ body {
 }
 
 @media screen and (max-width:600px) {
-.header {
+    .header {
         height: 10vh;
         width: 100vw;
         max-width: 100vw;
@@ -505,7 +526,8 @@ body {
                 color: @green;
                 font-weight: bold;
             }
-            .ayuda{
+
+            .ayuda {
                 margin-left: 0;
                 color: @green;
             }
@@ -513,6 +535,7 @@ body {
     }
 
 }
+
 @media all and (max-width:500px) {
 
     footer {
@@ -523,22 +546,24 @@ body {
         flex-flow: column nowrap;
     }
 }
-@media screen and (max-width: 300px) { 
-	header {
-		flex-direction:column;
-		padding:0;
-	}
- 
-	header .animation-header {
-		margin:20px;
-        width: 100%;
-	}
- 
-	header .nav {
-		width: 100%;
-        flex-flow:column nowrap;
+
+@media screen and (max-width: 300px) {
+    header {
+        flex-direction: column;
+        padding: 0;
     }
+
+    header .animation-header {
+        margin: 20px;
+        width: 100%;
+    }
+
+    header .nav {
+        width: 100%;
+        flex-flow: column nowrap;
+    }
+
     header .social {
-		width: 100%;
+        width: 100%;
     }
 }
