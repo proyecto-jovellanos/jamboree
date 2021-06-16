@@ -43,9 +43,7 @@ if (!isset($_COOKIE['id_User'])) {
 <body>
     <header class="header">
         <div class="animation-header">
-
-            Jamboree
-
+            <a href="../main/main.php">JamBoree</a>
         </div>
         <ul class="menu-items">
             <li><a href="../main/main.php">Inicio</a></li>

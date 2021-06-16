@@ -103,7 +103,7 @@ $(document).ready(function () {
 
             alert("Tema eliminado!");
 
-            $(this).parent().parent().parent().hide()
+            $(this).parent().parent().parent().parent().hide()
         } else {
 
             alert("Tema no eliminado");

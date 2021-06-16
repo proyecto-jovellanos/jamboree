@@ -72,7 +72,7 @@ body {
     align-items: center;
     position: fixed;
     top: 0px;
-    background-color: @green;
+    background-color: darken(@green, 15%);
 
     -moz-box-shadow: inset 0 0 5px #000000;
     -webkit-box-shadow: inset 0 0 5px #000000;
@@ -87,13 +87,25 @@ body {
         color: spin(@morado, 25);
         font-family: Monoton, sans-serif;
 
+        a {
+
+            &:link,
+            &:visited,
+            &:hover,
+            &:active {
+                text-decoration: none;
+                color: @morado;
+            }
+        }
     }
 
     .menu-items {
         display: flex;
         align-items: center;
+
         li {
             margin: 0 5px;
+
             a {
                 padding: 9px 13px;
                 font-size: 22px;
@@ -162,7 +174,7 @@ body {
             &:visited,
             &:hover,
             &:active {
-                color: spin(@green, 180);
+                color: @morado;
             }
         }
     }
