@@ -100,10 +100,10 @@ $(document).ready(function () {
             }
             fetch("../server.php", params)
 
-            $(this).parent().parent().parent().parent().hide()
 
             alert("Tema eliminado!");
 
+            $(this).parent().parent().parent().hide()
         } else {
 
             alert("Tema no eliminado");
