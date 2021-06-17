@@ -5,6 +5,12 @@ $(document).ready(function () {
     $(".bpm").hide()
     $(".id_song").hide()
 
+    //al pinchar en canvas redirigirá al etudio cno esa canción cargada
+    $('canvas').click(function () {
+        let id = $(this).attr("id")
+        window.location.replace("../estudio/estudio.html?id_song=" + id);
+    });
+
     $("canvas").each(function () {
         let id = $(this).attr("id")
         let track = JSON.parse($(this).prev().html())
@@ -16,10 +22,6 @@ $(document).ready(function () {
                 }
             }
         }
-    });
-    $('canvas').click(function () {
-        let id = $(this).attr("id")
-        window.location.replace("../estudio/estudio.html?id_song=" + id);
     });
     //@param i=0,1,2,3 ; j= 0-31 
     function draw(i, j, id) {
@@ -38,7 +40,7 @@ $(document).ready(function () {
         let y = (beatHeight * i)
 
         /* quiero q se dibuje la track que corresponda
-         si i es 1 que se dibuja la barra de snare. 
+         si i es 1 que se dibuje la barra de snare. 
         beatwidth es el ancho del canvas / cada hueco de los beats */
         ctx.fillStyle = colores[i];
         ctx.fillRect(x, y, beatWidth, canvas.height);
@@ -52,7 +54,6 @@ $(document).ready(function () {
     $(".play").click(function (ev) {
         track = $(this).prev().html()
         let bpm = $(this).prev().prev().html()
-        // console.log(bpm);
         cargaTrack(track, bpm)
 
         let id = $(this).next().html()
