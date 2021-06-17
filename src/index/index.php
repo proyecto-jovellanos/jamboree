@@ -78,7 +78,7 @@ elseif (isset($_POST['register'])) {
               <button type="submit" name='log'><i class="fas fa-play"></i></button>
             </div>
 
-            <div class="LinkRegister"><br><a href="register.php">¿No estas registrado? Registrate</a></div>
+            <div class="LinkRegister"><br><a href="register.php">¿No estás registrado? Regístrate</a></div>
           </form>
         </div>
         <!-- HACER popup para formulario de inicio o registro -->
@@ -98,19 +98,19 @@ elseif (isset($_POST['register'])) {
     <div class="divcarousel">
       <div class="textcarousel">
         <div id="title">
-          <h1>Conviertete en tus artistas favoritos</h1>
+          <h1>Conviértete en tus artistas favoritos</h1>
         </div>
         <div>
           <h2>Estudio</h2>
-          <p>Da rienda suelta a tu creatividad con un estudio diseñado para un manejo sencillo y online</p>
+          <p>Da rienda suelta a tu creatividad con un estudio diseñado para un manejo sencillo y online.</p>
         </div>
         <div>
           <h2>Foro</h2>
-          <p>Comparte tus temas, visualiza los de otros usarios y lucha por estar en los hits mas escuchados</p>
+          <p>Comparte tus temas, visualiza los de otros usarios y lucha por estar en los hits más escuchados.</p>
         </div>
         <div>
           <h2>Audioteca</h2>
-          <p>Almacena tus creaciones o importa la de otros usarios para enriquecer tu colección privada de ritmos y loops</p>
+          <p>Almacena tus creaciones o importa la de otros usarios para enriquecer tu colección privada de ritmos y loops.</p>
         </div>
       </div>
       <div class="card-carousel">
@@ -137,23 +137,23 @@ elseif (isset($_POST['register'])) {
       <div class="section">
         <div class="textimg">
           <h2>Estudio</h2>
-          <p>El estudio sera tu espacio de creación, tu pequeña cueva musical donde dejar fluir tu creatividad con su channel rack integrado y diversas funcionalidades como el control de bpm, mute...</p>
+          <p>El estudio será tu espacio de creación, tu pequeña cueva musical donde dejar fluir tu creatividad con su channel rack integrado y diversas funcionalidades como el control de bpm, mute...</p>
         </div>
-        <div class="img"><img src="../../media/Images/Estudio.png" alt=""></div>
+        <div class="img"><img src="../../media/Images/estudio.png" alt=""></div>
       </div>
       <div class="section">
         <div class="textimg">
           <h2>Foro</h2>
-          <p>El foro es un sitio agradable que comparte la comunidad para mostrar canciones o escucharlas ya seas un aficionado de la produccion o un simple amante de la musica o incluso un manager de talentos musicales</p>
+          <p>El foro es un sitio agradable que comparte la comunidad para mostrar canciones o escucharlas ya seas un aficionado de la producción o un simple amante de la musica o incluso un manager de talentos musicales.</p>
         </div>
-        <div class="img"><img src="../../media/Images/Foro.png" alt=""></div>
+        <div class="img"><img src="../../media/Images/foro.png" alt=""></div>
       </div>
       <div class="section">
         <div class="textimg">
           <h2>Audioteca</h2>
-          <p>La Audioteca es un espacio donde podras guardar todas aquellas canciones o beats que mas te interesen desde el estudio.Ademas desde ahi tendras la opcion de subirlas al foro para que todos los artistas las observen</p>
+          <p>La Audioteca es un espacio donde podrás guardar todas aquellas canciones o beats que más te interesen desde el estudio. Además desde ahí tendrás la opción de subirlas al foro para que todos los artistas las observen.</p>
         </div>
-        <div class="img"><img src="../../media/Images/Audioteca.png" alt=""></div>
+        <div class="img"><img src="../../media/Images/audioteca.png" alt=""></div>
       </div>
     </div>
 

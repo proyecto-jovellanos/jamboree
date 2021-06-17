@@ -68,7 +68,7 @@ body {
     align-items: center;
     position: fixed;
     top: 0px;
-    background-color: @green;
+    background-color: darken(@green, 15%);
 
     -moz-box-shadow: inset 0 0 5px #000000;
     -webkit-box-shadow: inset 0 0 5px #000000;
@@ -82,6 +82,17 @@ body {
         text-size-adjust: 100%;
         color: spin(@morado, 25);
         font-family: Monoton, serif;
+
+        a {
+
+            &:link,
+            &:visited,
+            &:hover,
+            &:active {
+                text-decoration: none;
+                color: @morado;
+            }
+        }
 
     }
 
