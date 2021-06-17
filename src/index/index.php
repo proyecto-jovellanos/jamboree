@@ -38,7 +38,6 @@ elseif (isset($_POST['register'])) {
 
   <!--HEADER -->
   <header>
-    <div class="logo">LOGO</div>
     <div class="title">
       Jamboree
     </div>
@@ -103,15 +102,15 @@ elseif (isset($_POST['register'])) {
         </div>
         <div>
           <h2>Estudio</h2>
-          <p>Saca tu artista con nuestro propio estudio integrado</p>
+          <p>Da rienda suelta a tu creatividad con un estudio diseñado para un manejo sencillo y online</p>
         </div>
         <div>
           <h2>Foro</h2>
-          <p>Comparte todas tus canciones ,modifica y visualiza las de otros usarios</p>
+          <p>Comparte tus temas, visualiza los de otros usarios y lucha por estar en los hits mas escuchados</p>
         </div>
         <div>
           <h2>Audioteca</h2>
-          <p>Almacena tus creaciones o la de otros usarios para seguir luego</p>
+          <p>Almacena tus creaciones o importa la de otros usarios para enriquecer tu colección privada de ritmos y loops</p>
         </div>
       </div>
       <div class="card-carousel">
@@ -128,7 +127,7 @@ elseif (isset($_POST['register'])) {
         </div>
 
         <div class="buton">
-          <button class="reproductorRap">Reggueton</button>
+          <button class="reproductorRap">Reggeaton</button>
           <p><br>¿Como se hace?<img src="../../media/Images/Regueton.PNG" alt=""></p>
         </div>
 
@@ -138,7 +137,7 @@ elseif (isset($_POST['register'])) {
       <div class="section">
         <div class="textimg">
           <h2>Estudio</h2>
-          <p>El estudio sera tu espacion de creacion ,tu pequeña cueva musical o como lo quieras llamar...Basicamente en el dejaras fluir tu creatividad con el chanel rack que tiene integrado y diviersas funcionalidades como el control de bpm ,para poder crear diferentes estilos musicales</p>
+          <p>El estudio sera tu espacio de creación, tu pequeña cueva musical donde dejar fluir tu creatividad con su channel rack integrado y diversas funcionalidades como el control de bpm, mute...</p>
         </div>
         <div class="img"><img src="../../media/Images/Estudio.png" alt=""></div>
       </div>
