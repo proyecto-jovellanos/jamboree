@@ -18,17 +18,14 @@ $(document).ready(function () {
     //  var user = document.cookie.replace(/(?:(?:^|.*;\s*)id_User\s*\=\s*([^;]*).*$)|^.*$/, "$1");
     //console.log(user);
 
-
+    //objeto con los 4 sonidos, cada uno con un array bidimensional y el nombre de la pista
     var tracks = {
-        // "name": nombreCookie,
-        //   "track": {
         0: [Array(32).fill(0), "kick"],
         1: [Array(32).fill(0), "snare"],
         2: [Array(32).fill(0), "hat"],
         3: [Array(32).fill(0), "clap"]
-        //    },
-        //"etiquetas": etiquetas
     };
+
     $("#currentBPM").html(Tone.Transport.bpm.value)
     $("#tempo").on('change', function (ev) {
         ev.preventDefault()
@@ -96,10 +93,9 @@ $(document).ready(function () {
         if (song_name == "") {
             $(".warning").text("Introduce un nombre")
         } else {
-            let tracksJSON = JSON.stringify(tracks)
             let tag = $("select").children("option:selected").val()
             let bpm = $("#tempo").val()
-            //  console.log(bpm);
+            let tracksJSON = JSON.stringify(tracks)
             var params = {
                 method: 'POST',
                 headers: {
@@ -140,6 +136,16 @@ $(document).ready(function () {
         leerMarked()
     })
 
+    //Funcion lectora de todos los beats para crear objeto track
+    function leerMarked() {
+        for (let i = 0; i < 4; i++) {
+            for (let j = 1; j < 33; j++) {
+                $(`.${tracks[i][1]} .beats .beat.${j}`).hasClass("marked") ?
+                    tracks[i][0][j - 1] = 1 :
+                    tracks[i][0][j - 1] = 0
+            }
+        }
+    }
     //boton para mutear una pista
     $(".fa-volume-mute").click(function (ev) {
         ev.preventDefault()
@@ -187,26 +193,14 @@ $(document).ready(function () {
         }
     })
 
-    //Funcion lectora de todos los beats para crear objeto track
-    function leerMarked() {
-        for (let i = 0; i < 4; i++) {
-            for (let j = 1; j < 33; j++) {
-                $(`.${tracks[i][1]} .beats .beat.${j}`).hasClass("marked") ?
-                    tracks[i][0][j - 1] = 1 :
-                    tracks[i][0][j - 1] = 0
-            }
-        }
-        //  console.log(tracks);
-    }
 
+
+    //graficos en beat marcado
     function leerTrackJSON() {
         for (let i = 0; i < 4; i++) {
             for (let j = 1; j < 33; j++) {
                 if (tracks[i][0][j - 1] == 1) {
                     $(`.${tracks[i][1]} .beats .beat.${j}`).addClass("marked")
-                } else {
-                    console.log(tracks[i][0][j - 1]);
-                    // console.log("0");
                 }
             }
         }
@@ -227,14 +221,12 @@ $(document).ready(function () {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
             },
-            //option=get para controlar la operacion en php
             body: "option=get&id_song=" + id_song
         }
         fetch("../server.php", params)
             .then(function (respuesta) {
                 return respuesta.text()
             }).then(function (datos) {
-                // console.log(datos);
                 let obj = JSON.parse(datos)
                 for (let i = 0; i < 4; i++) {
                     tracks[i][0] = obj[i][0]
@@ -305,7 +297,6 @@ $(document).ready(function () {
 
             Tone.Transport.scheduleRepeat(function (time) {
                 Tone.Draw.schedule(function () {
-                    //let w = new Tone.FrequencyClass(players[0].context).toFrequency()
                     for (let i = 0; i < 4; i++) {
                         //mostrar animacion cada negra
                         if (index == 1 || index == 9 || index == 17 || index == 25) {
@@ -323,7 +314,6 @@ $(document).ready(function () {
                             $(`.${tracks[i][1]} .beats .beat.${index+1}`).toggleClass("timeline")
                             $(`.${tracks[i][1]} .beats .beat.${index}`).toggleClass("timeline")
                         }
-                        //  console.log(index);
                         let player = players[i]
                         if (tracks[i][0][index] == 1) {
                             //al sonar una track marco esa fila entera para visualizacion

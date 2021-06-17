@@ -48,7 +48,6 @@ function cargaTrack(t, bpm) {
 
     $("#tempo").attr("value", bpm)
     Tone.Transport.bpm.value = bpm
-    console.log("Track cargado");
 }
 
 var index = 0
@@ -149,7 +148,6 @@ var t_id;
 
 function play(id) {
     t_id = parseInt(id)
-    console.log(id);
     if (Tone.context.state !== 'running') {
         Tone.context.resume();
     } else {
