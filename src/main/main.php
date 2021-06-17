@@ -38,9 +38,7 @@ if (!isset($_COOKIE['id_User'])) {
     </div> -->
     <header class="header">
         <div class="animation-header">
-
             Jamboree
-
         </div>
         <ul class="menu-items">
             <li><a href="../perfil.php">Mi perfil</a></li>

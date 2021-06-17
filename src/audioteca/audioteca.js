@@ -87,7 +87,7 @@ $(document).ready(function () {
 
     //boton para borrar
     $(".fa-trash-alt").click(function () {
-        var userselection = confirm("¿Estás seguro de borrar este tema para siempre?");
+        var userselection = confirm("¿Estás seguro de borrar este tema permanentemente?");
 
         if (userselection == true) {
             let id = $(this).parent().prev().html()
