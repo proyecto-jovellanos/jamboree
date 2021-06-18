@@ -18,8 +18,8 @@ if ($filas) {
   include("index.php")
 ?>
   <div id="error">
-    <h1>error autentificacion</h1>
-    <button type="submit"><a href="index.php">Otra vez</a></button>
+    <h1>Error de Autentificación</h1>
+    <button type="submit"><a class="error" href="index.php">Intentar de nuevo</a></button>
   </div>
 <?php
 }
