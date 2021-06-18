@@ -55,7 +55,6 @@ if (!isset($_COOKIE['id_User'])) {
         <div class="social">
             <a href="https://www.instagram.com/jamboreeoficial/"><i class="fab fa-instagram"></i></a>
             <a href="https://twitter.com/Jambore29165571"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook-square"></i></a>
         </div>
         <span class="btn_menu">
             <i class="fas fa-bars"></i>
@@ -82,7 +81,6 @@ if (!isset($_COOKIE['id_User'])) {
         <div class="socialFo">
             <a href="https://www.instagram.com/jamboreeoficial/"><i class="fab fa-instagram"></i></a>
             <a href="https://twitter.com/Jambore29165571"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook-square"></i></a>
         </div>
 
     </footer>
