@@ -154,7 +154,7 @@ $(document).ready(function () {
             case "kick":
                 if (players[0].mute) {
                     players[0].mute = false
-                    $(this).css("color", "black")
+                    $(this).css("color", "#d9bfa9")
                 } else {
                     players[0].mute = true
                     $(this).css("color", "red")
@@ -163,7 +163,7 @@ $(document).ready(function () {
             case "snare":
                 if (players[1].mute) {
                     players[1].mute = false
-                    $(this).css("color", "black")
+                    $(this).css("color", "#d9bfa9")
                 } else {
                     players[1].mute = true
                     $(this).css("color", "red")
@@ -172,7 +172,7 @@ $(document).ready(function () {
             case "hat":
                 if (players[2].mute) {
                     players[2].mute = false
-                    $(this).css("color", "black")
+                    $(this).css("color", "#d9bfa9")
                 } else {
                     players[2].mute = true
                     $(this).css("color", "red")
@@ -181,7 +181,7 @@ $(document).ready(function () {
             case "clap":
                 if (players[3].mute) {
                     players[3].mute = false
-                    $(this).css("color", "black")
+                    $(this).css("color", "#d9bfa9")
                 } else {
                     players[3].mute = true
                     $(this).css("color", "red")

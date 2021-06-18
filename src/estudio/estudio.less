@@ -481,9 +481,10 @@ body {
 
     .menu-items {
         position: absolute;
-        right: 2%;
+        right: 0%;
 
         li a {
+            color: @green;
             font-size: 16px;
             padding: 0;
         }
@@ -492,6 +493,54 @@ body {
 }
 
 @media screen and (max-width:600px) {
+    .kick {
+        .track_name {
+            span {
+                display: none;
+            }
+
+            &::after {
+                content: "K" !important;
+            }
+        }
+    }
+
+    .snare {
+        .track_name {
+            span {
+                display: none;
+            }
+
+            &::after {
+                content: "S" !important;
+            }
+        }
+    }
+
+    .hat {
+        .track_name {
+            span {
+                display: none;
+            }
+
+            &::after {
+                content: "H" !important;
+            }
+        }
+    }
+
+    .clap {
+        .track_name {
+            span {
+                display: none;
+            }
+
+            &::after {
+                content: "C" !important;
+            }
+        }
+    }
+
     .header {
         height: 10vh;
         width: 100vw;
@@ -514,8 +563,10 @@ body {
         right: 0;
 
         li {
-            margin: 30px 0 0 0;
+            margin: 0.5rem 0 auto auto !important;
             line-height: 30px;
+            width: 100%;
+            background-color: @gris-claro;
 
             &:hover {
                 background-color: none;
