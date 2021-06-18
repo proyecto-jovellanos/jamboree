@@ -14,13 +14,6 @@ $(document).ready(function () {
   })
   
 
-
-
-
-
-
-
-
 $num = $('.my-card').length;
 $even = $num / 2;
 $odd = ($num + 1) / 2;
