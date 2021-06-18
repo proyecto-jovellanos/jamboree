@@ -15,23 +15,23 @@
 
 <body>
 <header>
-    <div class="logo">LOGO</div>
-    <div class="title">
+<div class="title">
       Jamboree
     </div>
 
     <div class="social">
-        <a><i class="fab fa-twitter"></i></a>
-        <a><i class="fab fa-facebook"></i></a>
-        <a><i class="fab fa-instagram"></i></a>
-    </div>
 
+      <a href="https://www.instagram.com/jamboreeoficial/"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/Jambore29165571"><i class="fab fa-twitter"></i></a>
+      <a><i class="fab fa-facebook"></i></a>
+
+    </div>
   </header>
   <main>
     <form action="../index/index.php" method="post">
         <div class="dataRegister">
             <div class="sectionRegister">
-                <p>Username</p>
+                <p>Usuario</p>
                 <input type="text" name="user" id="" required>
             </div>
             <div class="sectionRegister">
@@ -39,19 +39,18 @@
                 <input type="password" name="password" id="" required>
             </div>
             <div class="sectionRegister">
-                <p>Fecha</p>
+                <p>Fecha Nacimiento</p>
                 <input type="date" name="fecha" id="" required>
             </div>
-            <input type="submit" value="SEND" class="sendRegister" name="register">
+            <input type="submit" value="Registrarse" class="sendRegister" name="register">
 
         </div>
     </form>
 </main>
     <!--FOOTER-->
-  <footer>
-    <div class="contactos">Nuestros nombres</div>
-    <div class="lopd">ley organica proteccion datos, cookies...</div>
-    <div class="year">AÑO y Copyright</div>
+    <footer>
+    <div class="contactos">© 2021 Jamboree Software</div>
+    <div class="lopd"><a href="../privacidad.html">Política de privacidad</a></div>
   </footer>
 
 </body>
