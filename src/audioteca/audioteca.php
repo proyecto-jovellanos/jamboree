@@ -70,7 +70,7 @@ if (!isset($_COOKIE['id_User'])) {
         <div class="lista_audioteca">
             <?php
             include("cancionesUsuario.php");
-            include("db.php");
+            include("../db.php");
             $leer = mysqli_query($conexion, 'select * from canciones where username="' . $_COOKIE['id_User'] . '" order by 1 desc');
             listar($leer);
             ?>

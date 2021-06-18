@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 @title: Cormorant, serif;
 @text: Nunito, sans-serif;
+@logo: Monoton, serif;
 @sombreado: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 /* Colores en Hex */
@@ -16,10 +17,11 @@
 @morado: #43038c;
 @gris-oscuro: #414141;
 @gris-claro: #525252;
-
+@blanco:white;
 * {
     box-sizing: border-box;
     margin: 0 auto;
+    text-decoration: none;
 }
 
 /* ocultar barras de scroll */
@@ -57,7 +59,6 @@ body {
 header {
     grid-area: header;
     background-color: @gris-oscuro;
-    background-color: @gris-oscuro;
     border: 1px solid @gris-claro;
     border-width: 2px;
     z-index: 9;
@@ -67,28 +68,17 @@ header {
     align-items: center;
     height: 10vh;
     min-height: 52px;
+    //background-color: @color-3-medium;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 1);
 
-
-
-    .logo {
-        text-align: center;
-        font-size: 2em;
-        font-weight: 3px;
-        color: @green;
-        font-family: @title;
-
-
-
-
-    }
 
     .title {
         font-size: x-large;
-
         text-align: center;
         color: @green;
-
-
+        font-family: @logo;
+        font-size: 2em;
+        font-family: Monoton, serif;
     }
 
     .social {
@@ -99,6 +89,7 @@ header {
     .social a {
         display: inline-flex;
         margin-left: 10px;
+        color: @green;
 
     }
 
@@ -137,8 +128,9 @@ main {
 
 
         .sectionRegister {
-            margin-top: 4%;
+            margin-top: 2%;
             text-align: center;
+            color: @green;
             *{
                 box-sizing: border-box;
             }
@@ -146,8 +138,6 @@ main {
             .sectionRegister p {
                 font-size: 10px;
                 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-
             }
 
             .sectionRegister input {
@@ -158,10 +148,26 @@ main {
         }
 
         .dataRegister>input {
+            color: blanchedalmond;
             margin-top: 2%;
-            margin-left: 45%;
+            margin-left: 35%;
+            height: 35px;
+            width: 30%;
+            background-image: linear-gradient(315deg, @green 0%, @green 74%);
+            overflow: hidden;
+            border: 1px solid black;
+            margin-bottom: 10px;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.8s;
+                /* Safari */
+                transition-duration: 0.8s;
 
-
+                &:hover {
+                    background-color: lighten(@green, 15%);
+                    color: @gris-oscuro;
+                }
 
         }
 
@@ -171,6 +177,9 @@ main {
         }
     }
 }
+p{
+    padding: 10px;
+}
 
 /*----FOOTER------*/
 footer {
@@ -178,19 +187,27 @@ footer {
     position: relative;
     bottom: 0;
     height: 10vh;
-
-
-}
-
-footer {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 1);
     background-color: @gris-oscuro;
     width: 100%;
     display: flex;
 
-}
+    color: @green;
 
-footer>div {
-    margin-right: auto;
-    margin-left: auto;
+    a {
+        text-decoration: none;
 
+        &:link,
+        &:visited,
+        &:hover,
+        &:active {
+            text-decoration: none;
+            color: @green;
+        }
+    }
+
+    div {
+        align-self: center;
+
+    }
 }
