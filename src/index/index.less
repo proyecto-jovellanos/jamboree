@@ -11,7 +11,7 @@
 @morado: #43038c;
 @gris-oscuro: #414141;
 @gris-claro: #525252;
-@blanco:white;
+@blanco: white;
 
 * {
     box-sizing: border-box;
@@ -204,11 +204,12 @@ main {
                 border: none;
                 font-family: Helvetica, Arial, sans-serif;
                 cursor: pointer;
-                &hover {
-                border: darken(@green, 10%) 0.5px solid;
-                box-shadow: 0 0 5px rgba(0, 0, 0, 1);
 
-            }
+                &hover {
+                    border: darken(@green, 10%) 0.5px solid;
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
+
+                }
 
             }
 
@@ -394,6 +395,7 @@ main {
                     flex-flow: column;
                     justify-content: center;
                     align-items: center;
+
                     p {
                         display: block;
                         color: @green;
@@ -405,6 +407,7 @@ main {
                 }
             }
         }
+
         .card-carousel {
             margin-top: 2em;
             box-sizing: content-box;
@@ -465,7 +468,7 @@ main {
         }
 
         .card-carousel .my-card:nth-child(0):before {
-            background-image: url('../../media/10.jpg');
+            background-image: url('../../media/1.png');
             background-size: 100% 100%;
             display: inline-block;
             width: 100%;
@@ -483,7 +486,7 @@ main {
         }
 
         .card-carousel .my-card:nth-child(1):before {
-            background-image: url('../../media/7.jpg');
+            background-image: url('../../media/2.jpg');
             background-size: 100% 100%;
             display: inline-block;
             width: 100%;
@@ -502,7 +505,7 @@ main {
         }
 
         .card-carousel .my-card:nth-child(2):before {
-            background-image: url('../../media/10.jpg');
+            background-image: url('../../media/3.jpg');
             background-size: 100% 100%;
             display: inline-block;
             width: 100%;
@@ -519,7 +522,7 @@ main {
         }
 
         .card-carousel .my-card:nth-child(3):before {
-            background-image: url('../../media/7.jpg');
+            background-image: url('../../media/4.jpg');
             background-size: 100% 100%;
             display: inline-block;
             width: 100%;
@@ -610,7 +613,8 @@ main {
 
             .textimg {
                 text-align: center;
-                h2{
+
+                h2 {
                     color: @blanco;
                 }
 
@@ -671,7 +675,7 @@ footer {
 #error {
     position: absolute;
     width: 25%;
-    background-color:@gris-oscuro;
+    background-color: @gris-oscuro;
     height: 200px;
     left: 37%;
 
@@ -691,15 +695,17 @@ footer {
     margin-top: 10%;
 
 }
+
 #error>button {
     font-size: 23px;
-    background-color:@morado;
+    background-color: @morado;
     font-family: 'Times New Roman', Times, serif;
     margin-top: 10%;
     border-radius: 5px;
     border: 1px solid black;
 }
-.error{
+
+.error {
     color: @green;
 }
 
