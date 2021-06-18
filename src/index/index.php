@@ -46,7 +46,7 @@ elseif (isset($_POST['register'])) {
 
       <a href="https://www.instagram.com/jamboreeoficial/"><i class="fab fa-instagram"></i></a>
       <a href="https://twitter.com/Jambore29165571"><i class="fab fa-twitter"></i></a>
-      <a><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-facebook-square"></i></a>
 
     </div>
 
