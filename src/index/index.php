@@ -90,7 +90,7 @@ elseif (isset($_POST['register'])) {
 
         <video muted loop autoplay>
 
-          <source src="1.mp4" type="video/mp4">
+          <source src="../../media/2.mp4" type="video/mp4">
         </video>
 
       </div>
