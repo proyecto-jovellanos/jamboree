@@ -88,8 +88,7 @@ elseif (isset($_POST['register'])) {
 
       <div class="video">
 
-        <video muted loop autoplay>
-
+        <video>
           <source src="../../media/2.mp4" type="video/mp4">
         </video>
 

@@ -83,27 +83,6 @@ header {
         width: 66vw;
     }
 
-
-    .menu-items {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        right: 8%;
-
-
-        li {
-            margin: 0 5px;
-
-            a {
-                padding: 9px 13px;
-                font-size: 22px;
-                display: block;
-            }
-        }
-
-
-    }
-
     .btn_menu {
         margin-right: 30px;
         font-size: 25px;
@@ -114,7 +93,8 @@ header {
     ul.show {
         top: 65px;
         width: 100%;
-        height: 250px;
+        min-width: 200px;
+        height: 20vh;
         position: absolute;
     }
 }
@@ -268,8 +248,20 @@ footer>div {
         display: none;
     }
 
-    .menu-items li a {
+    .menu-items {
+        position: absolute;
+        right: 5%;
         color: @green;
+        display: flex;
+        gap: 2em;
+
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+            text-decoration: none;
+            color: @green;
+        }
     }
 }
 
@@ -286,9 +278,10 @@ footer>div {
     }
 
     .menu-items {
+        display: block;
         position: fixed;
         width: 100vh;
-        height: calc(100%-65px);
+        //height: calc(100%-65px);
         background-color: @gris-oscuro;
         top: -100vh;
         text-align: center;
@@ -299,6 +292,7 @@ footer>div {
         li {
             margin: 30px 0 0 0;
             line-height: 30px;
+            background-color: @gris-claro;
 
             &:hover {
                 background-color: none;

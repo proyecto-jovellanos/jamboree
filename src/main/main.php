@@ -40,13 +40,13 @@ if (!isset($_COOKIE['id_User'])) {
         <div class="animation-header">
             Jamboree
         </div>
+        <span class="btn_menu">
+            <i class="fas fa-bars"></i>
+        </span>
         <ul class="menu-items">
             <li><a href="../perfil.php">Mi perfil</a></li>
             <li><a href="../ayuda.html">Ayuda</a></li>
         </ul>
-        <span class="btn_menu">
-            <i class="fas fa-bars"></i>
-        </span>
     </header>
 
     <div class="main">
