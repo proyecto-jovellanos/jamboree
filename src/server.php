@@ -1,7 +1,5 @@
 <?php
 include("db.php");
-
-//si se ha dado a cualquiera de los boton de "enviar" se inicia funcion escritora
 if ($_POST['option'] == "guardar") {
     $content = $_POST['track'];
     $id_User = $_POST['id_User'];
@@ -13,7 +11,6 @@ if ($_POST['option'] == "guardar") {
     mysqli_query($conexion, $consulta);
     $conexion->close();
 }
-
 //al cargarse la página se inicia la descarga de datos
 elseif ($_POST['option'] == "cargar") {
     $IdCancion = $_POST['id_cancion'];

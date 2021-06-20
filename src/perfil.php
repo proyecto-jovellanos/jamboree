@@ -29,7 +29,7 @@ if (!isset($_COOKIE['id_User'])) {
 <body>
     <header class="header">
         <div class="animation-header">
-        <a href="main/main.php">JamBoree</a>
+            <a href="main/main.php">JamBoree</a>
         </div>
         <ul class="menu-items">
             <li><a href="main/main.php">Inicio</a></li>
@@ -86,7 +86,7 @@ if (!isset($_COOKIE['id_User'])) {
 
     <footer>
         <div class="contactos">© 2021 Jamboree Software</div>
-        <div class="lopd"><a href="../privacidad.html">Política de privacidad</a></div>
+        <div class="lopd"><a href="privacidad.html">Política de privacidad</a></div>
         <div class="socialFo">
             <a href="https://www.instagram.com/jamboreeoficial/"><i class="fab fa-instagram"></i></a>
             <a href="https://twitter.com/Jambore29165571"><i class="fab fa-twitter"></i></a>
